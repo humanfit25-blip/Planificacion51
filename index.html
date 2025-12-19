@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CrossFit Vallecas - Programación Semanal</title>
+    <title>CrossFit Vallecas - Semana 22-27 Diciembre 2025</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&family=Barlow:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -19,6 +19,7 @@
             --rojo-crossfit: #ff0055;
             --texto-principal: #e0e0e0;
             --texto-secundario: #a0a0a0;
+            --oro-navidad: #ffd700;
         }
 
 ```
@@ -127,6 +128,14 @@
         letter-spacing: 2px;
     }
 
+    .week-dates {
+        font-size: 1em;
+        color: var(--oro-navidad);
+        font-weight: 500;
+        margin-top: 10px;
+        letter-spacing: 1px;
+    }
+
     .legend {
         display: flex;
         justify-content: center;
@@ -171,6 +180,11 @@
         animation: fadeInUp 0.6s ease backwards;
     }
 
+    .day-card.festivo {
+        border: 2px solid var(--oro-navidad);
+        box-shadow: 0 0 30px rgba(255, 215, 0, 0.2);
+    }
+
     .day-card:nth-child(1) { animation-delay: 0.1s; }
     .day-card:nth-child(2) { animation-delay: 0.2s; }
     .day-card:nth-child(3) { animation-delay: 0.3s; }
@@ -203,6 +217,10 @@
         overflow: hidden;
     }
 
+    .day-header.festivo {
+        background: linear-gradient(135deg, var(--oro-navidad) 0%, var(--burdeos) 100%);
+    }
+
     .day-header::before {
         content: '';
         position: absolute;
@@ -229,6 +247,25 @@
         position: relative;
     }
 
+    .day-date {
+        font-size: 0.9em;
+        color: rgba(255, 255, 255, 0.8);
+        font-weight: 300;
+        position: relative;
+    }
+
+    .festivo-badge {
+        display: inline-block;
+        background: var(--oro-navidad);
+        color: var(--negro);
+        padding: 5px 15px;
+        border-radius: 20px;
+        font-size: 0.8em;
+        font-weight: 700;
+        margin-top: 5px;
+        letter-spacing: 1px;
+    }
+
     .program-section {
         padding: 25px;
         border-left: 4px solid;
@@ -249,6 +286,13 @@
     .program-section.endurance {
         border-left-color: var(--celeste-endurance);
         background: linear-gradient(90deg, rgba(0, 212, 255, 0.05) 0%, transparent 100%);
+    }
+
+    .program-section.festivo {
+        border-left-color: var(--oro-navidad);
+        background: linear-gradient(90deg, rgba(255, 215, 0, 0.05) 0%, transparent 100%);
+        text-align: center;
+        padding: 40px 25px;
     }
 
     .program-section:not(:last-child) {
@@ -285,6 +329,23 @@
 
     .program-section.endurance .program-title {
         color: var(--celeste-endurance);
+    }
+
+    .program-section.festivo .program-title {
+        color: var(--oro-navidad);
+        justify-content: center;
+        font-size: 2.5em;
+    }
+
+    .festivo-icon {
+        font-size: 3em;
+        margin-bottom: 10px;
+    }
+
+    .festivo-text {
+        color: var(--oro-navidad);
+        font-size: 1.2em;
+        font-weight: 500;
     }
 
     .workout-content {
@@ -372,6 +433,20 @@
         margin-bottom: 10px;
         border: 1px solid var(--celeste-endurance);
     }
+
+    .christmas-wod {
+        background: linear-gradient(135deg, rgba(255, 215, 0, 0.3) 0%, rgba(139, 21, 56, 0.2) 100%);
+        padding: 5px 10px;
+        border-radius: 5px;
+        font-size: 0.85em;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        display: inline-block;
+        margin-bottom: 10px;
+        border: 1px solid var(--oro-navidad);
+        color: var(--oro-navidad);
+    }
 </style>
 ```
 
@@ -397,6 +472,7 @@
             </div>
             <h1>CrossFit Vallecas</h1>
             <p class="subtitle">Programación Semanal | Coaches</p>
+            <p class="week-dates">22 - 27 Diciembre 2025 🎄</p>
 
 ```
         <div class="legend">
@@ -416,19 +492,21 @@
     </header>
 
     <div class="week-grid">
-        <!-- DÍA 1 -->
+        <!-- LUNES 22/12 -->
         <div class="day-card">
             <div class="day-header">
-                <div class="day-name">Día 1</div>
+                <div class="day-name">Lunes</div>
+                <div class="day-date">22/12/2025</div>
             </div>
 
             <div class="program-section haltero">
                 <div class="program-title">Halterofilia</div>
                 <div class="workout-content">
                     <ul class="exercise-list">
-                        <li>Snatch Pull</li>
-                        <li>Muscle Snatch</li>
-                        <li>Power Snatch</li>
+                        <li>Squats Cleans</li>
+                        <li>Push Press</li>
+                        <li>Push Jerks</li>
+                        <li>Split Jerk</li>
                     </ul>
                 </div>
             </div>
@@ -436,186 +514,202 @@
             <div class="program-section crossfit">
                 <div class="program-title">CrossFit</div>
                 <div class="workout-content">
-                    <div class="workout-title">From minute 0 to minute 10 complete:</div>
+                    <div class="workout-title">AMRAP 12'</div>
+                    <div class="workout-details">
+                        12 Kettlebell Jerks<br>
+                        6 Toes-to-Bars<br>
+                        12 Jumping Lunge
+                    </div>
+
+                    <div class="workout-title">5 Rounds</div>
+                    <div class="workout-details">
+                        9 Kettlebell Snatches (left)<br>
+                        3 Burpees<br>
+                        9 Kettlebell Snatches (right)<br>
+                        3 Burpees<br>
+                        9 Kettlebell Thrusters<br>
+                        3 Bar Muscle-Ups
+                    </div>
+                </div>
+            </div>
+
+            <div class="program-section endurance">
+                <div class="program-title">Endurance</div>
+                <div class="workout-content">
+                    <div class="workout-title">Every minute on the minute For 30 minutes complete:</div>
+                    <div class="workout-details">
+                        <strong>Min 1:</strong> 100 mts Run<br>
+                        <strong>Min 2:</strong> 15 Thrusters<br>
+                        <strong>Min 3:</strong> 10 Burpees<br>
+                        <strong>Min 4:</strong> 15 DB Snatches<br>
+                        <strong>Min 5:</strong> 10 Calories
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MARTES 23/12 -->
+        <div class="day-card">
+            <div class="day-header">
+                <div class="day-name">Martes</div>
+                <div class="day-date">23/12/2025</div>
+            </div>
+
+            <div class="program-section haltero">
+                <div class="program-title">Halterofilia</div>
+                <div class="workout-content">
+                    <ul class="exercise-list">
+                        <li>Power Snatches</li>
+                        <li>Squat Snatches</li>
+                        <li>Push Jerk</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="program-section crossfit">
+                <div class="program-title">CrossFit</div>
+                <div class="workout-content">
+                    <div class="team-wod">👥 TEAM OF 4</div>
+                    <div class="workout-title">AMRAP 30'</div>
+                    <div class="workout-details">
+                        <strong>Run 400 mts Together</strong><br><br>
+                        <strong>Teammate A:</strong> 25 Deadlift (60kg/40kg)<br>
+                        <strong>Teammate B:</strong> 20 Burpee Pull-Ups<br>
+                        <strong>Teammate C:</strong> Max Hang C&J (60/40)<br>
+                        <strong>Teammate D:</strong> Max Pinch Grip Carry<br><br>
+                        <strong>Rest 60" each round</strong>
+                    </div>
+                </div>
+            </div>
+
+            <div class="program-section endurance">
+                <div class="program-title">Endurance</div>
+                <div class="workout-content">
+                    <div class="workout-title">6 Rounds</div>
+                    <div class="workout-details">
+                        15/12 Calories<br>
+                        15 American Swings<br>
+                        50 Double-Unders<br>
+                        15 Burpees Box Jumps
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- MIÉRCOLES 24/12 - NOCHEBUENA -->
+        <div class="day-card festivo">
+            <div class="day-header festivo">
+                <div class="day-name">Miércoles</div>
+                <div class="day-date">24/12/2025</div>
+                <div class="festivo-badge">🎄 NOCHEBUENA 🎄</div>
+            </div>
+
+            <div class="program-section haltero festivo">
+                <div class="festivo-icon">🎁</div>
+                <div class="program-title">FESTIVO</div>
+                <div class="festivo-text">No hay Halterofilia</div>
+            </div>
+
+            <div class="program-section crossfit">
+                <div class="program-title">CrossFit</div>
+                <div class="workout-content">
+                    <div class="christmas-wod">🎄 CHRISTMAS SPECIAL 🎄</div>
+                    <div class="hero-wod">⭐ MAYHEM DAILY WOD</div>
+                    <div class="workout-title">"12 DAYS OF CHRISTMAS"</div>
+                    <div class="workout-details">
+                        <strong>For Time</strong><br>
+                        1 Muscle-Up<br>
+                        2 Power Snatches<br>
+                        3 Overhead Squats<br>
+                        4 Bar Facing Burpees<br>
+                        5 Box Jumps<br>
+                        6 Strict Handstand Push-Ups<br>
+                        7 Toes-to-Bars<br>
+                        8 Hang DB Cleans<br>
+                        9 Ring Dips<br>
+                        10 GHD Sit-Ups<br>
+                        11 Pull-Ups<br>
+                        12(00) meter Row
+                    </div>
+                </div>
+            </div>
+
+            <div class="program-section endurance">
+                <div class="program-title">Endurance</div>
+                <div class="workout-content">
+                    <div class="workout-title">AMRAP 30'</div>
                     <div class="workout-details">
                         800 mts Run<br>
-                        <strong>3 Rounds</strong><br>
-                        10 Double Kettlebell Clean & Jerk<br>
-                        10 Push-Ups
-                    </div>
-
-                    <div class="workout-title">Minute 10 to minute 20:</div>
-                    <div class="workout-details">
-                        1 km Row<br>
-                        <strong>In The remaining time</strong><br>
-                        <strong>As Many rounds as possible:</strong><br>
-                        10 Burpees Box Jumps<br>
-                        10 Goblet Lunges
-                    </div>
-
-                    <div class="workout-title">Minute 20 to minute 30:</div>
-                    <div class="workout-details">
-                        Build a heavy Squat Clean
-                    </div>
-                </div>
-            </div>
-
-            <div class="program-section endurance">
-                <div class="program-title">Endurance</div>
-                <div class="workout-content">
-                    <div class="team-wod">👥 TEAM WOD</div>
-                    <div class="workout-title">3 sets</div>
-                    <div class="workout-details">
-                        <strong>Teammate A:</strong> 25 Calories<br>
-                        <strong>Teammate B:</strong> 25 Burpees<br><br>
-
-                        <strong>Teammate A:</strong> 100 Double Unders<br>
-                        <strong>Teammate B:</strong> 50 Air Squats<br><br>
-
-                        <strong>Teammate A:</strong> 200 mts Run<br>
-                        <strong>Teammate B:</strong> 30 DB Snatches
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- DÍA 2 -->
-        <div class="day-card">
-            <div class="day-header">
-                <div class="day-name">Día 2</div>
-            </div>
-
-            <div class="program-section haltero">
-                <div class="program-title">Halterofilia</div>
-                <div class="workout-content">
-                    <ul class="exercise-list">
-                        <li>Power Clean</li>
-                        <li>Squat Clean</li>
-                        <li>Push Jerk</li>
-                        <li>Clean Pull</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="program-section crossfit">
-                <div class="program-title">CrossFit</div>
-                <div class="workout-content">
-                    <div class="workout-title">Every minute For 12 minutes complete:</div>
-                    <div class="workout-details">
-                        <strong>Odd:</strong> 4 Deadlifts<br>
-                        <strong>Even:</strong> 4-8 Strict Pull-Ups
-                    </div>
-
-                    <div class="workout-title">For Time (Cap 16'):</div>
-                    <div class="workout-details">
-                        <strong>50-40-30-20-10</strong> Double-Unders<br>
-                        <strong>15-12-9-6-3</strong><br>
-                        Hang Power Snatches (40kg/25kg)<br>
-                        100m Run each round
-                    </div>
-                </div>
-            </div>
-
-            <div class="program-section endurance">
-                <div class="program-title">Endurance</div>
-                <div class="workout-content">
-                    <div class="workout-title">AMRAP 32'</div>
-                    <div class="workout-details">
-                        200 mts Run<br>
-                        18 Kettlebell Swings<br>
-                        18 Goblet Box Step-Ups<br>
-                        18 Burpees
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- DÍA 3 -->
-        <div class="day-card">
-            <div class="day-header">
-                <div class="day-name">Día 3</div>
-            </div>
-
-            <div class="program-section haltero">
-                <div class="program-title">Halterofilia</div>
-                <div class="workout-content">
-                    <ul class="exercise-list">
-                        <li>Snatch Pull</li>
-                        <li>Muscle Snatch</li>
-                        <li>Hang Power Snatch</li>
-                        <li>Front Squats</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="program-section crossfit">
-                <div class="program-title">CrossFit</div>
-                <div class="workout-content">
-                    <div class="workout-title">Every minute on the minute For 10' complete:</div>
-                    <div class="workout-details">
-                        <strong>ODD:</strong> 3 Hang Power Cleans<br>
-                        <strong>EVEN:</strong> 8 Strict Handstand Push-Ups / Pike Push-Ups
-                    </div>
-
-                    <div class="workout-title">3 sets</div>
-                    <div class="workout-details">
-                        30 Calories<br>
-                        20 Toes to Bar<br>
-                        10 Thrusters (40kg/25kg)<br>
-                        5 Burpees
-                    </div>
-                </div>
-            </div>
-
-            <div class="program-section endurance">
-                <div class="program-title">Endurance</div>
-                <div class="workout-content">
-                    <div class="workout-title">Every 5' for 30' complete:</div>
-                    <div class="workout-details">
-                        <strong>Set 1:</strong><br>
-                        400m Run<br>
-                        30 Goblet Lunges<br>
-                        20 Burpees<br><br>
-
-                        <strong>Set 2:</strong><br>
                         50 Double-Unders<br>
-                        40 Air Squats<br>
-                        20 DB Push Press
+                        40 Dumbbell Snatches<br>
+                        30 Burpees<br>
+                        20 Shuttle Run<br>
+                        10 Devil Press
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- DÍA 4 -->
+        <!-- JUEVES 25/12 - NAVIDAD -->
+        <div class="day-card festivo">
+            <div class="day-header festivo">
+                <div class="day-name">Jueves</div>
+                <div class="day-date">25/12/2025</div>
+                <div class="festivo-badge">🎅 NAVIDAD 🎅</div>
+            </div>
+
+            <div class="program-section haltero festivo">
+                <div class="festivo-icon">🎄</div>
+                <div class="program-title">FESTIVO</div>
+                <div class="festivo-text">¡Feliz Navidad!</div>
+            </div>
+
+            <div class="program-section crossfit festivo">
+                <div class="festivo-icon">🎁</div>
+                <div class="program-title">FESTIVO</div>
+                <div class="festivo-text">¡Disfruta con tu familia!</div>
+            </div>
+
+            <div class="program-section endurance festivo">
+                <div class="festivo-icon">⛄</div>
+                <div class="program-title">FESTIVO</div>
+                <div class="festivo-text">Descansa y celebra</div>
+            </div>
+        </div>
+
+        <!-- VIERNES 26/12 -->
         <div class="day-card">
             <div class="day-header">
-                <div class="day-name">Día 4</div>
+                <div class="day-name">Viernes</div>
+                <div class="day-date">26/12/2025</div>
             </div>
 
             <div class="program-section haltero">
                 <div class="program-title">Halterofilia</div>
                 <div class="workout-content">
                     <ul class="exercise-list">
-                        <li>Squat Clean and Jerk</li>
-                        <li>Squat Snatches</li>
-                 
+                        <li>Back Squats</li>
+                        <li>Cluster</li>
+                        <li>Power Clean</li>
+                    </ul>
                 </div>
             </div>
 
             <div class="program-section crossfit">
                 <div class="program-title">CrossFit</div>
                 <div class="workout-content">
-                    <div class="workout-title">4 Rounds</div>
+                    <div class="hero-wod">⭐ HERO WOD</div>
+                    <div class="workout-title">"SCHMALLS"</div>
                     <div class="workout-details">
-                        21 Kettlebell Swings<br>
-                        15 Chest to Bar<br>
-                        9 Burpees
-                    </div>
-
-                    <div class="workout-title">Every 2' For 16 minutes:</div>
-                    <div class="workout-details">
-                        <strong>Set 1:</strong> 10 Back Squats<br>
-                        <strong>Set 2:</strong> 300 mts Row
+                        <strong>For Time</strong><br>
+                        800 meter Run<br><br>
+                        <strong>Then 2 Rounds of:</strong><br>
+                        50 Burpees<br>
+                        40 Pull-Ups<br>
+                        30 Pistols<br>
+                        20 Kettlebell Swings (1.5/1 pood)<br>
+                        10 Handstand Push-Ups<br><br>
+                        <strong>Then 800 mts Run</strong>
                     </div>
                 </div>
             </div>
@@ -623,100 +717,67 @@
             <div class="program-section endurance">
                 <div class="program-title">Endurance</div>
                 <div class="workout-content">
-                    <div class="workout-title">4 Rounds</div>
+                    <div class="workout-title">AMRAP 36'</div>
                     <div class="workout-details">
-                        400 mts Run<br>
-                        9 Devil Press<br>
-                        12 Dumbbell Thrusters<br>
-                        15 Dumbbell Box Step-Ups
+                        365 Double-Unders<br>
+                        <strong>On the minute: 5 Push-Ups</strong>
+                    </div>
+
+                    <div class="workout-title">Then:</div>
+                    <div class="workout-details">
+                        <strong>AMRAP 12'</strong><br>
+                        Max Devil Press<br>
+                        <strong>On the minute: 5 Jumping Squats</strong>
+                    </div>
+
+                    <div class="workout-title">Then:</div>
+                    <div class="workout-details">
+                        2023 mts BIKE-ERG
+                    </div>
+
+                    <div class="workout-title">In the remaining time:</div>
+                    <div class="workout-details">
+                        <strong>AMRAP</strong><br>
+                        7 Thrusters (52 kg)<br>
+                        7 Burpees<br>
+                        52 Single Unders
                     </div>
                 </div>
             </div>
         </div>
 
-        <!-- DÍA 5 -->
+        <!-- SÁBADO 27/12 -->
         <div class="day-card">
             <div class="day-header">
-                <div class="day-name">Día 5</div>
+                <div class="day-name">Sábado</div>
+                <div class="day-date">27/12/2025</div>
             </div>
 
-            <div class="program-section crossfit">
-                <div class="program-title">CrossFit</div>
-                <div class="workout-content">
-                    <div class="hero-wod">⭐ HERO WOD</div>
-<div class="workout-title">"SGT. ANSARI"</div>
-<div class="workout-details">
-    <strong>4 Rounds For Time</strong><br>
-    5 Hang Cleans (60/43 kg)<br>
-    11 Toes-to-Bars<br>
-    29 Wall Ball Shots (9/6 kg)
-</div>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="program-section endurance">
-                <div class="program-title">Endurance</div>
-                <div class="workout-content">
-                    <div class="hero-wod">⭐ HERO WOD</div>
-                    <div class="workout-title">"HILDY"</div>
-                    <div class="workout-details">
-                        <strong>For Time</strong><br>
-                        100 Calorie Row<br>
-                        75 Thrusters (45/35 lb)<br>
-                        50 Pull-Ups<br>
-                        75 Wall Ball Shots (20/14 lb)<br>
-                        100 Calorie Row
-                    </div>
-                </div>
-            </div>
-
-<div class="program-section haltero">
+            <div class="program-section haltero">
                 <div class="program-title">Halterofilia</div>
                 <div class="workout-content">
                     <ul class="exercise-list">
-                    
-                        <li>Back Squats</li>
-                        <li>Power Clean</li>
-                        <li>Push Jerk</li>
-                        
+                        <li>Power Snatch</li>
+                        <li>Snatch Balance</li>
                     </ul>
-        
-        </div>
-
-        <!-- DÍA 6 -->
-        <div class="day-card">
-            <div class="day-header">
-                <div class="day-name">Día 6</div>
+                </div>
             </div>
 
             <div class="program-section crossfit">
                 <div class="program-title">CrossFit</div>
                 <div class="workout-content">
-                    <div class="hero-wod">⭐ HERO WOD TRIPLE</div>
-                    <div class="workout-title">Every 12 minutes For 36 minutes complete:</div>
-                    
+                    <div class="workout-title">10 Rounds (cap 15')</div>
                     <div class="workout-details">
-                        <strong>Set 1: ELLEN</strong><br>
-                        <strong>3 Rounds for Time</strong><br>
-                        20 Burpees<br>
-                        21 Alternating Dumbbell Snatches (50/35 lb)<br>
-                        12 Dumbbell Thrusters (2x50/35 lb)<br><br>
+                        1 Dumbbell DT<br>
+                        12 Toes to Bar
+                    </div>
 
-                        <strong>Set 2: CHRISTINE</strong><br>
-                        <strong>3 Rounds for Time</strong><br>
-                        500 meter Row<br>
-                        12 Deadlifts (Bodyweight)<br>
-                        21 Box Jumps (20 in)<br><br>
+                    <div class="workout-title">Rest 2'</div>
 
-                        <strong>Set 3: INGRID</strong><br>
-                        <strong>10 Rounds for Time</strong><br>
-                        3 Snatches (135/95 lb)<br>
-                        3 Bar Over Burpees<br><br>
-
-                        <strong>In The remaining time:</strong><br>
-                        Build a heavy Cluster
+                    <div class="workout-title">10 Rounds (cap 15')</div>
+                    <div class="workout-details">
+                        10 Cal Bike<br>
+                        12 Front Squats (60kg/40kg)
                     </div>
                 </div>
             </div>
@@ -724,19 +785,20 @@
             <div class="program-section endurance">
                 <div class="program-title">Endurance</div>
                 <div class="workout-content">
-                    <div class="hero-wod">⭐ HERO WOD</div>
                     <div class="team-wod">👥 IN PAIRS</div>
-                    <div class="workout-title">"RUNNING ANDI"</div>
+                    <div class="workout-title">For Time</div>
                     <div class="workout-details">
-                        <strong>For Time</strong><br>
-                        400 mts Run<br>
-                        100 Hang Power Snatches (65/45 lb)<br>
-                        400 mts Run<br>
-                        100 Push Presses (65/45 lb)<br>
-                        400 mts Run<br>
-                        100 Sumo Deadlift High-Pulls (65/45 lb)<br>
-                        400 mts Run<br>
-                        100 Front Squats (65/45 lb)
+                        <strong>5 Rounds</strong><br>
+                        <strong>Teammate A:</strong> 200 mts Run<br>
+                        <strong>Teammate B:</strong> Max Kettlebell Step-Ups<br><br>
+
+                        <strong>Rest 2'</strong><br><br>
+
+                        <strong>5 Rounds</strong><br>
+                        <strong>Teammate A:</strong> 100 Double-Unders<br>
+                        <strong>Teammate B:</strong> Max Complex<br>
+                        8 Russian Swings<br>
+                        8 Goblet Squats
                     </div>
                 </div>
             </div>
