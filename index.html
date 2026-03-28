@@ -3,7 +3,7 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CrossFit Vallecas - Semana 13</title>
+<title>CrossFit Vallecas - Semana 14</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{--bg-primary:#0d0d12;--bg-card:#1a1a22;--text-primary:#fff;--text-secondary:#8a8a9a;--accent-cf:#ff2d55;--accent-end:#00d4ff;--accent-halt:#00ff88;--day-bg:#c41e4a}
@@ -43,6 +43,13 @@ body{font-family:'Rajdhani',sans-serif;background:var(--bg-primary);color:var(--
 .day-header{background:var(--day-bg);background-image:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(0,0,0,.1) 10px,rgba(0,0,0,.1) 20px);border-radius:15px;padding:25px 20px;text-align:center;margin-top:30px;margin-bottom:0}
 .day-name{font-family:'Orbitron',sans-serif;font-size:1.8rem;font-weight:900;color:#fff;letter-spacing:3px}
 .day-date{font-size:1rem;color:rgba(255,255,255,.7);margin-top:5px}
+/* HOLY DAY CARD */
+.holy-day{background:linear-gradient(135deg,#0f0f1a,#1a1020);border:1px solid rgba(180,140,255,.2);border-radius:0 0 15px 15px;padding:40px 25px;text-align:center;position:relative;overflow:hidden}
+.holy-day::before{content:'✝';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:8rem;color:rgba(180,140,255,.04);pointer-events:none}
+.holy-title{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:rgba(200,160,255,.8);letter-spacing:4px;margin-bottom:16px}
+.holy-text{font-size:1.05rem;color:rgba(255,255,255,.45);line-height:1.9;max-width:480px;margin:0 auto}
+.holy-verse{font-size:.9rem;color:rgba(180,140,255,.5);font-style:italic;margin-top:18px;letter-spacing:1px}
+/* PROGRAM CARDS */
 .pc{background:var(--bg-card);border-radius:0 0 15px 15px;margin-bottom:0;position:relative;overflow:hidden}
 .pc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px}
 .pc.h::before{background:var(--accent-halt)}.pc.c::before{background:var(--accent-cf)}.pc.e::before{background:var(--accent-end)}
@@ -58,11 +65,12 @@ body{font-family:'Rajdhani',sans-serif;background:var(--bg-primary);color:var(--
 .sc p{margin-bottom:5px}
 .wt{font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:600;margin-bottom:14px}
 .wt.c{color:var(--accent-cf)}.wt.e{color:var(--accent-end)}.wt.h{color:var(--accent-halt)}
-.hero-badge{display:block;background:linear-gradient(135deg,rgba(255,180,0,.15),rgba(255,180,0,.04));border:1px solid rgba(255,180,0,.35);border-radius:8px;padding:8px 16px;font-family:'Orbitron',sans-serif;font-size:.72rem;color:rgba(255,200,80,.95);letter-spacing:2px;margin-bottom:16px;text-align:center;animation:heroPulse 3s ease-in-out infinite}
-@keyframes heroPulse{0%,100%{box-shadow:0 0 6px rgba(255,180,0,.2)}50%{box-shadow:0 0 16px rgba(255,180,0,.45)}}
-.memorial-badge{display:block;background:linear-gradient(135deg,rgba(0,212,255,.15),rgba(0,212,255,.04));border:1px solid rgba(0,212,255,.35);border-radius:8px;padding:8px 16px;font-family:'Orbitron',sans-serif;font-size:.72rem;color:var(--accent-end);letter-spacing:2px;margin-bottom:16px;text-align:center;animation:memPulse 3s ease-in-out infinite}
-@keyframes memPulse{0%,100%{box-shadow:0 0 6px rgba(0,212,255,.2)}50%{box-shadow:0 0 16px rgba(0,212,255,.45)}}
-.optional-badge{display:block;background:linear-gradient(135deg,rgba(0,255,136,.12),rgba(0,255,136,.03));border:1px solid rgba(0,255,136,.3);border-radius:8px;padding:8px 16px;font-family:'Orbitron',sans-serif;font-size:.72rem;color:var(--accent-halt);letter-spacing:2px;margin-bottom:16px;text-align:center}
+/* BADGES */
+.qf-badge{display:block;background:linear-gradient(135deg,rgba(255,45,85,.22),rgba(255,45,85,.06));border:1px solid rgba(255,45,85,.5);border-radius:8px;padding:8px 16px;font-family:'Orbitron',sans-serif;font-size:.72rem;color:var(--accent-cf);letter-spacing:2px;margin-bottom:14px;text-align:center;animation:qfPulse 2.5s ease-in-out infinite}
+@keyframes qfPulse{0%,100%{box-shadow:0 0 8px rgba(255,45,85,.25)}50%{box-shadow:0 0 20px rgba(255,45,85,.55)}}
+.qf-placeholder{background:rgba(255,45,85,.07);border:1px dashed rgba(255,45,85,.35);border-radius:10px;padding:16px;margin-bottom:14px;text-align:center}
+.qf-placeholder-text{font-family:'Orbitron',sans-serif;font-size:.75rem;color:rgba(255,120,140,.7);letter-spacing:2px}
+.qf-placeholder p{font-size:.88rem;color:var(--text-secondary);margin-top:8px}
 .material-note{background:rgba(255,200,50,.06);border:1px solid rgba(255,200,50,.2);border-radius:8px;padding:9px 14px;margin-bottom:12px;font-size:.84rem;color:rgba(255,210,80,.88);letter-spacing:.3px}
 .partner-block{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
 .partner-col{border-radius:10px;padding:11px 14px}
@@ -71,6 +79,13 @@ body{font-family:'Rajdhani',sans-serif;background:var(--bg-primary);color:var(--
 .partner-label{font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:2px;margin-bottom:5px}
 .partner-col.a .partner-label{color:var(--accent-cf)}.partner-col.b .partner-label{color:var(--accent-end)}
 .partner-col p{font-size:.88rem;color:var(--text-primary);line-height:1.5}
+.ladder-row{background:rgba(255,45,85,.06);border:1px solid rgba(255,45,85,.18);border-radius:10px;padding:11px 15px;margin-bottom:8px}
+.ladder-row.dl2{background:rgba(255,140,0,.06);border-color:rgba(255,140,0,.18)}
+.ladder-row.dl3{background:rgba(0,255,136,.05);border-color:rgba(0,255,136,.18)}
+.ladder-label{font-family:'Orbitron',sans-serif;font-size:.66rem;letter-spacing:2px;margin-bottom:5px;color:var(--accent-cf)}
+.ladder-row.dl2 .ladder-label{color:rgba(255,160,60,.9)}.ladder-row.dl3 .ladder-label{color:var(--accent-halt)}
+.amrap-block{background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.18);border-radius:10px;padding:12px 15px;margin-bottom:8px}
+.amrap-label{font-family:'Orbitron',sans-serif;font-size:.66rem;letter-spacing:2px;margin-bottom:6px;color:var(--accent-end)}
 .ps{height:2px;background:var(--bg-primary)}
 .fb{width:100%;background:rgba(255,255,255,.05);border:none;border-radius:10px;padding:15px 20px;margin-top:15px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background .3s}
 .fb:hover{background:rgba(255,255,255,.10)}
@@ -93,378 +108,310 @@ footer{text-align:center;padding:40px 20px;margin-top:40px}
 <div class="logo-star"><svg viewBox="0 0 100 100"><defs><filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ff2d55"/><stop offset="50%" style="stop-color:#c41e4a"/><stop offset="100%" style="stop-color:#8a1535"/></linearGradient></defs><polygon points="50,5 61,35 95,35 68,57 79,90 50,70 21,90 32,57 5,35 39,35" fill="url(#sg)" filter="url(#glow)"/><circle cx="50" cy="50" r="22" fill="#1a1a22"/><circle cx="50" cy="50" r="20" fill="#12121a"/><circle cx="42" cy="47" r="4" fill="#fff"/><circle cx="58" cy="47" r="4" fill="#fff"/><circle cx="43" cy="46" r="1.5" fill="#00d4ff"/><circle cx="59" cy="46" r="1.5" fill="#00d4ff"/><path d="M 38 56 Q 50 66 62 56" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
 <h1 class="main-title">CROSSFIT<br>VALLECAS</h1>
 <p class="main-subtitle">Programación Semanal | Coaches</p>
-<p class="week-date">22 Marzo 2026 – 27 Marzo 2026 ⚡</p>
-<p class="week-theme">— RELOAD &amp; RISE — SEMANA 13 —</p>
+<p class="week-date">30 Marzo 2026 – 04 Abril 2026 ⚡</p>
+<p class="week-theme">— IRON DEVOTION — SEMANA 14 — SEMANA SANTA —</p>
 <div class="legend"><div class="legend-btn"><div class="legend-dot h"></div>HALTEROFILIA</div><div class="legend-btn"><div class="legend-dot c"></div>CROSSFIT</div><div class="legend-btn"><div class="legend-dot e"></div>ENDURANCE</div></div>
 </header>
 <!-- ===== LUNES ===== -->
-<div class="day-header"><h2 class="day-name">LUNES</h2><p class="day-date">22/03/2026</p></div>
+<div class="day-header"><h2 class="day-name">LUNES</h2><p class="day-date">30/03/2026</p></div>
 
 <div class="pc h"><div class="pcon">
 <div class="ptitle"><div class="pdot"></div><span class="pname">HALTEROFILIA</span></div>
-<div class="ws"><div class="st">A) Shoulder Warm-up — 3 Sets For Quality</div><div class="sc">
-<p>8 Strict Press (empty bar or light — vertical bar path, full lockout)</p>
-<p>12 T-Raises (light DB or plate — retract scapula, horizontal plane)</p>
-<p>8 Push Press (add slight load — leg drive into overhead)</p>
-<p>12 Front Raises (light — anterior deltoid activation, controlled eccentric)</p>
+<div class="ws"><div class="st">A) Every 2' For 10' (5 Sets)</div><div class="sc">
+<p>1 Squat Clean + 4 Front Squats</p>
+<p><em>Load: 75–83% — The Clean establishes the front rack; the 4 FSQ build positional strength under fatigue. Unbroken — do not re-rack between movements.</em></p>
 </div></div>
-<div class="ws"><div class="st">B) Every 90" For 9' (6 Sets)</div><div class="sc">
-<p>2 Hang Power Cleans + 2 Front Squats + 2 Jerks</p>
-<p><em>Load: 72–80% — Unbroken complex. The FSQ after the HPC build front rack strength; the Jerk exits from the rack position of the last FSQ.</em></p>
+<div class="ws"><div class="st">B) On the Minute For 8' (8 Sets)</div><div class="sc">
+<p>3 Hang Power Clean &amp; Jerk @ 65–75%</p>
+<p><em>Build from 65% to 75% across the 8 minutes. Touch and go if the load allows. Focus on the dip timing for the Jerk directly from the HP Clean catch.</em></p>
 </div></div>
-<div class="ws"><div class="st">C) On the Minute For 10' (10 Sets)</div><div class="sc">
-<p><strong>Sets 1–3:</strong> 2 Power Clean &amp; Jerk</p>
-<p><strong>Sets 4–10:</strong> 1 Power Clean &amp; Jerk</p>
-<p><em>Build weight from set 4 onwards. The 2-rep opening sets dial in the timing before going heavy.</em></p>
-</div></div>
-<div class="ws"><div class="st">D) Accessories — Snatch Focus</div><div class="sc">
+<div class="ws"><div class="st">C) Accessories — Muscle Snatch Focus</div><div class="sc">
 <p>3 Sets:</p>
-<p>• 8 Snatch Grip RDL (slow eccentric — bar stays in contact, lat engagement)</p>
-<p>• 10 OHS with pause (empty bar or PVC — 4" at bottom, active press throughout)</p>
-<p>• 10 Cuban Rotations (slow — external rotator, manguito protection after Jerk volume)</p>
+<p>• 6 Muscle Snatches (bar speed — triple extension before any arm pull)</p>
+<p>• 10 Overhead Squat (pause 3" at bottom — active press, knees tracking out)</p>
+<p>• 10 Banded Pull-Aparts (horizontal plane — rear delt and external rotator)</p>
 </div></div>
 <button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Lunes de C&J con warm-up de hombro estructurado — el bloque A no es un calentamiento estándar, es activación específica: T-Raises y Front Raises activan deltoides posterior y anterior antes de cargar el Press y el Push Press.</strong><br><br>En el bloque B, el complex HPC + FSQ + Jerk es un trío de construcción: los 2 Front Squats después de los Hang Power Cleans obligan al atleta a mantener el codo alto bajo fatiga parcial, reforzando la posición de front rack que necesita para los Jerks siguientes. Observar que el Jerk sale directamente desde la posición de rack del último FSQ — no hay re-agarre ni re-posicionamiento. En el EMOM C, los sets 1-3 con 2 reps sirven para calibrar el timing antes de subir peso. Del set 4 en adelante, el atleta va aumentando progresivamente. Los accesorios D son orientados al Snatch precisamente para preparar mañana — el RDL y las Cuban Rotations son la inversión en el tirón de Snatch del martes.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc c"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
-<div class="ws"><div class="st">A) Every 2' For 12' (6 Sets Alternating)</div><div class="sc">
-<p><strong>Set 1:</strong> 10 Back Squats @ RPE 6/10</p>
-<p><strong>Set 2:</strong> 20 Bike Calories (sprint)</p>
-<p><em>Alternate every 2 minutes. 3 rounds each. The Bike sprint after the Squat creates a metabolic stimulus without heavy load accumulation.</em></p>
-</div></div>
-<div class="ws"><div class="st">B) "DOUBLE LOOP" — Every 90" For 18' (12 Sets Alternating)</div><div class="sc">
-<p><strong>Set 1:</strong> 10 KB Swings (24/16 kg, Russian) + 5 Burpees</p>
-<p><strong>Set 2:</strong> 200m Run + 30 Double Unders</p>
-<p><em>6 rounds of each set. Score: complete all reps within the 90" window.</em></p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Lunes de CrossFit con estructura de alternancia doble — el bloque A combina fuerza de pierna (Back Squat) con potencia cardíaca (Bike Cal), y el bloque B alterna un circuito corto de potencia (Swings + Burpees) con un bloque aeróbico de coordinación (Run + DU).</strong><br><br>En el bloque A, el RPE 6/10 en el Back Squat es deliberado — lunes es el día de volumen moderado tras el fin de semana. Las 20 Cal en Bike a sprint después del squat son la "factura cardiovascular" del bloque. Organizar a los atletas en tandas si no hay suficientes bikes — el desfase de 2 minutos entre grupos funciona perfectamente.<br><br>En el bloque B, el Set 1 (Swings + Burpees) debe completarse en menos de 60" para tener descanso real. El Set 2 (Run + DU) tiene más variación según nivel: atletas con DU fluidos terminarán en 70-75"; los que no, necesitarán gestionar los intentos. Escalar DU a 60 Single Unders.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc e"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
-<div class="wt e">"ENDURANCE CLASSIC"</div>
-<div class="ws"><div class="st">4 Rounds For Time — Cap 42'</div><div class="sc">
-<p>• 800m Run</p>
-<p>• 25 Box Jumps (60/50 cm)</p>
-<p>• 25 Sit-Ups</p>
-<p>• 25 Air Squats</p>
-<p>• 25 Push-Ups</p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>400 reps de calistenia + 3200m de carrera en 4 rounds — un WOD clásico de resistencia estructural. Sin cargas, sin ergómetros, sin material más allá del box: todos trabajan simultáneamente sin ningún cuello de botella.</strong><br><br>El 800m de apertura de cada ronda marca el tempo. El atleta que llega al round 3 sin haber paceado correctamente el Run muere en los Box Jumps. Los 25 Box Jumps después del Run son el primer filtro de potencia — la pierna está cargada y los saltos revelan la fatiga real. Los 25 Sit-Ups son el "descanso activo" de cada ronda. Los 25 Air Squats añaden volumen de pierna. Los 25 Push-Ups al cierre de cada ronda son el test de pushing cuando el cuerpo ya está fatigado.<br><br>Target: sub-38' para atletas de nivel intermedio. El coach debe estar en el kilómetro 400 del Run para dar el split a los atletas — es el único feedback real que tienen durante el WOD. Escalar Run a 600m para principiantes.</div>
-</div></div>
-
-<!-- ===== MARTES ===== -->
-
-<div class="day-header"><h2 class="day-name">MARTES</h2><p class="day-date">23/03/2026</p></div>
-
-<div class="pc h"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">HALTEROFILIA</span></div>
-<div class="ws"><div class="st">A) Snatch 3-Position — Every 90" For 15' (10 Sets)</div><div class="sc">
-<p><strong>Sets 1–5:</strong></p>
-<p>3 High Hang Squat Snatches + 3 Hang Squat Snatches + 3 Low Hang Squat Snatches</p>
-<p><em>Load: 65–72% — 9 reps total per set. The 3-position drill builds consistency from all entry points.</em></p>
-<p><strong>Sets 6–10:</strong></p>
-<p>1 Hang Squat Snatch</p>
-<p><em>Load: Build from 78% to heavy single. Apply the timing from the 3-position work.</em></p>
-</div></div>
-<div class="ws"><div class="st">B) Every 2' For 12' (6 Sets)</div><div class="sc">
-<p>5 Hang Power Clean &amp; Jerk</p>
-<p><em>Load: 70–78% — Moderate weight, full technique. The HP C&amp;J consolidates the C&J pattern after the Snatch-heavy block A.</em></p>
-</div></div>
-<div class="ws"><div class="st">C) Accessories — Core</div><div class="sc">
-<p>3 Sets:</p>
-<p>• 10 Ab Wheel Rollouts (full extension if possible)</p>
-<p>• 20 GHD Sit-Ups or weighted Sit-Ups</p>
-<p>• 30" L-Sit Hold (rings or parallel bars — accumulate)</p>
-<p>• 10 Pallof Press each side (anti-rotation — slow and deliberate)</p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Día de Snatch con el drill de 3 posiciones — el ejercicio más completo para construir consistencia técnica en las tres fases del hang. El atleta que puede hacer el High Hang, Hang y Low Hang con el mismo ritmo y velocidad tiene el timing correcto en todo el rango.</strong><br><br>En el bloque A sets 1-5, los 9 reps por set a 65-72% son técnicos — el coach debe observar si el atleta cambia el ritmo entre posiciones. El error más frecuente: el Low Hang se "arrastra" más lento porque el atleta tiene menos confianza desde ahí. Cue: "mismo ritmo de tirón desde las tres posiciones". Los sets 6-10 con peso creciente aplican el timing recién trabajado al esfuerzo real.<br><br>El bloque B de HP C&amp;J es el complemento de tirón diferente — consolida el patrón de Clean sin el volumen de Snatch. Los accesorios de Core son los más exigentes del ciclo en ese área: Ab Wheel + GHD + L-Sit + Pallof en la misma sesión es un bloque de core completo. No escatimar aquí — el trunk es la base de ambos lifts.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc c"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
-<div class="ws"><div class="st">A) Every Minute on the Minute For 12'</div><div class="sc">
-<p><strong>Odd minutes:</strong> 5 Deadlifts @ RPE 6/10</p>
-<p><strong>Even minutes:</strong> 1 Rope Climb (4.5m)</p>
-</div></div>
-<div class="ws"><div class="st">B) "TRIANGLE DRIVE" — Every 3' For 18' (6 Rounds)</div><div class="sc">
-<p>Complete within 3 minutes:</p>
-<p>• 15 Toes-to-Bar</p>
-<p>• 12 Alt DB Snatches (22.5/15 kg)</p>
-<p>• 9 Box Jumps (60/50 cm)</p>
-<p><em>Rest = remaining time. Score: total complete rounds.</em></p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>El EMOM A alterna hinge pesado (Deadlift) con tirón vertical (Rope Climb) — dos patrones complementarios que comparten el grip como factor limitante. El atleta que va demasiado pesado en el Deadlift llega sin manos a la cuerda.</strong><br><br>RPE 6/10 en el Deadlift significa carga manejable pero técnica — no es un deload, es trabajo de calidad. El coach debe recordar a los atletas que el Rope Climb en el minuto par requiere grip fresco: si el Deadlift se siente pesado, bajar el peso. En el metcon B, los 3 minutos con 15 T2B + 12 DB Snatch + 9 Box Jumps son intensos pero asequibles para completarse en 2:10-2:30 en atletas de nivel. La T2B es el cuello de botella: si el atleta no tiene el kipping fluido, llegarán tarde a los Box Jumps. Escalar T2B a Knee Raises. Los 9 Box Jumps de cierre son el "sprint final" de cada ronda — explosivos, no conservadores.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc e"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
-<div class="wt e">"PURSUIT ENGINE"</div>
-<div class="material-note">⚙ COACHES: Organizar en parejas al inicio. Atleta B en Max Row — asignar remo al inicio, sin cambios durante el WOD.</div>
-<div class="ws"><div class="st">5 Sets For Time — Partner Format</div><div class="sc">
-<div class="partner-block">
-<div class="partner-col a"><div class="partner-label">ATHLETE A — work block</div><p>200m Run</p><p>15 KB Swings (24/16 kg)</p><p>10 Burpees</p></div>
-<div class="partner-col b"><div class="partner-label">ATHLETE B — max effort</div><p>Max Calories Row</p><p>(sprint while A works)</p></div>
-</div>
-<p><em>Rotate when A finishes. 5 complete rotations each. Score: total team calories on Row.</em></p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Formato de persecución con incentivo directo: cuanto más rápido termina A su bloque, más tiempo acumula B en el remo — y viceversa. El scoring de Max Cal total del equipo crea presión competitiva sin cronómetro individual.</strong><br><br>Organizar las parejas antes de empezar y asignar un remo específico a cada par — con las limitaciones de material del box (6 remos disponibles), con 12 atletas en clase se cubren perfectamente 6 parejas. Si hay más atletas, usar Ski Erg o Bike Erg con el mismo protocolo. El atleta en máquina debe ir al 85-90% — no es un paseo, es donde se gana el score. El bloque de A (Run + Swings + Burpees) debería durar 2:30-3:00 minutos por ronda. Target: 90-120 cal totales para equipos de nivel intermedio. En la ronda 4-5, el atleta B llegará más fatigado al remo — comunicar que las últimas calorías son las más importantes.</div>
-</div></div>
-
-<!-- ===== MIÉRCOLES ===== -->
-
-<div class="day-header"><h2 class="day-name">MIÉRCOLES</h2><p class="day-date">24/03/2026</p></div>
-
-<div class="pc h"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">HALTEROFILIA</span></div>
-<div class="ws"><div class="st">A) Every Minute on the Minute For 12' (12 Sets)</div><div class="sc">
-<p><strong>Odd minutes:</strong> 4 Front Squats @ 78–83%</p>
-<p><strong>Even minutes:</strong> 8 Back Squats @ 72–78%</p>
-<p><em>28 total reps of Front Squat + 48 total reps of Back Squat. Volume-based strength day.</em></p>
-</div></div>
-<div class="ws"><div class="st">B) Every 90" For 15' (10 Sets)</div><div class="sc">
-<p><strong>Sets 1–3:</strong> 3 Power Snatches + 3 OHS</p>
-<p><strong>Sets 4–6:</strong> 2 Power Snatches + 1 OHS</p>
-<p><strong>Sets 7–10:</strong> 1 Power Snatch + 1 OHS</p>
-<p><em>Load: build across sets. The decreasing reps allow weight increases. The OHS cap every set with overhead positional strength.</em></p>
-</div></div>
-<div class="ws"><div class="st">C) Accessories — C&J Focus</div><div class="sc">
-<p>3 Sets:</p>
-<p>• 6 Clean Pulls @ 95–100% 1RM Clean (position and bar speed — not a max effort)</p>
-<p>• 8 Jerk Dip Drives (empty bar — vertical bar path, consistent dip angle)</p>
-<p>• 10 Banded Face Pulls (external rotator — mandatory after OHS volume)</p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Miércoles de fuerza máxima de pierna + Snatch en escalera descendente. El EMOM A combina Front y Back Squat en alternancia: 6 sets de cada uno en el mismo bloque de 12 minutos.</strong><br><br>Los 4 Front Squats al 78-83% son técnicos — codo alto, verticalidad de torso. Los 8 Back Squats al 72-78% son de volumen — brace fuerte, rodillas afuera. La alternancia permite que el atleta use los minutos de Back Squat como "descanso relativo" del Front rack, y viceversa. En la parte B, la escalera descendente (3+3 → 2+1 → 1+1) es elegante: el atleta trabaja más reps al inicio con peso más ligero y termina con peso máximo en pocos reps. El OHS cierra cada set — quien llega al OHS pesado con el hombro ya cargado por el Power Snatch aprende a mantener la posición bajo fatiga real. Los accesorios de C&J preparan el terreno para el tirón de mañana y el viernes.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc c"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
-<div class="ws"><div class="st">A) Skill &amp; Drills — Pull-Up Progression (~15')</div><div class="sc">
-<p>Coach-led progression:</p>
-<p>• Strict Pull-Ups: 3 × 5 (tempo 3-1-1 — full ROM, dead hang bottom)</p>
-<p>• Kipping Pull-Ups: 3 × 8 (hip drive timing — not arm pull)</p>
-<p>• Butterfly Pull-Ups: 3 × 5 (for athletes who have kipping dialed — circular path only)</p>
-<p><em>Athletes work at their current level. Coach assigns the appropriate variation.</em></p>
-</div></div>
-<div class="ws"><div class="st">B) "TRIPLE THREAT" — For Time (Cap 22')</div><div class="sc">
-<p>30 Thrusters (50/35 kg)</p>
-<p>30 Pull-Ups</p>
-<p>30 Calories</p>
-<p>—</p>
-<p>20 Thrusters</p>
-<p>20 Pull-Ups</p>
-<p>20 Calories</p>
-<p>—</p>
-<p>10 Thrusters</p>
-<p>10 Pull-Ups</p>
-<p>10 Calories</p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>El bloque A de skill es la preparación técnica directa para el metcon B — no es opcional. El atleta que hace el Skill &amp; Drills correctamente llegará al For Time con el patrón calibrado.</strong><br><br>En el Skill, el coach debe asignar el nivel apropiado sin negociación: el atleta que no tiene kipping limpio no hace butterfly, hace strict + kipping. El tempo 3-1-1 en los Strict Pull-Ups construye la fuerza de lat que el kipping necesita como base. En el metcon B, el 30-20-10 de Thruster + Pull-Up + Cal es un clásico con lógica de gestión: el round de 30 es el más importante — el atleta que lo gestiona bien en Thrusters (sets de 10-10-10) llega al 20 con reservas. Los Pull-Ups después de los Thrusters (grip ya cargado) son el segundo filtro. Las Calorías cierran el bloque — ergómetro a elegir según disponibilidad. Target: sub-18'.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc e"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
-<div class="wt e">"ORBITAL SEQUENCE"</div>
-<div class="ws"><div class="st">Part 1 — Every Minute on the Minute For 9' (3 Rounds × 3 Stations)</div><div class="sc">
-<p>Min 1: 12 DB Squats (2×22.5/15 kg)</p>
-<p>Min 2: 100m Run Sprint</p>
-<p>Min 3: DB DT Complex — 12 Deadlifts + 9 Hang Cleans + 6 Push Jerks (15/10 kg each)</p>
-</div></div>
-<div class="ws"><div class="st">— 800m Run — rest until Minute 14 —</div></div>
-<div class="ws"><div class="st">Part 2 — Every Minute on the Minute For 9' (3 Rounds × 3 Stations)</div><div class="sc">
-<p>Min 1: 40 Double Unders (Scale: 80 Single Unders)</p>
-<p>Min 2: 8 Hang Clusters (DB — 22.5/15 kg)</p>
-<p>Min 3: 15 Box Jumps (60/50 cm)</p>
-</div></div>
-<div class="ws"><div class="st">— 800m Run (finisher) —</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Sesión con tres bloques distintos: EMOM de fuerza y hinge (Part 1) → 800m Run como reset → EMOM de potencia y coordinación (Part 2) → 800m Run de cierre. La estructura crea un WOD largo con variedad real de estímulos.</strong><br><br>El DB DT en el minuto 3 de la Part 1 es el movimiento más técnico de la sesión: 12 DL + 9 Hang Clean + 6 Push Jerk con las mismas DBs sin soltarlas. A 15/10 kg es manejable, pero el atleta necesita conocer los movimientos. El coach debe demostrar el DT antes de empezar — especialmente la transición de Hang Clean a Push Jerk. El 800m entre bloques no es un sprint: es un reset activo a ritmo conversacional. La Part 2 sube la coordinación (DU) y la potencia (Clusters + Box Jumps). Los 8 Hang Clusters son el movimiento más complejo: Clean + Thruster sin pausa entre ambos — la recepción del clean debe estar en posición de sentadilla para salir directamente al Thruster. El 800m final cierra la sesión — aquí sí se puede soltar el ritmo.</div>
-</div></div>
-
-<!-- ===== JUEVES ===== -->
-
-<div class="day-header"><h2 class="day-name">JUEVES</h2><p class="day-date">25/03/2026</p></div>
-
-<div class="pc h"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">HALTEROFILIA</span></div>
-<div class="ws"><div class="st">A) Squat Clean — 4 Sets: 1' On / 1' Off</div><div class="sc">
-<p>8 Squat Cleans Touch &amp; Go (moderate — RPE 7/10)</p>
-<p><em>The T&amp;G forces a consistent rhythm between reps. Load must allow unbroken sets.</em></p>
-</div></div>
-<div class="ws"><div class="st">B) Push Press — 4 Sets: 1' On / 1' Off</div><div class="sc">
-<p>8 Push Press (RPE 7/10)</p>
-<p><em>Vertical bar path. Dip drive from legs — not forward lean. Lockout overhead.</em></p>
-</div></div>
-<div class="ws"><div class="st">C) Hang Snatch — 4 Sets: 1' On / 1' Off</div><div class="sc">
-<p>8 Hang Snatches (RPE 7/10)</p>
-<p><em>Load must allow 8 quality reps. If the catch breaks down, drop the weight immediately.</em></p>
-</div></div>
-<div class="ws"><div class="st">D) Accessories — Core</div><div class="sc">
-<p>3 Sets:</p>
-<p>• 12 GHD Sit-Ups (or weighted Sit-Ups)</p>
-<p>• 20 Banded Pull-Aparts (horizontal — rear delt and external rotator)</p>
-<p>• 45" Plank Hold (posterior pelvic tilt — do not let hips drop)</p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Jueves de volumen técnico en los tres patrones: Squat Clean (tirón + pierna), Push Press (empuje vertical), Hang Snatch (tirón overhead). El formato 1'/1' con 8 reps cada set crea un estímulo de resistencia muscular específica — no es máximo, es técnico-metabólico.</strong><br><br>El T&amp;G en los Squat Cleans exige que la rebote del suelo sea controlado — no es un drop y pick-up, es un reset rápido de posición. El atleta que pierde la espalda en la recepción durante el T&amp;G tiene un problema de fuerza posicional bajo fatiga. En el Push Press, el 1' OFF entre sets permite recuperación casi completa — el atleta debería mantener las 8 reps con el mismo ritmo en los 4 sets. Si baja la calidad en el set 3-4, el peso es demasiado alto. El Hang Snatch a RPE 7/10 puede verse comprometido por la fatiga acumulada de los dos bloques anteriores — bajar peso sin dudarlo. Los accesorios de core son el cierre: Banded Pull-Aparts tras Hang Snatches es manguito rotador externo que el atleta agradecerá mañana.</div>
+<div class="fbc"><strong>Lunes de apertura de Semana Santa — C&J como bloque principal. El complex Squat Clean + 4 FSQ de la parte A es uno de los ejercicios más eficientes para construir fuerza en front rack: el atleta que sale del Clean en posición perfecta y hace 4 Front Squats sin perder el codo está listo para los maxes de la semana.</strong><br><br>En el bloque B, el HP C&J Touch &amp; Go a 65-75% construye el ritmo de repetición que el atleta necesita cuando hay múltiples Jerks en el metcon. La transición del Clean al Jerk sin pausa es la habilidad más valiosa en un WOD de competición — el atleta que necesita "prepararse" entre el Clean y el Jerk pierde segundos que suman. Los accesorios de Muscle Snatch son la preparación para el patrón de tirón del martes: el OHS con pausa al final de cada set es el seguro de la posición overhead que el atleta necesita en el Snatch.</div>
 </div></div>
 <div class="ps"></div>
 
 <div class="pc c"><div class="pcon">
 <div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
 <div class="ws"><div class="st">A) Every Minute on the Minute For 8'</div><div class="sc">
-<p><strong>Odd minutes:</strong> 8 KB Floor Press (24/16 kg — both bells, chest to ceiling, stable base)</p>
-<p><strong>Even minutes:</strong> 8/8 One-Arm Bent-Over Row (DB — row to hip, not to shoulder)</p>
+<p><strong>Odd minutes:</strong> 1 Hang Power Snatch + 1 OHS (build to heavy by minute 7)</p>
+<p><strong>Even minutes:</strong> 1 Legless Rope Climb (4.5m — no feet)</p>
+<p><em>The OHS after the HPS is the overhead stability challenge. The Legless Rope Climb builds upper body pulling strength without leg compensation.</em></p>
 </div></div>
-<div class="ws"><div class="st">B) "KETTLEBELL SURGE" — 3 Rounds For Time (Cap 28')</div><div class="sc">
-<p>• 200m Run</p>
-<p>• 30 KB Snatches (24/16 kg — 15L + 15R)</p>
-<p>• 200m Run</p>
-<p>• 30 Double KB Jerks (2×20/16 kg)</p>
-<p>• 200m Run</p>
-<p>• 30 Double KB Front Rack Squats (2×20/16 kg)</p>
-<p>— Rest 1' between rounds —</p>
+<div class="ws"><div class="st">B) CROSSFIT QUARTERFINALS #1</div><div class="sc">
+<div class="qf-badge">🏆 CROSSFIT QUARTERFINALS 2026 — WOD #1</div>
+<p><strong>For Time — Cap: 12 minutes</strong></p>
+<p>10 × 50-foot Shuttle Runs</p>
+<p>20 Overhead Squats</p>
+<p>30 Burpees Over the Bar</p>
+<p><em>— Rest 1 Minute —</em></p>
+<p>30 Burpees Over the Bar</p>
+<p>20 Overhead Squats</p>
+<p>10 × 50-foot Shuttle Runs</p>
+<p><em>♀ 36 kg / ♂ 52 kg</em></p>
 </div></div>
 <button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>El EMOM A es un bloque de fuerza de pushing horizontal (KB Floor Press) y pulling horizontal (One-Arm Row) — dos patrones complementarios que equilibran el trabajo de pushing vertical que el atleta hace el resto de la semana.</strong><br><br>El KB Floor Press en el suelo elimina el rango de movimiento de hombro excesivo — ideal para atletas con limitaciones de glenohumeral. La base estable del suelo permite cargar más que con bench. El One-Arm Row a 8/8 construye el lat unilateral — cue: codo hacia la cadera, no hacia el hombro.<br><br>En el metcon B, los 3 rounds con estructura Run + KB movimiento + Run + KB movimiento + Run + KB movimiento son exigentes por el volumen total de KB (90 reps de Snatch + 90 Double Jerks + 90 Double Squats) intercalado con 1800m de carrera total. Los KB Jerks dobles son el movimiento más técnico: dip drive bilateral con dos kettlebells requiere coordinación de empuje simétrico. Los Double Front Rack Squats con las cadenas cargadas al final de cada ronda son el boss. Target: sub-24' sin el descanso.</div>
+<div class="fbc"><strong>El EMOM A es la preparación neuromuscular para los Quarterfinals: el HPS + OHS activa el patrón de tirón y estabilidad overhead, el Legless Rope Climb construye el pulling vertical puro que aparece en múltiples WODs de competición.</strong><br><br>El Legless Rope Climb es el ejercicio que más rápido diagnostica si el atleta tiene pulling de lat real o si depende de las piernas para subir. Para los atletas que no tienen legless: hacer 1 Rope Climb con técnica perfecta — no es el momento de practicar legless si no está consolidado.<br><br>En el QF #1, el WOD tiene simetría perfecta: empieza y termina con Shuttle Runs, con el OHS y los Burpees Over the Bar como bloque central. La pausa de 1 minuto en el centro es una trampa — el atleta que llega a esa pausa destruido no tiene tiempo de recuperar para el segundo bloque. Estrategia: los 30 Burpees Over the Bar del primer bloque deben hacerse a un ritmo que permita repetirlos en el segundo. El OHS a 52/36kg es el filtro técnico: movilidad de hombro y de cadera a la vez, con el core ya cargado por los Shuttle Runs. Shuttle Runs: virajes limpios, no frenar antes del cono — el tiempo se pierde en los cambios de dirección, no en la carrera recta. Registrar el split de cada bloque (pre-pausa y post-pausa) para análisis.</div>
 </div></div>
 <div class="ps"></div>
 
 <div class="pc e"><div class="pcon">
 <div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
-<div class="wt e">"STORM INTERVALS"</div>
-<div class="ws"><div class="st">3 Minutes On / 1 Minute Off — 2 Sets Alternating</div><div class="sc">
+<div class="wt e">"DEVOTION PAIRS"</div>
+<div class="material-note">⚙ COACHES: Organizar en parejas al inicio. Atleta B alterna entre Max Cal y Max Box Jumps según el bloque activo.</div>
+<div class="ws"><div class="st">2 Sets — Full Rest Between Sets</div><div class="sc">
+<p><strong>— Bloque 1 —</strong></p>
+<p>400m Run together (both athletes)</p>
 <div class="partner-block">
-<div class="partner-col a"><div class="partner-label">SET 1</div><p>300m Row Sprint</p><p>10 Burpees Over the Rower</p><p>Max Air Squats (remaining time)</p></div>
-<div class="partner-col b"><div class="partner-label">SET 2</div><p>100m Run Sprint</p><p>5 Devil's Press (22.5/15 kg)</p><p>5 Hang Clean &amp; Jerk (50/35 kg)</p></div>
+<div class="partner-col a"><div class="partner-label">ATHLETE A</div><p>20 Burpees</p></div>
+<div class="partner-col b"><div class="partner-label">ATHLETE B</div><p>Max Calories Ergometer (sprint while A works)</p></div>
 </div>
-<p><em>Alternate Set 1 and Set 2 every 3' (with 1' rest). 4 rounds of each = 16 total intervals.</em></p>
-<p><em>Score: Max Air Squats accumulated across all Set 1 rounds.</em></p>
+<p><em>— Rest 1' —</em></p>
+<p><strong>— Bloque 2 —</strong></p>
+<p>30 Synchro Air Squats (both athletes simultaneously)</p>
+<div class="partner-block">
+<div class="partner-col a"><div class="partner-label">ATHLETE A</div><p>30 KB Swings (24/16 kg)</p></div>
+<div class="partner-col b"><div class="partner-label">ATHLETE B</div><p>Max Box Jumps (60/50 cm) while A works</p></div>
+</div>
+<p><em>Score: total Cal + total Box Jumps accumulated across both sets.</em></p>
 </div></div>
 <button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Formato de intervalos 3'/1' con dos sets distintos alternados — el atleta no repite el mismo bloque dos veces seguidas. El Set 1 tiene scoring de Max Air Squats como incentivo para gestionar bien el Row y los Burpees; el Set 2 es trabajo técnico de potencia.</strong><br><br>En el Set 1, el Row de 300m debe completarse en 1:05-1:20 para dejar tiempo real a los Burpees (10 reps = ~30-40") y al Max Air Squats. Los Burpees Over the Rower son el elemento que diferencia del Burpee estándar — el atleta salta sobre la máquina lateralmente. Si el espacio no lo permite, sustituir por Burpees Over the Bar. El Max Air Squat al final del set es el scoring — el atleta que gestiona bien el Row y los Burpees tiene 45-60" para acumular Squats.<br><br>En el Set 2, los 5 Devil's Press + 5 HC&amp;J deben completarse en 2:00-2:20. El HC&amp;J a 50/35kg es técnico — dip y drive limpio, no press de brazos. La 1' de descanso entre sets es real pero corta — el atleta que no ha paceado bien llegará fatigado al siguiente set.</div>
+<div class="fbc"><strong>Formato de pareja con incentivo de velocidad: cuanto más rápido termina A su bloque, más tiempo tiene B en el ergómetro o en los Box Jumps. Dos bloques con scoring acumulado — el equipo que gestiona mejor los tiempos de A suma más reps de B.</strong><br><br>El Run de 400m juntos al inicio de cada set es el elemento de cohesión del equipo — ambos atletas llegan al primer split juntos. Los 30 Synchro Air Squats en el Bloque 2 son el momento de comunicación no verbal: ambos atletas deben coordinarse sin hablar. Los KB Swings de A deben completarse en menos de 45" para que B tenga más de 45" de Box Jumps. El atleta en Box Jumps debe ir a tope — no es un descanso, es donde se construye el score. Target: 15-20 Cal y 20-25 Box Jumps por set para equipos de nivel intermedio.</div>
 </div></div>
 
-<!-- ===== VIERNES ===== -->
-<div class="day-header"><h2 class="day-name">VIERNES</h2><p class="day-date">20/03/2026</p></div>
+<!-- ===== MARTES ===== -->
 
-<div class="program-card halterofilia"><div class="program-content">
-<div class="program-title"><div class="program-dot"></div><span class="program-name">HALTEROFILIA</span></div>
-<div class="peak-badge">⚡ "PEAK DAY" — CICLO COMPLETO: SNATCH + C&amp;J HEAVY SINGLES</div>
-<div class="workout-section"><div class="section-title">A) Snatch — Build to Heavy Single</div><div class="section-content"><p>Warm-up: 3 × 3 Snatch Pulls @ 75% + 2 × 1 Squat Snatch @ 65-70%</p><p>Every 2' For 12' (6 Sets): 1 Squat Snatch</p><p><em>Progression: 80 → 85 → 88 → 92 → 95 → 98%+</em></p><p><em>Max 2 attempts above 95%. Do not force a miss — stop at technical limit.</em></p><p>Back-off: 2 × 1 Squat Snatch @ 88% of today's max</p></div></div>
-<div class="workout-section"><div class="section-title">— Rest 8–10 Minutes Between Lifts —</div></div>
-<div class="workout-section"><div class="section-title">B) Clean &amp; Jerk — Build to Heavy Single</div><div class="section-content"><p>Warm-up: 3 × 3 Clean Pulls @ 75% + 2 × 1 C&amp;J @ 65-70%</p><p>Every 2' For 12' (6 Sets): 1 Clean &amp; Jerk</p><p><em>Progression: 80 → 85 → 88 → 92 → 95 → 98%+</em></p><p><em>If the Clean is limit — 60-90" extra rest before the Jerk attempt.</em></p><p>Back-off: 2 × 1 C&amp;J @ 88% of today's max</p></div></div>
-<div class="workout-section"><div class="section-title">C) Recovery</div><div class="section-content"><p>2 × 5 Snatch Grip Deadlifts @ 80% + 5' Dead Hang intervals (spinal decompression)</p></div></div>
-<button class="feedback-btn" onclick="toggleFeedback(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="feedback-content"><strong>Peak Day de cierre de ciclo — a diferencia del "Full Arsenal" de S11 (lifts alternados), hoy los dos lifts van en bloques separados con 8-10' de descanso real entre ellos. El atleta llega al C&J con el sistema nervioso completamente recuperado del Snatch.</strong><br><br>Esta estructura secuencial permite intentos de mayor intensidad en ambos lifts: el Snatch sale fresco; el C&J sale con la barra ya "calibrada" por el Snatch. La pausa de 8-10' entre lifts no es negociable — es donde se decide si el atleta puede dar lo máximo en el segundo lift o llega comprometido. El coach debe gestionar activamente ese descanso: hidratación, calentamiento de muñeca para el Clean, visualización del intento.<br><br>El back-off al 88% del máximo del día (no del PR histórico) es el set más importante de la sesión — consolida neurológicamente el nuevo rango. El atleta que se salta el back-off por euforia del PR está dejando la mitad del trabajo hecho. Los Snatch Grip Deadlifts y Dead Hang finales son la descompresión espinal obligatoria tras dos lifts de máximo — la columna lo agradece. Este es el día del que hablarán en el box durante semanas.</div>
-</div></div>
-<div class="program-separator"></div>
-
-<div class="pc c"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
-<div class="hero-badge">⚡ HERO WOD — "BADGER" — TERCERA SEMANA: LA VENCIDA</div>
-<div class="ws"><div class="st">For Time — Cap 45'</div><div class="sc">
-<p>3 Rounds:</p>
-<p>• 30 Squat Cleans (61/43 kg)</p>
-<p>• 30 Pull-Ups</p>
-<p>• 800m Run</p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>En honor al Chief Petty Officer Mark Carter, Navy SEAL. BADGER se ejecuta hoy por primera vez sin sustitución en el ciclo — las semanas 11 y 12 lo cedieron a otros Heroes por contexto de programación. Esta semana, BADGER es el WOD.</strong><br><br>El cuello de botella son los 30 Squat Cleans: round 1 puede hacerse en series de 10-10-10; round 2 en 8-8-7-7; round 3 "como salga, pero sin parar más de 15 segundos entre series". La clave técnica de BADGER que diferencia a los atletas es cómo manejan el grip entre los Cleans y los Pull-Ups — rodar la barra hasta los pies entre series de Clean permite que las manos descansen sin soltar la barra al suelo.<br><br>Los Pull-Ups después de 30 Squat Cleans con el grip ya cargado son el filtro real de BADGER — no el peso. Kipping eficiente desde el primer rep, no ahorrar el kipping para el final. El 800m de cierre de cada round es el reseteo mental y físico antes de volver a los 30 Cleans. En el round 3, el Run debe hacerse a buen ritmo — no caminar. Target: sub-38' para atletas de nivel. Siempre explicar el significado antes de empezar. Respetar el WOD.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc e"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
-<div class="memorial-badge">🏅 ALCAIDES CROSSFIT MEMORIAL WOD — "SPEEDY"</div>
-<div class="ws"><div class="st">AMRAP 40' — With a Partner</div><div class="sc">
-<p><em>Every 2 minutes, both athletes perform:</em></p>
-<p>• 8 Wall Ball Shots (9/6 kg)</p>
-<p>• 8 Deadlifts (40/30 kg)</p>
-<p>• 8 Power Cleans (40/30 kg)</p>
-<p>• 8 Shoulder-to-Overhead (40/30 kg)</p>
-<p>• Max Calorie Row (in remaining time of the 2-minute window)</p>
-<p><em>Score: total calories accumulated in the Max Row intervals across the 40 minutes.</em></p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>"SPEEDY" es un WOD de homenaje — memorial de Alcaides CrossFit. Antes de empezar, el coach explica brevemente el significado del WOD y dedica la sesión a quien honra. Ese momento vale más que cualquier cue técnico.</strong><br><br>La estructura es elegante: cada 2 minutos, ambos atletas hacen los 4 movimientos en el menor tiempo posible y el tiempo restante va al Max Row. El incentivo es doble — hacer los movimientos más rápido da más tiempo en la máquina, que es donde se acumula el score. Los 8 movimientos por ejercicio son manejables a 40/30 kg si el equipo mantiene un ritmo sostenible desde el inicio.<br><br>La gestión de los 2 minutos es la clave táctica: WB + DL + PC + STO a 8 reps cada uno deberían completarse en 50-70" para un equipo de nivel intermedio, dejando 50-70" de Row por intervalo. Ambos atletas reman a la vez — coordinar el ritmo. En los últimos 10 minutos del AMRAP, el cuerpo está fatigado y la tentación es bajar el ritmo en los movimientos — el coach debe motivar activamente que el Row sigue siendo un sprint, no un paseo. Tratar el WOD con el respeto que merece.</div>
-</div></div>
-
-<!-- ===== SÁBADO ===== -->
-
-<div class="day-header"><h2 class="day-name">SÁBADO</h2><p class="day-date">27/03/2026</p></div>
+<div class="day-header"><h2 class="day-name">MARTES</h2><p class="day-date">31/03/2026</p></div>
 
 <div class="pc h"><div class="pcon">
 <div class="ptitle"><div class="pdot"></div><span class="pname">HALTEROFILIA</span></div>
-<div class="ws"><div class="st">A) Squat Clean Ladder — Every 2' For 8' (4 Sets)</div><div class="sc">
-<p><strong>Set 1:</strong> 3 reps @ 70%</p>
-<p><strong>Set 2:</strong> 2 reps @ 80%</p>
-<p><strong>Set 3:</strong> 1 rep @ 90%</p>
-<p><strong>Set 4:</strong> 1 rep @ 90%+ (attempt PR or near-PR)</p>
+<div class="ws"><div class="st">A) Clean Deadlift + Clean Pull — Build to Super Heavy Complex (10')</div><div class="sc">
+<p>3 Clean Deadlifts + 3 Clean Pulls (add weight every 2 minutes)</p>
+<p><em>Build as heavy as possible in 10'. The DL establishes perfect position; the Pull adds bar acceleration. Both movements prepare the CNS for max Clean work.</em></p>
 </div></div>
-<div class="ws"><div class="st">Then — Every 90" For 6' (4 Sets)</div><div class="sc">
-<p>1 Squat Clean + 3 Front Squats (at the weight of the last ladder set)</p>
-<p><em>Consolidation complex: the Squat Clean into 3 FSQ builds front rack strength at near-max load.</em></p>
+<div class="ws"><div class="st">B) On the Minute For 10' (10 Sets)</div><div class="sc">
+<p>1 Snatch Pull + 1 Low Hang Squat Snatch (build in weight)</p>
+<p><em>The Snatch Pull primes the bar path; the Low Hang Squat Snatch confirms the catch from the most difficult position. Start at 75%, build to 88–92% by minute 10.</em></p>
 </div></div>
-<div class="ws"><div class="st">B) Muscle Snatches — 10 × 4 @ RPE 6/10</div><div class="sc">
-<p>4 Muscle Snatches per set, 10 total sets</p>
-<p><em>Moderate load — focus on bar speed, triple extension, and lockout. Not a strength exercise.</em></p>
+<div class="ws"><div class="st">C) Hang Squat Clean Progression — Every 90" For 15' (10 Sets)</div><div class="sc">
+<p><strong>Sets 1–3:</strong> 3 Hang Squat Cleans</p>
+<p><strong>Sets 4–6:</strong> 2 Hang Squat Cleans</p>
+<p><strong>Sets 7–10:</strong> 1 Hang Squat Clean</p>
+<p><em>Build weight as reps decrease. Arrive at a heavy single by set 10.</em></p>
 </div></div>
 <button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Sábado de Clean con escalera de intensidad + consolidación a través del complex + Muscle Snatches de técnica. La escalera 3-2-1 de la parte A es el formato más eficiente para encontrar un máximo del día sin quemar el SNC.</strong><br><br>El set 4 de la escalera es el intento de PR o near-PR — el atleta llega con el sistema activado por los tres sets previos y el cuerpo ya "sabe" el peso. El complex de 1 Squat Clean + 3 Front Squats a ese mismo peso es el cierre: los 3 Front Squats después del Clean máximo son posiblemente los reps más honestos de fuerza posicional de toda la semana — no hay excusa de "era un Clean muy pesado" porque el peso ya está en los hombros.<br><br>Los 10 × 4 Muscle Snatches son el segundo bloque: técnica de Snatch pura a RPE 6/10. Con 40 reps totales de Muscle Snatch a ritmo moderado, el atleta refuerza el patrón de tirón sin fatiga máxima. El Muscle Snatch es el ejercicio que más rápido deteriora cuando el atleta está cansado — si en los sets 8-10 el codo empieza a flexionarse antes de la extensión completa de cadera, el RPE era demasiado alto.</div>
+<div class="fbc"><strong>Martes de volumen técnico máximo — los tres bloques cubren los patrones de tirón completos: Clean Deadlift + Pull (activación de posición y velocidad), Snatch Pull + Low Hang Squat Snatch (patrón de Snatch desde la posición más difícil), Hang Squat Clean en escalera descendente (Clean con volumen decreciente y peso creciente).</strong><br><br>El Clean Deadlift + Pull en el bloque A es el calentamiento más honesto del SNC que existe para un día de mucho volumen de tirón: el DL lento enseña la posición; el Pull añade la aceleración. El atleta que hace el Pull correctamente tiene los hombros por delante de la barra hasta la segunda rodilla y los codos altos al final. En el bloque B, el Low Hang Squat Snatch es el drill más exigente de timing: sin el impulso del primer tirón, todo el poder viene del segundo. Si el atleta "cuela" la barra en lugar de tirarla, el Low Hang lo expone inmediatamente. El bloque C de Hang Squat Cleans en escalera es el cierre de la sesión — el atleta llega fatigado técnicamente al set 7-10, que es exactamente donde se forja la calidad bajo presión.</div>
 </div></div>
 <div class="ps"></div>
 
 <div class="pc c"><div class="pcon">
 <div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
-<div class="ws"><div class="st">A) Every 90" For 12' (8 Sets Alternating)</div><div class="sc">
-<p><strong>Set 1:</strong> 4 Front Squats + 12 Jumping Lunges</p>
-<p><em>Front Squats: build to heavy in 4 sets. Jumping Lunges: explosive, land softly.</em></p>
-<p><strong>Set 2:</strong> 100m Run Sprint + 10 Burpees</p>
+<div class="ws"><div class="st">A) Every 90" For 15' (10 Sets Alternating)</div><div class="sc">
+<p><strong>Set 1:</strong> 1 Back Squat (build to heavy single — 5 attempts across 10 sets)</p>
+<p><strong>Set 2:</strong> 5 Weighted Pull-Ups (add weight if possible — tempo 3-1-1)</p>
+<p><em>3 minutes total rest between Back Squat attempts. Weighted Pull-Ups are the active rest between squat sets.</em></p>
 </div></div>
-<div class="ws"><div class="st">B) "SHADOW DUEL" — 2 Rounds — Team of 2</div><div class="sc">
-<div class="partner-block">
-<div class="partner-col a"><div class="partner-label">ATHLETE A — works block</div><p>5 Wall Climbs</p><p>10 Devil's Press (22.5/15 kg)</p><p>30 Wall Balls (9/6 kg)</p></div>
-<div class="partner-col b"><div class="partner-label">ATHLETE B — max effort</div><p>Max Double Unders while A works each movement (continuous)</p></div>
-</div>
-<p><em>A works one movement at a time. B accumulates DU the entire time A is working. When A finishes all 3 movements, rotate. 2 full rounds each. Score: total DU.</em></p>
+<div class="ws"><div class="st">B) CROSSFIT QUARTERFINALS #2</div><div class="sc">
+<div class="qf-badge">🏆 CROSSFIT QUARTERFINALS 2026 — WOD #2</div>
+<p><strong>For Time — Cap: 15 minutes</strong></p>
+<p>80 Dumbbell Hang Squat Cleans</p>
+<p>40 Bar Muscle-Ups</p>
+<p><em>♀ 15 kg / ♂ 22.5 kg</em></p>
+<p><em>Partition reps as needed. DB HSC and BMU can be interleaved in any order.</em></p>
 </div></div>
 <button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>El bloque A alterna fuerza de pierna (Front Squat) con potencia de pierna explosiva (Jumping Lunges) y cardio de alta intensidad (Run + Burpees) — formato de sábado técnico y metabólico sin ser un WOD destructor.</strong><br><br>En el team WOD B, el formato "Shadow Duel" crea una dinámica de incentivo inverso: cuanto más rápido termina A sus movimientos, menos tiempo tiene B para acumular DU — pero el atleta A necesita ir rápido para que el equipo sume más DU en total. Los Wall Climbs son el movimiento más lento de A (los 5 Wall Climbs pueden durar 2+ minutos) — B tiene tiempo de sobra para DU ahí. Los Devil's Press son más rápidos. Los Wall Balls más todavía — ese es el sprint final de B para acumular DU.<br><br>El score de DU totales hace que B siempre esté motivado a saltar rápido, sin importar lo que A esté haciendo. Emparejar atletas de nivel similar para que la dinámica sea equilibrada. Escalar DU a Single Unders × 2 para atletas sin DU. 2 rounds completos con rotación. Esta dinámica es diferente a cualquier formato de semanas anteriores.</div>
+<div class="fbc"><strong>El bloque A de Back Squat + Weighted Pull-Ups es la preparación de fuerza de pierna y pulling vertical para los Quarterfinals de la semana. Los 5 intentos de Back Squat pesado con 3' de descanso real permiten construir hacia un máximo sin quemar el SNC.</strong><br><br>En el QF #2, los 80 DB Hang Squat Cleans + 40 Bar Muscle-Ups son un WOD de gestión de fatiga muscular específica: el DB HSC carga los cuádriceps, glúteos y front rack; el Bar MU carga el lat, trapecio y core. La estrategia más común es empezar con sets de 10-15 DB HSC, hacer 5-8 BMU, y rotar hasta agotar. El atleta que intenta hacer 20 DB HSC unbroken al inicio llegará muerto a los BMU.<br><br>El cuello de botella real son los Bar Muscle-Ups — el grip después de 80 DB HSC es el factor limitante más subestimado. El atleta debe chalk obligatorio antes de empezar los BMU. Para atletas sin BMU: escalar a C2B Pull-Ups × 2 (80 C2B). El formato "anyhow" permite cualquier combinación — el coach debe ayudar a cada atleta a planificar su estrategia antes de empezar. Registrar score.</div>
 </div></div>
 <div class="ps"></div>
 
 <div class="pc e"><div class="pcon">
 <div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
-<div class="wt e">"ECHO FORGE"</div>
-<div class="ws"><div class="st">5 Rounds — 5 Minutes On / 2 Minutes Off</div><div class="sc">
-<p>In the 5-minute window, complete:</p>
-<p>• 20/15 Echo Bike Calories (sprint opening)</p>
-<p>• 15 Burpees</p>
-<p>• 10 Hang Squat Cleans (50/35 kg)</p>
-<p>• Max Push-Ups (remaining time)</p>
-<p><em>Score: total Max Push-Ups accumulated across all 5 rounds.</em></p>
+<div class="wt e">"HOLY GRINDER"</div>
+<div class="ws"><div class="st">10 Rounds For Time — Cap 40'</div><div class="sc">
+<p>• 100 Double Unders (Scale: 200 Single Unders)</p>
+<p>• 200m Run</p>
+<p>• 3 Burpees</p>
+<p>• 6 Thrusters (40/27.5 kg)</p>
+<p>• 9 Push-Ups</p>
 </div></div>
 <button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>5 rounds de ventana de 5 minutos con scoring de Max Push-Ups al final — el incentivo es gestionar bien la Bike y los Burpees para llegar a los HSC con tiempo suficiente de Push-Ups en cada ronda.</strong><br><br>Con limitación de Echo Bikes (4 disponibles), organizar en grupos escalonados con 30" de desfase — todos dentro del mismo round de 5'. Los 20/15 Cal en Echo Bike son el coste de apertura: sprint, no ritmo sostenible. Los 15 Burpees son el "impuesto de transición". Los 10 Hang Squat Cleans a 50/35kg son el movimiento técnico de mayor demanda — el atleta que llega aquí con el cardio ya disparado necesita 2-3 respiraciones antes del primer rep. Los Max Push-Ups al final son el scoring: el atleta que gestiona los 3 primeros elementos en 3:30-4:00 tiene 60-90" de Push-Ups = 20-35 reps para un atleta fit.<br><br>Target de Push-Ups acumulados: 80-120 total en 5 rounds para atletas de nivel. La diferencia entre ronda 1 y ronda 5 es el test de gestión — si cae más del 40%, el pacing de la Bike o los Burpees fue demasiado agresivo desde el inicio.</div>
+<div class="fbc"><strong>10 rondas con 5 movimientos distintos — la estructura 3-6-9 de Burpees-Thrusters-Push-Ups dentro de cada ronda crea una progresión de empuje acumulativa. El WOD tiene 1000 DU + 2000m Run + 30 Burpees + 60 Thrusters + 90 Push-Ups al completar — es un trabajo de volumen real.</strong><br><br>Los 100 DU de apertura son el "impuesto de coordinación" de cada ronda — el atleta que los hace en 1:30-2:00 tiene un ritmo manejable para el resto. El Run de 200m es el "descanso aeróbico" entre los DU y el mini-circuito de fuerza. Los 3 Burpees son mínimos por diseño — no agotan, pero suman 30 al final. Los 6 Thrusters a 40/27.5kg son el elemento técnico: con el core ya cargado por los DU y el Run, el Thruster requiere atención. Los 9 Push-Ups cierran cada ronda — el atleta que llega al Push-Up del round 8 sin haber paceado lo paga aquí. Target: sub-36'. Escalar DU a 60 intentos si el atleta no tiene fluidez.</div>
 </div></div>
 
-<footer><p class="ft">CROSSFIT VALLECAS — SEMANA 13: RELOAD &amp; RISE | MARZO 2026</p></footer>
+<!-- ===== MIÉRCOLES ===== -->
+
+<div class="day-header"><h2 class="day-name">MIÉRCOLES</h2><p class="day-date">01/04/2026</p></div>
+
+<div class="pc h"><div class="pcon">
+<div class="ptitle"><div class="pdot"></div><span class="pname">HALTEROFILIA</span></div>
+<div class="ws"><div class="st">A) 5 Sets For Quality</div><div class="sc">
+<p>12 T-Raises (light DB — retract scapula, horizontal plane, slow eccentric)</p>
+<p>6 Muscle Snatches (bar speed — triple extension before arm pull, consistent bar path)</p>
+<p><em>This is not a strength block — it is shoulder health and Snatch pattern activation before the heavy work.</em></p>
+</div></div>
+<div class="ws"><div class="st">B) On the Minute For 10' (10 Sets)</div><div class="sc">
+<p><strong>Odd minutes:</strong> 5 Hang Squat Snatches @ 72–78%</p>
+<p><strong>Even minutes:</strong> 1 Power Clean + 5 Jerks @ 70–75%</p>
+<p><em>The Snatch minutes build receiving speed; the Clean + 5 Jerks minutes build Jerk endurance and consistency under fatigue.</em></p>
+</div></div>
+<div class="ws"><div class="st">C) Accessories — Lower Body</div><div class="sc">
+<p>3 Sets:</p>
+<p>• 10 Heavy Walking Lunges (DB or barbell — 50–60% BW total load)</p>
+<p>• 8/8 Heavy Bulgarian Split Squats (rear foot elevated — drive through heel)</p>
+<p>• 10 Nordic Hamstring Curls (injury prevention — eccentric only if needed)</p>
+</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Miércoles de Snatch y Jerk en el mismo EMOM — el atleta trabaja los dos patrones de overhead en alternancia dentro de la misma sesión. El bloque A de T-Raises + Muscle Snatches es la activación de hombro más específica que existe antes de un trabajo de overhead intenso.</strong><br><br>En el EMOM B, los 5 Hang Squat Snatches por minuto son un volumen técnico alto — el atleta que sale al 80% se destruye antes del minuto 5. El coach debe calibrar el peso individual: si en el minuto 4 el atleta empieza a "press" la barra en lugar de "drop", el peso está mal. Los 5 Jerks seguidos en el minuto par son el drill de resistencia de Jerk más valioso: el primero es fácil, el quinto con el sistema cardíaco activo y la pierna cargada es el que construye al atleta de competición.<br><br>Los accesorios C son Lower Body pesado — los Lunges y Bulgarian Squats a este nivel de carga son difíciles. Los Nordic Hamstring Curls son prevención de isquiotibial no negociable en una semana de tanto volumen de Clean y Snatch. El atleta que se los salta es el que se lesiona a final de temporada.</div>
+</div></div>
+<div class="ps"></div>
+
+<div class="pc c"><div class="pcon">
+<div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
+<div class="wt c">"TRAITOR'S WEDNESDAY" — DOBLE QUARTERFINALS</div>
+<div class="ws"><div class="st">A) CROSSFIT QUARTERFINALS #3</div><div class="sc">
+<div class="qf-badge">🏆 CROSSFIT QUARTERFINALS 2026 — WOD #3</div>
+<p><strong>For Time — Cap: 12 minutes</strong></p>
+<div class="ladder-row"><div class="ladder-label">3 ROUNDS @ WEIGHT 1 (lightest)</div><p>50 Double Unders + 10 Deadlifts</p><p><em>♀ 70 kg / ♂ 102 kg</em></p></div>
+<div class="ladder-row dl2"><div class="ladder-label">2 ROUNDS @ WEIGHT 2</div><p>50 Double Unders + 10 Deadlifts</p><p><em>♀ 83 kg / ♂ 125 kg</em></p></div>
+<div class="ladder-row dl3"><div class="ladder-label">1 ROUND @ WEIGHT 3 (heaviest)</div><p>50 Double Unders + 10 Deadlifts</p><p><em>♀ 102 kg / ♂ 143 kg</em></p></div>
+</div></div>
+<div class="ws"><div class="st">Then — CROSSFIT QUARTERFINALS #4</div><div class="sc">
+<div class="qf-badge">🏆 CROSSFIT QUARTERFINALS 2026 — WOD #4</div>
+<p><strong>For Time — Cap: 20 minutes</strong></p>
+<p>• 1000m Row</p>
+<p>• 30 Clean &amp; Jerks (♀ 43 kg / ♂ 61 kg)</p>
+<p>• 1000m Row</p>
+<p>• 30 Strict Handstand Push-Ups</p>
+</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>"Traitor's Wednesday" — dos Quarterfinals en una sola sesión. El miércoles traiciona al atleta que pensaba que la semana iba bajando de intensidad. Este es el día más exigente de la semana.</strong><br><br>En el QF #3, la escalera de Deadlift con DU intercalados es una trampa de gestión: el primer round con 70/102kg parece fácil y el atleta tiende a ir demasiado rápido. El tercer peso (102/143kg) en el round 6 es donde se paga todo. Estrategia: los DU a ritmo constante sin parar, el DL a singles si es necesario en el último peso. El tiempo cap de 12' es agresivo — el atleta que pierde en los DU no llega al peso final.<br><br>El QF #4 después del QF #3 es brutal por la secuencia: el primer Row de 1000m llega con las piernas ya cargadas del DL. Los 30 C&J a 61/43kg deben ser Touch &amp; Go los primeros 15 si el atleta tiene el patrón — en competición, los singles son el suicidio táctico. Los 30 Strict HSPU al final son el boss de la sesión: sin kipping, pura fuerza de hombro cuando el cuerpo ya está destruido. Para atletas sin Strict HSPU: escalar a 15 Kipping HSPU o 30 DB Strict Press pesado. Registrar ambos scores por separado.</div>
+</div></div>
+<div class="ps"></div>
+
+<div class="pc e"><div class="pcon">
+<div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
+<div class="wt e">"JUDAS"</div>
+<div class="ws"><div class="st">Part A — Every 90" For 18' (12 Sets × 3 Stations Rotating)</div><div class="sc">
+<p><strong>Set 1:</strong> 40" Echo Bike Sprint (max effort)</p>
+<p><strong>Set 2:</strong> 100m Run Sprint</p>
+<p><strong>Set 3:</strong> 5 Devil's Press (22.5/15 kg)</p>
+<p><em>Complete the set within 90". Rest = remaining time after each set.</em></p>
+</div></div>
+<div class="ws"><div class="st">— Rest 2 Minutes —</div></div>
+<div class="ws"><div class="st">Part B — "The Betrayal" — For Time</div><div class="sc">
+<p>100 Sit-Ups</p>
+<p>20 Burpees</p>
+<p>200 Russian Twists (med ball 9/6 kg)</p>
+<p>20 Burpees</p>
+<p>300 Flutter Kicks (each leg = 1 rep)</p>
+<p>20 Burpees</p>
+</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>"Judas" — el nombre lo dice todo. La Part A parece manejable: sprints de 40" en Bike, Run de 100m y 5 Devil's Press alternando cada 90". Pero después de 18 minutos de intervalos, la Part B revela la traición: 660 reps de core puro intercalados con 60 Burpees.</strong><br><br>En la Part A, los 40" de Bike sprint deben ser máximo esfuerzo — no ritmo sostenible. Si el atleta puede "mantener una conversación" en la Bike, no está trabajando lo suficiente. Los 100m de Run sprint son literalmente un sprint — no un trote de calentamiento. Los 5 Devil's Press cierran el set con full body explosivo. Si el tiempo se agota antes de terminar los 5, el peso es demasiado alto.<br><br>La Part B "The Betrayal" es el castigo de la sesión. Los 300 Flutter Kicks son el elemento que más sorprende — contando como 1 rep cada patada (no cada par), son 150 movimientos bilaterales. El core llega completamente destruido de los 200 Russian Twists anteriores. Los 60 Burpees intercalados son la "puntuación de transición" — el atleta que los lleva mal tiene un problema de resistencia de pushing que merece atención.</div>
+</div></div>
+
+<!-- ===== JUEVES SANTO ===== -->
+
+<div class="day-header" style="background:linear-gradient(135deg,#1a1025,#0f0a1a);border:1px solid rgba(180,140,255,.2)">
+<h2 class="day-name" style="color:rgba(200,160,255,.8);font-size:1.5rem">JUEVES SANTO</h2>
+<p class="day-date">02/04/2026</p>
+</div>
+<div class="holy-day">
+<div class="holy-title">TIEMPO DE ORACIÓN Y REFLEXIÓN</div>
+<p class="holy-text">El box descansa hoy. No hay entrenamiento programado. Jueves Santo es un día de pausa, de gratitud y de recogimiento. El cuerpo necesita descanso tanto como necesita trabajo — y hay días en que la mayor fortaleza es saber parar.</p>
+<p class="holy-verse">"Descansa en el Señor y espera en Él." — Salmo 37:7</p>
+</div>
+
+<!-- ===== VIERNES SANTO ===== -->
+
+<div class="day-header" style="background:linear-gradient(135deg,#1a1025,#0f0a1a);border:1px solid rgba(180,140,255,.2);margin-top:8px">
+<h2 class="day-name" style="color:rgba(200,160,255,.8);font-size:1.5rem">VIERNES SANTO</h2>
+<p class="day-date">03/04/2026</p>
+</div>
+<div class="holy-day">
+<div class="holy-title">AYUNO Y SILENCIO</div>
+<p class="holy-text">Viernes Santo — día de ayuno, de silencio y de duelo. No se entrena. No hay barra, no hay cronómetro, no hay WOD. Solo quietud. Los que entrenan hoy son los que mañana volverán al box con más hambre que nunca.</p>
+<p class="holy-verse">"El silencio es la voz más poderosa." — Anónimo</p>
+</div>
+
+<!-- ===== SÁBADO ===== -->
+
+<div class="day-header"><h2 class="day-name">SÁBADO</h2><p class="day-date">04/04/2026</p></div>
+
+<div class="pc h"><div class="pcon">
+<div class="ptitle"><div class="pdot"></div><span class="pname">HALTEROFILIA</span></div>
+<div class="ws"><div class="st">A) Tall Snatch — Skills &amp; Drills</div><div class="sc">
+<p>5 × 5 Tall Snatches @ 50% — as fast as possible each round</p>
+<p><em>No leg drive — pure speed under the bar. Elbows high and out, then drop. The athlete who hesitates gets pinned. Reset completely between reps.</em></p>
+</div></div>
+<div class="ws"><div class="st">B) Snatch Complex — 5 Rounds For Quality</div><div class="sc">
+<p>2 Muscle Snatches + 2 Snatch Balances + 2 Overhead Squats</p>
+<p><em>Build weight across rounds. The complex trains bar path (Muscle), drop speed (Balance), and positional strength (OHS) in one unbroken unit.</em></p>
+</div></div>
+<div class="ws"><div class="st">C) Build a Heavy Triple Cluster</div><div class="sc">
+<p>Every 2' For 10' (5 Sets): 3 Clusters (1 Hang Clean + 1 Thruster = 1 Cluster)</p>
+<p><em>Build to heaviest triple possible. The Cluster is the most demanding compound movement — the transition from Clean catch to Thruster drive must be seamless.</em></p>
+</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Sábado de Semana Santa — la vuelta al trabajo después de Jueves y Viernes de pausa. La energía del box después de dos días de descanso debería ser alta: aprovecharla.</strong><br><br>El Tall Snatch al 50% a velocidad máxima es el ejercicio de apertura perfecto: sin carga real, todo el foco va en la velocidad de caída. El atleta que hace el Tall Snatch lento tiene miedo de la posición — este drill elimina ese miedo porque el peso es mínimo. 5 × 5 reps dan 25 repeticiones de velocidad de entrada. El complejo de la parte B (Muscle + Balance + OHS) trabaja las tres fases del Snatch overhead en secuencia: el Muscle entrena el path de la barra; el Balance entrena la velocidad de caída; el OHS entrena la posición final. Unido en el mismo set sin soltar la barra, el atleta experimenta la conexión completa del movimiento.<br><br>El Triple Cluster de la parte C es el movimiento más exigente del sábado: 3 repeticiones de Hang Clean + Thruster sin soltar la barra, con peso creciente hasta el máximo del día. El primer Cluster de cada set es el más limpio; el tercero es donde se decide si el peso es el correcto. Si el atleta no puede hacer los 3 con técnica, el peso baja.</div>
+</div></div>
+<div class="ps"></div>
+
+<div class="pc c"><div class="pcon">
+<div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
+<div class="wt c">"RESURRECTION" — TRIPLE AMRAP BATTERY</div>
+<div class="ws"><div class="st">A) AMRAP 7' — "Block 1: Water"</div><div class="sc">
+<div class="amrap-block"><div class="amrap-label">OPENING EFFORT</div>
+<p>1000m Row — then in remaining time:</p>
+<p>Max Rounds: 5 Burpees Over the Rower + 10 Air Squats</p>
+</div>
+<p><em>— Rest until Minute 10 —</em></p>
+</div></div>
+<div class="ws"><div class="st">B) AMRAP 7' — "Block 2: Fire"</div><div class="sc">
+<div class="amrap-block"><div class="amrap-label">OPENING EFFORT</div>
+<p>2km Bike Erg (or 50 Echo Bike Calories) — then in remaining time:</p>
+<p>Max Rounds: 5 KB Thrusters (2×20/16 kg) + 10 KB Deadlifts</p>
+</div>
+<p><em>— Rest until Minute 20 —</em></p>
+</div></div>
+<div class="ws"><div class="st">C) AMRAP 7' — "Block 3: Earth"</div><div class="sc">
+<div class="amrap-block"><div class="amrap-label">OPENING EFFORT</div>
+<p>1000m Run — then in remaining time:</p>
+<p>Max Rounds: 5 Hang Squat Cleans (50/35 kg) + 10 Push-Ups</p>
+</div>
+<p><em>— Rest until Minute 30 —</em></p>
+</div></div>
+<div class="ws"><div class="st">D) Build a Heavy Power Clean &amp; Jerk — 5 Minutes</div><div class="sc">
+<p>Every 60" For 5': 1 Power Clean &amp; Jerk (add weight each minute)</p>
+<p><em>Finish the session with 5 attempts building to a heavy single. The previous battery loads the legs for the Clean — it will feel heavier than it is.</em></p>
+</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>"Resurrection" — la vuelta de los muertos. Después de Jueves y Viernes sin entrenamiento, el sábado el box resucita. El triple AMRAP Battery es el formato perfecto para el regreso: cada bloque tiene un opening effort largo (Row, Bike, Run) y luego un AMRAP de movimientos más cortos con el sistema cardíaco ya abierto.</strong><br><br>El formato es inteligente logísticamente: Block 1 usa el Row, Block 2 usa la Bike, Block 3 usa la pista de carrera — tres equipamientos distintos sin interferencia. El coach asigna los grupos al inicio para que la rotación sea fluida. El atleta que intenta hacer el 1000m Row en tiempo de PR llegará sin piernas al AMRAP de Burpees + Air Squats. La clave es gestionar el opening effort al 85-90% para tener entre 2-3 minutos de AMRAP real.<br><br>El bloque D de PC&amp;J en 5 minutos es el cierre de la sesión con el cuerpo ya completamente activado — el atleta que ha trabajado los tres bloques llega al barbell con el sistema cardíaco y neuromuscular en pico. 5 intentos de 1 rep en 5 minutos es el formato más eficiente para construir un heavy single en poco tiempo. El atleta no debe pensar en el peso anterior — solo en el siguiente rep.</div>
+</div></div>
+<div class="ps"></div>
+
+<div class="pc e"><div class="pcon">
+<div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
+<div class="wt e">"SATURDAY OF SILENCE" — PAIRS</div>
+<div class="material-note">⚙ COACHES: Wall Balls en parejas — 1 ball por pareja. Synchro Burpees: ambos simultáneamente. Plate step-ups: alternos, una plate compartida.</div>
+<div class="ws"><div class="st">3 Rounds For Time — Partner Format (Cap 38')</div><div class="sc">
+<p>• 200m Run together (both athletes, do not separate)</p>
+<p>• 50 Partner Wall Ball Shots (9/6 kg — one ball, relay or synchro)</p>
+<p>• 200m Run together</p>
+<p>• 50 Synchro Burpees (both athletes simultaneously)</p>
+<p>• 200m Run together</p>
+<p>• 50 Alt DB Box Step-Ups with plate (20/10 kg overhead — 25 each)</p>
+</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>"Saturday of Silence" — el nombre contrasta con el trabajo real: 3 rounds de partner WOD después de dos días de silencio. La vuelta al entrenamiento en formato de pareja crea el contexto perfecto de comunidad y de reencuentro después de Semana Santa.</strong><br><br>Los 200m Run juntos en cada transición son el elemento ritual del WOD: ambos atletas corren al mismo ritmo, no se separan. Es la firma del sábado de pareja — el equipo que no corre junto no está haciendo el WOD correctamente. Los 50 Partner Wall Balls pueden hacerse en relay (A lanza, B agarra) o sincronizados (ambos a la vez con dos balls) — el coach decide según el espacio y el material disponible. Los 50 Synchro Burpees son el elemento de mayor exigencia física y de coordinación: ambos atletas tocan el suelo y saltan al mismo tiempo — sin trampa posible. Los Box Step-Ups con plate overhead son el cierre de fuerza y movilidad: 25 reps por atleta con carga overhead es un trabajo de estabilidad real. El pie sobre el box debe ser completo, la extensión de cadera completa en cada rep. Target por round: 10-12 minutos. Cerrar la semana con la energía que merece el regreso de Semana Santa.</div>
+</div></div>
+
+<footer><p class="ft">CROSSFIT VALLECAS — SEMANA 14: IRON DEVOTION | SEMANA SANTA 2026</p></footer>
 </div>
 <script>function tf(b){b.classList.toggle('active');b.nextElementSibling.classList.toggle('show')}</script>
 </body></html>
