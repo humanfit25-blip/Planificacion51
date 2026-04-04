@@ -3,12 +3,15 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CrossFit Vallecas - Semana 14</title>
+<title>CrossFit Vallecas — Semana Completa</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ══════ OLD COLOR SYSTEM — Semana 15 ══════ */
 :root{--bg-primary:#0d0d12;--bg-card:#1a1a22;--text-primary:#fff;--text-secondary:#8a8a9a;--accent-cf:#ff2d55;--accent-end:#00d4ff;--accent-halt:#00ff88;--day-bg:#c41e4a}
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Rajdhani',sans-serif;background:var(--bg-primary);color:var(--text-primary);min-height:100vh;padding-bottom:50px;overflow-x:hidden}
+body{font-family:'Rajdhani',sans-serif;background:var(--bg-primary);color:var(--text-primary);min-height:100vh;overflow-x:hidden}
+
+/* ══════ OLD BACKGROUND SYSTEM ══════ */
 .cosmic-bg{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background:radial-gradient(ellipse at 15% 25%,rgba(196,30,74,.10) 0%,transparent 50%),radial-gradient(ellipse at 85% 75%,rgba(0,212,255,.07) 0%,transparent 50%),radial-gradient(ellipse at 55% 50%,rgba(0,255,136,.05) 0%,transparent 60%),linear-gradient(180deg,#000 0%,#0a0a12 50%,#0d0d18 100%)}
 .stars{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background-image:radial-gradient(2px 2px at 20px 30px,#fff,transparent),radial-gradient(2px 2px at 40px 70px,rgba(255,255,255,.8),transparent),radial-gradient(1px 1px at 90px 40px,#fff,transparent),radial-gradient(2px 2px at 130px 80px,rgba(255,255,255,.6),transparent),radial-gradient(1px 1px at 160px 120px,#fff,transparent),radial-gradient(2px 2px at 200px 50px,rgba(255,255,255,.7),transparent),radial-gradient(1px 1px at 250px 160px,#fff,transparent),radial-gradient(2px 2px at 300px 100px,rgba(255,255,255,.5),transparent),radial-gradient(1px 1px at 350px 200px,#fff,transparent),radial-gradient(2px 2px at 400px 150px,rgba(255,255,255,.8),transparent);background-size:400px 400px;animation:starsMove 100s linear infinite}
 .stars2{position:fixed;top:0;left:0;width:100%;height:100%;z-index:-1;background-image:radial-gradient(1px 1px at 50px 100px,rgba(255,255,255,.9),transparent),radial-gradient(2px 2px at 100px 200px,rgba(255,255,255,.5),transparent),radial-gradient(1px 1px at 180px 50px,rgba(255,255,255,.7),transparent),radial-gradient(1px 1px at 220px 300px,rgba(255,255,255,.6),transparent),radial-gradient(2px 2px at 280px 250px,rgba(255,255,255,.4),transparent),radial-gradient(1px 1px at 320px 150px,rgba(255,255,255,.8),transparent),radial-gradient(1px 1px at 380px 350px,rgba(255,255,255,.5),transparent);background-size:500px 500px;animation:starsMove 150s linear infinite}
@@ -19,399 +22,487 @@ body{font-family:'Rajdhani',sans-serif;background:var(--bg-primary);color:var(--
 @keyframes starsMove{from{transform:translateY(0)}to{transform:translateY(-400px)}}
 @keyframes twinkle{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.5)}}
 @keyframes shootingStar{0%{left:-120px;top:15%;opacity:0}5%{opacity:1}18%{left:120%;top:38%;opacity:0}100%{left:120%;top:38%;opacity:0}}
-.container{max-width:800px;margin:0 auto;padding:15px}
-.main-header{background:linear-gradient(180deg,#4a0a1a 0%,#3d0816 15%,#2a0510 35%,#1a030a 55%,#0d0d12 85%,#000 100%);border:1px solid rgba(196,30,74,.45);border-radius:20px;padding:50px 20px;text-align:center;margin-bottom:30px;position:relative;overflow:hidden;box-shadow:0 0 70px rgba(196,30,74,.35),inset 0 0 100px rgba(0,0,0,.5)}
-.main-header::before{content:'';position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 50% 30%,rgba(255,45,85,.15) 0%,transparent 50%);animation:headerGlow 8s ease-in-out infinite;pointer-events:none}
-.main-header::after{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 100%,rgba(0,0,0,.8) 0%,transparent 70%);pointer-events:none}
+
+/* ══════ OLD HEADER SYSTEM ══════ */
+.main-header{background:linear-gradient(180deg,#4a0a1a 0%,#3d0816 15%,#2a0510 35%,#1a030a 55%,#0d0d12 85%,#000 100%);border:1px solid rgba(196,30,74,.45);border-radius:20px;padding:50px 20px;text-align:center;margin-bottom:0;position:relative;overflow:hidden;box-shadow:0 0 70px rgba(196,30,74,.35),inset 0 0 100px rgba(0,0,0,.5)}
+.main-header::before{content:’’;position:absolute;top:-50%;left:-50%;width:200%;height:200%;background:radial-gradient(ellipse at 50% 30%,rgba(255,45,85,.15) 0%,transparent 50%);animation:headerGlow 8s ease-in-out infinite;pointer-events:none}
+.main-header::after{content:’’;position:absolute;top:0;left:0;right:0;bottom:0;background:radial-gradient(ellipse at 50% 100%,rgba(0,0,0,.8) 0%,transparent 70%);pointer-events:none}
 @keyframes headerGlow{0%,100%{transform:translate(0,0) scale(1);opacity:.5}50%{transform:translate(5%,5%) scale(1.1);opacity:.8}}
 .logo-star{width:120px;height:120px;margin:0 auto 25px;position:relative;z-index:2;animation:starFloat 4s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(196,30,74,.8)) drop-shadow(0 0 40px rgba(196,30,74,.5)) drop-shadow(0 0 60px rgba(196,30,74,.3))}
 .logo-star svg{width:100%;height:100%}
-.logo-star::before{content:'';position:absolute;top:50%;left:50%;width:150%;height:150%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(196,30,74,.4) 0%,transparent 70%);animation:starPulse 2s ease-in-out infinite;z-index:-1}
+.logo-star::before{content:’’;position:absolute;top:50%;left:50%;width:150%;height:150%;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(196,30,74,.4) 0%,transparent 70%);animation:starPulse 2s ease-in-out infinite;z-index:-1}
 @keyframes starFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-10px) rotate(3deg)}}
 @keyframes starPulse{0%,100%{transform:translate(-50%,-50%) scale(1);opacity:.5}50%{transform:translate(-50%,-50%) scale(1.3);opacity:.8}}
-.main-title{font-family:'Orbitron',sans-serif;font-size:3rem;font-weight:900;letter-spacing:4px;margin-bottom:15px;position:relative;z-index:2;color:#ff2d55;text-shadow:1px 1px 0 #cc1a3a,2px 2px 0 #aa1530,3px 3px 0 #881025,4px 4px 0 #660b1a,5px 5px 0 #440510,0 0 10px rgba(255,45,85,.8),0 0 20px rgba(255,45,85,.6),0 0 40px rgba(255,45,85,.4),0 0 80px rgba(255,45,85,.2);animation:title3D 3s ease-in-out infinite}
+.main-title{font-family:‘Orbitron’,sans-serif;font-size:3rem;font-weight:900;letter-spacing:4px;margin-bottom:15px;position:relative;z-index:2;color:#ff2d55;text-shadow:1px 1px 0 #cc1a3a,2px 2px 0 #aa1530,3px 3px 0 #881025,4px 4px 0 #660b1a,5px 5px 0 #440510,0 0 10px rgba(255,45,85,.8),0 0 20px rgba(255,45,85,.6),0 0 40px rgba(255,45,85,.4),0 0 80px rgba(255,45,85,.2);animation:title3D 3s ease-in-out infinite}
 @keyframes title3D{0%,100%{text-shadow:1px 1px 0 #cc1a3a,2px 2px 0 #aa1530,3px 3px 0 #881025,4px 4px 0 #660b1a,5px 5px 0 #440510,0 0 10px rgba(255,45,85,.8),0 0 20px rgba(255,45,85,.6),0 0 40px rgba(255,45,85,.4),0 0 80px rgba(255,45,85,.2);transform:translateY(0)}50%{text-shadow:1px 1px 0 #cc1a3a,2px 2px 0 #aa1530,3px 3px 0 #881025,4px 4px 0 #660b1a,5px 5px 0 #440510,6px 6px 0 #330308,0 0 15px rgba(255,45,85,1),0 0 30px rgba(255,45,85,.8),0 0 60px rgba(255,45,85,.5),0 0 100px rgba(255,45,85,.3);transform:translateY(-2px)}}
 .main-subtitle{font-size:1.3rem;color:rgba(255,255,255,.7);margin-bottom:20px;position:relative;z-index:2;letter-spacing:2px}
-.week-date{font-family:'Orbitron',sans-serif;font-size:1.2rem;color:var(--accent-end);margin-bottom:25px;position:relative;z-index:2;animation:dateGlow 2s ease-in-out infinite alternate}
-@keyframes dateGlow{0%{text-shadow:0 0 10px rgba(0,212,255,.8),0 0 20px rgba(0,212,255,.4)}100%{text-shadow:0 0 15px rgba(0,212,255,1),0 0 30px rgba(0,212,255,.6),0 0 40px rgba(0,212,255,.3)}}
-.week-theme{font-family:'Orbitron',sans-serif;font-size:1rem;color:var(--accent-halt);margin-bottom:25px;position:relative;z-index:2;letter-spacing:3px;text-shadow:0 0 10px rgba(0,255,136,.8),0 0 20px rgba(0,255,136,.4)}
-.legend{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;position:relative;z-index:2}
-.legend-btn{display:flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:25px;font-family:'Rajdhani',sans-serif;font-size:.9rem;font-weight:600;color:var(--text-primary);letter-spacing:1px;backdrop-filter:blur(5px);transition:all .3s ease}
-.legend-btn:hover{background:rgba(255,255,255,.15);transform:translateY(-2px)}
+.week-theme{font-family:‘Orbitron’,sans-serif;font-size:1rem;color:var(–accent-halt);margin-bottom:25px;position:relative;z-index:2;letter-spacing:3px;text-shadow:0 0 10px rgba(0,255,136,.8),0 0 20px rgba(0,255,136,.4)}
+.legend{display:flex;justify-content:center;gap:15px;flex-wrap:wrap;position:relative;z-index:2;margin-top:20px}
+.legend-btn{display:flex;align-items:center;gap:8px;padding:10px 20px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:25px;font-family:‘Rajdhani’,sans-serif;font-size:.9rem;font-weight:600;color:var(–text-primary);letter-spacing:1px;backdrop-filter:blur(5px)}
 .legend-dot{width:20px;height:8px;border-radius:4px}
-.legend-dot.h{background:var(--accent-halt)}.legend-dot.c{background:var(--accent-cf)}.legend-dot.e{background:var(--accent-end)}
-.day-header{background:var(--day-bg);background-image:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(0,0,0,.1) 10px,rgba(0,0,0,.1) 20px);border-radius:15px;padding:25px 20px;text-align:center;margin-top:30px;margin-bottom:0}
-.day-name{font-family:'Orbitron',sans-serif;font-size:1.8rem;font-weight:900;color:#fff;letter-spacing:3px}
-.day-date{font-size:1rem;color:rgba(255,255,255,.7);margin-top:5px}
-/* HOLY DAY CARD */
-.holy-day{background:linear-gradient(135deg,#0f0f1a,#1a1020);border:1px solid rgba(180,140,255,.2);border-radius:0 0 15px 15px;padding:40px 25px;text-align:center;position:relative;overflow:hidden}
-.holy-day::before{content:'✝';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-size:8rem;color:rgba(180,140,255,.04);pointer-events:none}
-.holy-title{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;color:rgba(200,160,255,.8);letter-spacing:4px;margin-bottom:16px}
-.holy-text{font-size:1.05rem;color:rgba(255,255,255,.45);line-height:1.9;max-width:480px;margin:0 auto}
-.holy-verse{font-size:.9rem;color:rgba(180,140,255,.5);font-style:italic;margin-top:18px;letter-spacing:1px}
-/* PROGRAM CARDS */
-.pc{background:var(--bg-card);border-radius:0 0 15px 15px;margin-bottom:0;position:relative;overflow:hidden}
-.pc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:4px}
-.pc.h::before{background:var(--accent-halt)}.pc.c::before{background:var(--accent-cf)}.pc.e::before{background:var(--accent-end)}
-.pcon{padding:25px 20px 20px 25px}
-.ptitle{display:flex;align-items:center;gap:10px;margin-bottom:20px}
-.pdot{width:10px;height:10px;border-radius:50%}
-.pc.h .pdot{background:var(--accent-halt)}.pc.c .pdot{background:var(--accent-cf)}.pc.e .pdot{background:var(--accent-end)}
-.pname{font-family:'Orbitron',sans-serif;font-size:1.4rem;font-weight:700;letter-spacing:2px}
-.pc.h .pname{color:var(--accent-halt)}.pc.c .pname{color:var(--accent-cf)}.pc.e .pname{color:var(--accent-end)}
-.ws{margin-bottom:20px}
-.st{font-family:'Rajdhani',sans-serif;font-size:1rem;font-weight:600;color:var(--text-secondary);margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1)}
-.sc{font-size:1rem;line-height:1.8;color:var(--text-primary)}
+.legend-dot.h{background:var(–accent-halt)}.legend-dot.c{background:var(–accent-cf)}.legend-dot.e{background:var(–accent-end)}
+
+/* ══════ NEW STRUCTURE — Nav + Collapsible Cards ══════ */
+.container{max-width:900px;margin:0 auto;padding:15px}
+
+/* Sticky day nav */
+.day-nav{position:sticky;top:0;z-index:100;background:rgba(13,13,18,0.95);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.1);padding:12px 16px;display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;margin-top:15px;border-radius:12px}
+.day-nav::-webkit-scrollbar{display:none}
+.day-nav button{flex-shrink:0;padding:10px 18px;border:1px solid rgba(255,255,255,.12);border-radius:10px;background:var(–bg-card);color:var(–text-secondary);font-family:‘Orbitron’,sans-serif;font-size:.6rem;letter-spacing:2px;cursor:pointer;transition:all .3s;text-transform:uppercase;font-weight:700}
+.day-nav button:hover,.day-nav button.active{border-color:var(–accent-cf);color:var(–text-primary);background:rgba(196,30,74,.15);box-shadow:0 0 15px rgba(196,30,74,.2)}
+
+/* Day sections */
+.day-section{display:none;padding-top:20px}
+.day-section.active{display:block}
+
+/* Day header — OLD diagonal stripe style */
+.day-header{background:var(–day-bg);background-image:repeating-linear-gradient(45deg,transparent,transparent 10px,rgba(0,0,0,.1) 10px,rgba(0,0,0,.1) 20px);border-radius:15px;padding:25px 20px;text-align:center;margin-bottom:15px}
+.day-name{font-family:‘Orbitron’,sans-serif;font-size:1.8rem;font-weight:900;color:#fff;letter-spacing:3px}
+.day-mission{font-family:‘Orbitron’,sans-serif;font-size:.65rem;color:rgba(255,255,255,.55);letter-spacing:2px;margin-top:8px;text-transform:uppercase}
+
+/* Track cards — NEW collapsible structure + OLD colors */
+.track-card{margin-bottom:12px;border-radius:15px;overflow:hidden;background:var(–bg-card);position:relative}
+.track-card::before{content:’’;position:absolute;left:0;top:0;bottom:0;width:4px}
+.track-card.cf::before{background:var(–accent-cf)}
+.track-card.haltero::before{background:var(–accent-halt)}
+.track-card.endurance::before{background:var(–accent-end)}
+
+.track-header{padding:18px 20px 18px 25px;display:flex;align-items:center;justify-content:space-between;cursor:pointer;user-select:none;transition:background .2s}
+.track-header:hover{background:rgba(255,255,255,.03)}
+
+.track-label{font-family:‘Orbitron’,sans-serif;font-size:.9rem;font-weight:700;letter-spacing:2px;display:flex;align-items:center;gap:10px}
+.track-label::before{content:’’;width:10px;height:10px;border-radius:50%;flex-shrink:0}
+.track-card.cf .track-label{color:var(–accent-cf)}
+.track-card.cf .track-label::before{background:var(–accent-cf)}
+.track-card.haltero .track-label{color:var(–accent-halt)}
+.track-card.haltero .track-label::before{background:var(–accent-halt)}
+.track-card.endurance .track-label{color:var(–accent-end)}
+.track-card.endurance .track-label::before{background:var(–accent-end)}
+
+.track-toggle{font-size:1rem;color:var(–text-secondary);transition:transform .3s}
+.track-card.open .track-toggle{transform:rotate(180deg)}
+
+.track-body{display:none;padding:0 25px 20px}
+.track-card.open .track-body{display:block}
+
+/* Sections inside cards — OLD typography */
+.st{font-family:‘Rajdhani’,sans-serif;font-size:1rem;font-weight:600;color:var(–text-secondary);margin-bottom:8px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.1);margin-top:18px}
+.sc{font-size:1rem;line-height:1.8;color:var(–text-primary)}
 .sc p{margin-bottom:5px}
-.wt{font-family:'Orbitron',sans-serif;font-size:1rem;font-weight:600;margin-bottom:14px}
-.wt.c{color:var(--accent-cf)}.wt.e{color:var(--accent-end)}.wt.h{color:var(--accent-halt)}
-/* BADGES */
-.qf-badge{display:block;background:linear-gradient(135deg,rgba(255,45,85,.22),rgba(255,45,85,.06));border:1px solid rgba(255,45,85,.5);border-radius:8px;padding:8px 16px;font-family:'Orbitron',sans-serif;font-size:.72rem;color:var(--accent-cf);letter-spacing:2px;margin-bottom:14px;text-align:center;animation:qfPulse 2.5s ease-in-out infinite}
-@keyframes qfPulse{0%,100%{box-shadow:0 0 8px rgba(255,45,85,.25)}50%{box-shadow:0 0 20px rgba(255,45,85,.55)}}
-.qf-placeholder{background:rgba(255,45,85,.07);border:1px dashed rgba(255,45,85,.35);border-radius:10px;padding:16px;margin-bottom:14px;text-align:center}
-.qf-placeholder-text{font-family:'Orbitron',sans-serif;font-size:.75rem;color:rgba(255,120,140,.7);letter-spacing:2px}
-.qf-placeholder p{font-size:.88rem;color:var(--text-secondary);margin-top:8px}
+.wt{font-family:‘Orbitron’,sans-serif;font-size:1rem;font-weight:600;margin-bottom:10px}
+.wt.c{color:var(–accent-cf)}.wt.e{color:var(–accent-end)}.wt.h{color:var(–accent-halt)}
+
+/* Objective box */
+.objective-box{border-radius:8px;padding:10px 14px;margin-bottom:8px;font-size:.92rem;line-height:1.6}
+.track-card.cf .objective-box{background:rgba(255,45,85,.06);border:1px solid rgba(255,45,85,.2);color:rgba(255,255,255,.85)}
+.track-card.haltero .objective-box{background:rgba(0,255,136,.06);border:1px solid rgba(0,255,136,.2);color:rgba(255,255,255,.85)}
+.track-card.endurance .objective-box{background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.2);color:rgba(255,255,255,.85)}
+
+/* Stimulus box — gold accent */
+.stimulus-box{background:rgba(255,200,50,.06);border:1px solid rgba(255,200,50,.2);border-radius:8px;padding:10px 14px;font-size:.9rem;line-height:1.6;color:rgba(255,210,80,.88)}
+
+/* Scaling grid */
+.scaling-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:8px}
+.scale-box{padding:10px 14px;border-radius:8px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);font-size:.88rem;line-height:1.6}
+.scale-label{font-family:‘Orbitron’,sans-serif;font-size:.6rem;font-weight:700;letter-spacing:2px;margin-bottom:4px}
+.rx-label{color:rgba(255,200,80,.95)}.scaled-label{color:var(–text-secondary)}
+
+/* Coach note — feedback toggle */
+.fb{width:100%;background:rgba(255,255,255,.05);border:none;border-radius:10px;padding:15px 20px;margin-top:15px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background .3s}
+.fb:hover{background:rgba(255,255,255,.10)}
+.fb span{font-family:‘Rajdhani’,sans-serif;font-size:.9rem;font-weight:600;color:var(–text-secondary);letter-spacing:1px}
+.fb svg{width:20px;height:20px;fill:var(–text-secondary);transition:transform .3s}
+.fb.active svg{transform:rotate(180deg)}
+.fbc{display:none;padding:15px 20px;background:rgba(0,0,0,.22);border-radius:10px;margin-top:10px;font-size:.95rem;line-height:1.65;color:var(–text-secondary)}
+.fbc.show{display:block}
+
+/* Hero badge */
+.hero-badge{display:block;background:linear-gradient(135deg,rgba(255,180,0,.15),rgba(255,180,0,.04));border:1px solid rgba(255,180,0,.35);border-radius:8px;padding:8px 16px;font-family:‘Orbitron’,sans-serif;font-size:.72rem;color:rgba(255,200,80,.95);letter-spacing:2px;margin-bottom:12px;text-align:center;animation:heroPulse 3s ease-in-out infinite}
+@keyframes heroPulse{0%,100%{box-shadow:0 0 6px rgba(255,180,0,.2)}50%{box-shadow:0 0 16px rgba(255,180,0,.45)}}
+
+/* Material note */
 .material-note{background:rgba(255,200,50,.06);border:1px solid rgba(255,200,50,.2);border-radius:8px;padding:9px 14px;margin-bottom:12px;font-size:.84rem;color:rgba(255,210,80,.88);letter-spacing:.3px}
+
+/* Partner block */
 .partner-block{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:10px 0}
 .partner-col{border-radius:10px;padding:11px 14px}
 .partner-col.a{background:rgba(255,45,85,.07);border:1px solid rgba(255,45,85,.2)}
 .partner-col.b{background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.2)}
-.partner-label{font-family:'Orbitron',sans-serif;font-size:.65rem;letter-spacing:2px;margin-bottom:5px}
-.partner-col.a .partner-label{color:var(--accent-cf)}.partner-col.b .partner-label{color:var(--accent-end)}
-.partner-col p{font-size:.88rem;color:var(--text-primary);line-height:1.5}
-.ladder-row{background:rgba(255,45,85,.06);border:1px solid rgba(255,45,85,.18);border-radius:10px;padding:11px 15px;margin-bottom:8px}
-.ladder-row.dl2{background:rgba(255,140,0,.06);border-color:rgba(255,140,0,.18)}
-.ladder-row.dl3{background:rgba(0,255,136,.05);border-color:rgba(0,255,136,.18)}
-.ladder-label{font-family:'Orbitron',sans-serif;font-size:.66rem;letter-spacing:2px;margin-bottom:5px;color:var(--accent-cf)}
-.ladder-row.dl2 .ladder-label{color:rgba(255,160,60,.9)}.ladder-row.dl3 .ladder-label{color:var(--accent-halt)}
-.amrap-block{background:rgba(0,212,255,.06);border:1px solid rgba(0,212,255,.18);border-radius:10px;padding:12px 15px;margin-bottom:8px}
-.amrap-label{font-family:'Orbitron',sans-serif;font-size:.66rem;letter-spacing:2px;margin-bottom:6px;color:var(--accent-end)}
-.ps{height:2px;background:var(--bg-primary)}
-.fb{width:100%;background:rgba(255,255,255,.05);border:none;border-radius:10px;padding:15px 20px;margin-top:15px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;transition:background .3s}
-.fb:hover{background:rgba(255,255,255,.10)}
-.fb span{font-family:'Rajdhani',sans-serif;font-size:.9rem;font-weight:600;color:var(--text-secondary);letter-spacing:1px}
-.fb svg{width:20px;height:20px;fill:var(--text-secondary);transition:transform .3s}
-.fb.active svg{transform:rotate(180deg)}
-.fbc{display:none;padding:15px 20px;background:rgba(0,0,0,.22);border-radius:10px;margin-top:10px;font-size:.95rem;line-height:1.65;color:var(--text-secondary)}
-.fbc.show{display:block}
+.partner-label{font-family:‘Orbitron’,sans-serif;font-size:.65rem;letter-spacing:2px;margin-bottom:5px}
+.partner-col.a .partner-label{color:var(–accent-cf)}.partner-col.b .partner-label{color:var(–accent-end)}
+.partner-col p{font-size:.88rem;color:var(–text-primary);line-height:1.5}
+
+/* Station block */
+.station-block{background:rgba(255,45,85,.05);border:1px solid rgba(255,45,85,.15);border-radius:10px;padding:12px 15px;margin-bottom:8px}
+.station-label{font-family:‘Orbitron’,sans-serif;font-size:.66rem;letter-spacing:2px;margin-bottom:6px;color:var(–accent-cf)}
+
+/* Footer */
 footer{text-align:center;padding:40px 20px;margin-top:40px}
-.ft{font-family:'Orbitron',sans-serif;font-size:.9rem;color:var(--text-secondary)}
-@media(max-width:480px){.main-title{font-size:2rem;letter-spacing:2px}.logo-star{width:90px;height:90px}.legend{gap:10px}.legend-btn{padding:8px 15px;font-size:.8rem}.day-name{font-size:1.5rem}.pname{font-size:1.2rem}.partner-block{grid-template-columns:1fr}}
+.ft{font-family:‘Orbitron’,sans-serif;font-size:.8rem;color:var(–text-secondary);letter-spacing:1px}
+
+/* Responsive */
+@media(max-width:480px){.main-title{font-size:2rem;letter-spacing:2px}.logo-star{width:90px;height:90px}.legend{gap:10px}.legend-btn{padding:8px 15px;font-size:.8rem}.day-name{font-size:1.5rem}.track-label{font-size:.75rem}.day-nav button{padding:8px 12px;font-size:.5rem}.partner-block{grid-template-columns:1fr}.scaling-grid{grid-template-columns:1fr}}
+
+/* Print */
+@media print{.cosmic-bg,.stars,.stars2,.twinkle-stars,.shooting-star{display:none}.day-nav{display:none}.day-section{display:block!important;page-break-after:always}.track-body{display:block!important}.fbc{display:block!important}}
 </style>
+
 </head>
 <body>
 <div class="cosmic-bg"></div><div class="stars"></div><div class="stars2"></div>
 <div class="twinkle-stars"><div class="twinkle-star"></div><div class="twinkle-star"></div><div class="twinkle-star"></div><div class="twinkle-star"></div><div class="twinkle-star"></div><div class="twinkle-star"></div><div class="twinkle-star"></div><div class="twinkle-star"></div><div class="twinkle-star"></div><div class="twinkle-star"></div></div>
 <div class="shooting-star"></div>
+
 <div class="container">
+
+<!-- ══════ HEADER ══════ -->
+
 <header class="main-header">
 <div class="logo-star"><svg viewBox="0 0 100 100"><defs><filter id="glow"><feGaussianBlur stdDeviation="2" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter><linearGradient id="sg" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ff2d55"/><stop offset="50%" style="stop-color:#c41e4a"/><stop offset="100%" style="stop-color:#8a1535"/></linearGradient></defs><polygon points="50,5 61,35 95,35 68,57 79,90 50,70 21,90 32,57 5,35 39,35" fill="url(#sg)" filter="url(#glow)"/><circle cx="50" cy="50" r="22" fill="#1a1a22"/><circle cx="50" cy="50" r="20" fill="#12121a"/><circle cx="42" cy="47" r="4" fill="#fff"/><circle cx="58" cy="47" r="4" fill="#fff"/><circle cx="43" cy="46" r="1.5" fill="#00d4ff"/><circle cx="59" cy="46" r="1.5" fill="#00d4ff"/><path d="M 38 56 Q 50 66 62 56" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
 <h1 class="main-title">CROSSFIT<br>VALLECAS</h1>
 <p class="main-subtitle">Programación Semanal | Coaches</p>
-<p class="week-date">30 Marzo 2026 – 04 Abril 2026 ⚡</p>
-<p class="week-theme">— IRON DEVOTION — SEMANA 14 — SEMANA SANTA —</p>
+<p class="week-theme">— SEMANA 15 — 3 TRACKS — 18 SESIONES —</p>
 <div class="legend"><div class="legend-btn"><div class="legend-dot h"></div>HALTEROFILIA</div><div class="legend-btn"><div class="legend-dot c"></div>CROSSFIT</div><div class="legend-btn"><div class="legend-dot e"></div>ENDURANCE</div></div>
 </header>
-<!-- ===== LUNES ===== -->
-<div class="day-header"><h2 class="day-name">LUNES</h2><p class="day-date">30/03/2026</p></div>
 
-<div class="pc h"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">HALTEROFILIA</span></div>
-<div class="ws"><div class="st">A) Every 2' For 10' (5 Sets)</div><div class="sc">
-<p>1 Squat Clean + 4 Front Squats</p>
-<p><em>Load: 75–83% — The Clean establishes the front rack; the 4 FSQ build positional strength under fatigue. Unbroken — do not re-rack between movements.</em></p>
-</div></div>
-<div class="ws"><div class="st">B) On the Minute For 8' (8 Sets)</div><div class="sc">
-<p>3 Hang Power Clean &amp; Jerk @ 65–75%</p>
-<p><em>Build from 65% to 75% across the 8 minutes. Touch and go if the load allows. Focus on the dip timing for the Jerk directly from the HP Clean catch.</em></p>
-</div></div>
-<div class="ws"><div class="st">C) Accessories — Muscle Snatch Focus</div><div class="sc">
-<p>3 Sets:</p>
-<p>• 6 Muscle Snatches (bar speed — triple extension before any arm pull)</p>
-<p>• 10 Overhead Squat (pause 3" at bottom — active press, knees tracking out)</p>
-<p>• 10 Banded Pull-Aparts (horizontal plane — rear delt and external rotator)</p>
-</div></div>
+<!-- ══════ NAV ══════ -->
+
+<nav class="day-nav" id="dayNav">
+<button class="active" onclick="showDay('mon')">Lunes</button>
+<button onclick="showDay('tue')">Martes</button>
+<button onclick="showDay('wed')">Miércoles</button>
+<button onclick="showDay('thu')">Jueves</button>
+<button onclick="showDay('fri')">Viernes</button>
+<button onclick="showDay('sat')">Sábado</button>
+</nav>
+
+<!-- ═══════════════════════════════════════ -->
+
+<!-- LUNES — BUILD -->
+
+<!-- ═══════════════════════════════════════ -->
+
+<section class="day-section active" id="day-mon">
+<div class="day-header"><h2 class="day-name">LUNES — BUILD</h2><div class="day-mission">Arranque con intención — Carga pesada para activar el SNC</div></div>
+
+<div class="track-card haltero open">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">HALTEROFILIA — C&J</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Abrir el ciclo semanal. Posiciones y timing del Clean & Jerk. Técnica antes que carga.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>Barbell Complex (empty bar), 2 rounds: 5 Muscle Cleans / 5 Front Squats / 5 Push Press / 5 Elbow Rotations in Front Rack</p></div>
+<div class="st">Técnica — 10 min</div><div class="sc"><p>3 x 3 Hang Clean Pull (from knee)</p><p>3 x 3 Muscle Clean (from floor)</p><p><em>Empty bar → light. Focus on positions, not load.</em></p></div>
+<div class="st">Fuerza — Every 2:00 x 8 Sets (25 min)</div><div class="sc"><p>1 Clean + 1 Front Squat + 1 Jerk</p><p><em>Build to RPE 7. Cada set es una oportunidad de afinar, no de competir.</em></p></div>
+<div class="st">Accesorio — 8 min</div><div class="sc"><p>3 x 10s Front Rack KB Hold (heavy) / 3 x 12 Banded Good Mornings</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Primer contacto de la semana con C&J. Buscar fluidez en el tirón y seguridad en la recepción. El Jerk debe ser estable — si se presiona, la carga es demasiada.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written. Build based on feel.</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>Power Clean + Front Squat + Push Press — RPE max 6</div></div>
 <button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Lunes de apertura de Semana Santa — C&J como bloque principal. El complex Squat Clean + 4 FSQ de la parte A es uno de los ejercicios más eficientes para construir fuerza en front rack: el atleta que sale del Clean en posición perfecta y hace 4 Front Squats sin perder el codo está listo para los maxes de la semana.</strong><br><br>En el bloque B, el HP C&J Touch &amp; Go a 65-75% construye el ritmo de repetición que el atleta necesita cuando hay múltiples Jerks en el metcon. La transición del Clean al Jerk sin pausa es la habilidad más valiosa en un WOD de competición — el atleta que necesita "prepararse" entre el Clean y el Jerk pierde segundos que suman. Los accesorios de Muscle Snatch son la preparación para el patrón de tirón del martes: el OHS con pausa al final de cada set es el seguro de la posición overhead que el atleta necesita en el Snatch.</div>
+<div class="fbc"><strong>Observar la recepción del Clean: ¿los codos suben rápido? ¿Hay colapso en el torso?</strong> Si el Front Squat intermedio se tuerce, la carga es excesiva. En el Jerk, vigilar la posición de split — pie delantero no debe pasar de la rodilla. Los accesorios son para reforzar posición de rack — no permitir que los hagan rápido y mal.</div>
 </div></div>
-<div class="ps"></div>
 
-<div class="pc c"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
-<div class="ws"><div class="st">A) Every Minute on the Minute For 8'</div><div class="sc">
-<p><strong>Odd minutes:</strong> 1 Hang Power Snatch + 1 OHS (build to heavy by minute 7)</p>
-<p><strong>Even minutes:</strong> 1 Legless Rope Climb (4.5m — no feet)</p>
-<p><em>The OHS after the HPS is the overhead stability challenge. The Legless Rope Climb builds upper body pulling strength without leg compensation.</em></p>
-</div></div>
-<div class="ws"><div class="st">B) CROSSFIT QUARTERFINALS #1</div><div class="sc">
-<div class="qf-badge">🏆 CROSSFIT QUARTERFINALS 2026 — WOD #1</div>
-<p><strong>For Time — Cap: 12 minutes</strong></p>
-<p>10 × 50-foot Shuttle Runs</p>
-<p>20 Overhead Squats</p>
-<p>30 Burpees Over the Bar</p>
-<p><em>— Rest 1 Minute —</em></p>
-<p>30 Burpees Over the Bar</p>
-<p>20 Overhead Squats</p>
-<p>10 × 50-foot Shuttle Runs</p>
-<p><em>♀ 36 kg / ♂ 52 kg</em></p>
-</div></div>
+<div class="track-card cf">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">CROSSFIT</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Activar el sistema nervioso con Back Squat pesado. Metcon corto con barbell para expresar potencia post-fuerza.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>2 Rounds: 200m Row / 10 Air Squats / 10 Ring Rows / 5 Inch Worms</p></div>
+<div class="st">Fuerza — Back Squat 5 x 5 @ RPE 8 (20 min)</div><div class="sc"><p>Every 2 minutes For 10 minutes. Build across sets. No fallar reps.</p></div>
+<div class="st">Metcon — 4 Rounds For Time </div><div class="sc"><p>7 Power Cleans (60/40 kg)</p><p>10 Box Jump Over (24"/20")</p><p>12 Chest-to-Bar Pull-ups</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">La fuerza es el plato principal, el metcon es el postre intenso. Rounds sub-3:00. Power Cleans en singles o doubles rápidos. Box Jumps con rebote. C2B en sets de 4-6.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>Hang Power Cleans 40/30 kg / Box Step-ups 20" / Jumping C2B or Banded Pull-ups</div></div>
 <button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>El EMOM A es la preparación neuromuscular para los Quarterfinals: el HPS + OHS activa el patrón de tirón y estabilidad overhead, el Legless Rope Climb construye el pulling vertical puro que aparece en múltiples WODs de competición.</strong><br><br>El Legless Rope Climb es el ejercicio que más rápido diagnostica si el atleta tiene pulling de lat real o si depende de las piernas para subir. Para los atletas que no tienen legless: hacer 1 Rope Climb con técnica perfecta — no es el momento de practicar legless si no está consolidado.<br><br>En el QF #1, el WOD tiene simetría perfecta: empieza y termina con Shuttle Runs, con el OHS y los Burpees Over the Bar como bloque central. La pausa de 1 minuto en el centro es una trampa — el atleta que llega a esa pausa destruido no tiene tiempo de recuperar para el segundo bloque. Estrategia: los 30 Burpees Over the Bar del primer bloque deben hacerse a un ritmo que permita repetirlos en el segundo. El OHS a 52/36kg es el filtro técnico: movilidad de hombro y de cadera a la vez, con el core ya cargado por los Shuttle Runs. Shuttle Runs: virajes limpios, no frenar antes del cono — el tiempo se pierde en los cambios de dirección, no en la carrera recta. Registrar el split de cada bloque (pre-pausa y post-pausa) para análisis.</div>
+<div class="fbc"><strong>Squat: vigilar profundidad y bracing. Cue "pecho arriba, respira arriba".</strong> En el metcon, ojo con las espaldas redondeadas en los Cleans post-squat — el SNC ya está cargado. Box Jumps: si alguien duda en el salto, escalar a step-up. C2B: mejor 3 sets consistentes que un set de 8 y luego singles.</div>
 </div></div>
-<div class="ps"></div>
 
-<div class="pc e"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
-<div class="wt e">"DEVOTION PAIRS"</div>
-<div class="material-note">⚙ COACHES: Organizar en parejas al inicio. Atleta B alterna entre Max Cal y Max Box Jumps según el bloque activo.</div>
-<div class="ws"><div class="st">2 Sets — Full Rest Between Sets</div><div class="sc">
-<p><strong>— Bloque 1 —</strong></p>
-<p>400m Run together (both athletes)</p>
+<div class="track-card endurance">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">ENDURANCE — AMRAP</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Ritmo sostenido, sin pico. Entrada aeróbica suave a la semana. Construir base, no destruir.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>3 min Easy Bike / 2 Rounds: 10 Glute Bridges / 10 Leg Swings (each) / 20 Mountain Climbers</p></div>
+<div class="st">WOD — AMRAP 30</div><div class="sc"><p>20/15 Cal Row</p><p>15 Air Squats</p><p>10 Push-ups</p><p>200m Run</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Base aeróbica pura. Ritmo conversacional. Nadie debería estar en zona roja en la ronda 2. Si no puedes hablar entre ejercicios, estás yendo demasiado rápido. Target: 7-9 rounds.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>15/10 Cal Row / 10 Air Squats / 10 Knee Push-ups / 100m Run</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Este WOD NO es una carrera. Gestionar el ego de los que quieren ir a tope desde la ronda 1.</strong> Push-ups con rango completo — si colapsan, escalar a rodillas. El remo es el ancla del ritmo: cue "cadencia de 22-24 spm, no sprints de 30".</div>
+</div></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+
+<!-- MARTES — ENGINE -->
+
+<!-- ═══════════════════════════════════════ -->
+
+<section class="day-section" id="day-tue">
+<div class="day-header"><h2 class="day-name">MARTES — ENGINE</h2><div class="day-mission">Precisión y velocidad — De pesado/lento a rápido/preciso</div></div>
+
+<div class="track-card haltero open">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">HALTEROFILIA — SNATCH</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Primer día de Snatch de la semana. Posiciones y velocidad de turnover. Calidad absoluta.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>3 x 5 Snatch Grip Press Behind Neck / 3 x 5 Snatch Grip DL (pause at knee) / 3 x 3 High Hang Snatch Pull</p></div>
+<div class="st">Técnica — 10 min</div><div class="sc"><p>3 x 3 Snatch Balance (light) / 3 x 3 Hang Power Snatch (light)</p><p><em>Build connection between pull and catch. No load chasing.</em></p></div>
+<div class="st">Fuerza — Every 2:00 x 8 Sets (20 min)</div><div class="sc"><p>1 Hang Power Snatch + 1 Overhead Squat</p><p><em>Build to RPE 6-7. The OHS reveals truth — if it wobbles, it's too heavy.</em></p></div>
+<div class="st">Accesorio — 8 min</div><div class="sc"><p>3 x 8 Snatch Grip RDL / 3 x 30s Overhead Plate Hold (20/15 kg)</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Snatch es el lift que más honestidad exige. Si el OHS tiembla, la carga es excesiva. RPE 6-7 permite repetir con precisión. No buscar 1RM — eso es el viernes.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>Hang Muscle Snatch + OHS / RPE 5-6 / SG RDL empty bar</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Revisar el ancho del agarre antes de empezar — muchos tienen el grip demasiado estrecho.</strong> Snatch Balance: recibir profundo con brazos bloqueados — si presiona arriba, no cuenta. Hang Power Snatch: contacto en cadera. OHS: cue "empuja la barra al techo, mete las costillas". Los RDL de snatch grip son oro para el tirón — no dejar que los hagan rápido.</div>
+</div></div>
+
+<div class="track-card cf">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">CROSSFIT</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Gymnastics bajo fatiga. Cambio de patrón: de squat/pull pesado a push/hinge rápido.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>3 Rounds: 10 Shoulder Taps in Plank / 5 Strict Press (empty bar) / 20 SU → 10 DU attempts</p></div>
+<div class="st">Fuerza — Every 90” For 12’ complete : 8  Strict Press + 12 T raises @ RPE 8 </div><div class="sc"><p>. No push press. No leg drive. Pure overhead strength.</p></div>
+<div class="st">Metcon — 5 Rounds For Time (Cap 12 min)</div><div class="sc"><p>8 Strict HSPU</p><p>30 Double Unders</p><p>16 KB American Swings (24/16 kg)</p></div>
+<div class="st">Accesorio — 5 min</div><div class="sc"><p>3 x 15 Banded Face Pulls</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Rounds de 2:30-3:00. HSPU strict son el limitante — sets de 3-4 están bien. DU para recuperar. KB Swings explosivos y sin pausa.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>8 DB Strict Press (heavy) / 60 Single Unders / KB 16/12 kg</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>HSPU estrictos: si alguien puede kipping pero no strict, hoy es strict o escala.</strong> Posición de trípode — cabeza adelante = peligro cervical. DU: si pierde +15 segundos, escalar a singles. Face pulls al final son prevención de hombro — no saltárselos.</div>
+</div></div>
+
+<div class="track-card endurance">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">ENDURANCE — INTERVALS</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Subir intensidad con intervalos estructurados. De aeróbico sostenido a esfuerzo/descanso.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>400m Easy Jog / 2 Rounds: 10 Spiderman Lunges / 10 Leg Swings / 5 Broad Jumps</p></div>
+<div class="st">WOD — 6 Rounds (Rest 1:30 between) — 32 min total</div><div class="sc"><p>400m Run</p><p>500m Row</p><p><em>Score = total time including rest. Track split per round.</em></p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Consistencia. Si la ronda 1 es 3:00, la ronda 6 no debería pasar de 3:15. Se busca negative split. Descanso de 1:30 sagrado — ni más ni menos.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>300m Run + 400m Row / Rest 2:00</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Trackear tiempos por ronda en pizarra.</strong> Si alguien cae +10 segundos entre ronda 1 y 3, salió demasiado fuerte. Tener remos preparados con el damper en la posición del atleta.</div>
+</div></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+
+<!-- MIÉRCOLES — GRIND -->
+
+<!-- ═══════════════════════════════════════ -->
+
+<section class="day-section" id="day-wed">
+<div class="day-header"><h2 class="day-name">MIÉRCOLES — GRIND</h2><div class="day-mission">Mayor volumen acumulado — No el más intenso, el de más trabajo total</div></div>
+
+<div class="track-card haltero open">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">HALTEROFILIA — C&J (LOAD)</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Subir carga en C&J. El día más pesado de haltero antes del viernes. Confianza con peso real.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>3 x 3 Tall Cleans / 3 x 3 Push Press / 3 x 2 Power Clean + Push Jerk (moderate)</p></div>
+<div class="st">Técnica — Clean Pulls 5 x 2 from Blocks (10 min)</div><div class="sc"><p>Knee height. Heavy — RPE 8. Focus on extension and speed through the middle.</p></div>
+<div class="st">Fuerza — Every 2:30 x 7 Sets (25 min)</div><div class="sc"><p>1 Power Clean + 1 Hang Squat Clean + 1 Push Jerk</p><p><em>Build to RPE 8. Heaviest C&J session before Friday.</em></p></div>
+<div class="st">Accesorio — 5 min</div><div class="sc"><p>3 x 5 Clean Deadlift — 3s eccentric down.</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Hoy sí se busca carga. Power Clean abre, Hang Squat Clean prueba posición con peso, Push Jerk expresa fuerza. Si el HSC se convierte en power + ride down, reducir.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>PC + Hang PC + Push Press / RPE max 7</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Hang Squat Clean es el movimiento clave.</strong> Si recibe alto y "baja montado", la técnica falla. Cue: "tira y desaparece debajo". Clean Pulls: extensión triple. Clean DL excéntricos: ritmo lento, sin excusas.</div>
+</div></div>
+
+<div class="track-card cf">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">CROSSFIT</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Mixed modal largo. Mayor volumen de metcon de la semana. Pacing inteligente.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>2 Rounds: 12 Cal Assault Bike / 8 Wall Balls (light) / 3 Rope Pulls from Floor</p></div>
+<div class="st">WOD — Amrap 20’</div><div class="sc"><p>50 Wall Balls (9/6 kg)</p><p>40 Cal Assault Bike</p><p>30 DB Box Step-ups (22.5/15 kg, 24"/20")</p><p>20 Burpees </p><p>10 rope climbs </p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Esto es un grind. Wall Balls: 20-15-15 o 25-25. Rope Climbs son el crux — máximo 2-3 seguidas. La vuelta es más corta a propósito: reward por aguantar.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>WB 6/4 kg / 30 Cal Bike / DB SU 20" (15/10 kg) / 4 Rope Pulls per rep</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Rope Climbs con colchonetas. "Si no tienes rope climb consistente, haces rope pulls — sin negociar."</strong> DB Step-ups: extensión de cadera completa arriba. La Bike de vuelta (20 cal) debería ser sprint controlado — el final está cerca.</div>
+</div></div>
+
+<div class="track-card endurance">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">ENDURANCE — CHIPPER FOR TIME</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Chipper descendente con barbell. Volumen sostenido. Chip away — una rep a la vez.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>2 Rounds: 200m Row / 10 Deadlifts (empty bar) / 10 Burpees</p></div>
+<div class="st">WOD — 2 Rounds For Time (Cap 30 min)</div><div class="sc"><p>500 mts Run </p><p>40 Deadlifts (50kg/35 kg)</p><p>30 Burpees</p><p>20 Hang squat Cleans (50/35 kg)</p><p>10 Shoulder to Overhead (50/35 kg)</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Descending reps = luz al final del túnel. Run: conversacional , Deadlifts en sets de 10 o la espalda paga. HPC y S2OH al final: unbroken o 10-10 y 5-5. Target: 22-28 min.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>40 Cal Row / DL 40/30 kg / Step-back Burpees / HPC & S2OH 35/25 kg</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Deadlifts: "hombros por delante de la barra, aprieta lats".</strong> Stiff-leg deadlifts → parar y corregir. Hang Cleans: contacto en cadera. Si alguien llega al cap en los DL, problema de scaling.</div>
+</div></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+
+<!-- JUEVES — PRECISION -->
+
+<!-- ═══════════════════════════════════════ -->
+
+<section class="day-section" id="day-thu">
+<div class="day-header"><h2 class="day-name">JUEVES — PRECISION</h2><div class="day-mission">Reset técnico — Preparar cuerpo y mente para el viernes</div></div>
+
+<div class="track-card haltero open">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">HALTEROFILIA — SNATCH COMPLEXES</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Calidad > carga. Complejos de Snatch para refinar posiciones antes del max-out de mañana.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>3 x 5 Sotts Press (snatch grip) / 3 x 3 Drop Snatch / 3 x 3 Hang Snatch High Pull</p></div>
+<div class="st">Fuerza — Every 2:30 x 7 Sets (25 min)</div><div class="sc"><p>1 Snatch Pull + 1 Hang Power Snatch + 1 Snatch Balance + 1 OHS</p><p><em>RPE 6-7 max. Every rep is a rehearsal for tomorrow.</em></p></div>
+<div class="st">Accesorio — 10 min</div><div class="sc"><p>3 x 8 Snatch Grip RDL (moderate) / 3 x 30s Bottom of OHS Hold (empty bar)</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Tirón → recepción → estabilidad → profundidad. Cada rep debe verse igual. Si el RPE pasa de 7, están demasiado pesados. Mañana se levantan máximos — hoy se calibra.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>Snatch Pull + Hang Muscle Snatch + Press in Snatch + OHS / RPE 5-6</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>"Mañana es el día de tirar fuerte, hoy es el día de tirar bien."</strong> El Snatch Balance revela la verdad. El bottom hold es diagnóstico: ¿rodillas fuera? ¿Barra sobre la base del cuello? ¿Pecho arriba? Corregir con paciencia.</div>
+</div></div>
+
+<div class="track-card cf">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">CROSSFIT</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Reset técnico. Skill de Hang Squat Clean + metcon corto y picante. Salir afilado, no agotado.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>3 Rounds: 5 Hang Muscle Cleans (empty bar) / 5 Front Squats / 5 Push Jerks / 5 T2B</p></div>
+<div class="st">Skill — Hang Squat Clean (12 min)</div><div class="sc"><p>Build to moderate single — RPE 6. Speed under the bar. NOT a max-out.</p></div>
+<div class="st">Metcon — 3 Rounds For Time (Cap 8 min)</div><div class="sc"><p>9 Thrusters (43/30 kg)</p><p>12 Toes-to-Bar</p><p>100m Shuttle Run (25m x 4)</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Corto y rápido. Rounds sub-2:30. Thrusters ligeros para ir unbroken. T2B en 2 sets (6-6 o 8-4). Esto pica pero NO destruye. Mañana es viernes.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>Thrusters 30/20 kg / Hanging Knee Raises / 75m Shuttle</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Si rompe Thrusters en la ronda 1, está demasiado pesado.</strong> T2B: si el kip se desintegra, escalar inmediatamente. Este metcon es de PRECISIÓN. Si alguien sale destruido hoy, mañana no rendirá en el Hero.</div>
+</div></div>
+
+<div class="track-card endurance">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">ENDURANCE — EMOM</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Trabajo estructurado y controlable. Preparar el cuerpo para el viernes sin vaciarlo.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>3 min Easy Bike / 2 Rounds: 10 DB Deadlifts (light) / 10 Sit-ups / 10 Scap Push-ups</p></div>
+<div class="st">WOD — EMOM 30 (10 Rounds of 3-Min Cycle)</div><div class="sc"><p>Min 1: 15/12 Cal Assault Bike</p><p>Min 2: 10 DB Devils Press (15/10 kg)</p><p>Min 3: 20 AbMat Sit-ups</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">10-15 segundos de descanso por minuto. La Bike es el motor. Devils Press full body pero controlados. Sit-ups son "descanso activo". NO sprint — metrónomo.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>12/9 Cal Bike / 8 Devils Press (10/7 kg) / 15 Sit-ups</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Si no termina calorías en 45 segundos, reducir.</strong> Devils Press: UN movimiento fluido, no burpee + snatch separados. Sit-ups son para respirar — si alguien va como loco, no entiende el estímulo.</div>
+</div></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+
+<!-- VIERNES — SUMMIT -->
+
+<!-- ═══════════════════════════════════════ -->
+
+<section class="day-section" id="day-fri">
+<div class="day-header"><h2 class="day-name">VIERNES — SUMMIT</h2><div class="day-mission">Día cumbre — Todo pica. Todo cuenta.</div></div>
+
+<div class="track-card haltero open">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">HALTEROFILIA — MAX ATTEMPTS</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Expresión máxima. La semana ha construido hacia este momento. Plan, ejecutar, celebrar.</div>
+<div class="st">Calentamiento — 10 min</div><div class="sc"><p>Full Warm-up Progression: Empty bar complex → gradual build</p><p>3 x 3 each lift at 50%, 60%, 70%. The warm-up IS part of the session.</p></div>
+<div class="st">Parte 1 — Build to 1RM Clean & Jerk (20 min)</div><div class="sc"><p>Max 5 attempts above 90%. Opener → Target → Ceiling.</p><p><em>Have a plan. Stick to the plan. No ego.</em></p></div>
+<div class="st">Parte 2 — Build to 1RM Snatch (20 min)</div><div class="sc"><p>Max 5 attempts above 90%. Same protocol.</p><p><em>The Snatch is the truth test. Respect it.</em></p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">No hay accesorios. No hay "extra work". Es DÍA DE LEVANTAR. Apertura (85%), objetivo (92-95%), techo (98-102%). Máximo 5 intentos por lift. Si fallan 2 seguidos, se acabó.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>1RM Clean & Jerk + 1RM Snatch</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>3RM Power Clean & Push Press / 3RM Power Snatch</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Cada atleta debe decirte su plan: "abro con X, busco Y, techo Z".</strong> No más de 5 intentos pesados. Si la técnica se rompe, no cuenta. Música alta. Ambiente de competición. Celebrar cada PR.</div>
+</div></div>
+
+<div class="track-card cf">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">CROSSFIT — HERO WOD</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="hero-badge">HERO WOD — "NATE"</div>
+<div class="objective-box">Test mental. El Hero WOD es el examen de la semana. Consistencia bajo fatiga, carácter cuando duele.</div>
+<div class="st">Calentamiento — 10 min</div><div class="sc"><p>2 Rounds: 5 Strict Pull-ups / 5 Kipping HSPU / 8 KB Swings (moderate) / 5 Ring Rows</p></div>
+<div class="st">WOD — AMRAP 20 Minutes</div><div class="sc"><p>2 Muscle-ups</p><p>4 Handstand Push-ups</p><p>8 KB Swings (32/24 kg)</p><p><em>In honor of Chief Petty Officer Nate Hardy, KIA Iraq, February 4, 2008.</em></p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">AMRAP de grind. Small sets, steady pace. Pace round 1 = pace round 15. Elite: 10+. Good: 6-8. Average: 4-5. El benchmark es la consistencia.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>4 Pull-ups + 4 Ring Dips / 4 DB Push Press (heavy) / KB 24/16 kg</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Sin MU consistente = escalar SIN NEGOCIAR.</strong> HSPU kipping permitido — es Hero WOD. KB American standard. Si baja +30 segundos por round, intervenir. Siempre explicar el significado del WOD antes de empezar.</div>
+</div></div>
+
+<div class="track-card endurance">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">ENDURANCE — LONG CONDITIONING</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Conditioning largo a tope. La versión Endurance del día cumbre. Sufrimiento inteligente sostenido.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>400m Easy Run / 2 Rounds: 10 BB Good Mornings / 10 Jumping Lunges / 5 Broad Jumps</p></div>
+<div class="st">WOD — For Time (Cap 35 min)</div><div class="sc"><p>2000m Row</p><p>40 Barbell Lunges (40/30 kg)</p><p>1600m Run</p><p>30 Power Cleans (40/30 kg)</p><p>1000m Row</p><p>20 Front Squats (40/30 kg)</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Largo y doloroso. 2000m Row marca el tono — no sprint. Lunges = donde empieza el daño. 1600m Run = test mental. Power Cleans y FS al final = recompensa del que dosificó. Target: 28-35 min.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>1500m Row / Lunges, Cleans & FS at 30/20 kg / 1200m Run</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>Diseñado para romper en la segunda mitad.</strong> Power Cleans después de 1600m van a ser brutales — vigilar espaldas. NADIE debería caminar en la carrera. Remo inicial: "pace 2:00-2:05/500m".</div>
+</div></div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+
+<!-- SÁBADO — TRIBE -->
+
+<!-- ═══════════════════════════════════════ -->
+
+<section class="day-section" id="day-sat">
+<div class="day-header"><h2 class="day-name">SÁBADO — TRIBE</h2><div class="day-mission">Día social — Nadie compite solo. Se cierra la semana juntos.</div></div>
+
+<div class="track-card haltero open">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">HALTEROFILIA — ACCESORIOS & POSICIONES</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="objective-box">Descarga activa. Trabajo ligero de calidad. Reforzar posiciones sin carga. Disfrutar la barra.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>Light Barbell Flow — 2 Rounds, 5 each: Snatch Grip DL / Hang Muscle Snatch / OHS / Snatch Balance</p></div>
+<div class="st">Trabajo de Calidad — 30 min (Not for Time)</div><div class="sc">
+<p><strong>A1:</strong> 3 x 5 Tall Clean (empty bar → light)</p>
+<p><strong>A2:</strong> 3 x 5 Tall Snatch (empty bar → light)</p>
+<p><strong>B1:</strong> 3 x 8 Behind the Neck Push Press (snatch grip)</p>
+<p><strong>B2:</strong> 3 x 10 Chinese Rows</p>
+<p><strong>C1:</strong> 3 x 30s Bottom of Squat Hold (BB overhead, light)</p>
+<p><strong>C2:</strong> 3 x 10 Hip Extensions</p>
+<p><strong>D1:</strong> 3 x 10/side Single Leg RDL (no weight)</p>
+<p><strong>D2:</strong> 3 x 10 Banded Pull-aparts</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Esto NO es un entrenamiento. Es mantenimiento de calidad. Nadie debería sudar a chorros. Tall movements = velocidad bajo la barra sin tirón. Chinese Rows = oro para trapecios del tirón.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>All movements with empty bar or light</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>PVC pipe or training bar / Skip bottom hold if mobility limits</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>DÍA DE RECUPERACIÓN. "Ayer hiciste máximos, hoy toca cuidar el cuerpo."</strong> Tall movements: no hay tirón, solo velocidad de meterse debajo. Chinese Rows: tirar alto con codos, squeeze arriba. Bottom hold = screening de movilidad.</div>
+</div></div>
+
+<div class="track-card cf">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">CROSSFIT — TEAM WOD</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="wt c">"TRIBE CIRCUIT" — TEAM OF 3</div>
+<div class="material-note">COACHES: Equipos de 3. Cada atleta en una estación. Rotar cada minuto. 5 rotaciones completas.</div>
+<div class="objective-box">Día social. Equipos de 3, estaciones rotativas. Diversión, ruido, comunidad.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>Partner Medicine Ball Relay — 3 rounds each</p><p>Then 2 rounds: 10 Air Squats + 10 Push-ups + 5 Burpees</p></div>
+<div class="st">WOD — 25 min (1 min work / 30s transition)</div><div class="sc">
+<div class="station-block"><div class="station-label">STATION 1</div><p>Max Cal Row</p></div>
+<div class="station-block"><div class="station-label">STATION 2</div><p>Max Wall Balls (9/6 kg)</p></div>
+<div class="station-block"><div class="station-label">STATION 3</div><p>Max DB Deadlifts (22.5/15 kg)</p></div>
+<p>5 full rotations. Score = Total team reps.</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Full send each minute. 1 min on, 2 min off. Row: 15-20 cal/min. WB: 15-20 reps/min. DB DL: 15-20 reps/min. Scores en pizarra. Competición sana.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>WB 6/4 kg / DB DL 15/10 kg</div></div>
+<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
+<div class="fbc"><strong>EL DÍA DIVERTIDO. Música alta. Energía alta. Gritar los cambios.</strong> Resultados parciales en pizarra. Mezclar niveles. Si alguien viene solo, integrarlo. Celebrar al equipo ganador Y al último.</div>
+</div></div>
+
+<div class="track-card endurance">
+<div class="track-header" onclick="this.parentElement.classList.toggle('open')"><span class="track-label">ENDURANCE — PARTNER PURSUIT</span><span class="track-toggle">▼</span></div>
+<div class="track-body">
+<div class="material-note">COACHES: Parejas organizadas al inicio. 1 KB por pareja.</div>
+<div class="objective-box">Partner pursuit. Tu compañero te espera — no hay sandbag. El día social del Endurance.</div>
+<div class="st">Calentamiento — 8 min</div><div class="sc"><p>Easy Bike 3 min / Partner Med Ball Toss x 20 / 2 Rounds: 10 Alt Lunges + 10 Push-ups</p></div>
+<div class="st">WOD — "You Go, I Go" in Pairs (30 min)</div><div class="sc">
 <div class="partner-block">
-<div class="partner-col a"><div class="partner-label">ATHLETE A</div><p>20 Burpees</p></div>
-<div class="partner-col b"><div class="partner-label">ATHLETE B</div><p>Max Calories Ergometer (sprint while A works)</p></div>
+<div class="partner-col a"><div class="partner-label">ATHLETE A — Full Round</div><p>100 mts  sprint </p><p>10 KB Swings (24/16 kg)</p><p>10 Burpees</p></div>
+<div class="partner-col b"><div class="partner-label">ATHLETE B</div><p>Rests while A works</p></div>
 </div>
-<p><em>— Rest 1' —</em></p>
-<p><strong>— Bloque 2 —</strong></p>
-<p>30 Synchro Air Squats (both athletes simultaneously)</p>
-<div class="partner-block">
-<div class="partner-col a"><div class="partner-label">ATHLETE A</div><p>30 KB Swings (24/16 kg)</p></div>
-<div class="partner-col b"><div class="partner-label">ATHLETE B</div><p>Max Box Jumps (60/50 cm) while A works</p></div>
-</div>
-<p><em>Score: total Cal + total Box Jumps accumulated across both sets.</em></p>
-</div></div>
+<p>8 rounds each (16 total). Score = total time.</p></div>
+<div class="st">Estímulo</div><div class="stimulus-box">Tu partner te espera. Urgencia natural. Cada ronda: 2:00-2:30. Transiciones limpias — cuando tu partner llega, tú ya estás en la puerta.</div>
+<div class="st">Escalados</div><div class="scaling-grid"><div class="scale-box"><div class="scale-label rx-label">RX</div>As written</div><div class="scale-box"><div class="scale-label scaled-label">SCALED</div>150m Run / KB 16/12 kg / 7 Burpees</div></div>
 <button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Formato de pareja con incentivo de velocidad: cuanto más rápido termina A su bloque, más tiempo tiene B en el ergómetro o en los Box Jumps. Dos bloques con scoring acumulado — el equipo que gestiona mejor los tiempos de A suma más reps de B.</strong><br><br>El Run de 400m juntos al inicio de cada set es el elemento de cohesión del equipo — ambos atletas llegan al primer split juntos. Los 30 Synchro Air Squats en el Bloque 2 son el momento de comunicación no verbal: ambos atletas deben coordinarse sin hablar. Los KB Swings de A deben completarse en menos de 45" para que B tenga más de 45" de Box Jumps. El atleta en Box Jumps debe ir a tope — no es un descanso, es donde se construye el score. Target: 15-20 Cal y 20-25 Box Jumps por set para equipos de nivel intermedio.</div>
+<div class="fbc"><strong>Emparejar atletas de nivel similar.</strong> KB Swings: Russian o American — decidir antes y ser consistente. Burpees: "tu partner acaba de darlo todo, no le hagas esperar".</div>
 </div></div>
+</section>
 
-<!-- ===== MARTES ===== -->
-
-<div class="day-header"><h2 class="day-name">MARTES</h2><p class="day-date">31/03/2026</p></div>
-
-<div class="pc h"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">HALTEROFILIA</span></div>
-<div class="ws"><div class="st">A) Clean Deadlift + Clean Pull — Build to Super Heavy Complex (10')</div><div class="sc">
-<p>3 Clean Deadlifts + 3 Clean Pulls (add weight every 2 minutes)</p>
-<p><em>Build as heavy as possible in 10'. The DL establishes perfect position; the Pull adds bar acceleration. Both movements prepare the CNS for max Clean work.</em></p>
-</div></div>
-<div class="ws"><div class="st">B) On the Minute For 10' (10 Sets)</div><div class="sc">
-<p>1 Snatch Pull + 1 Low Hang Squat Snatch (build in weight)</p>
-<p><em>The Snatch Pull primes the bar path; the Low Hang Squat Snatch confirms the catch from the most difficult position. Start at 75%, build to 88–92% by minute 10.</em></p>
-</div></div>
-<div class="ws"><div class="st">C) Hang Squat Clean Progression — Every 90" For 15' (10 Sets)</div><div class="sc">
-<p><strong>Sets 1–3:</strong> 3 Hang Squat Cleans</p>
-<p><strong>Sets 4–6:</strong> 2 Hang Squat Cleans</p>
-<p><strong>Sets 7–10:</strong> 1 Hang Squat Clean</p>
-<p><em>Build weight as reps decrease. Arrive at a heavy single by set 10.</em></p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Martes de volumen técnico máximo — los tres bloques cubren los patrones de tirón completos: Clean Deadlift + Pull (activación de posición y velocidad), Snatch Pull + Low Hang Squat Snatch (patrón de Snatch desde la posición más difícil), Hang Squat Clean en escalera descendente (Clean con volumen decreciente y peso creciente).</strong><br><br>El Clean Deadlift + Pull en el bloque A es el calentamiento más honesto del SNC que existe para un día de mucho volumen de tirón: el DL lento enseña la posición; el Pull añade la aceleración. El atleta que hace el Pull correctamente tiene los hombros por delante de la barra hasta la segunda rodilla y los codos altos al final. En el bloque B, el Low Hang Squat Snatch es el drill más exigente de timing: sin el impulso del primer tirón, todo el poder viene del segundo. Si el atleta "cuela" la barra en lugar de tirarla, el Low Hang lo expone inmediatamente. El bloque C de Hang Squat Cleans en escalera es el cierre de la sesión — el atleta llega fatigado técnicamente al set 7-10, que es exactamente donde se forja la calidad bajo presión.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc c"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
-<div class="ws"><div class="st">A) Every 90" For 15' (10 Sets Alternating)</div><div class="sc">
-<p><strong>Set 1:</strong> 1 Back Squat (build to heavy single — 5 attempts across 10 sets)</p>
-<p><strong>Set 2:</strong> 5 Weighted Pull-Ups (add weight if possible — tempo 3-1-1)</p>
-<p><em>3 minutes total rest between Back Squat attempts. Weighted Pull-Ups are the active rest between squat sets.</em></p>
-</div></div>
-<div class="ws"><div class="st">B) CROSSFIT QUARTERFINALS #2</div><div class="sc">
-<div class="qf-badge">🏆 CROSSFIT QUARTERFINALS 2026 — WOD #2</div>
-<p><strong>For Time — Cap: 15 minutes</strong></p>
-<p>80 Dumbbell Hang Squat Cleans</p>
-<p>40 Bar Muscle-Ups</p>
-<p><em>♀ 15 kg / ♂ 22.5 kg</em></p>
-<p><em>Partition reps as needed. DB HSC and BMU can be interleaved in any order.</em></p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>El bloque A de Back Squat + Weighted Pull-Ups es la preparación de fuerza de pierna y pulling vertical para los Quarterfinals de la semana. Los 5 intentos de Back Squat pesado con 3' de descanso real permiten construir hacia un máximo sin quemar el SNC.</strong><br><br>En el QF #2, los 80 DB Hang Squat Cleans + 40 Bar Muscle-Ups son un WOD de gestión de fatiga muscular específica: el DB HSC carga los cuádriceps, glúteos y front rack; el Bar MU carga el lat, trapecio y core. La estrategia más común es empezar con sets de 10-15 DB HSC, hacer 5-8 BMU, y rotar hasta agotar. El atleta que intenta hacer 20 DB HSC unbroken al inicio llegará muerto a los BMU.<br><br>El cuello de botella real son los Bar Muscle-Ups — el grip después de 80 DB HSC es el factor limitante más subestimado. El atleta debe chalk obligatorio antes de empezar los BMU. Para atletas sin BMU: escalar a C2B Pull-Ups × 2 (80 C2B). El formato "anyhow" permite cualquier combinación — el coach debe ayudar a cada atleta a planificar su estrategia antes de empezar. Registrar score.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc e"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
-<div class="wt e">"HOLY GRINDER"</div>
-<div class="ws"><div class="st">10 Rounds For Time — Cap 40'</div><div class="sc">
-<p>• 100 Double Unders (Scale: 200 Single Unders)</p>
-<p>• 200m Run</p>
-<p>• 3 Burpees</p>
-<p>• 6 Thrusters (40/27.5 kg)</p>
-<p>• 9 Push-Ups</p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>10 rondas con 5 movimientos distintos — la estructura 3-6-9 de Burpees-Thrusters-Push-Ups dentro de cada ronda crea una progresión de empuje acumulativa. El WOD tiene 1000 DU + 2000m Run + 30 Burpees + 60 Thrusters + 90 Push-Ups al completar — es un trabajo de volumen real.</strong><br><br>Los 100 DU de apertura son el "impuesto de coordinación" de cada ronda — el atleta que los hace en 1:30-2:00 tiene un ritmo manejable para el resto. El Run de 200m es el "descanso aeróbico" entre los DU y el mini-circuito de fuerza. Los 3 Burpees son mínimos por diseño — no agotan, pero suman 30 al final. Los 6 Thrusters a 40/27.5kg son el elemento técnico: con el core ya cargado por los DU y el Run, el Thruster requiere atención. Los 9 Push-Ups cierran cada ronda — el atleta que llega al Push-Up del round 8 sin haber paceado lo paga aquí. Target: sub-36'. Escalar DU a 60 intentos si el atleta no tiene fluidez.</div>
-</div></div>
-
-<!-- ===== MIÉRCOLES ===== -->
-
-<div class="day-header"><h2 class="day-name">MIÉRCOLES</h2><p class="day-date">01/04/2026</p></div>
-
-<div class="pc h"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">HALTEROFILIA</span></div>
-<div class="ws"><div class="st">A) 5 Sets For Quality</div><div class="sc">
-<p>12 T-Raises (light DB — retract scapula, horizontal plane, slow eccentric)</p>
-<p>6 Muscle Snatches (bar speed — triple extension before arm pull, consistent bar path)</p>
-<p><em>This is not a strength block — it is shoulder health and Snatch pattern activation before the heavy work.</em></p>
-</div></div>
-<div class="ws"><div class="st">B) On the Minute For 10' (10 Sets)</div><div class="sc">
-<p><strong>Odd minutes:</strong> 5 Hang Squat Snatches @ 72–78%</p>
-<p><strong>Even minutes:</strong> 1 Power Clean + 5 Jerks @ 70–75%</p>
-<p><em>The Snatch minutes build receiving speed; the Clean + 5 Jerks minutes build Jerk endurance and consistency under fatigue.</em></p>
-</div></div>
-<div class="ws"><div class="st">C) Accessories — Lower Body</div><div class="sc">
-<p>3 Sets:</p>
-<p>• 10 Heavy Walking Lunges (DB or barbell — 50–60% BW total load)</p>
-<p>• 8/8 Heavy Bulgarian Split Squats (rear foot elevated — drive through heel)</p>
-<p>• 10 Nordic Hamstring Curls (injury prevention — eccentric only if needed)</p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Miércoles de Snatch y Jerk en el mismo EMOM — el atleta trabaja los dos patrones de overhead en alternancia dentro de la misma sesión. El bloque A de T-Raises + Muscle Snatches es la activación de hombro más específica que existe antes de un trabajo de overhead intenso.</strong><br><br>En el EMOM B, los 5 Hang Squat Snatches por minuto son un volumen técnico alto — el atleta que sale al 80% se destruye antes del minuto 5. El coach debe calibrar el peso individual: si en el minuto 4 el atleta empieza a "press" la barra en lugar de "drop", el peso está mal. Los 5 Jerks seguidos en el minuto par son el drill de resistencia de Jerk más valioso: el primero es fácil, el quinto con el sistema cardíaco activo y la pierna cargada es el que construye al atleta de competición.<br><br>Los accesorios C son Lower Body pesado — los Lunges y Bulgarian Squats a este nivel de carga son difíciles. Los Nordic Hamstring Curls son prevención de isquiotibial no negociable en una semana de tanto volumen de Clean y Snatch. El atleta que se los salta es el que se lesiona a final de temporada.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc c"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
-<div class="wt c">"TRAITOR'S WEDNESDAY" — DOBLE QUARTERFINALS</div>
-<div class="ws"><div class="st">A) CROSSFIT QUARTERFINALS #3</div><div class="sc">
-<div class="qf-badge">🏆 CROSSFIT QUARTERFINALS 2026 — WOD #3</div>
-<p><strong>For Time — Cap: 12 minutes</strong></p>
-<div class="ladder-row"><div class="ladder-label">3 ROUNDS @ WEIGHT 1 (lightest)</div><p>50 Double Unders + 10 Deadlifts</p><p><em>♀ 70 kg / ♂ 102 kg</em></p></div>
-<div class="ladder-row dl2"><div class="ladder-label">2 ROUNDS @ WEIGHT 2</div><p>50 Double Unders + 10 Deadlifts</p><p><em>♀ 83 kg / ♂ 125 kg</em></p></div>
-<div class="ladder-row dl3"><div class="ladder-label">1 ROUND @ WEIGHT 3 (heaviest)</div><p>50 Double Unders + 10 Deadlifts</p><p><em>♀ 102 kg / ♂ 143 kg</em></p></div>
-</div></div>
-<div class="ws"><div class="st">Then — CROSSFIT QUARTERFINALS #4</div><div class="sc">
-<div class="qf-badge">🏆 CROSSFIT QUARTERFINALS 2026 — WOD #4</div>
-<p><strong>For Time — Cap: 20 minutes</strong></p>
-<p>• 1000m Row</p>
-<p>• 30 Clean &amp; Jerks (♀ 43 kg / ♂ 61 kg)</p>
-<p>• 1000m Row</p>
-<p>• 30 Strict Handstand Push-Ups</p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>"Traitor's Wednesday" — dos Quarterfinals en una sola sesión. El miércoles traiciona al atleta que pensaba que la semana iba bajando de intensidad. Este es el día más exigente de la semana.</strong><br><br>En el QF #3, la escalera de Deadlift con DU intercalados es una trampa de gestión: el primer round con 70/102kg parece fácil y el atleta tiende a ir demasiado rápido. El tercer peso (102/143kg) en el round 6 es donde se paga todo. Estrategia: los DU a ritmo constante sin parar, el DL a singles si es necesario en el último peso. El tiempo cap de 12' es agresivo — el atleta que pierde en los DU no llega al peso final.<br><br>El QF #4 después del QF #3 es brutal por la secuencia: el primer Row de 1000m llega con las piernas ya cargadas del DL. Los 30 C&J a 61/43kg deben ser Touch &amp; Go los primeros 15 si el atleta tiene el patrón — en competición, los singles son el suicidio táctico. Los 30 Strict HSPU al final son el boss de la sesión: sin kipping, pura fuerza de hombro cuando el cuerpo ya está destruido. Para atletas sin Strict HSPU: escalar a 15 Kipping HSPU o 30 DB Strict Press pesado. Registrar ambos scores por separado.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc e"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
-<div class="wt e">"JUDAS"</div>
-<div class="ws"><div class="st">Part A — Every 90" For 18' (12 Sets × 3 Stations Rotating)</div><div class="sc">
-<p><strong>Set 1:</strong> 40" Echo Bike Sprint (max effort)</p>
-<p><strong>Set 2:</strong> 100m Run Sprint</p>
-<p><strong>Set 3:</strong> 5 Devil's Press (22.5/15 kg)</p>
-<p><em>Complete the set within 90". Rest = remaining time after each set.</em></p>
-</div></div>
-<div class="ws"><div class="st">— Rest 2 Minutes —</div></div>
-<div class="ws"><div class="st">Part B — "The Betrayal" — For Time</div><div class="sc">
-<p>100 Sit-Ups</p>
-<p>20 Burpees</p>
-<p>200 Russian Twists (med ball 9/6 kg)</p>
-<p>20 Burpees</p>
-<p>300 Flutter Kicks (each leg = 1 rep)</p>
-<p>20 Burpees</p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>"Judas" — el nombre lo dice todo. La Part A parece manejable: sprints de 40" en Bike, Run de 100m y 5 Devil's Press alternando cada 90". Pero después de 18 minutos de intervalos, la Part B revela la traición: 660 reps de core puro intercalados con 60 Burpees.</strong><br><br>En la Part A, los 40" de Bike sprint deben ser máximo esfuerzo — no ritmo sostenible. Si el atleta puede "mantener una conversación" en la Bike, no está trabajando lo suficiente. Los 100m de Run sprint son literalmente un sprint — no un trote de calentamiento. Los 5 Devil's Press cierran el set con full body explosivo. Si el tiempo se agota antes de terminar los 5, el peso es demasiado alto.<br><br>La Part B "The Betrayal" es el castigo de la sesión. Los 300 Flutter Kicks son el elemento que más sorprende — contando como 1 rep cada patada (no cada par), son 150 movimientos bilaterales. El core llega completamente destruido de los 200 Russian Twists anteriores. Los 60 Burpees intercalados son la "puntuación de transición" — el atleta que los lleva mal tiene un problema de resistencia de pushing que merece atención.</div>
-</div></div>
-
-<!-- ===== JUEVES SANTO ===== -->
-
-<div class="day-header" style="background:linear-gradient(135deg,#1a1025,#0f0a1a);border:1px solid rgba(180,140,255,.2)">
-<h2 class="day-name" style="color:rgba(200,160,255,.8);font-size:1.5rem">JUEVES SANTO</h2>
-<p class="day-date">02/04/2026</p>
-</div>
-<div class="holy-day">
-<div class="holy-title">TIEMPO DE ORACIÓN Y REFLEXIÓN</div>
-<p class="holy-text">El box descansa hoy. No hay entrenamiento programado. Jueves Santo es un día de pausa, de gratitud y de recogimiento. El cuerpo necesita descanso tanto como necesita trabajo — y hay días en que la mayor fortaleza es saber parar.</p>
-<p class="holy-verse">"Descansa en el Señor y espera en Él." — Salmo 37:7</p>
+<footer><p class="ft">CROSSFIT VALLECAS — PROGRAMACIÓN SEMANAL COMPLETA | 3 TRACKS | 6 DÍAS | 18 SESIONES (semana 15)</p></footer>
 </div>
 
-<!-- ===== VIERNES SANTO ===== -->
+<script>
+function showDay(id){
+  document.querySelectorAll('.day-section').forEach(s=>s.classList.remove('active'));
+  document.getElementById('day-'+id).classList.add('active');
+  document.querySelectorAll('.day-nav button').forEach(b=>b.classList.remove('active'));
+  event.currentTarget.classList.add('active');
+  window.scrollTo({top:document.querySelector('.day-nav').offsetTop,behavior:'smooth'});
+}
+function tf(b){b.classList.toggle('active');b.nextElementSibling.classList.toggle('show')}
+// Open first track of visible day by default
+document.querySelectorAll('.day-section').forEach(day=>{
+  const cards=day.querySelectorAll('.track-card');
+  cards.forEach((c,i)=>{if(i===0)c.classList.add('open');else c.classList.remove('open')});
+});
+</script>
 
-<div class="day-header" style="background:linear-gradient(135deg,#1a1025,#0f0a1a);border:1px solid rgba(180,140,255,.2);margin-top:8px">
-<h2 class="day-name" style="color:rgba(200,160,255,.8);font-size:1.5rem">VIERNES SANTO</h2>
-<p class="day-date">03/04/2026</p>
-</div>
-<div class="holy-day">
-<div class="holy-title">AYUNO Y SILENCIO</div>
-<p class="holy-text">Viernes Santo — día de ayuno, de silencio y de duelo. No se entrena. No hay barra, no hay cronómetro, no hay WOD. Solo quietud. Los que entrenan hoy son los que mañana volverán al box con más hambre que nunca.</p>
-<p class="holy-verse">"El silencio es la voz más poderosa." — Anónimo</p>
-</div>
-
-<!-- ===== SÁBADO ===== -->
-
-<div class="day-header"><h2 class="day-name">SÁBADO</h2><p class="day-date">04/04/2026</p></div>
-
-<div class="pc h"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">HALTEROFILIA</span></div>
-<div class="ws"><div class="st">A) Tall Snatch — Skills &amp; Drills</div><div class="sc">
-<p>5 × 5 Tall Snatches @ 50% — as fast as possible each round</p>
-<p><em>No leg drive — pure speed under the bar. Elbows high and out, then drop. The athlete who hesitates gets pinned. Reset completely between reps.</em></p>
-</div></div>
-<div class="ws"><div class="st">B) Snatch Complex — 5 Rounds For Quality</div><div class="sc">
-<p>2 Muscle Snatches + 2 Snatch Balances + 2 Overhead Squats</p>
-<p><em>Build weight across rounds. The complex trains bar path (Muscle), drop speed (Balance), and positional strength (OHS) in one unbroken unit.</em></p>
-</div></div>
-<div class="ws"><div class="st">C) Build a Heavy Triple Cluster</div><div class="sc">
-<p>Every 2' For 10' (5 Sets): 3 Clusters (1 Hang Clean + 1 Thruster = 1 Cluster)</p>
-<p><em>Build to heaviest triple possible. The Cluster is the most demanding compound movement — the transition from Clean catch to Thruster drive must be seamless.</em></p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>Sábado de Semana Santa — la vuelta al trabajo después de Jueves y Viernes de pausa. La energía del box después de dos días de descanso debería ser alta: aprovecharla.</strong><br><br>El Tall Snatch al 50% a velocidad máxima es el ejercicio de apertura perfecto: sin carga real, todo el foco va en la velocidad de caída. El atleta que hace el Tall Snatch lento tiene miedo de la posición — este drill elimina ese miedo porque el peso es mínimo. 5 × 5 reps dan 25 repeticiones de velocidad de entrada. El complejo de la parte B (Muscle + Balance + OHS) trabaja las tres fases del Snatch overhead en secuencia: el Muscle entrena el path de la barra; el Balance entrena la velocidad de caída; el OHS entrena la posición final. Unido en el mismo set sin soltar la barra, el atleta experimenta la conexión completa del movimiento.<br><br>El Triple Cluster de la parte C es el movimiento más exigente del sábado: 3 repeticiones de Hang Clean + Thruster sin soltar la barra, con peso creciente hasta el máximo del día. El primer Cluster de cada set es el más limpio; el tercero es donde se decide si el peso es el correcto. Si el atleta no puede hacer los 3 con técnica, el peso baja.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc c"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">CROSSFIT</span></div>
-<div class="wt c">"RESURRECTION" — TRIPLE AMRAP BATTERY</div>
-<div class="ws"><div class="st">A) AMRAP 7' — "Block 1: Water"</div><div class="sc">
-<div class="amrap-block"><div class="amrap-label">OPENING EFFORT</div>
-<p>1000m Row — then in remaining time:</p>
-<p>Max Rounds: 5 Burpees Over the Rower + 10 Air Squats</p>
-</div>
-<p><em>— Rest until Minute 10 —</em></p>
-</div></div>
-<div class="ws"><div class="st">B) AMRAP 7' — "Block 2: Fire"</div><div class="sc">
-<div class="amrap-block"><div class="amrap-label">OPENING EFFORT</div>
-<p>2km Bike Erg (or 50 Echo Bike Calories) — then in remaining time:</p>
-<p>Max Rounds: 5 KB Thrusters (2×20/16 kg) + 10 KB Deadlifts</p>
-</div>
-<p><em>— Rest until Minute 20 —</em></p>
-</div></div>
-<div class="ws"><div class="st">C) AMRAP 7' — "Block 3: Earth"</div><div class="sc">
-<div class="amrap-block"><div class="amrap-label">OPENING EFFORT</div>
-<p>1000m Run — then in remaining time:</p>
-<p>Max Rounds: 5 Hang Squat Cleans (50/35 kg) + 10 Push-Ups</p>
-</div>
-<p><em>— Rest until Minute 30 —</em></p>
-</div></div>
-<div class="ws"><div class="st">D) Build a Heavy Power Clean &amp; Jerk — 5 Minutes</div><div class="sc">
-<p>Every 60" For 5': 1 Power Clean &amp; Jerk (add weight each minute)</p>
-<p><em>Finish the session with 5 attempts building to a heavy single. The previous battery loads the legs for the Clean — it will feel heavier than it is.</em></p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>"Resurrection" — la vuelta de los muertos. Después de Jueves y Viernes sin entrenamiento, el sábado el box resucita. El triple AMRAP Battery es el formato perfecto para el regreso: cada bloque tiene un opening effort largo (Row, Bike, Run) y luego un AMRAP de movimientos más cortos con el sistema cardíaco ya abierto.</strong><br><br>El formato es inteligente logísticamente: Block 1 usa el Row, Block 2 usa la Bike, Block 3 usa la pista de carrera — tres equipamientos distintos sin interferencia. El coach asigna los grupos al inicio para que la rotación sea fluida. El atleta que intenta hacer el 1000m Row en tiempo de PR llegará sin piernas al AMRAP de Burpees + Air Squats. La clave es gestionar el opening effort al 85-90% para tener entre 2-3 minutos de AMRAP real.<br><br>El bloque D de PC&amp;J en 5 minutos es el cierre de la sesión con el cuerpo ya completamente activado — el atleta que ha trabajado los tres bloques llega al barbell con el sistema cardíaco y neuromuscular en pico. 5 intentos de 1 rep en 5 minutos es el formato más eficiente para construir un heavy single en poco tiempo. El atleta no debe pensar en el peso anterior — solo en el siguiente rep.</div>
-</div></div>
-<div class="ps"></div>
-
-<div class="pc e"><div class="pcon">
-<div class="ptitle"><div class="pdot"></div><span class="pname">ENDURANCE</span></div>
-<div class="wt e">"SATURDAY OF SILENCE" — PAIRS</div>
-<div class="material-note">⚙ COACHES: Wall Balls en parejas — 1 ball por pareja. Synchro Burpees: ambos simultáneamente. Plate step-ups: alternos, una plate compartida.</div>
-<div class="ws"><div class="st">3 Rounds For Time — Partner Format (Cap 38')</div><div class="sc">
-<p>• 200m Run together (both athletes, do not separate)</p>
-<p>• 50 Partner Wall Ball Shots (9/6 kg — one ball, relay or synchro)</p>
-<p>• 200m Run together</p>
-<p>• 50 Synchro Burpees (both athletes simultaneously)</p>
-<p>• 200m Run together</p>
-<p>• 50 Alt DB Box Step-Ups with plate (20/10 kg overhead — 25 each)</p>
-</div></div>
-<button class="fb" onclick="tf(this)"><span>FEEDBACK PARA COACHES</span><svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg></button>
-<div class="fbc"><strong>"Saturday of Silence" — el nombre contrasta con el trabajo real: 3 rounds de partner WOD después de dos días de silencio. La vuelta al entrenamiento en formato de pareja crea el contexto perfecto de comunidad y de reencuentro después de Semana Santa.</strong><br><br>Los 200m Run juntos en cada transición son el elemento ritual del WOD: ambos atletas corren al mismo ritmo, no se separan. Es la firma del sábado de pareja — el equipo que no corre junto no está haciendo el WOD correctamente. Los 50 Partner Wall Balls pueden hacerse en relay (A lanza, B agarra) o sincronizados (ambos a la vez con dos balls) — el coach decide según el espacio y el material disponible. Los 50 Synchro Burpees son el elemento de mayor exigencia física y de coordinación: ambos atletas tocan el suelo y saltan al mismo tiempo — sin trampa posible. Los Box Step-Ups con plate overhead son el cierre de fuerza y movilidad: 25 reps por atleta con carga overhead es un trabajo de estabilidad real. El pie sobre el box debe ser completo, la extensión de cadera completa en cada rep. Target por round: 10-12 minutos. Cerrar la semana con la energía que merece el regreso de Semana Santa.</div>
-</div></div>
-
-<footer><p class="ft">CROSSFIT VALLECAS — SEMANA 14: IRON DEVOTION | SEMANA SANTA 2026</p></footer>
-</div>
-<script>function tf(b){b.classList.toggle('active');b.nextElementSibling.classList.toggle('show')}</script>
-</body></html>
+</body>
+</html>
