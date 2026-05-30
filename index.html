@@ -3,149 +3,54 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CFVK · Semana 22 · TROY BURN</title>
+<title>CFVK · Semana 23 · PHOENIX</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800;900&family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --bg-primary: #05050a;
-  --bg-card: rgba(18, 18, 26, 0.85);
-  --accent-cf: #ff2d55;
-  --accent-end: #00d4ff;
-  --accent-halt: #00ff88;
-  --accent-bs: #ff8800;
-  --accent-gold: #ffb800;
-  --text: #e8e8f0;
-  --text-dim: #a0a0b5;
-  --text-faint: #6a6a85;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.16);
-
-  /* CORRECCIÓN NEBULA READ: Contraste optimizado para fondo oscuro */
-  --read-bg: rgba(22, 22, 33, 0.95);
-  --read-bg-card: rgba(30, 30, 45, 0.9);
-  --read-bg-soft: rgba(26, 26, 38, 0.95);
-  --read-text: #ffffff;
-  --read-text-dim: #cccccc;
-  --read-text-faint: #888899;
-  --read-border: rgba(255, 255, 255, 0.1);
-  --read-border-strong: rgba(255, 255, 255, 0.2);
-}
-
+:root{--bg-primary:#05050a;--bg-card:rgba(18,18,26,0.85);--accent-cf:#ff2d55;--accent-end:#00d4ff;--accent-halt:#00ff88;--accent-bs:#ff8800;--accent-gold:#ffb800;--text:#e8e8f0;--text-dim:#a0a0b5;--text-faint:#6a6a85;--border:rgba(255,255,255,0.08);--border-strong:rgba(255,255,255,0.16);--read-bg:rgba(22,22,33,0.95);--read-bg-card:rgba(30,30,45,0.9);--read-bg-soft:rgba(26,26,38,0.95);--read-text:#ffffff;--read-text-dim:#cccccc;--read-text-faint:#888899;--read-border:rgba(255,255,255,0.1);--read-border-strong:rgba(255,255,255,0.2)}
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{
-  background: var(--bg-primary);
-  color: var(--text);
-  font-family: 'Rajdhani', sans-serif;
-  min-height: 100vh;
-  overflow-x: hidden;
-  line-height: 1.45;
-}
-
-/* Ajustes de color para máxima legibilidad en dispositivos móviles */
-.objective-box.c { border-color: rgba(255, 45, 85, 0.4); color: #ffccd5; }
-.objective-box.h { border-color: rgba(0, 255, 136, 0.4); color: #ccffd9; }
-.objective-box.e { border-color: rgba(0, 212, 255, 0.4); color: #ccf6ff; }
-.objective-box.b { border-color: rgba(255, 136, 0, 0.4); color: #ffebd4; }
-
-.block-title { color: #ffffff !important; }
-.block-content { color: #e8e8f0 !important; }
-.block-content li { color: #e8e8f0 !important; }
-.block-content .sets { color: #a0a0b5 !important; }
-.block-content .load { color: var(--accent-gold) !important; }
-
-.stim { background: rgba(255, 184, 0, 0.08); border-left: 3px solid var(--accent-gold); color: #ffe6a3; }
-.stim-label { color: var(--accent-gold); }
-
-.scale-card { background: var(--read-bg-card); border: 1px solid var(--read-border); color: #ffffff; }
-.scale-card.rx strong { color: var(--accent-gold); }
-.scale-card.sc strong { color: #a0a0b5; }
-
-.coach-head { color: var(--accent-gold); background: var(--read-bg-card); }
-.coach-block { background: rgba(255, 255, 255, 0.03); border: 1px solid var(--read-border); margin-bottom: 10px; padding: 12px 14px; border-radius: 5px; border-left: 3px solid; }
-.coach-block:last-child { margin-bottom: 0; }
-.coach-block.tech { border-left-color: var(--accent-gold); }
-.coach-block.geo { border-left-color: var(--accent-end); }
-.coach-block.scale { border-left-color: var(--accent-cf); }
-.coach-block.prog { border-left-color: var(--accent-halt); }
-
-.coach-block-label { font-family: 'Orbitron', sans-serif; font-size: 10px; font-weight: 700; letter-spacing: .3em; text-transform: uppercase; display: block; margin-bottom: 8px; }
-.coach-block.tech .coach-block-label { color: var(--accent-gold); }
-.coach-block.geo .coach-block-label { color: var(--accent-end); }
-.coach-block.scale .coach-block-label { color: var(--accent-cf); }
-.coach-block.prog .coach-block-label { color: var(--accent-halt); }
-
-.coach-block-text { color: #e8e8f0; font-size: 13px; line-height: 1.6; }
-.coach-block-text em { color: var(--accent-gold); font-style: italic; font-weight: 600; }
-.coach-block-text strong { color: #ffffff; font-weight: 700; }
-
-/* ═══════════════ FONDO ESPACIAL 5 CAPAS ═══════════════ */
-.space{
-position:fixed;inset:0;z-index:-5;
-background:
-radial-gradient(ellipse at 15% 20%, rgba(255,45,85,.08) 0%, transparent 45%),
-radial-gradient(ellipse at 85% 15%, rgba(0,212,255,.08) 0%, transparent 45%),
-radial-gradient(ellipse at 50% 85%, rgba(0,255,136,.06) 0%, transparent 50%),
-radial-gradient(ellipse at 20% 70%, rgba(255,184,0,.05) 0%, transparent 40%),
-linear-gradient(180deg, #05050a 0%, #07081a 50%, #05050a 100%);
-}
-.nebula{
-position:fixed;inset:0;z-index:-4;
-background:
-radial-gradient(circle at 30% 40%, rgba(255,184,0,.04) 0%, transparent 30%),
-radial-gradient(circle at 70% 60%, rgba(0,212,255,.05) 0%, transparent 35%);
-animation:nebulaDrift 40s ease-in-out infinite alternate;
-mix-blend-mode:screen;
-}
-@keyframes nebulaDrift{
-0%{transform:translate(0,0) scale(1)}
-100%{transform:translate(3%,-2%) scale(1.08)}
-}
-
+body{background:var(--bg-primary);color:var(--text);font-family:'Rajdhani',sans-serif;min-height:100vh;overflow-x:hidden;line-height:1.45}
+.objective-box.c{border-color:rgba(255,45,85,0.4);color:#ffccd5}
+.objective-box.h{border-color:rgba(0,255,136,0.4);color:#ccffd9}
+.objective-box.e{border-color:rgba(0,212,255,0.4);color:#ccf6ff}
+.objective-box.b{border-color:rgba(255,136,0,0.4);color:#ffebd4}
+.block-title{color:#ffffff !important}
+.block-content{color:#e8e8f0 !important}
+.block-content li{color:#e8e8f0 !important}
+.block-content .sets{color:#a0a0b5 !important}
+.block-content .load{color:var(--accent-gold) !important}
+.stim{background:rgba(255,184,0,0.08);border-left:3px solid var(--accent-gold);color:#ffe6a3}
+.stim-label{color:var(--accent-gold)}
+.scale-card{background:var(--read-bg-card);border:1px solid var(--read-border);color:#ffffff}
+.scale-card.rx strong{color:var(--accent-gold)}
+.scale-card.sc strong{color:#a0a0b5}
+.coach-head{color:var(--accent-gold);background:var(--read-bg-card)}
+.coach-block{background:rgba(255,255,255,0.03);border:1px solid var(--read-border);margin-bottom:10px;padding:12px 14px;border-radius:5px;border-left:3px solid}
+.coach-block:last-child{margin-bottom:0}
+.coach-block.tech{border-left-color:var(--accent-gold)}
+.coach-block.geo{border-left-color:var(--accent-end)}
+.coach-block.scale{border-left-color:var(--accent-cf)}
+.coach-block.prog{border-left-color:var(--accent-halt)}
+.coach-block-label{font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;letter-spacing:.3em;text-transform:uppercase;display:block;margin-bottom:8px}
+.coach-block.tech .coach-block-label{color:var(--accent-gold)}
+.coach-block.geo .coach-block-label{color:var(--accent-end)}
+.coach-block.scale .coach-block-label{color:var(--accent-cf)}
+.coach-block.prog .coach-block-label{color:var(--accent-halt)}
+.coach-block-text{color:#e8e8f0;font-size:13px;line-height:1.6}
+.coach-block-text em{color:var(--accent-gold);font-style:italic;font-weight:600}
+.coach-block-text strong{color:#ffffff;font-weight:700}
+.space{position:fixed;inset:0;z-index:-5;background:radial-gradient(ellipse at 15% 20%,rgba(255,45,85,.08) 0%,transparent 45%),radial-gradient(ellipse at 85% 15%,rgba(0,212,255,.08) 0%,transparent 45%),radial-gradient(ellipse at 50% 85%,rgba(0,255,136,.06) 0%,transparent 50%),radial-gradient(ellipse at 20% 70%,rgba(255,184,0,.05) 0%,transparent 40%),linear-gradient(180deg,#05050a 0%,#07081a 50%,#05050a 100%)}
+.nebula{position:fixed;inset:0;z-index:-4;background:radial-gradient(circle at 30% 40%,rgba(255,184,0,.04) 0%,transparent 30%),radial-gradient(circle at 70% 60%,rgba(0,212,255,.05) 0%,transparent 35%);animation:nebulaDrift 40s ease-in-out infinite alternate;mix-blend-mode:screen}
+@keyframes nebulaDrift{0%{transform:translate(0,0) scale(1)}100%{transform:translate(3%,-2%) scale(1.08)}}
 .stars-layer{position:fixed;inset:0;z-index:-3;pointer-events:none}
-.l1{
-background-image:
-radial-gradient(1px 1px at 10% 20%, #fff 100%, transparent),
-radial-gradient(1px 1px at 80% 30%, #fff 100%, transparent),
-radial-gradient(1px 1px at 30% 80%, #fff 100%, transparent),
-radial-gradient(1px 1px at 65% 65%, #fff 100%, transparent),
-radial-gradient(1px 1px at 90% 85%, #fff 100%, transparent),
-radial-gradient(1px 1px at 45% 15%, #fff 100%, transparent),
-radial-gradient(1px 1px at 22% 55%, #fff 100%, transparent),
-radial-gradient(1px 1px at 55% 45%, #fff 100%, transparent);
-background-size:100% 100%;
-opacity:.7;
-animation:drift1 120s linear infinite;
-}
-.l2{
-background-image:
-radial-gradient(1.5px 1.5px at 12% 35%, #fff 100%, transparent),
-radial-gradient(1.5px 1.5px at 70% 15%, #fff 100%, transparent),
-radial-gradient(1.5px 1.5px at 40% 70%, #fff 100%, transparent),
-radial-gradient(1.5px 1.5px at 85% 50%, #fff 100%, transparent),
-radial-gradient(1.5px 1.5px at 20% 90%, #fff 100%, transparent),
-radial-gradient(1.5px 1.5px at 60% 25%, #fff 100%, transparent);
-background-size:100% 100%;
-opacity:.5;
-animation:drift2 180s linear infinite;
-}
-.l3{
-background-image:
-radial-gradient(2px 2px at 25% 45%, #ff2d55 100%, transparent),
-radial-gradient(2px 2px at 75% 75%, #00d4ff 100%, transparent),
-radial-gradient(2px 2px at 50% 20%, #00ff88 100%, transparent),
-radial-gradient(2px 2px at 15% 75%, #ffb800 100%, transparent),
-radial-gradient(2px 2px at 88% 35%, #ff2d55 100%, transparent);
-background-size:100% 100%;
-opacity:.4;
-animation:drift3 240s linear infinite;
-}
+.l1{background-image:radial-gradient(1px 1px at 10% 20%,#fff 100%,transparent),radial-gradient(1px 1px at 80% 30%,#fff 100%,transparent),radial-gradient(1px 1px at 30% 80%,#fff 100%,transparent),radial-gradient(1px 1px at 65% 65%,#fff 100%,transparent),radial-gradient(1px 1px at 90% 85%,#fff 100%,transparent),radial-gradient(1px 1px at 45% 15%,#fff 100%,transparent),radial-gradient(1px 1px at 22% 55%,#fff 100%,transparent),radial-gradient(1px 1px at 55% 45%,#fff 100%,transparent);background-size:100% 100%;opacity:.7;animation:drift1 120s linear infinite}
+.l2{background-image:radial-gradient(1.5px 1.5px at 12% 35%,#fff 100%,transparent),radial-gradient(1.5px 1.5px at 70% 15%,#fff 100%,transparent),radial-gradient(1.5px 1.5px at 40% 70%,#fff 100%,transparent),radial-gradient(1.5px 1.5px at 85% 50%,#fff 100%,transparent),radial-gradient(1.5px 1.5px at 20% 90%,#fff 100%,transparent),radial-gradient(1.5px 1.5px at 60% 25%,#fff 100%,transparent);background-size:100% 100%;opacity:.5;animation:drift2 180s linear infinite}
+.l3{background-image:radial-gradient(2px 2px at 25% 45%,#ff2d55 100%,transparent),radial-gradient(2px 2px at 75% 75%,#00d4ff 100%,transparent),radial-gradient(2px 2px at 50% 20%,#00ff88 100%,transparent),radial-gradient(2px 2px at 15% 75%,#ffb800 100%,transparent),radial-gradient(2px 2px at 88% 35%,#ff2d55 100%,transparent);background-size:100% 100%;opacity:.4;animation:drift3 240s linear infinite}
 @keyframes drift1{from{transform:translateY(0)}to{transform:translateY(-100vh)}}
 @keyframes drift2{from{transform:translateY(0)}to{transform:translateY(-100vh)}}
 @keyframes drift3{from{transform:translateY(0)}to{transform:translateY(-100vh)}}
-
 .pulsars{position:fixed;inset:0;z-index:-2;pointer-events:none}
 .pulsar{position:absolute;width:3px;height:3px;border-radius:50%;animation:pulse 3s ease-in-out infinite}
 .pulsar.p1{top:12%;left:8%;background:#fff;box-shadow:0 0 8px 2px #fff,0 0 16px 4px rgba(255,45,85,.5);animation-delay:0s}
@@ -161,7 +66,6 @@ animation:drift3 240s linear infinite;
 .pulsar.p11{top:72%;left:5%;background:#fff;box-shadow:0 0 8px 2px #fff,0 0 16px 4px rgba(0,255,136,.5);animation-delay:1.4s}
 .pulsar.p12{top:28%;left:22%;background:#fff;box-shadow:0 0 8px 2px #fff,0 0 16px 4px rgba(255,184,0,.6);animation-delay:1.8s}
 @keyframes pulse{0%,100%{opacity:.3;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
-
 .comet{position:fixed;z-index:-1;pointer-events:none;width:2px;height:2px;border-radius:50%}
 .comet.c1{background:#ffb800;box-shadow:0 0 8px 2px #ffb800;animation:comet1 18s linear infinite;animation-delay:3s}
 .comet.c2{background:#ff2d55;box-shadow:0 0 8px 2px #ff2d55;animation:comet2 22s linear infinite;animation-delay:9s}
@@ -169,1966 +73,528 @@ animation:drift3 240s linear infinite;
 @keyframes comet1{0%{top:-5%;left:100%;opacity:0}5%{opacity:1}95%{opacity:1}100%{top:105%;left:-5%;opacity:0}}
 @keyframes comet2{0%{top:30%;left:-5%;opacity:0}5%{opacity:1}95%{opacity:1}100%{top:110%;left:60%;opacity:0}}
 @keyframes comet3{0%{top:-5%;left:40%;opacity:0}5%{opacity:1}95%{opacity:1}100%{top:70%;left:105%;opacity:0}}
-
-/* ═══════════════ LAYOUT ═══════════════ */
 .container{max-width:1200px;margin:0 auto;padding:24px 20px 80px}
-
-/* ═══════════════ MISSION PANEL ═══════════════ */
-.mission-panel{
-position:relative;
-padding:48px 28px 52px;
-background:
-radial-gradient(circle at 50% 0%, rgba(255,184,0,.10) 0%, transparent 60%),
-linear-gradient(180deg, rgba(18,18,26,.9) 0%, rgba(10,10,18,.7) 100%);
-border:1px solid var(--border-strong);
-border-radius:16px;
-text-align:center;
-overflow:hidden;
-box-shadow:0 0 80px rgba(255,184,0,.08), inset 0 0 60px rgba(0,0,0,.4);
-margin-bottom:24px;
-}
-.mission-panel::before{
-content:"";position:absolute;inset:0;
-background:linear-gradient(90deg, transparent 0%, rgba(255,45,85,.12) 50%, transparent 100%);
-opacity:.3;animation:scan 8s ease-in-out infinite;pointer-events:none;
-}
+.mission-panel{position:relative;padding:48px 28px 52px;background:radial-gradient(circle at 50% 0%,rgba(255,184,0,.10) 0%,transparent 60%),linear-gradient(180deg,rgba(18,18,26,.9) 0%,rgba(10,10,18,.7) 100%);border:1px solid var(--border-strong);border-radius:16px;text-align:center;overflow:hidden;box-shadow:0 0 80px rgba(255,184,0,.08),inset 0 0 60px rgba(0,0,0,.4);margin-bottom:24px}
+.mission-panel::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 0%,rgba(255,45,85,.12) 50%,transparent 100%);opacity:.3;animation:scan 8s ease-in-out infinite;pointer-events:none}
 @keyframes scan{0%,100%{transform:translateX(-100%)}50%{transform:translateX(100%)}}
-
-.meta-bar{
-display:flex;justify-content:space-between;align-items:center;
-font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.22em;
-color:var(--text-dim);margin-bottom:36px;flex-wrap:wrap;gap:12px;
-}
+.meta-bar{display:flex;justify-content:space-between;align-items:center;font-family:'Orbitron',sans-serif;font-size:11px;letter-spacing:.22em;color:var(--text-dim);margin-bottom:36px;flex-wrap:wrap;gap:12px}
 .meta-bar > div{display:flex;align-items:center;gap:8px}
-.meta-bar .status-dot{
-display:inline-block;width:6px;height:6px;border-radius:50%;
-background:var(--accent-gold);box-shadow:0 0 8px var(--accent-gold);
-animation:blink 2s ease-in-out infinite;
-}
+.meta-bar .status-dot{display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--accent-gold);box-shadow:0 0 8px var(--accent-gold);animation:blink 2s ease-in-out infinite}
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}
-
-.orbital-logo{
-width:120px;height:120px;margin:0 auto 28px;position:relative;
-animation:logoFloat 5s ease-in-out infinite;
-filter:drop-shadow(0 0 20px rgba(255,45,85,.65)) drop-shadow(0 0 40px rgba(255,45,85,.3));
-}
+.orbital-logo{width:120px;height:120px;margin:0 auto 28px;position:relative;animation:logoFloat 5s ease-in-out infinite;filter:drop-shadow(0 0 20px rgba(255,45,85,.65)) drop-shadow(0 0 40px rgba(255,45,85,.3))}
 .orbital-logo svg{width:100%;height:100%;position:relative;z-index:2}
-.orbital-logo::before{
-content:"";position:absolute;top:50%;left:50%;width:170%;height:170%;
-transform:translate(-50%,-50%);border-radius:50%;border:1px dashed rgba(255,45,85,.22);
-animation:orbitRing 22s linear infinite;pointer-events:none;
-}
-.orbital-logo::after{
-content:"";position:absolute;top:50%;left:50%;width:215%;height:215%;
-transform:translate(-50%,-50%);border-radius:50%;border:1px dotted rgba(0,212,255,.18);
-animation:orbitRing 36s linear infinite reverse;pointer-events:none;
-}
+.orbital-logo::before{content:"";position:absolute;top:50%;left:50%;width:170%;height:170%;transform:translate(-50%,-50%);border-radius:50%;border:1px dashed rgba(255,45,85,.22);animation:orbitRing 22s linear infinite;pointer-events:none}
+.orbital-logo::after{content:"";position:absolute;top:50%;left:50%;width:215%;height:215%;transform:translate(-50%,-50%);border-radius:50%;border:1px dotted rgba(0,212,255,.18);animation:orbitRing 36s linear infinite reverse;pointer-events:none}
 @keyframes logoFloat{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-6px) rotate(2deg)}}
 @keyframes orbitRing{to{transform:translate(-50%,-50%) rotate(360deg)}}
-
-.mission-title{
-font-family:'Orbitron',sans-serif;font-weight:900;
-font-size:clamp(48px, 9vw, 96px);line-height:.95;letter-spacing:.06em;color:#fff;
-text-shadow:0 0 40px rgba(255,184,0,.4), 2px 2px 0 rgba(255,45,85,.3), -2px -2px 0 rgba(0,212,255,.2);
-margin-bottom:10px;
-}
-.mission-sub{
-font-family:'Orbitron',sans-serif;font-weight:500;font-size:14px;
-letter-spacing:.4em;color:var(--text-dim);margin-bottom:18px;text-transform:uppercase;
-}
-.mission-tagline{
-font-family:'Rajdhani',sans-serif;font-weight:600;font-size:15px;
-letter-spacing:.1em;color:var(--accent-gold);text-transform:uppercase;margin-bottom:32px;
-}
-
+.mission-title{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(48px,9vw,96px);line-height:.95;letter-spacing:.06em;color:#fff;text-shadow:0 0 40px rgba(255,184,0,.4),2px 2px 0 rgba(255,45,85,.3),-2px -2px 0 rgba(0,212,255,.2);margin-bottom:10px}
+.mission-sub{font-family:'Orbitron',sans-serif;font-weight:500;font-size:14px;letter-spacing:.4em;color:var(--text-dim);margin-bottom:18px;text-transform:uppercase}
+.mission-tagline{font-family:'Rajdhani',sans-serif;font-weight:600;font-size:15px;letter-spacing:.1em;color:var(--accent-gold);text-transform:uppercase;margin-bottom:32px}
 .orbit-legend{display:flex;justify-content:center;gap:14px;flex-wrap:wrap}
-.legend-badge{
-padding:10px 18px;font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;
-letter-spacing:.24em;border:1px solid;border-radius:4px;background:rgba(0,0,0,.3);text-transform:uppercase;
-}
+.legend-badge{padding:10px 18px;font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;letter-spacing:.24em;border:1px solid;border-radius:4px;background:rgba(0,0,0,.3);text-transform:uppercase}
 .legend-badge.h{color:var(--accent-halt);border-color:var(--accent-halt);text-shadow:0 0 8px rgba(0,255,136,.5)}
 .legend-badge.c{color:var(--accent-cf);border-color:var(--accent-cf);text-shadow:0 0 8px rgba(255,45,85,.5)}
 .legend-badge.e{color:var(--accent-end);border-color:var(--accent-end);text-shadow:0 0 8px rgba(0,212,255,.5)}
 .legend-badge.b{color:var(--accent-bs);border-color:var(--accent-bs);text-shadow:0 0 8px rgba(255,136,0,.5)}
-
-/* ═══════════════ THESIS BLOCK ═══════════════ */
-.thesis{
-padding:24px 28px;background:rgba(18,18,26,.6);
-border:1px solid var(--border);border-left:3px solid var(--accent-gold);
-border-radius:8px;margin-bottom:28px;
-font-size:16px;line-height:1.6;color:#d0d0de;
-}
-.thesis-label{
-font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.3em;
-color:var(--accent-gold);margin-bottom:10px;text-transform:uppercase;
-}
-
-/* ═══════════════ CONSOLE NAV STICKY ═══════════════ */
-.console-nav{
-position:sticky;top:0;z-index:50;display:flex;gap:6px;
-padding:14px 8px;margin:-14px -8px 20px;
-background:rgba(5,5,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none;
-}
+.thesis{padding:24px 28px;background:rgba(18,18,26,.6);border:1px solid var(--border);border-left:3px solid var(--accent-gold);border-radius:8px;margin-bottom:28px;font-size:16px;line-height:1.6;color:#d0d0de}
+.thesis-label{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.3em;color:var(--accent-gold);margin-bottom:10px;text-transform:uppercase}
+.console-nav{position:sticky;top:0;z-index:50;display:flex;gap:6px;padding:14px 8px;margin:-14px -8px 20px;background:rgba(5,5,10,.92);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--border);overflow-x:auto;scrollbar-width:none}
 .console-nav::-webkit-scrollbar{display:none}
-.nav-btn{
-flex:1 1 0;min-width:54px;padding:10px 6px;
-background:rgba(18,18,26,.6);border:1px solid var(--border);border-radius:6px;
-color:var(--text-dim);font-family:'Orbitron',sans-serif;font-weight:700;
-font-size:10px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;
-transition:all .2s ease;display:flex;flex-direction:column;align-items:center;gap:4px;
-}
+.nav-btn{flex:1 1 0;min-width:54px;padding:10px 6px;background:rgba(18,18,26,.6);border:1px solid var(--border);border-radius:6px;color:var(--text-dim);font-family:'Orbitron',sans-serif;font-weight:700;font-size:10px;letter-spacing:.18em;text-transform:uppercase;cursor:pointer;transition:all .2s ease;display:flex;flex-direction:column;align-items:center;gap:4px}
 .nav-btn .day-num{font-size:8px;color:var(--text-faint);font-weight:500}
 .nav-btn:hover{border-color:var(--accent-gold);color:var(--text)}
-.nav-btn.active{
-background:var(--accent-gold);border-color:var(--accent-gold);color:#000;
-box-shadow:0 0 20px rgba(255,184,0,.4);
-}
+.nav-btn.active{background:var(--accent-gold);border-color:var(--accent-gold);color:#000;box-shadow:0 0 20px rgba(255,184,0,.4)}
 .nav-btn.active .day-num{color:#000;opacity:.6}
-
-/* ═══════════════ DAY BANNER ═══════════════ */
 .day{display:none;animation:fadeIn .4s ease}
 .day.active{display:block}
 @keyframes fadeIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
-
-.day-banner{
-position:relative;padding:22px 28px 22px 48px;margin-bottom:20px;
-background:linear-gradient(100deg, var(--accent-cf) 0%, #c41e4a 60%, #8b1537 100%);
-color:#fff;clip-path:polygon(0 0, 100% 0, 97% 100%, 0 100%);overflow:hidden;
-}
-.day-banner.hero-day{
-background:linear-gradient(100deg, #ffb800 0%, #c98f00 55%, #7a1030 100%);
-}
-.day-banner.murph-day{
-background:linear-gradient(100deg, #1a1a22 0%, #3a0a14 55%, #8b1537 100%);
-border:1px solid var(--accent-gold);
-}
-.day-banner::before{
-content:"";position:absolute;inset:0;
-background:repeating-linear-gradient(135deg, transparent 0, transparent 18px, rgba(0,0,0,.12) 18px, rgba(0,0,0,.12) 22px);
-pointer-events:none;
-}
-.day-banner-inner{
-position:relative;display:flex;justify-content:space-between;align-items:center;
-gap:16px;flex-wrap:wrap;
-}
+.day-banner{position:relative;padding:22px 28px 22px 48px;margin-bottom:20px;background:linear-gradient(100deg,var(--accent-cf) 0%,#c41e4a 60%,#8b1537 100%);color:#fff;clip-path:polygon(0 0,100% 0,97% 100%,0 100%);overflow:hidden}
+.day-banner.hero-day{background:linear-gradient(100deg,#ffb800 0%,#c98f00 55%,#7a1030 100%)}
+.day-banner.team-day{background:linear-gradient(100deg,#00d4ff 0%,#0a6e8c 55%,#8b1537 100%)}
+.day-banner::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(135deg,transparent 0,transparent 18px,rgba(0,0,0,.12) 18px,rgba(0,0,0,.12) 22px);pointer-events:none}
+.day-banner-inner{position:relative;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
 .day-title-block{display:flex;flex-direction:column;gap:4px}
-.day-title{
-font-family:'Orbitron',sans-serif;font-weight:900;
-font-size:clamp(20px, 5vw, 30px);letter-spacing:.08em;line-height:1;
-}
-.theme-tag{
-font-family:'Orbitron',sans-serif;font-size:10px;font-weight:500;
-letter-spacing:.34em;color:rgba(255,255,255,.75);text-transform:uppercase;
-}
-.mission-label{
-font-family:'Rajdhani',sans-serif;font-style:italic;font-weight:500;
-font-size:13px;color:rgba(255,255,255,.9);letter-spacing:.04em;
-text-align:right;max-width:50%;
-}
-
-/* ═══════════════ TRACK MODULE ═══════════════ */
-.module{
-background:var(--bg-card);border:1px solid var(--border);
-border-left-width:4px;border-radius:10px;margin-bottom:16px;
-overflow:hidden;backdrop-filter:blur(6px);transition:all .3s ease;
-}
+.day-title{font-family:'Orbitron',sans-serif;font-weight:900;font-size:clamp(20px,5vw,30px);letter-spacing:.08em;line-height:1}
+.theme-tag{font-family:'Orbitron',sans-serif;font-size:10px;font-weight:500;letter-spacing:.34em;color:rgba(255,255,255,.75);text-transform:uppercase}
+.mission-label{font-family:'Rajdhani',sans-serif;font-style:italic;font-weight:500;font-size:13px;color:rgba(255,255,255,.9);letter-spacing:.04em;text-align:right;max-width:50%}
+.module{background:var(--bg-card);border:1px solid var(--border);border-left-width:4px;border-radius:10px;margin-bottom:16px;overflow:hidden;backdrop-filter:blur(6px);transition:all .3s ease}
 .module.h{border-left-color:var(--accent-halt)}
 .module.c{border-left-color:var(--accent-cf)}
 .module.e{border-left-color:var(--accent-end)}
 .module.b{border-left-color:var(--accent-bs)}
-
-.module-header{
-display:flex;justify-content:space-between;align-items:center;
-padding:16px 22px;cursor:pointer;user-select:none;gap:12px;
-}
-.module-label{
-font-family:'Orbitron',sans-serif;font-weight:800;font-size:15px;
-letter-spacing:.24em;text-transform:uppercase;
-}
-
-/* ═══════════════ HALO NEÓN H/C/E/B ═══════════════ */
-.module.h .module-label{
-color:#aaffd1;
-text-shadow:0 0 4px #fff, 0 0 10px var(--accent-halt), 0 0 22px var(--accent-halt), 0 0 38px rgba(0,255,136,.55);
-filter:brightness(1.18);
-animation:neonFlicker 7s ease-in-out infinite;
-}
-.module.c .module-label{
-color:#ffb6c5;
-text-shadow:0 0 4px #fff, 0 0 10px var(--accent-cf), 0 0 22px var(--accent-cf), 0 0 38px rgba(255,45,85,.55);
-filter:brightness(1.18);
-animation:neonFlicker 7s ease-in-out infinite;
-}
-.module.e .module-label{
-color:#a8e9ff;
-text-shadow:0 0 4px #fff, 0 0 10px var(--accent-end), 0 0 22px var(--accent-end), 0 0 38px rgba(0,212,255,.55);
-filter:brightness(1.18);
-animation:neonFlicker 7s ease-in-out infinite;
-}
-.module.b .module-label{
-color:#ffd9a0;
-text-shadow:0 0 4px #fff, 0 0 10px var(--accent-bs), 0 0 22px var(--accent-bs), 0 0 38px rgba(255,136,0,.55);
-filter:brightness(1.18);
-animation:neonFlicker 7s ease-in-out infinite;
-}
-@keyframes neonFlicker{
-0%,100%{opacity:1}
-47%{opacity:1}
-48%{opacity:.78}
-49%{opacity:1}
-72%{opacity:1}
-73%{opacity:.85}
-74%{opacity:1}
-}
-
-.sub-label{
-font-family:'Rajdhani',sans-serif;font-weight:500;font-size:12px;
-color:var(--text-dim);letter-spacing:.08em;
-}
-.toggle-arrow{
-font-family:'Orbitron',sans-serif;font-size:16px;
-color:var(--text-dim);transition:transform .3s ease;
-}
+.module-header{display:flex;justify-content:space-between;align-items:center;padding:16px 22px;cursor:pointer;user-select:none;gap:12px}
+.module-label{font-family:'Orbitron',sans-serif;font-weight:800;font-size:15px;letter-spacing:.24em;text-transform:uppercase}
+.module.h .module-label{color:#aaffd1;text-shadow:0 0 4px #fff,0 0 10px var(--accent-halt),0 0 22px var(--accent-halt),0 0 38px rgba(0,255,136,.55);filter:brightness(1.18);animation:neonFlicker 7s ease-in-out infinite}
+.module.c .module-label{color:#ffb6c5;text-shadow:0 0 4px #fff,0 0 10px var(--accent-cf),0 0 22px var(--accent-cf),0 0 38px rgba(255,45,85,.55);filter:brightness(1.18);animation:neonFlicker 7s ease-in-out infinite}
+.module.e .module-label{color:#a8e9ff;text-shadow:0 0 4px #fff,0 0 10px var(--accent-end),0 0 22px var(--accent-end),0 0 38px rgba(0,212,255,.55);filter:brightness(1.18);animation:neonFlicker 7s ease-in-out infinite}
+.module.b .module-label{color:#ffd9a0;text-shadow:0 0 4px #fff,0 0 10px var(--accent-bs),0 0 22px var(--accent-bs),0 0 38px rgba(255,136,0,.55);filter:brightness(1.18);animation:neonFlicker 7s ease-in-out infinite}
+@keyframes neonFlicker{0%,100%{opacity:1}47%{opacity:1}48%{opacity:.78}49%{opacity:1}72%{opacity:1}73%{opacity:.85}74%{opacity:1}}
+.sub-label{font-family:'Rajdhani',sans-serif;font-weight:500;font-size:12px;color:var(--text-dim);letter-spacing:.08em}
+.toggle-arrow{font-family:'Orbitron',sans-serif;font-size:16px;color:var(--text-dim);transition:transform .3s ease}
 .module.open .toggle-arrow{transform:rotate(90deg)}
-
-.module-body{
-max-height:0;overflow:hidden;transition:max-height .5s ease;
-background:var(--read-bg);
-color:var(--read-text);
-}
+.module-body{max-height:0;overflow:hidden;transition:max-height .5s ease;background:var(--read-bg);color:var(--read-text)}
 .module.open .module-body{max-height:9999px}
 .module-inner{padding:18px 22px 22px;border-top:1px solid var(--read-border)}
-
-/* ═══════════════ BLOQUES INTERNOS ═══════════════ */
-.objective-box{
-padding:14px 16px;border:1px solid;border-radius:6px;margin-bottom:16px;
-font-size:14px;line-height:1.5;background:var(--read-bg-soft);
-}
-.objective-box strong{
-font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.26em;
-text-transform:uppercase;display:block;margin-bottom:4px;
-}
+.objective-box{padding:14px 16px;border:1px solid;border-radius:6px;margin-bottom:16px;font-size:14px;line-height:1.5;background:var(--read-bg-soft)}
+.objective-box strong{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.26em;text-transform:uppercase;display:block;margin-bottom:4px}
 .objective-box.h strong{color:#00aa5a}
 .objective-box.c strong{color:#c81e3c}
 .objective-box.e strong{color:#008cb4}
 .objective-box.b strong{color:#c86400}
-
 .block{margin-bottom:18px}
 .block:last-child{margin-bottom:0}
-.block-head{
-display:flex;justify-content:space-between;align-items:baseline;
-margin-bottom:8px;padding-bottom:6px;border-bottom:1px dashed var(--read-border-strong);
-gap:10px;flex-wrap:wrap;
-}
-.block-title{
-font-family:'Orbitron',sans-serif;font-weight:700;font-size:13px;
-letter-spacing:.18em;color:var(--read-text);text-transform:uppercase;
-}
-.block-time{
-font-family:'Orbitron',sans-serif;font-weight:700;font-size:11px;
-letter-spacing:.18em;color:var(--accent-gold);
-}
+.block-head{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:8px;padding-bottom:6px;border-bottom:1px dashed var(--read-border-strong);gap:10px;flex-wrap:wrap}
+.block-title{font-family:'Orbitron',sans-serif;font-weight:700;font-size:13px;letter-spacing:.18em;color:var(--read-text);text-transform:uppercase}
+.block-time{font-family:'Orbitron',sans-serif;font-weight:700;font-size:11px;letter-spacing:.18em;color:var(--accent-gold)}
 .block-content{font-size:15px;line-height:1.6;color:var(--read-text)}
 .block-content ul{list-style:none;padding:0}
 .block-content li{padding:3px 0;padding-left:18px;position:relative}
 .block-content li::before{content:"▸";position:absolute;left:0;color:var(--accent-gold);font-weight:700}
 .block-content .sets{color:var(--read-text-dim);font-size:13px;font-style:italic}
 .block-content .load{color:var(--accent-gold);font-weight:700}
-
-.stim{
-padding:10px 14px;margin:12px 0;
-background:rgba(255,184,0,.10);border-left:3px solid var(--accent-gold);
-border-radius:4px;font-size:13px;line-height:1.5;
-}
-.stim-label{
-font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:.3em;
-display:block;margin-bottom:3px;text-transform:uppercase;
-}
-
+.stim{padding:10px 14px;margin:12px 0;background:rgba(255,184,0,.10);border-left:3px solid var(--accent-gold);border-radius:4px;font-size:13px;line-height:1.5}
+.stim-label{font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:.3em;display:block;margin-bottom:3px;text-transform:uppercase}
 .scale-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
-.scale-card{
-padding:10px 12px;border-radius:5px;font-size:13px;line-height:1.45;
-}
-.scale-card strong{
-font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing: .24em;
-display:block;margin-bottom:6px;text-transform:uppercase;
-}
-
-.coach-toggle{
-margin-top:14px;border:1px solid var(--read-border);border-radius:5px;
-overflow:hidden;background:var(--read-bg-soft);
-}
-.coach-head{
-padding:10px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;
-font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.26em;
-text-transform:uppercase;
-}
+.scale-card{padding:10px 12px;border-radius:5px;font-size:13px;line-height:1.45}
+.scale-card strong{font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.24em;display:block;margin-bottom:6px;text-transform:uppercase}
+.coach-toggle{margin-top:14px;border:1px solid var(--read-border);border-radius:5px;overflow:hidden;background:var(--read-bg-soft)}
+.coach-head{padding:10px 14px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.26em;text-transform:uppercase}
 .coach-head .coach-arrow{transition:transform .2s ease}
 .coach-toggle.open .coach-arrow{transform:rotate(90deg)}
-.coach-content{
-max-height:0;overflow:hidden;transition:max-height .5s ease;
-padding:0 12px;
-}
-.coach-toggle.open .coach-content{
-max-height:4000px;padding:6px 12px 12px;
-}
-
-.hero-ribbon{
-padding:8px 14px;margin:0 0 14px;
-background:linear-gradient(90deg,rgba(255,184,0,.25),rgba(255,184,0,.10));
-border:1px solid var(--accent-gold);border-radius:4px;
-font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;
-letter-spacing:.26em;color:var(--accent-gold);text-align:center;
-text-transform:uppercase;animation:heroGlow 2.4s ease-in-out infinite;
-}
-@keyframes heroGlow{
-0%,100%{box-shadow:0 0 10px rgba(255,184,0,.2)}
-50%{box-shadow:0 0 24px rgba(255,184,0,.5)}
-}
-
-.tribute{
-padding:10px 14px;margin:10px 0 14px;
-border-left:3px solid var(--accent-gold);background:rgba(255,184,0,.08);
-font-style:italic;font-size:13px;color:#ffe6a3;line-height:1.5;
-}
-
-.material-tag{
-display:inline-block;padding:4px 10px;
-background:rgba(255,184,0,.12);border:1px solid #c89200;border-radius:3px;
-font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:.24em;
-color:var(--accent-gold);margin:6px 0;text-transform:uppercase;font-weight:700;
-}
-
-.pair-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px}
-.pair-card{
-padding:12px 14px;background:var(--read-bg-card);border:1px solid var(--read-border);
-border-radius:5px;font-size:14px;line-height:1.5;color:var(--read-text);
-}
-.pair-card.a{border-left:3px solid #c81e3c}
-.pair-card.b{border-left:3px solid #008cb4}
-.pair-card strong{
-font-family:'Orbitron',sans-serif;font-size:10px;letter-spacing:.24em;
-display:block;margin-bottom:6px;text-transform:uppercase;
-}
-.pair-card.a strong{color:#c81e3c}
-.pair-card.b strong{color:#008cb4}
-
+.coach-content{max-height:0;overflow:hidden;transition:max-height .5s ease;padding:0 12px}
+.coach-toggle.open .coach-content{max-height:4000px;padding:6px 12px 12px}
+.hero-ribbon{padding:8px 14px;margin:0 0 14px;background:linear-gradient(90deg,rgba(255,184,0,.25),rgba(255,184,0,.10));border:1px solid var(--accent-gold);border-radius:4px;font-family:'Orbitron',sans-serif;font-size:10px;font-weight:700;letter-spacing:.26em;color:var(--accent-gold);text-align:center;text-transform:uppercase;animation:heroGlow 2.4s ease-in-out infinite}
+@keyframes heroGlow{0%,100%{box-shadow:0 0 10px rgba(255,184,0,.2)}50%{box-shadow:0 0 24px rgba(255,184,0,.5)}}
+.tribute{padding:10px 14px;margin:10px 0 14px;border-left:3px solid var(--accent-gold);background:rgba(255,184,0,.08);font-style:italic;font-size:13px;color:#ffe6a3;line-height:1.5}
+.material-tag{display:inline-block;padding:4px 10px;background:rgba(255,184,0,.12);border:1px solid #c89200;border-radius:3px;font-family:'Orbitron',sans-serif;font-size:9px;letter-spacing:.24em;color:var(--accent-gold);margin:6px 0;text-transform:uppercase;font-weight:700}
 footer{margin-top:60px;padding:30px 20px;text-align:center;border-top:1px solid var(--border)}
-.footer-text{
-font-family:'Orbitron',sans-serif;font-weight:700;font-size:14px;
-letter-spacing:.28em;color:var(--text);margin-bottom:8px;text-transform:uppercase;
-}
-.footer-sub{
-font-family:'Rajdhani',sans-serif;font-style:italic;font-size:13px;color:var(--text-faint);
-}
-
-@media (max-width:640px){
-.container{padding:16px 12px 60px}
-.mission-panel{padding:32px 18px 38px}
-.mission-title{font-size:48px}
-.module-inner{padding:4px 16px 18px}
-.scale-grid,.pair-grid{grid-template-columns:1fr}
-.meta-bar{font-size:10px}
-.day-banner{padding:18px 22px 18px 28px}
-.mission-label{max-width:100%;text-align:left}
-}
+.footer-text{font-family:'Orbitron',sans-serif;font-weight:700;font-size:14px;letter-spacing:.28em;color:var(--text);margin-bottom:8px;text-transform:uppercase}
+.footer-sub{font-family:'Rajdhani',sans-serif;font-style:italic;font-size:13px;color:var(--text-faint)}
+@media (max-width:640px){.container{padding:16px 12px 60px}.mission-panel{padding:32px 18px 38px}.mission-title{font-size:48px}.module-inner{padding:4px 16px 18px}.scale-grid{grid-template-columns:1fr}.meta-bar{font-size:10px}.day-banner{padding:18px 22px 18px 28px}.mission-label{max-width:100%;text-align:left}}
 </style>
 </head>
 <body>
-
-<div class="space"></div>
-<div class="nebula"></div>
-<div class="stars-layer l1"></div>
-<div class="stars-layer l2"></div>
-<div class="stars-layer l3"></div>
-
-<div class="pulsars">
-  <div class="pulsar p1"></div><div class="pulsar p2"></div>
-  <div class="pulsar p3"></div><div class="pulsar p4"></div>
-  <div class="pulsar p5"></div><div class="pulsar p6"></div>
-  <div class="pulsar p7"></div><div class="pulsar p8"></div>
-  <div class="pulsar p9"></div><div class="pulsar p10"></div>
-  <div class="pulsar p11"></div><div class="pulsar p12"></div>
-</div>
-
-<div class="comet c1"></div>
-<div class="comet c2"></div>
-<div class="comet c3"></div>
-
+<div class="space"></div><div class="nebula"></div>
+<div class="stars-layer l1"></div><div class="stars-layer l2"></div><div class="stars-layer l3"></div>
+<div class="pulsars"><div class="pulsar p1"></div><div class="pulsar p2"></div><div class="pulsar p3"></div><div class="pulsar p4"></div><div class="pulsar p5"></div><div class="pulsar p6"></div><div class="pulsar p7"></div><div class="pulsar p8"></div><div class="pulsar p9"></div><div class="pulsar p10"></div><div class="pulsar p11"></div><div class="pulsar p12"></div></div>
+<div class="comet c1"></div><div class="comet c2"></div><div class="comet c3"></div>
 <div class="container">
+<div class="mission-panel">
+<div class="meta-bar"><div>SEMANA · 23</div><div><span class="status-dot"></span> PHOENIX</div><div>RPE 7 — 7.5</div></div>
+<div class="orbital-logo"><svg viewBox="0 0 100 100"><defs><filter id="logoGlow"><feGaussianBlur stdDeviation="2"/></filter><linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" style="stop-color:#ff3d65"/><stop offset="50%" style="stop-color:#c41e4a"/><stop offset="100%" style="stop-color:#7a1030"/></linearGradient><radialGradient id="logoCore" cx="50%" cy="50%"><stop offset="0%" style="stop-color:#1a1a22"/><stop offset="100%" style="stop-color:#0a0a12"/></radialGradient></defs><polygon points="50,5 61,35 95,35 68,57 79,90 50,70 21,90 32,57 5,35 39,35" fill="url(#starGrad)" filter="url(#logoGlow)"/><circle cx="50" cy="50" r="22" fill="url(#logoCore)"/><circle cx="42" cy="47" r="4" fill="#fff"/><circle cx="58" cy="47" r="4" fill="#fff"/><circle cx="43" cy="46" r="1.5" fill="#00d4ff"/><circle cx="59" cy="46" r="1.5" fill="#00d4ff"/><path d="M 38 56 Q 50 66 62 56" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/></svg></div>
+<h1 class="mission-title">PHOENIX</h1>
+<div class="mission-sub">CrossFit Vallecas · Semana 23</div>
+<div class="mission-tagline">1 — 6 · JUNIO · 2026</div>
+<div class="orbit-legend"><span class="legend-badge h">Halterofilia</span><span class="legend-badge c">CrossFit</span><span class="legend-badge e">Endurance</span><span class="legend-badge b">Body Soldier</span></div>
+</div>
+<div class="thesis"><div class="thesis-label">◆ Tesis · S23</div>De las cenizas de Troya se levanta el fénix. Tras la combustión contenida de TROY BURN (RPE 6), <strong>PHOENIX sube un punto entero</strong>: RPE 7–7.5. Intensidad real, volumen más afilado. Renacemos con patrones frescos — nada de repetir el camino andado. Olímpico técnico-pesado en Halterofilia con alternancia Snatch/C&amp;J, fuerza gimnástica y barra cíclica en CrossFit, motor diferenciado cada día en Endurance con rotación estricta de formatos, y un split de hipertrofia rotado completo en Body Soldier. El viernes, doble Hero: <strong>"RICHARD VANHINE"</strong> y <strong>"PUCCIO"</strong>. El sábado, vuelo en formación — todo en pareja. El ave no vuelve a la ceniza: asciende.</div>
+<div class="thesis" style="border-left:3px solid var(--accent-end);margin-top:10px"><div class="thesis-label" style="color:var(--accent-end)">◆ Síntesis · Lectura rápida</div>
+<strong>LUN · REBIRTH</strong> CF EMOM Push Press / Strict Pull-Ups + 5RFT DB Snatch/C2B/Burpee BJO &middot; END E6:00×36 Row/Bike/Run + acentos &middot; HALT Snatch complex + balance &middot; BS espalda &amp; bíceps.<br>
+<strong>MAR · RISING</strong> CF Wall Walk/Ring Dip EMOM + 21-15-9 Deadlift/Push-Up + rope climbs &middot; END EMOM 30 Row/Swings/Run &middot; HALT C&amp;J complex 4 movimientos &middot; BS pecho &amp; tríceps.<br>
+<strong>MIÉ · TALONS</strong> CF Pendlay/Bench strength + AMRAP OHS/Hang Snatch/core &middot; END AMRAP 30 en pareja &middot; HALT Snatch hang + déficit &middot; BS pierna &amp; core.<br>
+<strong>JUE · INFERNO</strong> CF Squat Clean EMOM + RFT Run/Squat Clean/T2B/KB Snatch &middot; END AMRAP 35 Row/Medball &middot; HALT C&amp;J pesado escalonado &middot; BS hombros.<br>
+<strong>VIE · APEX · HERO</strong> CF "RICHARD VANHINE" &middot; END "PUCCIO" (sagrados) &middot; HALT Snatch Max Day &middot; BS Phoenix Arms pump.<br>
+<strong>SÁB · FLIGHT · TEAM</strong> Todo en pareja. CF "Wingmen" chipper 100s &middot; END 10 rondas Run/KB &middot; HALT complex en pareja &middot; BS posterior &amp; brazos.</div>
+<div class="console-nav">
+<button class="nav-btn active" onclick="showDay(event,'lun')"><span>LUN</span><span class="day-num">01</span></button>
+<button class="nav-btn" onclick="showDay(event,'mar')"><span>MAR</span><span class="day-num">02</span></button>
+<button class="nav-btn" onclick="showDay(event,'mie')"><span>MIÉ</span><span class="day-num">03</span></button>
+<button class="nav-btn" onclick="showDay(event,'jue')"><span>JUE</span><span class="day-num">04</span></button>
+<button class="nav-btn" onclick="showDay(event,'vie')"><span>VIE</span><span class="day-num">05</span></button>
+<button class="nav-btn" onclick="showDay(event,'sab')"><span>SÁB</span><span class="day-num">06</span></button>
+</div>
+<div class="day active" id="day-lun">
+<div class="day-banner"><div class="day-banner-inner"><div class="day-title-block"><div class="theme-tag">◆ 01 · JUNIO · REBIRTH</div><div class="day-title">LUNES</div></div><div class="mission-label">"De las cenizas, la bestia despierta. La intensidad resurge un punto entero."</div></div></div>
 
-  <div class="mission-panel">
-    <div class="meta-bar">
-      <div>SEMANA · 22</div>
-      <div><span class="status-dot"></span> TROY BURN</div>
-      <div>MEMORIAL WEEK</div>
-    </div>
+<div class="module c open" data-day="lun">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ CrossFit</div><div class="sub-label">Push Press / Strict Pull-Up EMOM + Phoenix Rise Triplet</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box c"><strong>◆ Objetivo</strong>Estrenamos PHOENIX con un EMOM que alterna fuerza de hombro y tracción estricta: empuje pesado en los minutos impares, dominadas estrictas en los pares. Después, un triplet de mancuerna, tracción torácica y salto explosivo. Intensidad real sin volumen aplastante.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) EMOM × 12 min · Alt Set 1 / Set 2</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li><strong>Set 1 (odd):</strong> 3 Push Press <span class="sets">(build across sets to a heavy triple — RPE 7.5)</span></li><li><strong>Set 2 (even):</strong> 6 Strict Pull-Ups</li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) "PHOENIX RISE" · 5 Rounds For Time</span><span class="block-time">CAP 16 MIN</span></div><div class="block-content"><ul><li>24 Alternating Dumbbell Snatch <span class="load">(22.5 / 15 kg)</span></li><li>12 Chest-to-Bar Pull-Ups</li><li>6 Burpee Box Jump-Overs <span class="load">(24" / 20")</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>En el EMOM, sube el Push Press cada serie impar hasta un triple firme (nunca al fallo) y mantén las dominadas estrictas limpias en las pares. El triplet debe rondar los 12-14 min — elige una mancuerna que permita los 24 Snatch en 12-12, y enlaza las 12 C2B en 2 tandas. Cajón que rebote.</div>
+<div class="scale-grid"><div class="scale-card rx"><strong>◆ RX</strong>EMOM 3 Push Press heavy / 6 Strict Pull-Ups · 24 DB Snatch 22.5/15 · 12 Chest-to-Bar · 6 Burpee Box Jump-Overs 24/20"</div><div class="scale-card sc"><strong>◆ Scaled</strong>EMOM 3 Push Press moderate / 6 Banded Pull-Ups · 24 DB Snatch 15/10 · 12 Pull-Ups or Jumping C2B · 6 Burpee Step-Overs 20"</div></div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Push Press: <em>"dip vertical corto, drive de cadera, la barra viaja en línea recta sobre la cabeza"</em>. Dominada estricta: sin balanceo, barbilla por encima de la barra. DB Snatch: cadera explosiva, el codo guía, recepción con el brazo bloqueado. C2B: arco de kipping agresivo, pecho a la barra.</div></div>
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ RACK + BARRA + MANCUERNA + CAJÓN + RIG</span> CrossFit usa rack, mancuerna, cajones y barra de dominadas. Endurance hoy trabaja en remo, bici y carrera con kettlebell — sin cajón. Avisa que los atletas arrancan en distintos puntos del rig para repartir las barras de dominadas.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Escalado &amp; Banderas Rojas</span><div class="coach-block-text"><strong>Bandera roja:</strong> si en el EMOM la barra se va hacia delante, el atleta usa los brazos antes que las piernas — recórtale la carga. En el triplet, si las C2B no salen, pasa a dominadas normales o jumping C2B sin dudar.</div></div>
+</div></div>
+</div></div></div>
 
-    <div class="orbital-logo">
-      <svg viewBox="0 0 100 100">
-        <defs>
-          <filter id="logoGlow"><feGaussianBlur stdDeviation="2"/></filter>
-          <linearGradient id="starGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" style="stop-color:#ff3d65"/>
-            <stop offset="50%" style="stop-color:#c41e4a"/>
-            <stop offset="100%" style="stop-color:#7a1030"/>
-          </linearGradient>
-          <radialGradient id="logoCore" cx="50%" cy="50%">
-            <stop offset="0%" style="stop-color:#1a1a22"/>
-            <stop offset="100%" style="stop-color:#0a0a12"/>
-          </radialGradient>
-        </defs>
-        <polygon points="50,5 61,35 95,35 68,57 79,90 50,70 21,90 32,57 5,35 39,35" fill="url(#starGrad)" filter="url(#logoGlow)"/>
-        <circle cx="50" cy="50" r="22" fill="url(#logoCore)"/>
-        <circle cx="42" cy="47" r="4" fill="#fff"/>
-        <circle cx="58" cy="47" r="4" fill="#fff"/>
-        <circle cx="43" cy="46" r="1.5" fill="#00d4ff"/>
-        <circle cx="59" cy="46" r="1.5" fill="#00d4ff"/>
-        <path d="M 38 56 Q 50 66 62 56" stroke="#fff" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-      </svg>
-    </div>
+<div class="module e" data-day="lun">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Endurance</div><div class="sub-label">Every 6:00 × 36 min · Distance + Max Effort</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box e"><strong>◆ Objetivo</strong>Apertura de motor con bloques de seis minutos: una distancia fija en cada modalidad y, con el tiempo que sobre, máximas repeticiones de un acento. Dos rondas completas, seis ventanas. Cuanto más rápido cierres la distancia, más descanso (o más reps) ganas.</div>
+<div class="material-tag">⚙ ROWER + BIKEERG + CARRERA + KETTLEBELL (CrossFit no usa estos ergómetros hoy)</div>
+<div class="block"><div class="block-head"><span class="block-title">◆ Every 6 min × 36 min · 2 Rounds</span><span class="block-time">36 MIN</span></div><div class="block-content"><ul><li><strong>Set 1:</strong> 1 km Row, then in the remaining time Max Burpees</li><li><strong>Set 2:</strong> 2 km BikeErg, then in the remaining time Max Air Squats</li><li><strong>Set 3:</strong> 800 m Run, then in the remaining time Max Double Kettlebell Snatches <span class="load">(2× 24 / 16 kg)</span></li></ul><div class="sets" style="margin-top:6px">6 windows total (Set 1 → 2 → 3 → 1 → 2 → 3). Score: total accumulated max reps.</div></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>La distancia debe dejarte 1:30-2:30 de trabajo extra dentro de cada ventana de 6 minutos. Rema a 2:00-2:10/500m, bici a 60 RPM, carrera al 75%. Los acentos (burpees, air squats, KB snatch) son tensión, no carrera: ritmo constante para acumular reps sin reventar antes de la segunda ronda.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Remo: <em>"piernas, cadera, brazos — en ese orden"</em>. Double KB Snatch: las dos pesas viajan pegadas al cuerpo, recepción con los codos girando rápido por debajo. Enseña a leer cuánto tiempo deja la distancia antes de lanzarse a los acentos.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Escalado</span><div class="coach-block-text">Para quien tarde demasiado en las distancias: recorta a 1 ronda (3 ventanas) o reduce Row a 800 m, Bike a 1,6 km y Run a 600 m. El objetivo es que siempre quede tiempo para los acentos.</div></div>
+</div></div>
+</div></div></div>
 
-    <h1 class="mission-title">TROY BURN</h1>
-    <div class="mission-sub">CrossFit Vallecas · Semana 22</div>
-    <div class="mission-tagline">25 — 30 · MAYO · 2026 · MEMORIAL WEEK</div>
+<div class="module h" data-day="lun">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Halterofilia</div><div class="sub-label">Snatch Complex + Snatch Balance · RPE 7</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box h"><strong>◆ Objetivo</strong>Abrimos la semana olímpica con Snatch. Complex de tres movimientos para reforzar la velocidad bajo la barra y la posición de recepción. El Snatch Balance enseña a meterse rápido y aguantar el overhead. RPE 7 limpio, un punto por encima de la semana pasada.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) Muscular Warm-up &amp; Hypertrophy</span><span class="block-time">8 MIN</span></div><div class="block-content"><ul><li>3 sets × 10 Snatch-Grip Behind-the-Neck Press <span class="sets">(empty / light bar)</span></li><li>3 sets × 12 Banded Pull-Aparts <span class="sets">(rear delts, controlled)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) Snatch Complex · Every 90s × 12 min · 8 sets</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li>1 Snatch Balance + 1 Overhead Squat + 1 Squat Snatch <span class="sets">(build to RPE 7 — clean reps only)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">C) Accessory · Snatch Pulls · 4 × 4</span><span class="block-time">10 MIN</span></div><div class="block-content"><ul><li>4 sets × 4 Snatch Pulls <span class="load">(@ 100-105% of snatch, full extension)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>El Snatch Balance es la joya del día: empuja la barra hacia arriba mientras te metes debajo, no al revés. Cue: <em>"castiga el suelo con los pies y aguanta el bloqueo"</em>. Si pierdes el equilibrio hacia delante, la barra está adelantada en la recepción. Sube carga solo si las tres repeticiones del complex salen limpias.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Recepción siempre con la barra apilada sobre la mitad del pie y los hombros activos empujando al techo. <em>"Codos bloqueados, axilas mirando al frente"</em>. El OHS del medio es el chequeo de movilidad: si el torso se va adelante, trabaja tobillo y dorsal.</div></div>
+<div class="coach-block prog"><span class="coach-block-label">◆ Programación</span><div class="coach-block-text">Día de Snatch. Próximo día de Snatch el miércoles (hang + déficit), respetando la separación. Jueves y viernes la cosa va de C&amp;J y máximos.</div></div>
+</div></div>
+</div></div></div>
 
-    <div class="orbit-legend">
-      <span class="legend-badge h">Halterofilia</span>
-      <span class="legend-badge c">CrossFit</span>
-      <span class="legend-badge e">Endurance</span>
-      <span class="legend-badge b">Body Soldier</span>
-    </div>
-  </div>
-
-  <div class="thesis">
-    <div class="thesis-label">◆ Tesis · S22</div>
-    Diez años de asedio. Troya arde lentamente y nosotros con ella. Semana de RPE contenido pero volumen brutal: combustión sostenida que no busca picos sino fatiga acumulada día a día. La chispa cae el lunes (SPARK barbell complex), la yesca alimenta el fuego el martes (KINDLING couplet), el miércoles ruge la cámara de combustión (KB EMOM monstruoso), el jueves llega <strong>la agonía de Troya</strong> — fuerza bajo el asedio —, el viernes la doble llamarada Hero con AIR FORCE y LOREDO. Y el sábado, en plena <strong>Memorial Week</strong>, toda la tribu se une como una sola unidad: <strong>MURPH</strong>. Porque cuando la ciudad arde, no quedan tracks — solo soldados.
-  </div>
-
-  <div class="thesis" style="border-left:3px solid var(--accent-end);margin-top:10px">
-    <div class="thesis-label" style="color:var(--accent-end)">◆ Síntesis · Lectura rápida</div>
-    <strong>LUN · SPARK</strong> CF Barbell Complex EMOM 18 + Run/Burpee/Thruster intervals &middot; END Burning Fields AMRAP 30 &middot; HALT C&amp;J Technical Volume &middot; BS Chest Burn KB.<br>
-    <strong>MAR · KINDLING</strong> CF Muscle Snatch skill + Couplet 5RFT &middot; END Yesca Chipper For Time &middot; HALT Snatch Tempo + Pull &middot; BS Back Brutality KB.<br>
-    <strong>MIÉ · COMBUSTION</strong> CF TGU + Legless skill + Combustion Chamber KB EMOM 20 &middot; END Tabata + Ember EMOM 28 &middot; HALT C&amp;J Pause + Front Squat &middot; BS Shoulder Forge DB.<br>
-    <strong>JUE · AGONÍA DE TROYA</strong> CF Embers Chipper 4RFT + Heavy Hang Clean &middot; END E7:00×42 triatlón Run/Row/Bike &middot; HALT Jerk Focus + Heavy Back Squat &middot; BS Arm Forge KB.<br>
-    <strong>VIE · BLAZE · HERO</strong> CF "AIR FORCE" &middot; END "LOREDO" (sagrados) &middot; HALT C&amp;J Max Day &middot; BS Burning Arms KB Pump.<br>
-    <strong>SÁB · MURPH · MEMORIAL</strong> Toda la tribu unida. 1 milla · 100 Pull-Ups · 200 Push-Ups · 300 Squats · 1 milla. Honor a Lt. Michael P. Murphy.
-  </div>
-
-  <div class="console-nav">
-    <button class="nav-btn active" onclick="showDay(event,'lun')"><span>LUN</span><span class="day-num">25</span></button>
-    <button class="nav-btn" onclick="showDay(event,'mar')"><span>MAR</span><span class="day-num">26</span></button>
-    <button class="nav-btn" onclick="showDay(event,'mie')"><span>MIÉ</span><span class="day-num">27</span></button>
-    <button class="nav-btn" onclick="showDay(event,'jue')"><span>JUE</span><span class="day-num">28</span></button>
-    <button class="nav-btn" onclick="showDay(event,'vie')"><span>VIE</span><span class="day-num">29</span></button>
-    <button class="nav-btn" onclick="showDay(event,'sab')"><span>SÁB</span><span class="day-num">30</span></button>
-  </div>
-
-  <!-- ═══════════════════════ LUNES ═══════════════════════ -->
-  <div class="day active" id="day-lun">
-    <div class="day-banner">
-      <div class="day-banner-inner">
-        <div class="day-title-block">
-          <div class="theme-tag">◆ 25 · MAYO · SPARK</div>
-          <div class="day-title">LUNES</div>
-        </div>
-        <div class="mission-label">"La chispa cae sobre la madera. El motor se enciende. Volumen contenido para abrir la combustión."</div>
-      </div>
-    </div>
-
-    <div class="module c open" data-day="lun">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ CrossFit</div>
-          <div class="sub-label">Spark Complex EMOM + Run/Burpee/Thruster Intervals</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box c">
-            <strong>◆ Objetivo</strong>
-            Abrir TROY BURN con un EMOM largo de barbell complex a RPE 6 pero volumen alto. Después, intervalos alternados de carrera + barra: la chispa que enciende la semana. El atleta debe terminar bombeado, no roto.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) SPARK COMPLEX · EMOM 18 MIN</span>
-              <span class="block-time">18 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li><strong>Min 1:</strong> 6 Power Cleans <span class="load">(50 / 35 kg)</span></li>
-                <li><strong>Min 2:</strong> 8 Front Squats <span class="load">(50 / 35 kg)</span></li>
-                <li><strong>Min 3:</strong> 10 Push Press <span class="load">(50 / 35 kg)</span></li>
-              </ul>
-              <div class="sets" style="margin-top:6px">6 rondas completas. Misma barra todo el bloque.</div>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) Every 2 min × 12 min · Alt Set 1 / Set 2</span>
-              <span class="block-time">12 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li><strong>Set 1:</strong> 100 m Run + 10 Burpees</li>
-                <li><strong>Set 2:</strong> 100 m Run + 10 Unbroken Thrusters <span class="load">(barra del complex)</span></li>
-              </ul>
-              <div class="sets" style="margin-top:6px">6 sets totales alternando Set 1 / Set 2. Los Thrusters DEBEN ser unbroken — si rompes, no cuenta el set.</div>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Complex peso moderado: cada minuto debe terminarse en 35-45s. Intervalos: la carrera regula el ritmo, los Thrusters unbroken son el reto técnico — elige carga que garantice los 10 seguidos incluso fatigado. Bombeo de cuádriceps y hombros sostenido.
-          </div>
-          <div class="scale-grid">
-            <div class="scale-card rx">
-              <strong>◆ RX</strong>
-              Complex 50/35 kg · Thrusters 50/35 kg unbroken · Run 100 m
-            </div>
-            <div class="scale-card sc">
-              <strong>◆ Scaled</strong>
-              Complex 35/25 kg · Thrusters 35/25 kg unbroken · Run 80 m · Reducir 2 reps por estación
-            </div>
-          </div>
-          <div class="coach-toggle" onclick="toggleCoach(this)">
-            <div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div>
-            <div class="coach-content">
-              <div class="coach-block tech">
-                <span class="coach-block-label">◆ Foco Técnico</span>
-                <div class="coach-block-text">Power Clean: <em>"barra cerca del cuerpo, codos rápidos al front rack"</em>. Front Squat: codos altos siempre. Thrusters unbroken: respira arriba en el lockout, no en el hoyo. Cue: <em>"un ciclo de aire por rep, sin parar la barra"</em>.</div>
-              </div>
-              <div class="coach-block geo">
-                <span class="coach-block-label">◆ Material &amp; Geografía</span>
-                <div class="coach-block-text"><span class="material-tag">⚙ 1 BARRA + DISCOS POR ATLETA</span> CF LUN usa barras. Endurance LUN en zona carrera/suelo/caja (sin barra). Body Soldier en bancas + KB. Halterofilia en plataformas. Coordinar arranque escalonado si más de 14 atletas para no saturar plataformas.</div>
-              </div>
-              <div class="coach-block scale">
-                <span class="coach-block-label">◆ Escalado &amp; Seguridad</span>
-                <div class="coach-block-text"><strong>Bandera roja:</strong> si el atleta no enlaza 6 Power Cleans unbroken la primera ronda, bajar 5 kg. Es Semana de volumen: el éxito es completar las 6 rondas + 6 intervalos, no morir a mitad.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module e" data-day="lun">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Endurance</div>
-          <div class="sub-label">Burning Fields · Long AMRAP Aerobic</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box e">
-            <strong>◆ Objetivo</strong>
-            AMRAP largo aeróbico a ritmo conversacional. Capacidad de base, motor encendido 30 minutos. Cero conflictos de material: solo carrera, suelo y caja.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">◆ BURNING FIELDS · AMRAP 30 MIN</span>
-              <span class="block-time">30 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>400 m Run</li>
-                <li>30 Air Squats</li>
-                <li>20 Sit-Ups</li>
-                <li>10 Box Step-Ups <span class="load">(24" / 20", alternantes)</span></li>
-              </ul>
-              <div class="sets" style="margin-top:6px">Score: rondas + reps. Target RX: 7-9 rondas.</div>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Ritmo Z2 desde el minuto 1. Debes poder hablar a frases cortas todo el WOD. Si pierdes la conversación, has acelerado. Air Squats unbroken, Sit-Ups crisp, Box Step-Ups paso a paso, carrera al 70%.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module h" data-day="lun">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Halterofilia</div>
-          <div class="sub-label">C&amp;J Technical Volume · RPE 6</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box h">
-            <strong>◆ Objetivo</strong>
-            Rotamos a Clean &amp; Jerk con volumen técnico. RPE bajo, 8 sets de complex para acumular kilómetros barra sin tocar el SNC. Foco en posición sobre la barra y velocidad de codos.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) Warm-up Muscular &amp; Hypertrophy</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 10 Dumbbell Pullover <span class="sets">(banco plano, dorsal activo)</span></li>
-                <li>3 sets × 8 Bent Over Barbell Row <span class="sets">(ligero, espalda escapular)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) Technical Complex · Every 90s × 12 min</span>
-              <span class="block-time">12 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>1 Clean Pull + 1 Power Clean + 1 Squat Clean + 1 Push Jerk <span class="sets">(8 sets, build to RPE 6 limpio)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">C) Accessory · Clean Pulls · 4 × 5</span>
-              <span class="block-time">10 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 5 Clean Pulls <span class="load">(@ RPE 7, peso clean +5%, controlado)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Volumen alto, RPE bajo. El Push Jerk al final del complex es el momento crítico: codos rápidos, pies activos. No subas más kilos: gana repeticiones limpias. Cada serie es una chispa más en la pila.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module b" data-day="lun">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Body Soldier</div>
-          <div class="sub-label">Chest Burn · KB Floor Press Dominante · 42 MIN</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box b">
-            <strong>◆ Objetivo</strong>
-            Abrir TROY BURN con pecho denso desde múltiples ángulos. Hoy el rey es el KB Floor Press: bilateral y unilateral, para martirizar pecho con estabilidad escapular forzada. CF hoy usa barbell exclusivamente — vía libre en bancas, mancuernas y kettlebells.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) KB Floor Press Double · 4 × 10</span>
-              <span class="block-time">12 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 10 reps <span class="sets">(Dos KB en posición rack, bajada controlada hasta tríceps al suelo, pausa breve, RPE 7)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) Flat Dumbbell Bench Press · 4 × 10</span>
-              <span class="block-time">10 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 10 reps <span class="sets">(RPE 7, foco pecho denso, sin chocar mancuernas arriba)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">C) Incline Dumbbell Fly · 3 × 12</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 12 reps <span class="sets">(Banco a 30°, codos ligeramente flexionados, squeeze en la cima)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">D) Dumbbell Pullover · 3 × 15</span>
-              <span class="block-time">7 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 15 reps <span class="sets">(Caderas bajas, foco apertura caja torácica + dorsal)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">E) Push-Up Finisher · 5 × Max Reps</span>
-              <span class="block-time">5 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>5 sets al fallo técnico <span class="sets">(60s rest entre sets, pecho al suelo cada rep)</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════ MARTES ═══════════════════════ -->
-  <div class="day" id="day-mar">
-    <div class="day-banner">
-      <div class="day-banner-inner">
-        <div class="day-title-block">
-          <div class="theme-tag">◆ 26 · MAYO · KINDLING</div>
-          <div class="day-title">MARTES</div>
-        </div>
-        <div class="mission-label">"La yesca alimenta el fuego. Snatch técnico y couplet sostenido. El incendio crece."</div>
-      </div>
-    </div>
-
-    <div class="module c open" data-day="mar">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ CrossFit</div>
-          <div class="sub-label">Muscle Snatch Skill + Kindling's Couplet 5 RFT</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box c">
-            <strong>◆ Objetivo</strong>
-            Skill técnico de Muscle Snatch + OHS para activar patrón overhead. Couplet de 5 rondas con Hang Power Snatch ligero, saltos, flexiones y remo. Volumen sostenido sin pegar fuerte al SNC.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) Every 90" × 9 min · Snatch Skill</span>
-              <span class="block-time">9 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 Muscle Snatch + 2 Overhead Squats <span class="sets">(6 sets, RPE 6, técnica primero, sin re-grip)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) KINDLING'S COUPLET · 5 Rounds For Time</span>
-              <span class="block-time">CAP 18 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>8 Hang Power Snatches <span class="load">(40 / 30 kg)</span></li>
-                <li>12 Box Jumps <span class="load">(24" / 20")</span></li>
-                <li>8 Push-Ups <span class="sets">(pecho al suelo)</span></li>
-                <li>12 / 9 Calorie Row</li>
-              </ul>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Skill: Muscle Snatch sin meterse debajo, tirón alto y brazos. Couplet: peso ligero — Hang Power Snatch unbroken las 5 rondas. Box Jumps rebote suave, Push-Ups en sets de 4-4 si hace falta, remo a 2:00-2:10/500m. Target: 12-15 min.
-          </div>
-          <div class="scale-grid">
-            <div class="scale-card rx">
-              <strong>◆ RX</strong>
-              Hang Power Snatch 40/30 kg · Box Jumps 24/20" · Push-Ups estándar · Row 12/9 cal
-            </div>
-            <div class="scale-card sc">
-              <strong>◆ Scaled</strong>
-              Hang Power Snatch 30/20 kg · Box Step-Ups 24/20" · Push-Ups en caja · Row 10/8 cal
-            </div>
-          </div>
-          <div class="coach-toggle" onclick="toggleCoach(this)">
-            <div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div>
-            <div class="coach-content">
-              <div class="coach-block tech">
-                <span class="coach-block-label">◆ Foco Técnico</span>
-                <div class="coach-block-text">Muscle Snatch: <em>"barra pegada, codos altos y por fuera, recepción con brazos sin flexión de rodilla"</em>. Hang Power Snatch: extensión explosiva de cadera, recepción en cuarto de sentadilla. Si la barra se aleja del cuerpo, pierdes el tirón.</div>
-              </div>
-              <div class="coach-block geo">
-                <span class="coach-block-label">◆ Material &amp; Geografía</span>
-                <div class="coach-block-text"><span class="material-tag">⚙ BARRAS + BOX + REMO</span> CF MAR usa barras, cajas y remos. Endurance MAR usa bike + ski (sin remo). Body Soldier MAR usa pull-up bar + KB. Sin solape de remo.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module e" data-day="mar">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Endurance</div>
-          <div class="sub-label">Yesca Chipper · For Time · RPE 7</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box e">
-            <strong>◆ Objetivo</strong>
-            Chipper largo y descendente en modalidad. Wall balls, bike, lunges con goblet, burpees, ski y un cierre gimnástico de grip. La trampa son los burpees tras las lunges. CF hoy ocupa el remo — Endurance se queda bike y ski exclusivos.
-          </div>
-          <div class="material-tag">⚙ WALL BALL + BIKEERG + SKIERG + KB GOBLET + PULL-UP BAR</div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">◆ YESCA CHIPPER · For Time</span>
-              <span class="block-time">CAP 28 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>100 Wall Balls <span class="load">(9 / 6 kg)</span></li>
-                <li>80 / 60 Calorie BikeErg</li>
-                <li>60 Goblet Lunges <span class="sets">(unbroken, alternantes, KB al pecho)</span></li>
-                <li>40 Burpees</li>
-                <li>20 / 16 Calorie SkiErg</li>
-                <li>10 Strict Toes-to-Bar + 10 Strict Pull-Ups</li>
-              </ul>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Wall Balls en sets de 25-25-25-25 o 20s. Bike a 60-65 RPM. Goblet Lunges unbroken obligatorio (KB ligero). Burpees crisp 1/3s. SkiErg sprint controlado. Cierre de grip: T2B estrictos en 5-5, Pull-Ups estrictos en 5-5. Target: 18-24 min.
-          </div>
-          <div class="scale-grid">
-            <div class="scale-card rx">
-              <strong>◆ RX</strong>
-              100 WB 9/6 · 80/60 Bike · 60 Goblet Lunges · 40 Burpees · 20/16 Ski · 10 Strict T2B + 10 Strict Pull-Ups
-            </div>
-            <div class="scale-card sc">
-              <strong>◆ Scaled</strong>
-              70 WB 6/4 · 60/45 Bike · 40 Goblet Lunges · 30 Burpees · 16/12 Ski · 10 Hanging Knee Raises + 30 Ring Rows (3× los pull-ups)
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module h" data-day="mar">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Halterofilia</div>
-          <div class="sub-label">Snatch Tempo + Pull · RPE 6</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box h">
-            <strong>◆ Objetivo</strong>
-            Alternancia sagrada — toca Snatch. Pausa de 3 segundos en rodilla para eliminar el rebote elástico y forzar aceleración desde stop muerto. Cierre con Snatch Pulls heavy para acumular fuerza de tirón.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) Warm-up Muscular &amp; Hypertrophy</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 8 Press Behind the Neck <span class="sets">(barra ligera, hombros activos)</span></li>
-                <li>3 sets × 10 Snatch Push Press <span class="sets">(agarre snatch, técnico)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) Tempo Snatch Complex · Every 2 min × 12 min</span>
-              <span class="block-time">12 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>1 Snatch Pull pausa 3" en rodilla + 1 Power Snatch + 1 Overhead Squat <span class="sets">(6 sets, RPE 6 limpio)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">C) Heavy Snatch Pulls · 4 × 4</span>
-              <span class="block-time">10 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 4 Snatch Pulls <span class="load">(@ RPE 7, peso snatch +10%, tirón completo hasta esternón)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            La pausa en rodilla no es descanso — es tensión sostenida. Mantén presión intraabdominal, peso en talones, hombros sobre la barra. Cue: <em>"barra inmóvil, cuerpo cargado"</em>. Si pierdes la tensión, el Power Snatch se queda corto.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module b" data-day="mar">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Body Soldier</div>
-          <div class="sub-label">Back Brutality · KB Rows Pesados · 42 MIN</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box b">
-            <strong>◆ Objetivo</strong>
-            Día de espalda con kettlebell dominante. Tracción densa, dorsal grueso, antebrazos de hierro. CF MAR usa barra y remo — BS MAR ocupa KB (libres) y pull-up bar coordinando con CF en transiciones.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) Strict Pull-Ups · 4 × 6</span>
-              <span class="block-time">10 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 6 reps <span class="sets">(Cinturón con disco o KB colgando si dominan estricto, RPE 8)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) Heavy KB Single-Arm Row · 4 × 8/8</span>
-              <span class="block-time">12 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 8/8 reps <span class="sets">(KB pesada 32/24, mano libre apoyada en banco, tirón al bolsillo cadera)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">C) KB Double Bent Over Row · 3 × 10</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 10 reps <span class="sets">(Dos KB simultáneos, torso 45°, agarre neutro)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">D) Lat Pulldown · 3 × 12</span>
-              <span class="block-time">6 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 12 reps <span class="sets">(Agarre ancho, tirón a clavícula superior, sin balanceo)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">E) KB Renegade Row Finisher · 3 × 8/8</span>
-              <span class="block-time">6 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 8/8 reps <span class="sets">(Plancha con KB cada mano, alternar rema sin perder caderas)</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════ MIÉRCOLES ═══════════════════════ -->
-  <div class="day" id="day-mie">
-    <div class="day-banner">
-      <div class="day-banner-inner">
-        <div class="day-title-block">
-          <div class="theme-tag">◆ 27 · MAYO · COMBUSTION</div>
-          <div class="day-title">MIÉRCOLES</div>
-        </div>
-        <div class="mission-label">"Combustión sostenida. Pico de volumen semanal. Cámara de fuego rugiendo con kettlebell."</div>
-      </div>
-    </div>
-
-    <div class="module c open" data-day="mie">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ CrossFit</div>
-          <div class="sub-label">TGU + Legless Skill + Combustion Chamber KB EMOM 20</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box c">
-            <strong>◆ Objetivo</strong>
-            Skill de calidad: Turkish Get-Ups unilaterales + trepa de cuerda sin pies. Después, el corazón ardiente de TROY BURN — EMOM de 20 minutos con complex KB denso. RPE 6 sostenido, volumen que destroza sin tocar el SNC.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) 5 Rounds For Quality</span>
-              <span class="block-time">~12 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>2/2 Turkish Get-Ups <span class="load">(KB media, control absoluto)</span></li>
-                <li>1 Legless Rope Climb <span class="sets">(trepa sin pies — escalado: trepa con pies o 3 rope pull-ups tumbado)</span></li>
-              </ul>
-              <div class="sets" style="margin-top:6px">Sin reloj agresivo. Calidad de movimiento por encima de velocidad.</div>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) COMBUSTION CHAMBER · EMOM 20 MIN</span>
-              <span class="block-time">20 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li><strong>Min 1:</strong> 8/8 KB Cleans <span class="load">(single, alternantes — 24 / 16 kg)</span></li>
-                <li><strong>Min 2:</strong> 10 KB Jumping Squats <span class="load">(32 / 24 kg, goblet, salto en la cima)</span></li>
-                <li><strong>Min 3:</strong> 8 KB Strict Press <span class="load">(single, alternantes — 4/4) (24 / 16 kg)</span></li>
-                <li><strong>Min 4:</strong> 12 American KB Swings <span class="load">(24 / 16 kg)</span></li>
-                <li><strong>Min 5:</strong> 16 Hollow Rocks with KB Hold <span class="sets">(KB sostenido overhead o sobre el pecho)</span></li>
-              </ul>
-              <div class="sets" style="margin-top:6px">4 rondas completas. Total 20 min. Misma KB single + 1 KB goblet pesada por atleta.</div>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Skill sin fatiga: el TGU enseña estabilidad de hombro, la trepa sin pies forja grip y tracción. EMOM: cada estación en 35-45s. El min 5 (Hollow Rocks con KB) es core bajo carga — no lo subestimes. Antebrazos de mármol y muslos quemando al salir.
-          </div>
-          <div class="scale-grid">
-            <div class="scale-card rx">
-              <strong>◆ RX</strong>
-              KB Cleans 24/16 · Jumping Squats 32/24 · Strict Press 24/16 · Swings 24/16 · Hollow + KB Hold · 1 Legless
-            </div>
-            <div class="scale-card sc">
-              <strong>◆ Scaled</strong>
-              KB Cleans 16/12 · Jumping Squats 24/16 (sin salto) · Strict Press 16/12 · Swings 20/12 · Hollow Hold · Trepa con pies
-            </div>
-          </div>
-          <div class="coach-toggle" onclick="toggleCoach(this)">
-            <div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div>
-            <div class="coach-content">
-              <div class="coach-block tech">
-                <span class="coach-block-label">◆ Foco Técnico</span>
-                <div class="coach-block-text">TGU: <em>"vista en el KB toda la subida, cada posición controlada"</em>. Legless: agarre en J-hook con las piernas cruzadas alto, tracción de dorsal explosiva. KB Clean: el codo gira por debajo, el KB se acuna, no golpea. Jumping Squat: aterrizaje suave, rodillas fuera.</div>
-              </div>
-              <div class="coach-block geo">
-                <span class="coach-block-label">◆ Material &amp; Geografía</span>
-                <div class="coach-block-text"><span class="material-tag">⚙ KB EXCLUSIVAS CF + CUERDA</span> CF MIÉ usa KB (1 media + 1 pesada por atleta) y cuerdas. Body Soldier MIÉ usa DB + cable (cede KB a CF). Endurance MIÉ usa remo + run + comba. Sin conflictos.</div>
-              </div>
-              <div class="coach-block scale">
-                <span class="coach-block-label">◆ Escalado &amp; Seguridad</span>
-                <div class="coach-block-text"><strong>Bandera roja:</strong> si en la ronda 2 no completa una estación dentro del minuto, bajar peso o reps. La trepa sin pies solo para quien la domina — el resto, trepa con pies sin penalización de ego.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module e" data-day="mie">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Endurance</div>
-          <div class="sub-label">Tabata + Ember EMOM 28 · RPE 7</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box e">
-            <strong>◆ Objetivo</strong>
-            Apertura Tabata explosiva (comba + sentadilla) para encender el motor, seguida de un EMOM intermitente de 28 minutos con 3 modalidades + descanso programado. La estructura te obliga a recuperar — pero el día castiga la suma. Cero KB (CF se las come), cero barra.
-          </div>
-          <div class="material-tag">⚙ ROWER + COMBA (CF NO USA REMO HOY)</div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) TABATA · 8 min</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>Tabata Double Unders <span class="sets">(20s ON / 10s OFF × 8)</span></li>
-                <li>Tabata Air Squats <span class="sets">(20s ON / 10s OFF × 8)</span></li>
-              </ul>
-              <div class="sets" style="margin-top:6px">Alternar bloques: 4 min DU + 4 min Air Squats. Score: reps mínimas por intervalo.</div>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) EMBER EMOM · 28 MIN</span>
-              <span class="block-time">28 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li><strong>Min 1:</strong> 15 / 12 Calorie Row</li>
-                <li><strong>Min 2:</strong> 15 Burpees</li>
-                <li><strong>Min 3:</strong> 200 m Run</li>
-                <li><strong>Min 4:</strong> REST</li>
-              </ul>
-              <div class="sets" style="margin-top:6px">7 rondas completas. Score: rondas completadas dentro del minuto.</div>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Tabata: máximo esfuerzo controlado, no morir antes del EMOM. Ember EMOM: la trampa es el min de REST. Si trabajas al 100% en cada estación, no llegas a las 7 rondas. Plan: row al 80% (35-40s), burpees crisp (45s), run al 75% (55-60s).
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module h" data-day="mie">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Halterofilia</div>
-          <div class="sub-label">C&amp;J Pause + Front Squat · RPE 6.5</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box h">
-            <strong>◆ Objetivo</strong>
-            Doble pausa: Clean Pull en rodilla + Squat Clean en el hoyo. Tensión sostenida, eliminamos el rebote del clean. Cierre con Pause Front Squat heavy para forjar la posición de recepción.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) Warm-up Muscular &amp; Hypertrophy</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 10 Bent Over Barbell Row <span class="sets">(ligero, hombros activos)</span></li>
-                <li>3 sets × 8 Strict Press <span class="sets">(barra moderada, control overhead)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) Paused Complex · Every 2 min × 10 min</span>
-              <span class="block-time">10 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>1 Clean Pull pausa 3" rodilla + 1 Squat Clean pausa 3" hoyo + 1 Split Jerk <span class="sets">(5 sets, RPE 6.5)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">C) Pause Front Squat · 4 × 4</span>
-              <span class="block-time">12 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 4 Pause Front Squats <span class="load">(@ RPE 7, pausa 3" abajo, codos altos, sin rebote)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Combustión técnica. La pausa en el hoyo del Squat Clean es la clave de la semana — mantener front rack rígido durante 3 segundos completos. Cue: <em>"codos altos, costillas abajo, peso en pies completos"</em>. Si el codo cae, repite con menos peso.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module b" data-day="mie">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Body Soldier</div>
-          <div class="sub-label">Shoulder Forge · DB + Cable (CF se come las KB) · 42 MIN</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box b">
-            <strong>◆ Objetivo</strong>
-            Hombros desde tres cabezas. Hoy CF acapara las KB con su Combustion Chamber — BS opera con mancuernas y cable exclusivamente. Trabajo denso de deltoides anterior, lateral y posterior. Hombros de granito.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) Seated DB Shoulder Press · 4 × 8</span>
-              <span class="block-time">12 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 8 reps <span class="sets">(Banco vertical, RPE 8, mancuernas a la altura del oído arriba)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) DB Arnold Press · 3 × 10</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 10 reps <span class="sets">(Rotación completa palma adentro → afuera, contracción en la cima)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">C) DB Lateral Raises · 4 × 15</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 15 reps <span class="sets">(Codo ligeramente flexionado, pulgar arriba, sin balanceo)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">D) Cable Face Pull · 3 × 15</span>
-              <span class="block-time">6 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 15 reps <span class="sets">(Polea a altura de cara, separar cuerda al rostro, contraer omóplatos)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">E) DB Front Raise · 3 × 12</span>
-              <span class="block-time">5 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 12 reps <span class="sets">(Alternantes hasta nivel de hombro, sin balanceo)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">F) Cable Reverse Fly Finisher · 3 × 15</span>
-              <span class="block-time">5 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 15 reps <span class="sets">(Polea baja cruzada, apertura amplia, deltoides posterior)</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════ JUEVES ═══════════════════════ -->
-  <div class="day" id="day-jue">
-    <div class="day-banner">
-      <div class="day-banner-inner">
-        <div class="day-title-block">
-          <div class="theme-tag">◆ 28 · MAYO · LA AGONÍA DE TROYA</div>
-          <div class="day-title">JUEVES</div>
-        </div>
-        <div class="mission-label">"Fuerza bajo el asedio. La ciudad resiste su última noche. Chipper feroz y barra pesada."</div>
-      </div>
-    </div>
-
-    <div class="module c open" data-day="jue">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ CrossFit</div>
-          <div class="sub-label">Embers Chipper 4 RFT + Heavy Hang Clean</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box c">
-            <strong>◆ Objetivo</strong>
-            La agonía de Troya. Chipper feroz de 4 rondas: wall balls, hang power clean, T2B, bar-facing burpees y bar muscle-ups. Después, fuerza bajo el asedio: subir a un Hang Clean pesado del día. Volumen + un toque de fuerza para honrar la resistencia.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) EMBERS CHIPPER · 4 Rounds For Time</span>
-              <span class="block-time">CAP 22 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>25 Wall Balls <span class="load">(9 / 6 kg, 10/9 ft)</span></li>
-                <li>20 Hang Power Cleans <span class="load">(50 / 35 kg)</span></li>
-                <li>15 Toes-to-Bar</li>
-                <li>10 Bar-Facing Burpees</li>
-                <li>5 Bar Muscle-Ups <span class="sets">(o 20 Chest-to-Bar escalado)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) THEN · Build to a Heavy Hang Clean</span>
-              <span class="block-time">~12 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>Subir progresivamente en peso hasta encontrar un Hang Clean pesado del día <span class="sets">(no 1RM a fallo — RPE 8-9 limpio)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Chipper: Wall Balls en 13-12, Hang Power Clean en sets de 5, T2B en 8-7, BFB ritmo crisp, BMU en singles cuando llegue la fatiga. Después del metcon, el Heavy Hang Clean es fuerza bajo fatiga: técnica limpia, sin fallos absurdos. Troya resiste de pie.
-          </div>
-          <div class="scale-grid">
-            <div class="scale-card rx">
-              <strong>◆ RX</strong>
-              WB 9/6 · Hang Power Clean 50/35 · T2B · BFB · 5 BMU + Heavy Hang Clean
-            </div>
-            <div class="scale-card sc">
-              <strong>◆ Scaled</strong>
-              WB 6/4 · Hang Power Clean 35/25 · Hanging Knee Raises · Step-overs · 20 Pull-Ups + Hang Clean técnico moderado
-            </div>
-          </div>
-          <div class="coach-toggle" onclick="toggleCoach(this)">
-            <div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div>
-            <div class="coach-content">
-              <div class="coach-block tech">
-                <span class="coach-block-label">◆ Foco Técnico</span>
-                <div class="coach-block-text">Hang Power Clean: <em>"barra desde mid-thigh, extensión explosiva, codos rápidos, recepción en cuarto de squat"</em>. En el Heavy Hang Clean post-metcon, recuérdales: la fatiga no perdona — si la espalda se redondea, cierran la serie. Técnica primero, ego después.</div>
-              </div>
-              <div class="coach-block geo">
-                <span class="coach-block-label">◆ Material &amp; Geografía</span>
-                <div class="coach-block-text"><span class="material-tag">⚙ BARRAS + WALL BALL + PULL-UP BAR</span> CF JUE usa barras, wall balls y pull-up bar. Endurance JUE usa run + row + bike (sin barra). Body Soldier JUE usa bancas + KB + EZ bar. Sin conflicto.</div>
-              </div>
-              <div class="coach-block scale">
-                <span class="coach-block-label">◆ Escalado &amp; Seguridad</span>
-                <div class="coach-block-text"><strong>Bandera roja:</strong> los BMU son el corte — si no salen los 2 primeros de una ronda, escalar a C2B inmediatamente. El Heavy Hang Clean NO es para PR a fallo tras un chipper; es fuerza controlada.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module e" data-day="jue">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Endurance</div>
-          <div class="sub-label">Triatlón del Asedio · E7:00 × 42 min · RPE 7</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box e">
-            <strong>◆ Objetivo</strong>
-            Triatlón de resistencia bajo el asedio. Cada 7 minutos, una distancia larga en una modalidad distinta + un acento que te castiga. 2 rondas completas = 42 minutos de motor puro. La agonía de Troya en formato endurance.
-          </div>
-          <div class="material-tag">⚙ ROWER + BIKEERG + DB (CF NO USA REMO/BIKE HOY)</div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">◆ Every 7 min × 42 min · 2 Rounds</span>
-              <span class="block-time">42 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li><strong>Set 1:</strong> 1000 m Run + en el tiempo restante Max Russian Twists</li>
-                <li><strong>Set 2:</strong> 1500 m Row + cada 90" 5 Burpees Over the Rower</li>
-                <li><strong>Set 3:</strong> 2000 m BikeErg + cada 90" 5 Devil Press <span class="load">(2× 22.5 / 15 kg)</span></li>
-              </ul>
-              <div class="sets" style="margin-top:6px">6 ventanas de 7 min en total (Set 1 → 2 → 3 → 1 → 2 → 3). El trabajo extra ocupa el tiempo que sobre tras la distancia.</div>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Cada distancia debe dejarte 1:30-2:30 de trabajo extra dentro de la ventana de 7 min. Run a ritmo sostenido (no sprint), Row a 2:00-2:10/500m, Bike a 60 RPM. Los acentos (twists, burpees, devil press) son tensión, no carrera. Gestiona para llegar entero a la segunda ronda.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module h" data-day="jue">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Halterofilia</div>
-          <div class="sub-label">Jerk Focus + Heavy Back Squat · RPE 6.5-7</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box h">
-            <strong>◆ Objetivo</strong>
-            Día atípico: cero Snatch, cero Clean completo. Usamos el jueves para forjar el Jerk con complex de presses y acumular volumen de Back Squat. Brasas de calidad técnica antes del C&amp;J Max del viernes.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) Warm-up Muscular &amp; Hypertrophy</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 8 Behind-the-Neck Push Press <span class="sets">(barra ligera, técnico)</span></li>
-                <li>3 sets × 8 Goblet Squat <span class="sets">(KB media, profundidad completa)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) Jerk Complex · Every 90s × 9 min</span>
-              <span class="block-time">9 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>1 Push Jerk + 1 Split Jerk + 1 Split Jerk Recovery <span class="sets">(6 sets, RPE 6.5, foco velocidad de pies)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">C) Heavy Back Squat · 5 × 5</span>
-              <span class="block-time">15 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>5 sets × 5 reps <span class="load">(@ RPE 7, volumen — no buscamos PR, buscamos kilómetros)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">D) Optional Accessory · Good Mornings · 3 × 8</span>
-              <span class="block-time">7 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 8 reps <span class="sets">(Barra ligera-moderada, espalda erguida, foco isquios)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Jerk Complex: el Split Jerk Recovery es la joya — junta los pies con la barra overhead sin perder el bloqueo. Back Squat 5×5: RPE 7 sostenido, todas las series con el mismo peso o ligera progresión. Volumen sin tocar SNC.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module b" data-day="jue">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Body Soldier</div>
-          <div class="sub-label">Arm Forge · KB Tate Press + KB Curl · 42 MIN</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box b">
-            <strong>◆ Objetivo</strong>
-            Forjar las armas letales. KB Tate Press como pieza central, seguido de superseries de KB curls + skull crushers. Brazos como mármol antes del pump festival del viernes.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) KB Tate Press · 4 × 10/10</span>
-              <span class="block-time">12 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 10/10 reps <span class="sets">(Tumbado en banco, KB horizontal sobre el pecho, codos hacia los lados, bajada hasta esternón)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) Close-Grip Bench Press · 4 × 8</span>
-              <span class="block-time">10 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 8 reps <span class="sets">(Agarre a anchura de hombros, codos pegados, RPE 8)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">C) KB Concentration Curl · 4 × 10/10</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>4 sets × 10/10 reps <span class="sets">(Sentado, codo apoyado en muslo, KB por las dos asas, contracción máxima arriba)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">D) EZ Bar Skull Crushers · 3 × 12</span>
-              <span class="block-time">6 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 12 reps <span class="sets">(Bajada hasta frente, codos fijos en su posición, sin abrir)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">E) KB Hammer Curl · 3 × 12/12</span>
-              <span class="block-time">6 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 12/12 reps <span class="sets">(KB agarrado por el asa, agarre neutro, foco braquial y antebrazo)</span></li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════ VIERNES ═══════════════════════ -->
-  <div class="day" id="day-vie">
-    <div class="day-banner hero-day">
-      <div class="day-banner-inner">
-        <div class="day-title-block">
-          <div class="theme-tag">◆ 29 · MAYO · BLAZE · HERO DAY</div>
-          <div class="day-title">VIERNES</div>
-        </div>
-        <div class="mission-label">"La doble llamarada. AIR FORCE en CrossFit y LOREDO en Endurance. Troya arde por completo."</div>
-      </div>
-    </div>
-
-    <div class="module c open" data-day="vie">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ CrossFit</div>
-          <div class="sub-label">Hero WOD · "AIR FORCE"</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="hero-ribbon">◆ HERO WOD · "AIR FORCE" ◆</div>
-          <div class="tribute">In memory of U.S. Air Force Major <strong>Walter David Gray, 38</strong>, of Conyers, Georgia, an air liaison officer assigned to the 13th Air Support Operations Squadron, who died on August 8, 2012, from injuries suffered during a suicide bomb attack in Kunar province, Afghanistan. He is survived by his wife Heather and his three children, Nyah, Ava, and Garrett.</div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">◆ "AIR FORCE" · 4 Rounds For Time</span>
-              <span class="block-time">CAP 30 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>20 Thrusters <span class="load">(43 / 30 kg)</span></li>
-                <li>20 Sumo Deadlift High Pulls <span class="load">(43 / 30 kg)</span></li>
-                <li>20 Push Jerks <span class="load">(43 / 30 kg)</span></li>
-                <li>20 Overhead Squats <span class="load">(43 / 30 kg)</span></li>
-                <li>20 Front Squats <span class="load">(43 / 30 kg)</span></li>
-              </ul>
-              <div class="sets" style="margin-top:6px"><strong>Penalty:</strong> 4 Burpees cada minuto que pase desde el inicio. Misma barra todo el WOD.</div>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            La llamarada. 100 reps de barra por ronda × 4 + burpees por cada minuto. Pacing brutal: si vas muy fuerte O muy lento, los burpees acumulados te matan. Sweet spot: 6-7 min por ronda, 4-5 burpees acumulados por ronda. Target total: 24-28 min.
-          </div>
-          <div class="scale-grid">
-            <div class="scale-card rx">
-              <strong>◆ RX</strong>
-              43/30 kg · Thrusters · SDHP · Push Jerks · OHS · Front Squats · Burpees penalty
-            </div>
-            <div class="scale-card sc">
-              <strong>◆ Scaled</strong>
-              30/20 kg · 3 rounds en vez de 4 · Burpees penalty cada 2 min en vez de 1
-            </div>
-          </div>
-          <div class="coach-toggle" onclick="toggleCoach(this)">
-            <div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div>
-            <div class="coach-content">
-              <div class="coach-block tech">
-                <span class="coach-block-label">◆ Foco Técnico</span>
-                <div class="coach-block-text">OHS es el cuello de botella: <em>"brazos en oreja, abdomen apretado, profundidad completa"</em>. Front Squats al final: codos altos, no soltar el front rack tras los Push Jerks.</div>
-              </div>
-              <div class="coach-block geo">
-                <span class="coach-block-label">◆ Material &amp; Geografía</span>
-                <div class="coach-block-text"><span class="material-tag">⚙ 1 BARRA + DISCOS POR ATLETA</span> Cada atleta su barra todo el WOD. Endurance VIE en LOREDO (sin barra, sin remo). Body Soldier en bancas + KB. Sin conflicto.</div>
-              </div>
-              <div class="coach-block scale">
-                <span class="coach-block-label">◆ Escalado &amp; Seguridad</span>
-                <div class="coach-block-text"><strong>Bandera roja:</strong> dolor de hombro en OHS → bajar 5 kg. Si la primera ronda supera 10 min, escalar a 3 rondas. <strong>Es Hero WOD:</strong> el objetivo es honrar a Walter David Gray, no batir tiempos.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module e" data-day="vie">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Endurance</div>
-          <div class="sub-label">Hero WOD · "LOREDO"</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="hero-ribbon">◆ HERO WOD · "LOREDO" ◆</div>
-          <div class="tribute">In memory of U.S. Army Sergeant 1st Class <strong>Edwardo Loredo, 34</strong>, of Houston, Texas, who was killed on June 24, 2010, while conducting combat operations in Jelawar, Afghanistan. He is survived by his wife, 1st Lt. Jennifer Loredo, daughter Laura Isabelle, stepdaughter Alexis, and son Eduardo.</div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">◆ "LOREDO" · 6 Rounds For Time</span>
-              <span class="block-time">CAP 35 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>24 Squats <span class="sets">(air squats, profundidad completa)</span></li>
-                <li>24 Push-Ups <span class="sets">(pecho al suelo cada rep)</span></li>
-                <li>24 Walking Lunges <span class="sets">(alternantes)</span></li>
-                <li>400 m Run</li>
-              </ul>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            6 rondas de volumen brutal sin material. Target round time: 4-5 min. Squats unbroken, Push-Ups en 12-12 o 8-8-8 desde la ronda 2, Walking Lunges crisp, Run al 75%. La tercera ronda es la trampa.
-          </div>
-          <div class="scale-grid">
-            <div class="scale-card rx">
-              <strong>◆ RX</strong>
-              6 rounds · 24 reps cada estación · Run 400 m
-            </div>
-            <div class="scale-card sc">
-              <strong>◆ Scaled</strong>
-              5 rounds · 20 reps cada estación · Run 300 m · Push-Ups en caja
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module h" data-day="vie">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Halterofilia</div>
-          <div class="sub-label">Max Day · Heavy C&amp;J Complex</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box h">
-            <strong>◆ Objetivo</strong>
-            Día de máximos en C&amp;J. Build progresivo hasta carga heavy del día. Back-off con Clean Pulls pesados para reforzar tirón. Sin fallos estúpidos — si la técnica se rompe, cierra la serie.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) Warm-up Activation</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 8 Clean Pulls técnicos <span class="sets">(barra ligera, posición sobre la barra)</span></li>
-                <li>2 sets × 5 Front Squat <span class="sets">(barra moderada, codos altos)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) Build to Heavy C&amp;J Complex · 0:00 — 22:00</span>
-              <span class="block-time">22 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>1 Squat Clean + 1 Split Jerk <span class="sets">(subir progresivamente hasta carga máxima del día, RPE 9 max)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">C) Back-off · Heavy Clean Pulls · 3 × 3</span>
-              <span class="block-time">10 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>3 sets × 3 Clean Pulls <span class="load">(@ 90-95% del top complex, tirón completo y controlado)</span></li>
-              </ul>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Heavy es solidez técnica al límite, NO fallo. Cada subida +5/10kg hasta el RPE 9 del día. Si una repetición sale fea, repite con misma carga limpia y cierra. Los Clean Pulls back-off graban patrón, no machacan SNC.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module b" data-day="vie">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Body Soldier</div>
-          <div class="sub-label">Burning Arms · KB Pump Festival · 22 MIN</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="hero-ribbon">◆ BURNING ARMS · KB PUMP DAY ◆</div>
-          <div class="objective-box b">
-            <strong>◆ Objetivo</strong>
-            Día festivo Body Soldier. AMRAP brutal de brazos con kettlebell exclusivo. Cargas ligeras, congestión máxima, antebrazos en llamas. Salir del box con las armas más grandes del barrio. Troya arde — los brazos celebran.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) BURNING ARMS AMRAP · 22 MIN</span>
-              <span class="block-time">22 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>10 KB Curls <span class="load">(double KB, 16 / 12 kg cada uno)</span></li>
-                <li>10 KB Hammer Curls <span class="load">(double, neutro)</span></li>
-                <li>10 KB Tate Press <span class="load">(single arm × 10 cada brazo)</span></li>
-                <li>10 KB Floor Press <span class="load">(double, ligero)</span></li>
-                <li>10 KB Overhead Tricep Extension <span class="load">(double, agarre por las asas superiores)</span></li>
-              </ul>
-              <div class="sets" style="margin-top:6px">Score: rondas completas en 22 min. Objetivo: 6-8 rondas con bombeo extremo.</div>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            No es competición de pesos. Es competición de bombeo. Cargas que permitan unbroken todas las series. Ritmo continuo, descansos cortos solo entre rondas. Antebrazos en llamas, bíceps en explosión, tríceps quemando.
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- ═══════════════════════ SÁBADO · MURPH ═══════════════════════ -->
-  <div class="day" id="day-sab">
-    <div class="day-banner murph-day">
-      <div class="day-banner-inner">
-        <div class="day-title-block">
-          <div class="theme-tag">◆ 30 · MAYO · MEMORIAL · "BODY ARMOR"</div>
-          <div class="day-title">SÁBADO · MURPH</div>
-        </div>
-        <div class="mission-label">"Hoy no hay tracks. Hoy solo hay soldados. Toda la tribu, un solo WOD, una sola memoria."</div>
-      </div>
-    </div>
-
-    <div class="module c open" data-day="sab">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ MURPH · El WOD</div>
-          <div class="sub-label">For Time · Toda la tribu unida · CAP 60 MIN</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="hero-ribbon">◆ HERO WOD · "MURPH" · MEMORIAL DAY ◆</div>
-          <div class="tribute">In memory of U.S. Navy Lieutenant <strong>Michael P. Murphy, 29</strong>, of Patchogue, New York, killed in Afghanistan on June 28, 2005, during Operation Red Wings. Liderando un equipo SEAL de cuatro hombres rodeados en las montañas del Hindu Kush, Murphy salió a campo abierto bajo fuego enemigo para conseguir una señal de radio y pedir ayuda para sus hombres — sabiendo lo que le costaría. Recibió la <strong>Medalla de Honor</strong> a título póstumo. Este era su WOD favorito. Lo llamaba "Body Armor". Hoy lo cargamos por él.</div>
-          <div class="objective-box c">
-            <strong>◆ El significado</strong>
-            Estamos en <strong>Memorial Week</strong>. El lunes fue Memorial Day. Troya ardió toda la semana y hoy, entre las cenizas, la tribu entera —halterófilos, crossfitters, corredores y soldados de hierro— se une en un solo movimiento. No compites contra el de al lado. Cargas el peso de una memoria. Cada repetición es un nombre que no vuelve a casa.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">◆ "MURPH" · For Time</span>
-              <span class="block-time">CAP 60 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>1 Mile Run <span class="sets">(1.600 m)</span></li>
-                <li>100 Pull-Ups</li>
-                <li>200 Push-Ups</li>
-                <li>300 Air Squats</li>
-                <li>1 Mile Run <span class="sets">(1.600 m)</span></li>
-              </ul>
-              <div class="sets" style="margin-top:8px"><strong>RX+:</strong> con chaleco lastrado 9/6 kg (20/14 lb). El trabajo del medio se PARTICIONA libremente (Murph "Partitioned"): el clásico es 20 rondas de 5 Pull-Ups + 10 Push-Ups + 15 Air Squats ("Cindy split").</div>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Es un WOD largo y mental. La primera milla NO se sprinta — sales controlado o mueres en las flexiones. Particiona desde la primera ronda (Cindy split) aunque te sientas fresco; quien va unbroken al inicio se hunde a mitad. Hidratación previa. Hoy se trata de terminar con honor, no de ganar.
-          </div>
-          <div class="scale-grid">
-            <div class="scale-card rx">
-              <strong>◆ RX / RX+</strong>
-              1 milla · 100 PU · 200 Push-Ups · 300 Squats · 1 milla<br>RX+ con chaleco 9/6 kg · Particionado libre
-            </div>
-            <div class="scale-card sc">
-              <strong>◆ Scaled · "Half Murph"</strong>
-              800 m · 50 PU (banda/ring rows) · 100 Push-Ups (rodillas) · 150 Squats · 800 m · Sin chaleco
-            </div>
-          </div>
-          <div class="coach-toggle" onclick="toggleCoach(this)">
-            <div class="coach-head"><span>◆ Feedback Coaches · Por perfil de atleta</span><span class="coach-arrow">▸</span></div>
-            <div class="coach-content">
-              <div class="coach-block prog">
-                <span class="coach-block-label">◆ Para el Halterófilo</span>
-                <div class="coach-block-text">El volumen gimnástico alto es terreno desconocido para tu atleta de fuerza. <strong>Particiona agresivo</strong> (rondas de 5-10-15 desde el inicio) y prioriza ritmo de carrera cómodo. Su fuerza le da Pull-Ups y Push-Ups potentes, pero la resistencia muscular es el reto. Scaling sin vergüenza: <em>"Half Murph" es victoria total para un levantador.</em></div>
-              </div>
-              <div class="coach-block geo">
-                <span class="coach-block-label">◆ Para el Corredor (Endurance)</span>
-                <div class="coach-block-text">Las millas son tu casa — pero NO las uses para sacar ventaja y luego morir en el suelo. <strong>Corre la primera milla al 80%</strong>, reserva para los empujes. El cuello de botella serán las 200 flexiones: particiona en sets cómodos (10-10) desde el principio. Tu motor te lleva a la segunda milla con tank.</div>
-              </div>
-              <div class="coach-block scale">
-                <span class="coach-block-label">◆ Para el CrossFitter</span>
-                <div class="coach-block-text">Tu pan de cada día. Decisión clave: <strong>chaleco o no</strong>. Si vas RX+ con lastre, la primera milla baja un 20% el ritmo. Cindy split (5-10-15 × 20) es el estándar de oro para mantener manos y pecho frescos. Apunta sub-45 con chaleco, sub-38 sin él.</div>
-              </div>
-              <div class="coach-block tech">
-                <span class="coach-block-label">◆ Para el Body Soldier</span>
-                <div class="coach-block-text">El de hipertrofia tiene fuerza de empuje brutal pero poco gas aeróbico. <strong>Las flexiones son tu arma</strong> — tu pecho aguanta. Cuida las Pull-Ups (volumen alto desconocido) y administra la carrera con caminata-trote si hace falta. Hoy entrenas el motor que normalmente no tocas. Termina con dignidad.</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module e" data-day="sab">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Logística &amp; Heats</div>
-          <div class="sub-label">Cómo orquestar Murph para toda la tribu</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box e">
-            <strong>◆ Objetivo</strong>
-            Con los 4 perfiles entrenando el mismo WOD, la gestión de material y espacio es clave. El cuello de botella es la barra de dominadas. Planificación de heats y rotaciones para que nadie espere.
-          </div>
-          <div class="material-tag">⚙ PULL-UP BAR (CUELLO DE BOTELLA) + RUTA DE CARRERA + COLCHONETAS</div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">◆ Heats por capacidad de la barra de dominadas</span>
-              <span class="block-time">GESTIÓN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li><strong>Heat 1:</strong> RX+ con chaleco (los más capaces, salen primero)</li>
-                <li><strong>Heat 2:</strong> RX particionado</li>
-                <li><strong>Heat 3:</strong> Scaled / Half Murph</li>
-                <li><strong>Salida escalonada cada 3-4 min</strong> para descongestionar la ruta de carrera y las barras.</li>
-              </ul>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Nota del Capitán a los coaches</span>
-            Avisa a los atletas que <strong>empiezan en distintos puntos del rig</strong> para repartir las barras de dominadas. Ten estaciones de agua visibles. Música épica. Pon el nombre de Michael Murphy en la pizarra. Que el último en terminar reciba la mayor ovación: hoy nadie corre solo.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module h" data-day="sab">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ Calentamiento Común</div>
-          <div class="sub-label">Preparación de la tribu antes de Murph</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box h">
-            <strong>◆ Objetivo</strong>
-            Murph castiga el sistema sin piedad. Un calentamiento progresivo común para los 4 perfiles, preparando hombros, cadera y motor antes de cargar la memoria.
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">A) Motor &amp; Movilidad · 8 min</span>
-              <span class="block-time">8 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>400 m Trote suave progresivo</li>
-                <li>Movilidad de hombro: pass-throughs + dislocaciones con banda</li>
-                <li>Movilidad de cadera: spiderman + sentadilla profunda sostenida</li>
-              </ul>
-            </div>
-          </div>
-          <div class="block">
-            <div class="block-head">
-              <span class="block-title">B) Activación Gimnástica · 6 min</span>
-              <span class="block-time">6 MIN</span>
-            </div>
-            <div class="block-content">
-              <ul>
-                <li>2 rondas: 5 Pull-Ups + 10 Push-Ups + 15 Air Squats <span class="sets">(ritmo suave, ensayo del Cindy split)</span></li>
-                <li>Probar el chaleco quien lo vaya a usar</li>
-              </ul>
-            </div>
-          </div>
-          <div class="stim">
-            <span class="stim-label">◆ Stimulus</span>
-            Que cada atleta encuentre HOY su estrategia de partición en el calentamiento. La ronda de prueba 5-10-15 es exactamente el ritmo que llevarán en el WOD. Hombros bien calientes: 200 flexiones no perdonan un manguito frío.
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="module b" data-day="sab">
-      <div class="module-header" onclick="toggleModule(this)">
-        <div>
-          <div class="module-label">◆ La Historia</div>
-          <div class="sub-label">Por qué cargamos este peso · Operation Red Wings</div>
-        </div>
-        <div class="toggle-arrow">▸</div>
-      </div>
-      <div class="module-body">
-        <div class="module-inner">
-          <div class="objective-box b">
-            <strong>◆ El relato</strong>
-            28 de junio de 2005. Las montañas del Hindu Kush, Afganistán.
-          </div>
-          <div class="block">
-            <div class="block-content" style="font-size:15px;line-height:1.7">
-              <p style="margin-bottom:12px">El teniente Michael P. Murphy lideraba un equipo de cuatro SEALs en una misión de reconocimiento. Fueron descubiertos y rodeados por una fuerza enemiga muy superior en número. Sin cobertura, sin comunicaciones, con sus hombres cayendo heridos uno a uno.</p>
-              <p style="margin-bottom:12px">Murphy tomó una decisión que le costaría la vida: salió a un claro expuesto al fuego enemigo —el único lugar donde había señal— para llamar por radio y pedir el rescate de su equipo. Fue alcanzado mientras hablaba. Terminó la llamada, dio las gracias, y volvió a la lucha.</p>
-              <p style="margin-bottom:12px">Murphy y dos de sus compañeros murieron ese día. Recibió la Medalla de Honor a título póstumo. El WOD que llevaba su nombre era el que él mismo hacía con su chaleco antibalas puesto en una barra cualquiera. Lo llamaba <strong>"Body Armor"</strong>.</p>
-              <p style="color:var(--accent-gold);font-style:italic">Cuando hoy las piernas te tiemblen en la sentadilla 250, recuerda: él corrió hacia el fuego por sus hermanos. Lo mínimo que podemos hacer es terminar. 🫡</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <footer>
-    <div class="footer-text">CFVK · S22 · TROY BURN</div>
-    <div class="footer-sub">25 — 30 · Mayo · 2026 · Memorial Week · "Cuando la ciudad arde, no quedan tracks. Solo soldados."</div>
-  </footer>
-
+<div class="module b" data-day="lun">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Body Soldier</div><div class="sub-label">Espalda &amp; Bíceps · Tracción Densa · 42 MIN</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box b"><strong>◆ Objetivo</strong>Arrancamos PHOENIX con espalda gruesa y bíceps llenos. Rotamos respecto a la semana pasada: hoy mandan la tracción horizontal y vertical más el curl en varios ángulos. Tirón de calidad para construir la "V" de la espalda.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) Weighted Pull-Ups · 4 × 6</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li>4 sets × 6 reps <span class="sets">(add load if strict pull-ups are easy, RPE 8, rest 90s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) Barbell Pendlay Row · 4 × 8</span><span class="block-time">10 MIN</span></div><div class="block-content"><ul><li>4 sets × 8 reps <span class="sets">(explosive pull to lower chest, dead stop each rep, rest 75s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">C) Single-Arm Lat Pulldown · 3 × 12/12</span><span class="block-time">8 MIN</span></div><div class="block-content"><ul><li>3 sets × 12/12 reps <span class="sets">(cable, full stretch overhead, squeeze at the bottom)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">D) Incline DB Curl · 3 × 12</span><span class="block-time">6 MIN</span></div><div class="block-content"><ul><li>3 sets × 12 reps <span class="sets">(bench at 45°, arms behind torso for max stretch, rest 60s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">E) Cable Hammer Curl (Rope) · 3 × 15</span><span class="block-time">6 MIN</span></div><div class="block-content"><ul><li>3 sets × 15 reps <span class="sets">(neutral grip, focus brachialis + forearm, rest 45s)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>La fila Pendlay es el corazón del día: cada repetición arranca muerta en el suelo, sin rebote. Mantén el torso paralelo y tira con los codos, no con las manos. En los curls, prohibido balancear: el bíceps trabaja, no la espalda baja.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ RIG + BARRA + CABLE + MANCUERNAS</span> CrossFit usa el rig hoy en su triplet — coordina turnos de barra de dominadas. Si hay saturación, Body Soldier puede empezar por las filas y cerrar con dominadas.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Escalado</span><div class="coach-block-text">Sin dominadas estrictas todavía: sustituir por jalón al pecho pesado 4×8 o dominadas asistidas con banda. La progresión llega: hoy se construye fuerza de tracción base.</div></div>
+</div></div>
+</div></div></div>
 </div>
 
+<div class="day" id="day-mar">
+<div class="day-banner"><div class="day-banner-inner"><div class="day-title-block"><div class="theme-tag">◆ 02 · JUNIO · RISING</div><div class="day-title">MARTES</div></div><div class="mission-label">"El fénix asciende. Gimnasia de control sobre las manos y barra cíclica."</div></div></div>
+
+<div class="module c open" data-day="mar">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ CrossFit</div><div class="sub-label">Wall Walk / Ring Dip EMOM + Ascent 21-15-9</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box c"><strong>◆ Objetivo</strong>Día de ascenso: fuerza gimnástica invertida y empuje en anillas en EMOM, seguido de un couplet veloz de peso muerto y flexiones con trepa de cuerda en cada ronda. Tracción de grip y ritmo de barra al suelo.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) EMOM × 12 min · Alt Odd / Even</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li><strong>Odd:</strong> 2 Wall Walks <span class="sets">(slow, controlled, full lockout at top)</span></li><li><strong>Even:</strong> 12 Ring Dips / Box Dips <span class="sets">(strict if possible, full depth)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) "ASCENT" · 21-15-9 For Time</span><span class="block-time">CAP 15 MIN</span></div><div class="block-content"><ul><li>Deadlifts <span class="load">(70 / 47.5 kg)</span></li><li>Push-Ups</li><li><strong>After each round:</strong> 2 Rope Climbs <span class="sets">(legs allowed, 4.5 m)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>El EMOM no es fatiga: clava cada Wall Walk con control y cada Ring Dip a profundidad real. El couplet es rápido — peso muerto moderado y unbroken, flexiones en 2 tandas, y 2 trepas tras cada bloque. La cuerda castiga el grip: sal del peso muerto con las manos frescas. Objetivo: 9-12 min.</div>
+<div class="scale-grid"><div class="scale-card rx"><strong>◆ RX</strong>EMOM 2 Wall Walks / 12 Ring Dips · Deadlifts 70/47.5 · Push-Ups · 2 Rope Climbs each round</div><div class="scale-card sc"><strong>◆ Scaled</strong>EMOM 1 Wall Walk / 12 Box Dips · Deadlifts 50/35 · Knee Push-Ups · 4 Rope Pulls from floor each round</div></div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Wall Walk: <em>"abdomen apretado, no arquees la lumbar, las manos caminan hacia la pared"</em>. Peso muerto: barra pegada a las espinillas, espalda neutra, empuje el suelo. Trepa: agarre en gancho con los pies, tracción potente de dorsal.</div></div>
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ PARED + ANILLAS + BARRA + CUERDA</span> CrossFit ocupa pared, anillas, barra y cuerdas. Endurance hoy va de remo, kettlebell, carrera y comba (EMOM 30), sin solape de material.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Banderas Rojas</span><div class="coach-block-text"><strong>Hombro:</strong> si hay molestia en los Ring Dips, pasa a fondos en cajón. <strong>Lumbar:</strong> si la espalda se redondea en el peso muerto bajo fatiga, baja peso de inmediato.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module e" data-day="mar">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Endurance</div><div class="sub-label">Rising EMOM 30 · 5-Movement Wheel</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box e"><strong>◆ Objetivo</strong>EMOM de 30 minutos con cinco modalidades rotando en bloque. Trabajo sostenido pero medido: cada minuto debe terminar con 10-15 segundos de aire. Formato "al minuto" — distinto de las ventanas largas del lunes.</div>
+<div class="material-tag">⚙ ROWER + KETTLEBELL + CARRERA + COMBA (CrossFit no usa estos ergómetros hoy)</div>
+<div class="block"><div class="block-head"><span class="block-title">◆ RISING EMOM · 30 MIN · 5-Movement Wheel</span><span class="block-time">30 MIN</span></div><div class="block-content"><ul><li><strong>Min 1:</strong> 12 / 10 Calorie Row</li><li><strong>Min 2:</strong> 18 Russian Kettlebell Swings <span class="load">(24 / 16 kg)</span></li><li><strong>Min 3:</strong> 100 m Run</li><li><strong>Min 4:</strong> 50 Double-Unders</li><li><strong>Min 5:</strong> 12 Air Squats + 8 Push-Ups</li></ul><div class="sets" style="margin-top:6px">6 full rounds. Score: any minute not completed within the window.</div></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>El ritmo lo marca el reloj, no tú. Cada estación está calibrada para acabar sobre el segundo 45-50. Si vas con la lengua fuera en la ronda 2, has empezado demasiado fuerte. La comba es el respiro técnico: relájate y respira mientras saltas.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Remo: tirón potente y recuperación relajada. Russian Swing: la cadera manda, la pesa llega a la altura de los ojos, no más. Double-Unders: muñecas, no brazos; salto bajo y constante.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Escalado</span><div class="coach-block-text">Para quien no domina dobles: 30 Double-Unders o 60 Single-Unders. Baja calorías o KB un escalón si alguien no cierra el minuto dos rondas seguidas.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module h" data-day="mar">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Halterofilia</div><div class="sub-label">Clean &amp; Jerk Complex · 4 Movimientos · RPE 7.5</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box h"><strong>◆ Objetivo</strong>Toca Clean &amp; Jerk. Complex de cuatro movimientos — la progresión de la semana sube en densidad. Encadenamos un Power Clean, una sentadilla frontal de transición, un Squat Clean y el Split Jerk. RPE 7.5, exigente pero sin máximos.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) Muscular Warm-up &amp; Hypertrophy</span><span class="block-time">8 MIN</span></div><div class="block-content"><ul><li>3 sets × 10 Bent-Over Barbell Row <span class="sets">(light, scapular control)</span></li><li>3 sets × 8 Strict Press <span class="sets">(moderate bar, overhead lockout)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) C&amp;J Complex · Every 2 min × 12 min · 6 sets</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li>1 Power Clean + 1 Front Squat + 1 Squat Clean + 1 Split Jerk <span class="sets">(build to RPE 7.5 — clean reps only)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">C) Accessory · Tempo Front Squat · 3 × 5</span><span class="block-time">10 MIN</span></div><div class="block-content"><ul><li>3 sets × 5 reps <span class="sets">(3-second descent, no bounce out of the hole, RPE 7)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>El reto del complex es mantener el front rack rígido del Power Clean al Split Jerk sin reajustar las manos. La sentadilla frontal del medio "ensaya" la profundidad del Squat Clean que viene justo después. Cue: <em>"codos altos toda la serie, sin descansar la barra en el cuello"</em>.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Split Jerk: <em>"pie delantero firme, pie trasero activo, barra detrás de la cabeza en el bloqueo"</em>. La transición Power Clean → Front Squat enseña a recibir alto y bajar con control. Recuerda: el Split Jerk es el estándar del club, nada de Push Jerk aquí.</div></div>
+<div class="coach-block prog"><span class="coach-block-label">◆ Programación</span><div class="coach-block-text">Día de C&amp;J. El próximo será el jueves (pesado escalonado). Hoy acumulamos calidad técnica con un complex denso de cuatro piezas — un escalón más que la semana pasada.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module b" data-day="mar">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Body Soldier</div><div class="sub-label">Pecho &amp; Tríceps · Empuje Completo · 42 MIN</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box b"><strong>◆ Objetivo</strong>Empuje horizontal e inclinado con barra y mancuerna, cerrando con tríceps desde dos ángulos. Pecho denso, brazos de empuje fuertes. Complementa perfecto con los anillos de CrossFit sin chocar de material.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) Barbell Bench Press · 4 × 8</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li>4 sets × 8 reps <span class="sets">(RPE 8, controlled descent, full lockout, rest 90s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) Incline DB Press · 4 × 10</span><span class="block-time">10 MIN</span></div><div class="block-content"><ul><li>4 sets × 10 reps <span class="sets">(bench at 30°, deep stretch at bottom, rest 75s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">C) Cable Chest Fly · 3 × 15</span><span class="block-time">8 MIN</span></div><div class="block-content"><ul><li>3 sets × 15 reps <span class="sets">(high-to-low cable, squeeze and hold 1s at midline)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">D) Cable Tricep Pushdown (V-Bar) · 4 × 12</span><span class="block-time">7 MIN</span></div><div class="block-content"><ul><li>4 sets × 12 reps <span class="sets">(elbows pinned to torso, full lockout, rest 60s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">E) Overhead Cable Tricep Extension · 3 × 12</span><span class="block-time">5 MIN</span></div><div class="block-content"><ul><li>3 sets × 12 reps <span class="sets">(rope, lean forward, stretch the long head, rest 45s)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>En press de banca, baja la barra controlada hasta tocar el pecho — nada de rebotes. Las aperturas con cable buscan estiramiento y contracción, no peso. Para tríceps, alterna empuje (codos pegados) y extensión overhead (estiramiento de cabeza larga) para martillar las tres cabezas.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ BANCO + BARRA + CABLE + MANCUERNAS</span> CrossFit usa anillas y barra olímpica hoy; Body Soldier ocupa bancas y cables. Sin solape. Coordina solo las mancuernas si CrossFit las necesita en algún escalado.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Escalado</span><div class="coach-block-text">Si hay molestia de hombro en banca plana, sustituir por press en máquina o subir el banco a inclinado. Mantén el RPE 8 sin llegar al fallo absoluto en compuestos.</div></div>
+</div></div>
+</div></div></div>
+</div>
+<div class="day" id="day-mie">
+<div class="day-banner"><div class="day-banner-inner"><div class="day-title-block"><div class="theme-tag">◆ 03 · JUNIO · TALONS</div><div class="day-title">MIÉRCOLES</div></div><div class="mission-label">"Las garras se cierran. Fuerza horizontal y un AMRAP olímpico-gimnástico."</div></div></div>
+
+<div class="module c open" data-day="mie">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ CrossFit</div><div class="sub-label">Pendlay Row / Bench Strength + Iron Talons AMRAP</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box c"><strong>◆ Objetivo</strong>Las garras del fénix. Fuerza de tracción y empuje horizontal en superserie, seguida de un AMRAP olímpico-gimnástico: sentadilla por encima de la cabeza, core en hollow, snatch desde hang, abdomen y burpees. Técnica overhead bajo fatiga.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) STRENGTH · E2:00 × 10 min · 5 sets</span><span class="block-time">10 MIN</span></div><div class="block-content"><ul><li>5 Barbell Pendlay Rows + 5 Bench Press <span class="sets">(superset, same area, RPE 7.5)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) "IRON TALONS" · AMRAP 15 min</span><span class="block-time">15 MIN</span></div><div class="block-content"><ul><li>5 Overhead Squats <span class="load">(43 / 30 kg)</span></li><li>15 Hollow Rocks</li><li>5 Hang Snatches <span class="load">(43 / 30 kg)</span></li><li>15 Sit-Ups</li><li>5 Burpees</li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>La superserie es fuerza pura: descansa lo que el reloj te deje tras las 5+5 reps. En el AMRAP, barra ligera y misma carga para OHS y Hang Snatch (mismo agarre) — todo unbroken. El cuello de botella es el overhead bajo fatiga de core: mantén la barra apilada sobre la mitad del pie. Objetivo: 5-7 rondas.</div>
+<div class="scale-grid"><div class="scale-card rx"><strong>◆ RX</strong>5 Pendlay Row + 5 Bench · 5 OHS 43/30 · 15 Hollow Rocks · 5 Hang Snatch 43/30 · 15 Sit-Ups · 5 Burpees</div><div class="scale-card sc"><strong>◆ Scaled</strong>5+5 moderate · 5 OHS 30/20 · 15 Hollow Hold (s) · 5 Hang Power Snatch 30/20 · 15 Sit-Ups · 5 Burpees</div></div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Overhead Squat: <em>"brazos en oreja, abdomen apretado, profundidad completa"</em>. Hang Snatch: extensión explosiva de cadera, recepción rápida. Hollow Rock: lumbar pegada al suelo, no arqueada — si pierde la posición, reduce a hollow hold.</div></div>
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ BARRA + BANCO + COLCHONETA</span> CrossFit usa barra (Pendlay/Bench y la barra ligera del AMRAP) y suelo para el core. Endurance hoy trabaja en pareja con remo, mancuerna, cajón y comba — sin barra. Sin solape.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Banderas Rojas</span><div class="coach-block-text"><strong>Hombro:</strong> molestia en el OHS → bajar carga o pasar a Front Squat ligero. El Hang Snatch ligero no es día de fuerza: si alguien sube peso, recuérdale que hoy es ritmo y técnica.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module e" data-day="mie">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Endurance</div><div class="sub-label">"Descending Engine" · AMRAP 30 · In Pairs</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box e"><strong>◆ Objetivo</strong>Motor en pareja: mientras uno acumula distancia, el otro acumula esfuerzo máximo, y juntos rematan un tramo sincronizado. Dos bloques de "uno trabaja una tarea fija / el otro va al máximo en otra", más reps compartidas. Formato de pareja — distinto al EMOM individual de ayer.</div>
+<div class="material-tag">⚙ POR PAREJA: 1 ROWER + 1 PAR MANCUERNAS + 1 CAJÓN + COMBA + RUTA (CrossFit usa barra y suelo hoy)</div>
+<div class="block"><div class="block-head"><span class="block-title">◆ "DESCENDING ENGINE" · AMRAP 30 min · In Pairs</span><span class="block-time">30 MIN</span></div><div class="block-content"><ul><li><strong>Block 1:</strong> Teammate A: 1000 m Run / Teammate B: Max effort Row <span class="sets">(swap when A returns)</span></li><li><strong>Together:</strong> 50 Synchro Alternating DB Snatch <span class="load">(22.5 / 15 kg)</span></li><li><strong>Block 2:</strong> Teammate A: 100 Double-Unders / Teammate B: Max Box Jump-Overs <span class="load">(24" / 20")</span></li><li><strong>Together:</strong> 50 Burpees</li></ul><div class="sets" style="margin-top:6px">Repeat blocks for 30 minutes. Score: total combined reps + distance.</div></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>En los bloques A/B, el que va al máximo aprieta porque va a descansar cuando rote. Los tramos sincronizados (DB Snatch y Burpees) obligan a marcar un ritmo común — comunicaos en voz alta y repartid en tandas que mantengan a los dos moviéndose. Gestión de pareja por encima de heroísmos individuales.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Sincronía en DB Snatch: ambos arriba a la vez (lockout simultáneo). Transiciones de relevo limpias: el que llega de correr toca y el otro sale disparado. <em>"Trabaja fuerte tu tarea porque te toca descanso al rotar"</em>.</div></div>
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ ROWER + MANCUERNAS + CAJÓN + COMBA</span> Endurance usa estos materiales hoy; CrossFit opera con barra y suelo. Asigna un rower y un cajón por pareja al inicio y escalona salidas a carrera para no saturar la puerta.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module h" data-day="mie">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Halterofilia</div><div class="sub-label">Hang Snatch + Deficit Snatch Deadlift · RPE 7</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box h"><strong>◆ Objetivo</strong>Segundo día de Snatch de la semana, con enfoque distinto al lunes: arranque desde hang sobre la rodilla para forzar la aceleración en la segunda fase del tirón, y déficit en el peso muerto de snatch para cargar isquios y posición de salida.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) Muscular Warm-up &amp; Hypertrophy</span><span class="block-time">8 MIN</span></div><div class="block-content"><ul><li>3 sets × 12 Dumbbell Pullover <span class="sets">(lat activation, controlled)</span></li><li>3 sets × 10 Snatch-Grip RDL <span class="sets">(light bar, hamstring loading)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) Hang Snatch Complex · Every 90s × 12 min · 8 sets</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li>1 Hang Squat Snatch (above knee) + 1 Overhead Squat <span class="sets">(build to RPE 7 — clean reps only)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">C) Accessory · Deficit Snatch Deadlift · 4 × 4</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li>4 sets × 4 reps <span class="load">(stand on 2.5 cm plate, @ 90% of snatch, slow off the floor)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>El Hang Snatch elimina la primera fase del suelo y te obliga a ser explosivo desde la rodilla. El déficit en el peso muerto alarga el recorrido y carga la posición de salida — clave para mejorar la velocidad de barra. Cue: <em>"empuja el suelo lejos, barra rozando los muslos"</em>.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Desde el hang: hombros por delante de la barra, peso en todo el pie, y al pasar la rodilla, extensión violenta de cadera. <em>"La barra no sube por los brazos, sube por la cadera"</em>. En el déficit, mantén la espalda fija desde el primer centímetro.</div></div>
+<div class="coach-block prog"><span class="coach-block-label">◆ Programación</span><div class="coach-block-text">Día de Snatch (separado dos días del lunes). El viernes cerramos con Snatch Max Day. Hoy construimos posición y velocidad, no kilos máximos.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module b" data-day="mie">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Body Soldier</div><div class="sub-label">Pierna &amp; Core · Cadena Completa · 44 MIN</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box b"><strong>◆ Objetivo</strong>Día de pierna completa con foco en cuádriceps, isquios, glúteo y un cierre fuerte de core. Rotamos respecto a la semana pasada metiendo la pierna a mitad de semana. Volumen alto, articulaciones cuidadas.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) Goblet Squat (Tempo) · 4 × 10</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li>4 sets × 10 reps <span class="sets">(3-second descent, deep, heavy DB or KB, rest 75s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) Romanian Deadlift · 4 × 10</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li>4 sets × 10 reps <span class="sets">(barbell or DB, hinge to mid-shin, hamstring tension, rest 90s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">C) Walking Lunges (DB) · 3 × 20</span><span class="block-time">8 MIN</span></div><div class="block-content"><ul><li>3 sets × 20 steps <span class="sets">(10/leg, DB at sides, controlled knee track)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">D) Standing Calf Raise · 4 × 20</span><span class="block-time">6 MIN</span></div><div class="block-content"><ul><li>4 sets × 20 reps <span class="sets">(full range, 1s squeeze at top, rest 45s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">E) Hanging Leg Raise + Plank Combo · 3 rounds</span><span class="block-time">6 MIN</span></div><div class="block-content"><ul><li>3 rounds: 12 Hanging Leg Raises + 45s Plank <span class="sets">(strict core, no swing on the bar)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>La sentadilla goblet con tempo quema cuádriceps sin machacar la espalda. En el peso muerto rumano, siente el estiramiento de isquios y no bajes más allá de tu bisagra de cadera. Las zancadas caminando son volumen de glúteo — controla cada paso.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ MANCUERNAS + KB + RACK + RIG</span> CrossFit ocupa barra y suelo; Endurance trabaja en pareja con remo/cajón/comba. Body Soldier usa mancuernas, KB y máquinas de pierna. Comparte solo la barra de dominadas para las elevaciones de piernas — coordina turnos.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Escalado</span><div class="coach-block-text">Elevaciones de piernas colgado demasiado duras: sustituir por elevaciones de rodilla o crunch en colchoneta. Mantén el peso de la goblet alto pero con profundidad real.</div></div>
+</div></div>
+</div></div></div>
+</div>
+
+<div class="day" id="day-jue">
+<div class="day-banner"><div class="day-banner-inner"><div class="day-title-block"><div class="theme-tag">◆ 04 · JUNIO · INFERNO</div><div class="day-title">JUEVES</div></div><div class="mission-label">"El día más caliente. Motor al rojo vivo y barra olímpica bajo fatiga."</div></div></div>
+
+<div class="module c open" data-day="jue">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ CrossFit</div><div class="sub-label">Squat Clean EMOM + Run / Clean / T2B / KB Engine</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box c"><strong>◆ Objetivo</strong>El infierno. Primero, técnica de Squat Clean en EMOM para encender el patrón olímpico. Después, un RFT de carrera, cargada de sentadilla, abdomen colgado y un cierre de KB snatch que sube las pulsaciones al rojo. Barra cíclica bajo fatiga, motor a tope.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) STRENGTH · E2:00 × 10 min · 5 sets</span><span class="block-time">10 MIN</span></div><div class="block-content"><ul><li>2 Squat Cleans <span class="sets">(touch-and-go, build to RPE 7.5 — clean technique)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) "INFERNO" · 4 Rounds For Time</span><span class="block-time">CAP 20 MIN</span></div><div class="block-content"><ul><li>200 m Run</li><li>9 Squat Cleans <span class="load">(60 / 42.5 kg)</span></li><li>15 Toes-to-Bar</li><li>21 Kettlebell Snatches <span class="load">(24 / 16 kg, alternating)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>El EMOM es técnica con carga, no día de máximos: dos cargadas de sentadilla limpias por set. En el RFT, la carrera corta regula el pulso, las cargadas en singles rápidos, los T2B en 8-7 y el KB snatch alternando en bloques de 10-11. Si la barra se siente pesada, escala antes de romper la espalda. Objetivo: 15-19 min.</div>
+<div class="scale-grid"><div class="scale-card rx"><strong>◆ RX</strong>EMOM 2 Squat Cleans heavy · 200 m Run · 9 Squat Cleans 60/42.5 · 15 Toes-to-Bar · 21 KB Snatch 24/16</div><div class="scale-card sc"><strong>◆ Scaled</strong>EMOM 2 Squat Cleans moderate · 200 m Run · 9 Squat Cleans 42.5/30 · 12 Hanging Knee Raises · 21 KB Snatch 16/12</div></div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Squat Clean: <em>"recibe en sentadilla completa con los codos altos, levántate con el pecho arriba"</em>. KB Snatch: recorrido en una línea, el codo gira para que la pesa no golpee el antebrazo, lockout sobre la cabeza. T2B: ritmo de kipping, no fuerza bruta.</div></div>
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ BARRA + RIG + KETTLEBELL + CARRERA</span> CrossFit usa barra, barra de dominadas, kettlebell y carrera — sin ergómetros hoy. Endurance tiene vía libre para remo y medball en su AMRAP. Sin solape.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Banderas Rojas</span><div class="coach-block-text"><strong>Espalda baja:</strong> 9 Squat Cleans tras correr es exigente — si la técnica se rompe, baja peso. El KB Snatch alternando es el cierre: si el hombro se cansa, baja peso de pesa antes que romper técnica.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module e" data-day="jue">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Endurance</div><div class="sub-label">Inferno Engine · AMRAP 35 · Medball Engine</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box e"><strong>◆ Objetivo</strong>AMRAP largo de motor con balón medicinal: remo, carrera corta y trabajo de medball que castiga piernas y empuje. Treinta y cinco minutos sostenidos sin descansos programados. Formato AMRAP — rompe la racha de ventanas, EMOM y pareja de los días previos.</div>
+<div class="material-tag">⚙ ROWER + MEDBALL + CARRERA (CrossFit no usa remo ni medball hoy)</div>
+<div class="block"><div class="block-head"><span class="block-title">◆ INFERNO ENGINE · AMRAP 35 min</span><span class="block-time">35 MIN</span></div><div class="block-content"><ul><li>20 / 16 Calorie Row</li><li>100 m Run</li><li>20 Medball Lunges <span class="load">(9 / 6 kg)</span></li><li>10 Burpees</li><li>20 Medball Cleans <span class="load">(9 / 6 kg)</span></li></ul><div class="sets" style="margin-top:6px">Score: total rounds + reps. Target RX: 5-7 rounds.</div></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>Ritmo "sostenible para 35 minutos" — Z2 alto. No hay descanso programado, así que el descanso es bajar el ritmo en las transiciones. Las Medball Lunges son tu recuperación activa entre el remo y los burpees. Si quemas demasiado en el remo, el medball se hace eterno.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Medball Clean: <em>"bisagra de cadera, balón pegado, recepción en sentadilla con el pecho arriba"</em>. Medball Lunge: balón al pecho, rodilla trasera controlada al suelo. Gestión: remo al 80%, transiciones rápidas valen más que machacar una estación.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Escalado</span><div class="coach-block-text">Reduce a AMRAP 28 o baja calorías un 20% para quien tenga poco fondo. El éxito es mantener el movimiento continuo, sin paradas largas.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module h" data-day="jue">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Halterofilia</div><div class="sub-label">Clean &amp; Jerk Pesado Escalonado · RPE 8</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box h"><strong>◆ Objetivo</strong>Segundo día de C&amp;J, hoy más pesado. Subimos a series de un solo Clean &amp; Jerk escalonando la carga hacia un RPE 8 sólido. Cierre con back-off de Front Squat para reforzar la pierna. Un escalón antes del Max Day del viernes.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) Muscular Warm-up &amp; Hypertrophy</span><span class="block-time">8 MIN</span></div><div class="block-content"><ul><li>3 sets × 10 Bent-Over Barbell Row <span class="sets">(light, scapular control)</span></li><li>3 sets × 8 Behind-the-Neck Push Press <span class="sets">(light bar, jerk dip rehearsal)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) Clean &amp; Jerk · Every 2 min × 14 min · 7 sets</span><span class="block-time">14 MIN</span></div><div class="block-content"><ul><li>1 Squat Clean + 1 Split Jerk <span class="sets">(build across sets to a heavy single at RPE 8)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">C) Back-off · Front Squat · 3 × 3</span><span class="block-time">10 MIN</span></div><div class="block-content"><ul><li>3 sets × 3 reps <span class="load">(@ 85% of top clean, elbows high, drive out of the hole)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>RPE 8 es "podría hacer 2 repeticiones más, pero no muchas". Sube escalonado: cada serie un poco más, parando antes de cualquier fallo. El back-off de Front Squat con el 85% del top graba la fuerza de pierna sin destrozar el sistema antes del viernes.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Bajo carga pesada, el Split Jerk es donde se pierden las repeticiones: <em>"compromiso total bajo la barra, no dudes en el split"</em>. Si el Squat Clean sale alto y feo, repite con la misma carga antes de subir. Técnica manda sobre ego.</div></div>
+<div class="coach-block prog"><span class="coach-block-label">◆ Programación</span><div class="coach-block-text">Día de C&amp;J pesado. Mañana es Snatch Max Day — por eso hoy paramos en RPE 8 y no buscamos máximos absolutos. La semana progresa hacia el pico del viernes.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module b" data-day="jue">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Body Soldier</div><div class="sub-label">Hombros · Tres Cabezas · 42 MIN</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box b"><strong>◆ Objetivo</strong>Hombros completos atacando las tres cabezas del deltoides. Press vertical pesado, elevaciones laterales de volumen y trabajo posterior para una articulación fuerte y simétrica. Hombros redondos y resistentes.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) Seated DB Shoulder Press · 4 × 8</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li>4 sets × 8 reps <span class="sets">(upright bench, RPE 8, full lockout, rest 90s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) DB Lateral Raise · 4 × 15</span><span class="block-time">8 MIN</span></div><div class="block-content"><ul><li>4 sets × 15 reps <span class="sets">(slight elbow bend, thumb down, no swing, rest 45s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">C) Cable Rear Delt Fly · 3 × 15</span><span class="block-time">7 MIN</span></div><div class="block-content"><ul><li>3 sets × 15 reps <span class="sets">(cross cables, wide arc, rear delt isolation)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">D) DB Front Raise · 3 × 12</span><span class="block-time">5 MIN</span></div><div class="block-content"><ul><li>3 sets × 12 reps <span class="sets">(alternating to shoulder height, controlled, rest 45s)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">E) Lateral Raise Drop Set · 3 sets</span><span class="block-time">5 MIN</span></div><div class="block-content"><ul><li>3 sets: 12 reps medium → 10 reps light → 12 reps very light <span class="sets">(no rest between drops, rest 90s between full sets)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>En el press, controla la bajada hasta la altura del oído. Las elevaciones laterales mandan: lidera con el codo y sube hasta la línea del hombro, sin impulso. El drop-set final busca congestión máxima — pesos que ardan al final.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ BANCO + MANCUERNAS + CABLE</span> CrossFit hoy usa barra, rig y KB (sin bancas ni cables). Body Soldier tiene vía libre en bancas y poleas. Sin conflicto de material.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Escalado</span><div class="coach-block-text">Hombro sensible: reducir el press a máquina con respaldo y bajar el rango de las elevaciones. Prioriza la técnica sobre el peso en todo el trabajo de deltoides.</div></div>
+</div></div>
+</div></div></div>
+</div>
+<div class="day" id="day-vie">
+<div class="day-banner hero-day"><div class="day-banner-inner"><div class="day-title-block"><div class="theme-tag">◆ 05 · JUNIO · APEX · HERO DAY</div><div class="day-title">VIERNES</div></div><div class="mission-label">"La cima del vuelo. 'Richard Vanhine' en CrossFit, 'Puccio' en Endurance. Sesión sagrada."</div></div></div>
+
+<div class="module c open" data-day="vie">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ CrossFit</div><div class="sub-label">Hero WOD · "Richard Vanhine"</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="hero-ribbon">◆ HERO WOD · "RICHARD VANHINE" ◆</div>
+<div class="tribute">Hero WOD reconocido por la fundación 555 Fitness — creada por bomberos para honrar a los caídos del cuerpo y promover su salud y forma física. Hoy honramos con nuestro esfuerzo a Richard "Bruce" Van Hine, un bombero del FDNY
+que entregó su vida salvando a otros en las Torres Gemelas el 11 de septiembre. Su
+casco recuperado entre los escombros y su pasión por la naturaleza nos recuerdan la
+esencia de este WOD: la resistencia, la entrega y el espíritu de servicio. A él no le
+gustaba que lo llamaran héroe; siempre decía que "solo estaba haciendo su trabajo".
+Por eso, hoy no entrenamos solo por estética o rendimiento, sino para rendir tributo a
+un verdadero ejemplo de valentía. Deja el alma en cada repetición, apoya a tus compañeros
+y mantén la cabeza en alto, porque cada gota de sudor de hoy es un homenaje a su memoria.. <strong>()</strong></div>
+<div class="objective-box c"><strong>◆ El significado</strong>La cima del vuelo del fénix. Un Hero clásico de barra al hombro y carrera: empujes pesados, distancia, thrusters y más distancia. La trampa es el cambio constante entre la barra y el reloj de la carrera. Honramos a Richard Vanhine vaciándonos por completo.</div>
+<div class="block"><div class="block-head"><span class="block-title">◆ "RICHARD VANHINE" · 4 Rounds For Time</span><span class="block-time">CAP 30 MIN</span></div><div class="block-content"><ul><li>25 Shoulder-to-Overheads <span class="load">(60 / 42.5 kg · 135/95 lb)</span></li><li>400 m Run</li><li>15 Thrusters <span class="load">(60 / 42.5 kg · 135/95 lb)</span></li><li>400 m Run</li></ul><div class="sets" style="margin-top:6px">Same barbell. Score: total time for 4 rounds.</div></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>Peso medio que permita tandas grandes en el S2OH (15-10 o 13-12). Los Thrusters son el segundo golpe: en 2 tandas máximo. Las carreras de 400 m no se sprintan — son recuperación activa para volver a la barra. Objetivo: 18-26 min.</div>
+<div class="scale-grid"><div class="scale-card rx"><strong>◆ RX</strong>25 S2OH 60/42.5 · 400 m Run · 15 Thrusters 60/42.5 · 400 m Run · 4 rounds</div><div class="scale-card sc"><strong>◆ Scaled</strong>25 S2OH 42.5/30 · 300 m Run · 15 Thrusters 42.5/30 · 300 m Run · 3 rounds</div></div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Shoulder-to-Overhead: usa Push Press o Push Jerk para ahorrar hombro — <em>"drive de cadera, no press estricto"</em>. Thrusters: sentadilla completa y aprovecha el rebote para el empuje. Reparte el aire en el lockout, no en el hoyo.</div></div>
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ 1 BARRA + DISCOS POR ATLETA</span> Cada atleta una barra, todo el WOD. Endurance hoy hace "Puccio" (barra + remo + carrera). Coordina salidas a carrera y reparto de rowers. <strong>Es Hero WOD:</strong> honramos a Richard Vanhine — completarlo con respeto.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Banderas Rojas</span><div class="coach-block-text"><strong>Hombro/lumbar:</strong> 25 empujes por ronda es mucho volumen overhead — si la técnica decae, baja 5 kg. Si la primera ronda supera 7 min, escalar a 3 rondas.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module e" data-day="vie">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Endurance</div><div class="sub-label">Hero WOD · "Puccio"</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="hero-ribbon">◆ HERO WOD · "PUCCIO" ◆</div>
+<div class="tribute">Memorial WOD de la comunidad CrossFit (SPRAG), dedicado a la memoria del caído Puccio. Un test de motor y barra que mezcla carrera, técnica olímpica y remo. Hoy lo cargamos por él. <strong></strong></div>
+<div class="objective-box e"><strong>◆ El significado</strong>Hero híbrido de motor y fuerza: arrancas con una milla, te metes en la barra con cargadas y sentadillas, y cierras vaciándote en el remo. La gestión de la milla inicial decide cómo llegas a la barra. Por Puccio.</div>
+<div class="block"><div class="block-head"><span class="block-title">◆ "PUCCIO" · For Time</span><span class="block-time">CAP 35 MIN</span></div><div class="block-content"><ul><li>1 Mile Run <span class="sets">(1.600 m)</span></li><li>30 Power Cleans <span class="load">(60 / 42.5 kg · 135/95 lb)</span></li><li>30 Back Squats <span class="load">(60 / 42.5 kg · 135/95 lb)</span></li><li>1000 m Row</li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>La milla inicial controlada (no sprint) o llegas fundido a la barra. Power Cleans en singles rápidos o tandas de 5; Back Squats desde el suelo en 2-3 tandas. El remo final es donde se vacía el tanque — ritmo fuerte pero sin morir en los primeros 300 m. Objetivo: 16-24 min.</div>
+<div class="scale-grid"><div class="scale-card rx"><strong>◆ RX</strong>1 Mile Run · 30 Power Cleans 60/42.5 · 30 Back Squats 60/42.5 · 1000 m Row</div><div class="scale-card sc"><strong>◆ Scaled</strong>1200 m Run · 30 Power Cleans 42.5/30 · 30 Back Squats 42.5/30 · 800 m Row</div></div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Power Clean: <em>"extensión explosiva, codos rápidos al front rack"</em>. Back Squat desde el suelo: primer rep sale de una cargada, luego rack. Remo final: ritmo objetivo y respeta el split, no salgas a 1:45 si no lo aguantas.</div></div>
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ BARRA + ROWER + RUTA DE CARRERA</span> Endurance usa barra y rower; CrossFit ("Richard Vanhine") usa barras y corre. Comparten ruta de carrera y ambos usan barra — asigna zonas y escalona salidas para no saturar.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module h" data-day="vie">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Halterofilia</div><div class="sub-label">Snatch Max Day + Back-off</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box h"><strong>◆ Objetivo</strong>El pico de la semana. Hoy buscamos un Snatch pesado del día (alternamos respecto al C&amp;J Max de la semana pasada). Build progresivo hasta RPE 9, sin fallos absurdos, y back-off con Snatch Pulls para reforzar el tirón.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) Activation Warm-up</span><span class="block-time">8 MIN</span></div><div class="block-content"><ul><li>3 sets × 6 Snatch-Grip Push Press <span class="sets">(light, overhead position)</span></li><li>2 sets × 3 Overhead Squat <span class="sets">(moderate, depth and balance)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) Build to a Heavy Squat Snatch · 0:00 — 22:00</span><span class="block-time">22 MIN</span></div><div class="block-content"><ul><li>1 Squat Snatch <span class="sets">(climb in weight to a heavy single, RPE 9 max — no missed reps grinding)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">C) Back-off · Snatch Pulls · 3 × 3</span><span class="block-time">10 MIN</span></div><div class="block-content"><ul><li>3 sets × 3 reps <span class="load">(@ 95-100% of top snatch, full extension, controlled)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>Máximo del día es solidez técnica al límite, NO fallo a la desesperada. Sube +2,5/5 kg por intento hasta el RPE 9. Si fallas dos veces seguidas, cierra ahí y pasa al back-off. Los Snatch Pulls con el top del día graban el patrón de tirón sin machacar el sistema nervioso.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">En cargas máximas la paciencia en el suelo lo es todo: <em>"no tires con prisa, deja que la barra llegue a la cadera antes de extender"</em>. La velocidad bajo la barra decide el intento — agresividad para meterse, firmeza para aguantar el overhead.</div></div>
+<div class="coach-block prog"><span class="coach-block-label">◆ Programación</span><div class="coach-block-text">Viernes de máximos en Halterofilia (constitución del club). Esta semana toca Snatch Max, alternando con el C&amp;J Max de la semana anterior. El sábado bajamos a trabajo técnico en pareja.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module b" data-day="vie">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Body Soldier</div><div class="sub-label">Phoenix Arms · Pump Festival · 24 MIN</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="hero-ribbon">◆ PHOENIX ARMS · PUMP DAY ◆</div>
+<div class="objective-box b"><strong>◆ Objetivo</strong>Cierre festivo de la semana. AMRAP de brazos con superseries bíceps-tríceps a alta densidad. Cargas ligeras, congestión brutal, antebrazos en llamas. El fénix despliega las alas: salir del box bombeado.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) PHOENIX ARMS AMRAP · 22 min</span><span class="block-time">22 MIN</span></div><div class="block-content"><ul><li>12 EZ-Bar Curls <span class="sets">(light, strict)</span></li><li>12 EZ-Bar Skull Crushers</li><li>12 DB Hammer Curls</li><li>12 Bench Dips</li><li>15 Cable Curls <span class="sets">(continuous tension)</span></li></ul><div class="sets" style="margin-top:6px">Score: rounds in 22 min. Target: 6-8 rounds with extreme pump.</div></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>No es competición de pesos: es competición de bombeo. Cargas que permitan todas las repeticiones seguidas. Ritmo continuo, descansos cortos solo entre rondas. Bíceps explotando, tríceps quemando, antebrazos al rojo. Termina la semana con las alas desplegadas.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ BARRA EZ + MANCUERNAS + CABLE + BANCO</span> CrossFit y Endurance usan barras olímpicas y corren. Body Soldier tiene libre la zona de bancas, cables y barra EZ. Sin conflicto.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Escalado</span><div class="coach-block-text">Si el codo molesta en los fondos en banco, reducir el rango o pasar a extensión con cuerda. El día es de volumen y congestión, nunca de fallo articular.</div></div>
+</div></div>
+</div></div></div>
+</div>
+
+<div class="day" id="day-sab">
+<div class="day-banner team-day"><div class="day-banner-inner"><div class="day-title-block"><div class="theme-tag">◆ 06 · JUNIO · FLIGHT · TEAM DAY</div><div class="day-title">SÁBADO</div></div><div class="mission-label">"Vuelo en formación. Hoy se entrena en pareja: el fénix no asciende solo."</div></div></div>
+
+<div class="module c open" data-day="sab">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ CrossFit</div><div class="sub-label">"Wingmen" · Partner Chipper · 100s</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box c"><strong>◆ Objetivo</strong>Cierre de semana en formación. Chipper de cien repeticiones por estación, repartidas libremente entre los dos. Volumen alto, ambiente de equipo, nadie vuela solo. La gestión del reparto es la clave de la nota.</div>
+<div class="material-tag">⚙ POR PAREJA: 1 ROWER + 1 PAR MANCUERNAS + 1 CAJÓN + RIG</div>
+<div class="block"><div class="block-head"><span class="block-title">◆ "WINGMEN" · For Time · In Pairs</span><span class="block-time">CAP 30 MIN</span></div><div class="block-content"><ul><li>100 Calorie Row <span class="sets">(split as you like, one works / one rests)</span></li><li>100 DB Thrusters <span class="load">(2× 22.5 / 15 kg)</span></li><li>100 Pull-Ups</li><li>100 Burpee Box Jump-Overs <span class="load">(24" / 20")</span></li><li>100 DB Box Step-Overs <span class="load">(2× 22.5 / 15 kg)</span></li></ul><div class="sets" style="margin-top:6px">Split every station freely between partners. Score: total time.</div></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>Reparte en tandas cortas que mantengan a los dos en movimiento: mientras uno trabaja, el otro recupera. Las dominadas en bloques de 10-15. Los Burpee Box Jump-Overs son el muro — repartid 15-15 o 20-20 para no acumular fatiga. Comunicaos el plan antes de empezar. Objetivo: 24-30 min.</div>
+<div class="scale-grid"><div class="scale-card rx"><strong>◆ RX</strong>100 Cal Row · 100 DB Thrusters 22.5/15 · 100 Pull-Ups · 100 Burpee Box Jump-Overs 24/20 · 100 DB Box Step-Overs 22.5/15</div><div class="scale-card sc"><strong>◆ Scaled</strong>80 Cal Row · 80 DB Thrusters 15/10 · 80 Banded Pull-Ups · 80 Burpee Step-Overs · 80 DB Box Step-Ups 15/10</div></div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">DB Thrusters: <em>"sentadilla completa, drive de cadera, mancuernas bloqueadas arriba"</em>. DB Box Step-Over: paso completo arriba del cajón, control en la bajada. El reparto inteligente vale más que la velocidad bruta de un solo miembro.</div></div>
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ ROWER + MANCUERNAS + CAJÓN + RIG</span> Sábado social: CrossFit y Endurance comparten espacio. Endurance usa carrera + kettlebell hoy; CrossFit usa rower, mancuerna, cajón y rig. Escalona salidas de las parejas cada 2-3 min para repartir rowers y cajones.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Escalado</span><div class="coach-block-text">Tríos en vez de parejas si la clase es grande: reparten el mismo volumen. Ajustar carga de mancuernas para que los Thrusters no se rompan a singles.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module e" data-day="sab">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Endurance</div><div class="sub-label">"Formation" · 10 Rounds · Run + Double KB</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box e"><strong>◆ Objetivo</strong>Diez rondas de carrera y kettlebell doble: un sprint corto, trabajo explosivo de doble pesa, un tramo de recuperación y un cierre de fuerza en front rack. Motor y agarre por igual, en ambiente de equipo. Formato de rondas múltiples — cierre social de la semana.</div>
+<div class="material-tag">⚙ DOBLE KETTLEBELL + RUTA DE CARRERA (CrossFit usa rower/cajón/rig hoy)</div>
+<div class="block"><div class="block-head"><span class="block-title">◆ "FORMATION" · 10 Rounds</span><span class="block-time">CAP 35 MIN</span></div><div class="block-content"><ul><li>100 m Run</li><li>10 Double Kettlebell Snatches <span class="load">(2× 24 / 16 kg)</span></li><li>100 m Jog <span class="sets">(recovery pace)</span></li><li>10 Double Kettlebell Front Rack Squats <span class="load">(2× 24 / 16 kg)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>Los 100 m de carrera se aprietan; los 100 m de trote son recuperación activa real — no los corras. Double KB Snatch en una tanda si el agarre aguanta. Front Rack Squats con las dos pesas pegadas al pecho, codos altos. Ritmo sostenible para las 10 rondas, sin reventar en la tercera.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Double KB Snatch: las pesas pegadas al cuerpo, codos girando rápido por debajo para no golpear el antebrazo. Front Rack Squat: codos altos, torso vertical, profundidad completa. <em>"El trote no es descanso pasivo, es ritmo controlado"</em>.</div></div>
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ DOBLE KETTLEBELL + RUTA</span> Endurance usa solo doble kettlebell y carrera; CrossFit ocupa rower, cajón y rig. Sin solape. Asigna un juego de pesas por atleta o pareja y reparte la salida a la ruta de carrera.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module h" data-day="sab">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Halterofilia</div><div class="sub-label">Tandem Speed · Técnica en Pareja</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box h"><strong>◆ Objetivo</strong>Cierre técnico en pareja tras el Snatch Max del viernes. Cargas ligeras (RPE 5-6), foco absoluto en velocidad bajo la barra. Compartiendo una barra, los compañeros se alternan al minuto y se corrigen mutuamente. Día social y de calidad.</div>
+<div class="block"><div class="block-head"><span class="block-title">A) Tall Snatch · In Pairs · Every 1:00 × 12 min</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li>3 Tall Snatch <span class="sets">(light, partners alternate each minute — 6 sets each)</span></li></ul></div></div>
+<div class="block"><div class="block-head"><span class="block-title">B) Tall Clean + Split Jerk · In Pairs · Every 1:00 × 12 min</span><span class="block-time">12 MIN</span></div><div class="block-content"><ul><li>2 Tall Clean + 1 Split Jerk <span class="sets">(light, partners alternate each minute — 6 sets each)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>El Tall Snatch/Clean parte sin extensión de cadera: te obliga a tirar de los brazos y meterte rapidísimo debajo. Cargas muy ligeras — la velocidad es el rey. Mientras uno levanta, el otro observa la recepción y da feedback. Pura calidad técnica.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block tech"><span class="coach-block-label">◆ Foco Técnico</span><div class="coach-block-text">Tall variants: <em>"codos rápidos, castiga el suelo con los pies, recepción firme"</em>. El compañero que observa debe corregir una sola cosa por serie. No subir peso: si la velocidad baja, baja la carga.</div></div>
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ 1 BARRA POR PAREJA + PLATAFORMA</span> Halterofilia comparte barras libremente. Una barra por pareja basta para todo el día — ideal para la dinámica de relevo al minuto.</div></div>
+</div></div>
+</div></div></div>
+
+<div class="module b" data-day="sab">
+<div class="module-header" onclick="toggleModule(this)"><div><div class="module-label">◆ Body Soldier</div><div class="sub-label">"Wing Builders" · Posterior &amp; Brazos en Pareja · 40 MIN</div></div><div class="toggle-arrow">▸</div></div>
+<div class="module-body"><div class="module-inner">
+<div class="objective-box b"><strong>◆ Objetivo</strong>Cierre de hipertrofia en pareja: cadena posterior y brazos en formato "tú trabajas / yo descanso". Un compañero hace la ronda completa mientras el otro recupera, luego cambian. Volumen alto con descanso natural y ambiente de equipo.</div>
+<div class="block"><div class="block-head"><span class="block-title">◆ "WING BUILDERS" · In Pairs · AMRAP 20 min</span><span class="block-time">20 MIN</span></div><div class="block-content"><ul><li>10 DB Romanian Deadlifts</li><li>10 DB Bent-Over Rows</li><li>10 DB Curls</li><li>10 DB Overhead Tricep Extensions</li></ul><div class="sets" style="margin-top:6px">One partner completes a full round while the other rests, then switch. Score: total combined rounds.</div></div></div>
+<div class="block"><div class="block-head"><span class="block-title">◆ Finisher · Partner Plank Hold</span><span class="block-time">5 MIN</span></div><div class="block-content"><ul><li>Accumulate 3:00 total plank between partners <span class="sets">(switch whenever one drops)</span></li></ul></div></div>
+<div class="stim"><span class="stim-label">◆ Estímulo</span>Con descanso completo entre rondas, aprieta cada serie con buena técnica. Las mancuernas se comparten en la pareja, así que el cambio es directo. El peso muerto rumano cuida los isquios; los curls y extensiones cierran la semana con bombeo. Ambiente de equipo por encima de todo.</div>
+<div class="coach-toggle" onclick="toggleCoach(this)"><div class="coach-head"><span>◆ Feedback Coaches</span><span class="coach-arrow">▸</span></div><div class="coach-content">
+<div class="coach-block geo"><span class="coach-block-label">◆ Material &amp; Geografía</span><div class="coach-block-text"><span class="material-tag">⚙ 1 PAR MANCUERNAS POR PAREJA + COLCHONETA</span> Sábado social: un par de mancuernas por pareja basta. CrossFit ocupa ergómetros y rig, Endurance carrera y kettlebell — Body Soldier opera en la zona de mancuernas y suelo. Sin conflicto.</div></div>
+<div class="coach-block scale"><span class="coach-block-label">◆ Escalado</span><div class="coach-block-text">Ajustar el peso de las mancuernas a la pareja más débil o tener dos juegos. Reducir a AMRAP 16 si la clase es muy numerosa. La plancha final, acumulada como equipo, cierra el ambiente del día.</div></div>
+</div></div>
+</div></div></div>
+</div>
+
+<footer>
+<div class="footer-text">CFVK · S23 · PHOENIX</div>
+<div class="footer-sub">1 — 6 · Junio · 2026 · RPE 7–7.5 · "El ave no vuelve a la ceniza: asciende."</div>
+</footer>
+</div>
 <script>
 function showDay(ev, day){
   document.querySelectorAll('.day').forEach(d => d.classList.remove('active'));
   document.getElementById('day-' + day).classList.add('active');
-
   document.querySelectorAll('.nav-btn').forEach(b => b.classList.remove('active'));
   if (ev && ev.currentTarget) ev.currentTarget.classList.add('active');
-
   const modules = document.querySelectorAll('#day-' + day + ' .module');
   modules.forEach(m => m.classList.remove('open'));
   const first = document.querySelector('#day-' + day + ' .module.c');
   if (first) first.classList.add('open');
-
   window.scrollTo({top:0, behavior:'smooth'});
 }
-
-function toggleModule(header){
-  const module = header.parentElement;
-  module.classList.toggle('open');
-}
-
-function toggleCoach(el){
-  el.classList.toggle('open');
-}
+function toggleModule(header){ header.parentElement.classList.toggle('open'); }
+function toggleCoach(el){ el.classList.toggle('open'); }
 </script>
-
 </body>
 </html>
