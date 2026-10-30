@@ -1,3 +1,7 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<style>body{margin:0}[hidden]{display:none!important}</style>
 <title>CFVK S44 Balanza</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -275,6 +279,119 @@ body.pizarra .lvl span{font-size:19px}
   <main id="day"></main>
   <div class="foot">CrossFit Vallecas &middot; VOLT 2</div>
 </div>
+
+<!-- ===== CFVK SOUND - control de audio (un circulo, dos estados) ===== -->
+<style>
+.snd{position:fixed;z-index:40;right:max(16px,env(safe-area-inset-right,0px));bottom:calc(18px + env(safe-area-inset-bottom,0px));
+  width:50px;height:50px;padding:0;border-radius:50%;cursor:pointer;-webkit-tap-highlight-color:transparent;
+  border:1.5px solid transparent;
+  background:radial-gradient(circle at 50% 38%,#1d0c13 0%,#0a0307 72%) padding-box,
+             conic-gradient(from 210deg,#7a5b17,#ffe7a3,#c99329,#6b4f14,#f6d47c,#7a5b17) border-box;
+  box-shadow:0 8px 22px rgba(0,0,0,.6),0 0 0 1px rgba(255,184,0,.06);
+  transition:box-shadow .6s ease,transform .25s ease,filter .4s ease}
+.snd:hover{filter:brightness(1.12)}
+.snd:active{transform:scale(.94)}
+.snd:focus-visible{outline:2px solid #ffb800;outline-offset:3px}
+.snd[aria-pressed="true"]{box-shadow:0 8px 22px rgba(0,0,0,.6),0 0 18px rgba(255,184,0,.32),inset 0 0 12px rgba(255,184,0,.12)}
+.snd svg{display:block;width:26px;height:26px;margin:auto;overflow:visible}
+.snd .snd-off,.snd .snd-on{transform-box:fill-box;transform-origin:center;transition:opacity .45s ease,transform .6s cubic-bezier(.2,.7,.2,1)}
+.snd .snd-on{opacity:0;transform:scale(.45)}
+.snd .snd-cut{stroke-dasharray:20;stroke-dashoffset:0;transition:stroke-dashoffset .5s cubic-bezier(.2,.7,.2,1)}
+.snd[aria-pressed="true"] .snd-off{opacity:0;transform:scale(.7) rotate(-14deg)}
+.snd[aria-pressed="true"] .snd-cut{stroke-dashoffset:20}
+.snd[aria-pressed="true"] .snd-on{opacity:1;transform:none}
+@media (max-width:420px){.snd{width:46px;height:46px}.snd svg{width:24px;height:24px}}
+@media (prefers-reduced-motion:reduce){.snd,.snd .snd-off,.snd .snd-on,.snd .snd-cut{transition:none}}
+</style>
+<button class="snd" id="sndBtn" type="button" aria-pressed="false" aria-label="Sound off. Activar musica" title="Sound off">
+  <svg viewBox="0 0 24 24" aria-hidden="true">
+    <defs>
+      <linearGradient id="sndGold" x1="0" y1="0" x2="1" y2="1">
+        <stop offset="0" stop-color="#fff0c2"/><stop offset=".45" stop-color="#f2c75c"/><stop offset="1" stop-color="#b8861f"/>
+      </linearGradient>
+    </defs>
+    <g class="snd-off" fill="none" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4.5 9.6h3.1L12.4 5.7v12.6L7.6 14.4H4.5z" stroke="url(#sndGold)" stroke-width="1.6"/>
+      <path class="snd-cut" d="M5 5L19 19" stroke="#0a0307" stroke-width="4"/>
+      <path class="snd-cut" d="M5 5L19 19" stroke="url(#sndGold)" stroke-width="1.6"/>
+    </g>
+    <path class="snd-on" d="M9.6 6.9v10.2l8.1-5.1z" fill="url(#sndGold)"/>
+  </svg>
+</button>
+<audio id="sndAudio" src="audio/Lament%20of%20the%20War%20-%20MP3%20Preview.mp3" preload="none" loop playsinline></audio>
+<script>
+(function(){
+  var VOL=0.35, UP=1.4, DOWN=0.9, KEY="cfvk-snd-t";
+  var btn=document.getElementById("sndBtn"), a=document.getElementById("sndAudio");
+  if(!btn||!a)return;
+  var on=false, ctx=null, gain=null, volOK=true, tick=null, done=null, fading=false;
+
+  /* iOS no deja cambiar audio.volume: alli el fundido va por Web Audio */
+  try{var v0=a.volume;a.volume=0.5;volOK=Math.abs(a.volume-0.5)<0.01;a.volume=v0;}catch(e){volOK=false;}
+  var AC=window.AudioContext||window.webkitAudioContext;
+
+  function graph(){
+    if(volOK||gain||!AC)return;
+    try{
+      if(navigator.audioSession)navigator.audioSession.type="playback";
+      ctx=new AC();var src=ctx.createMediaElementSource(a);gain=ctx.createGain();gain.gain.value=0;
+      src.connect(gain);gain.connect(ctx.destination);
+    }catch(e){gain=null;}
+  }
+  function level(){return gain?gain.gain.value:(volOK?a.volume:1);}
+  function setLevel(x){if(gain)gain.gain.value=x;else if(volOK)a.volume=x;}
+  function stop(){clearInterval(tick);tick=null;if(done){clearTimeout(done);done=null;}fading=false;}
+  function fadeTo(target,secs,cb){
+    stop();fading=true;
+    if(gain){
+      var t=ctx.currentTime;gain.gain.cancelScheduledValues(t);gain.gain.setValueAtTime(gain.gain.value,t);gain.gain.linearRampToValueAtTime(target,t+secs);
+      done=setTimeout(function(){done=null;fading=false;if(cb)cb();},secs*1000+30);return;
+    }
+    if(!volOK){fading=false;if(cb)cb();return;}
+    var from=a.volume,t0=performance.now();
+    tick=setInterval(function(){
+      var k=Math.min(1,(performance.now()-t0)/(secs*1000)),e=k<.5?2*k*k:1-Math.pow(-2*k+2,2)/2;
+      a.volume=Math.max(0,Math.min(1,from+(target-from)*e));
+      if(k>=1){stop();if(cb)cb();}
+    },30);
+  }
+  function paint(){
+    btn.setAttribute("aria-pressed",on?"true":"false");
+    btn.setAttribute("aria-label",on?"Sound on. Silenciar musica":"Sound off. Activar musica");
+    btn.title=on?"Sound on":"Sound off";
+  }
+  function turnOn(){
+    on=true;paint();graph();
+    if(ctx&&ctx.state==="suspended")ctx.resume();
+    if(a.paused)setLevel(0);
+    var p=a.play();
+    if(p&&p.catch)p.catch(function(){stop();on=false;paint();});
+    fadeTo(VOL,UP);
+  }
+  function turnOff(){
+    on=false;paint();
+    fadeTo(0,DOWN,function(){if(!on)a.pause();});
+  }
+  btn.addEventListener("click",function(){on?turnOff():turnOn();});
+
+  /* si el sistema corta el audio (llamada, auriculares), el boton vuelve a SOUND OFF */
+  a.addEventListener("pause",function(){if(on&&!fading){on=false;paint();}});
+
+  /* sin nombre de cancion en la pantalla de bloqueo */
+  if("mediaSession" in navigator){
+    try{navigator.mediaSession.metadata=new MediaMetadata({title:"CrossFit Vallecas",artist:"Planificacion51"});}catch(e){}
+    try{navigator.mediaSession.setActionHandler("play",function(){if(!on)turnOn();});
+        navigator.mediaSession.setActionHandler("pause",function(){if(on)turnOff();});}catch(e){}
+  }
+
+  /* al cambiar de semana se retoma en el mismo punto (solo en esta pestana) */
+  try{var saved=parseFloat(sessionStorage.getItem(KEY));
+    if(saved>0)a.addEventListener("loadedmetadata",function once(){a.removeEventListener("loadedmetadata",once);if(saved<a.duration)a.currentTime=saved;});}catch(e){}
+  window.addEventListener("pagehide",function(){try{if(a.currentTime>0)sessionStorage.setItem(KEY,String(a.currentTime));}catch(e){}});
+})();
+</script>
+<!-- ===== fin CFVK SOUND ===== -->
+
 
 <script>
 /* ===================== DATOS DE LA SEMANA ===================== */
