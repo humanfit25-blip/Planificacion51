@@ -2,7 +2,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <style>body{margin:0}[hidden]{display:none!important}</style>
-<title>CFVK S44 Balanza</title>
+<title>CFVK S45 Alfa y Omega</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Anton&family=Orbitron:wght@600;800;900&family=Rajdhani:wght@500;600;700&display=swap">
@@ -123,6 +123,7 @@ body.pizarra .piz{background:var(--gold);color:#120;}
 .rider{margin-top:16px;border:1px solid var(--line);border-radius:10px;background:rgba(18,6,12,.82);padding:14px 16px;display:flex;flex-direction:column;gap:8px}
 .rider h3{margin:0;font-family:var(--f-display);font-weight:800;font-size:14px;letter-spacing:.2em;text-transform:uppercase;color:var(--crimson)}
 .rider q{quotes:none;font-style:italic;color:#ffb3c4;font-size:17px}
+.manif>summary{list-style:none;cursor:pointer;display:inline-block;border:1px solid var(--gold);border-radius:999px;padding:6px 14px;font-family:var(--f-display);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--gold)}.manif>summary::-webkit-details-marker{display:none}.manif[open]>summary{margin-bottom:10px}.manif{display:flex;flex-direction:column;gap:8px}
 .rider p{margin:0;font-size:17px;color:var(--silver);max-width:65ch}
 .banner{margin-top:10px;border:1px solid var(--gold);border-radius:8px;padding:10px 14px;font-size:17px;font-weight:600;color:#ffe3a3;
   background:linear-gradient(90deg,rgba(255,184,0,.14),rgba(255,45,85,.08))}
@@ -395,193 +396,962 @@ body.pizarra .lvl span{font-size:19px}
 
 <script>
 /* ===================== DATOS DE LA SEMANA ===================== */
-var BS=[{"name":"PUSH","tag":"Doble progresi&oacute;n &middot; semana 3 de 4","blocks":[{"h":"WARM-UP","lines":["5 min el&iacute;ptica &middot; rotaciones con banda &middot; 2 series ligeras de press banca"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2 min","lines":["Press banca con barra 4 x 6-8"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60-90 s","lines":["Press inclinado con mancuernas 3 x 8-10","Aperturas en polea 3 x 12-15","Fondos en paralelas 3 x 8-12","Press franc&eacute;s con barra Z 3 x 10-12","Extensi&oacute;n de tr&iacute;ceps en polea con cuerda 3 x 12-15"]}],"rx":"Cuando todas las series llegan al techo del rango con buena t&eacute;cnica, sube la carga la semana siguiente","sc":"Press en m&aacute;quina en vez de barra &middot; fondos asistidos","material":["banco","barra","mancuernas","poleas","paralelas"],"foco":"Esc&aacute;pulas atr&aacute;s y abajo en todo el press. Bajada controlada de 2 s.","banderas":"Codos abiertos a 90 grados en el banco: cerrarlos a 45. Anotar el peso de cada serie."},{"name":"PULL","tag":"Doble progresi&oacute;n &middot; semana 3 de 4 &middot; b&iacute;ceps","blocks":[{"h":"WARM-UP","lines":["5 min remo suave &middot; 2 x 10 face pull ligero &middot; colgarse 30 s"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2 min","lines":["Dominadas (lastradas si pasas de 10) 4 x 6-10"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60-90 s","lines":["Remo con barra 4 x 8-10","Remo unilateral con mancuerna 3 x 10-12","Pullover en polea alta 3 x 12-15","Face pull 3 x 15","Curl con barra recta 3 x 8-10"]}],"rx":"Mismo criterio: rango completo en todas las series, sube la carga","sc":"Jal&oacute;n al pecho en vez de dominadas &middot; remo en m&aacute;quina","material":["barra de dominadas","barra","mancuernas","poleas"],"foco":"Tirar con el codo, no con la mano. Pausa de 1 s con la esc&aacute;pula retra&iacute;da en los remos.","banderas":"Remo con barra con la espalda subiendo en cada rep: est&aacute;s usando inercia, baja carga."},{"name":"PIERNA","tag":"Doble progresi&oacute;n &middot; semana 3 de 4","blocks":[{"h":"WARM-UP","lines":["5 min bici &middot; 2 x 10 sentadilla goblet &middot; movilidad de tobillo"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2-3 min","lines":["Sentadilla trasera con barra 4 x 6-8"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60-90 s","lines":["Prensa 3 x 10-12","Sentadilla b&uacute;lgara con mancuernas 3 x 8-10 por pierna","Extensi&oacute;n de cu&aacute;driceps 3 x 12-15","Gemelo de pie 4 x 12-15"]}],"rx":"Sube carga cuando todas las series llegan al techo del rango","sc":"Sentadilla en m&aacute;quina Smith o hack &middot; b&uacute;lgara sin peso","material":["rack","barra","prensa","mancuernas","maquina de extension","maquina de gemelo"],"foco":"Rodilla sigue la l&iacute;nea del pie. Profundidad completa antes que m&aacute;s kilos.","banderas":"Tal&oacute;n que se levanta en la b&uacute;lgara: alargar la zancada."},{"name":"POSTERIOR + CORE","tag":"Doble progresi&oacute;n &middot; semana 3 de 4","blocks":[{"h":"WARM-UP","lines":["5 min el&iacute;ptica &middot; puente de gl&uacute;teo 2 x 15 &middot; bird dog 2 x 8"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2 min","lines":["Peso muerto rumano con barra 4 x 8-10"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60-90 s","lines":["Hip thrust con barra 4 x 8-12","Curl femoral tumbado 3 x 10-12","Hiperextensiones 3 x 12-15","Rueda abdominal 3 x 8-12","Plancha lateral 3 x 30-45 s por lado"]}],"rx":"Sube carga cuando todas las series llegan al techo del rango","sc":"Rumano con mancuernas &middot; rueda desde rodillas con recorrido corto","material":["barra","banco","maquina de femoral","banco de hiperextensiones","rueda abdominal"],"foco":"El rumano es cadera atr&aacute;s, no espalda abajo. Bloquear gl&uacute;teo arriba del hip thrust 1 s.","banderas":"Lumbar que se arquea en la rueda: recortar recorrido."},{"name":"BRAZOS","tag":"Doble progresi&oacute;n &middot; semana 3 de 4 &middot; b&iacute;ceps","blocks":[{"h":"WARM-UP","lines":["5 min remo &middot; 2 x 15 curl con banda &middot; 2 x 15 extensi&oacute;n con banda"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2 min","lines":["Press de banca agarre cerrado 4 x 6-8"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60 s","lines":["Curl con barra Z 4 x 8-10","Curl inclinado con mancuernas 3 x 10-12","Extensi&oacute;n de tr&iacute;ceps sobre la cabeza en polea 3 x 10-12","Curl martillo 3 x 10-12","Curl de predicador en m&aacute;quina 2 x 12-15"]}],"rx":"Sube carga cuando todas las series llegan al techo del rango","sc":"Press cerrado en m&aacute;quina &middot; curl con mancuernas ligeras","material":["banco","barra","barra Z","mancuernas","poleas","maquina de predicador"],"foco":"Codos fijos a los lados en todos los curls. Bajada de 2 s.","banderas":"Balanceo del tronco en el curl con barra: la carga es demasiada."},{"name":"HOMBROS","tag":"Doble progresi&oacute;n &middot; semana 3 de 4","blocks":[{"h":"WARM-UP","lines":["5 min el&iacute;ptica &middot; rotaciones externas con banda 2 x 15 &middot; 2 series ligeras de press"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2 min","lines":["Press militar con barra de pie 4 x 6-8"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60-90 s","lines":["Press Arnold 3 x 8-10","Elevaciones laterales con mancuernas 4 x 12-15","P&aacute;jaros en m&aacute;quina 3 x 12-15","Encogimientos con mancuernas 3 x 10-12","Elevaciones frontales en polea 2 x 12"]}],"rx":"Sube carga cuando todas las series llegan al techo del rango","sc":"Press de hombro en m&aacute;quina sentado","material":["barra","rack","mancuernas","maquina de pajaros","poleas"],"foco":"Gl&uacute;teo y abdomen apretados en el press de pie: el tronco no se arquea.","banderas":"Elevaciones laterales con impulso de trapecio: menos peso, codo por delante."}];
+var BS=[{"name":"PUSH","tag":"Doble progresi&oacute;n &middot; semana 4 de 4 &middot; descarga","blocks":[{"h":"WARM-UP","lines":["5 min el&iacute;ptica &middot; rotaciones con banda &middot; 2 series ligeras de press banca"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2 min","lines":["Press banca con barra 2 x 6-8 @ RIR 3"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60-90 s","lines":["Press inclinado con mancuernas 2 x 8-10","Aperturas en polea 2 x 12-15","Fondos en paralelas 2 x 8-12","Press franc&eacute;s con barra Z 2 x 10-12","Extensi&oacute;n de tr&iacute;ceps en polea con cuerda 2 x 12-15"]}],"rx":"Peso de la S44 &middot; 2 series &middot; RIR 3","sc":"Press en m&aacute;quina en vez de barra &middot; fondos asistidos","material":["banco","barra","mancuernas","poleas","paralelas"],"foco":"Esc&aacute;pulas atr&aacute;s y abajo en todo el press. Bajada controlada de 2 s."},{"name":"PULL","tag":"Doble progresi&oacute;n &middot; semana 4 de 4 &middot; descarga &middot; b&iacute;ceps","blocks":[{"h":"WARM-UP","lines":["5 min remo suave &middot; 2 x 10 face pull ligero &middot; colgarse 30 s"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2 min","lines":["Dominadas (lastradas si pasas de 10) 2 x 6-10 @ RIR 3"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60-90 s","lines":["Remo con barra 2 x 8-10","Remo unilateral con mancuerna 2 x 10-12","Pullover en polea alta 2 x 12-15","Face pull 2 x 15","Curl con barra recta 2 x 8-10"]}],"rx":"Peso de la S44 &middot; 2 series &middot; RIR 3","sc":"Jal&oacute;n al pecho en vez de dominadas &middot; remo en m&aacute;quina","material":["barra de dominadas","barra","mancuernas","poleas"],"foco":"Tirar con el codo, no con la mano. Pausa de 1 s con la esc&aacute;pula retra&iacute;da en los remos."},{"name":"PIERNA","tag":"Doble progresi&oacute;n &middot; semana 4 de 4 &middot; descarga","blocks":[{"h":"WARM-UP","lines":["5 min bici &middot; 2 x 10 sentadilla goblet &middot; movilidad de tobillo"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2-3 min","lines":["Sentadilla trasera con barra 2 x 6-8 @ RIR 3"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60-90 s","lines":["Prensa 2 x 10-12","Sentadilla b&uacute;lgara con mancuernas 2 x 8-10 por pierna","Extensi&oacute;n de cu&aacute;driceps 2 x 12-15","Gemelo de pie 2 x 12-15"]}],"rx":"Peso de la S44 &middot; 2 series &middot; RIR 3","sc":"Sentadilla en m&aacute;quina Smith o hack &middot; b&uacute;lgara sin peso","material":["rack","barra","prensa","mancuernas","maquina de extension","maquina de gemelo"],"foco":"Rodilla sigue la l&iacute;nea del pie. Profundidad completa antes que m&aacute;s kilos."},{"name":"POSTERIOR + CORE","tag":"Doble progresi&oacute;n &middot; semana 4 de 4 &middot; descarga","blocks":[{"h":"WARM-UP","lines":["5 min el&iacute;ptica &middot; puente de gl&uacute;teo 2 x 15 &middot; bird dog 2 x 8"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2 min","lines":["Peso muerto rumano con barra 2 x 8-10 @ RIR 3"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60-90 s","lines":["Hip thrust con barra 2 x 8-12","Curl femoral tumbado 2 x 10-12","Hiperextensiones 2 x 12-15","Rueda abdominal 2 x 8-12","Plancha lateral 2 x 30-45 s por lado"]}],"rx":"Peso de la S44 &middot; 2 series &middot; RIR 3","sc":"Rumano con mancuernas &middot; rueda desde rodillas con recorrido corto","material":["barra","banco","maquina de femoral","banco de hiperextensiones","rueda abdominal"],"foco":"El rumano es cadera atr&aacute;s, no espalda abajo. Bloquear gl&uacute;teo arriba del hip thrust 1 s."},{"name":"BRAZOS","tag":"Doble progresi&oacute;n &middot; semana 4 de 4 &middot; descarga &middot; b&iacute;ceps","blocks":[{"h":"WARM-UP","lines":["5 min remo &middot; 2 x 15 curl con banda &middot; 2 x 15 extensi&oacute;n con banda"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2 min","lines":["Press de banca agarre cerrado 2 x 6-8 @ RIR 3"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60 s","lines":["Curl con barra Z 2 x 8-10","Curl inclinado con mancuernas 2 x 10-12","Extensi&oacute;n de tr&iacute;ceps sobre la cabeza en polea 2 x 10-12","Curl martillo 2 x 10-12","Curl de predicador en m&aacute;quina 2 x 12-15"]}],"rx":"Peso de la S44 &middot; 2 series &middot; RIR 3","sc":"Press cerrado en m&aacute;quina &middot; curl con mancuernas ligeras","material":["banco","barra","barra Z","mancuernas","poleas","maquina de predicador"],"foco":"Codos fijos a los lados en todos los curls. Bajada de 2 s."},{"name":"HOMBROS","tag":"Doble progresi&oacute;n &middot; semana 4 de 4 &middot; descarga","blocks":[{"h":"WARM-UP","lines":["5 min el&iacute;ptica &middot; rotaciones externas con banda 2 x 15 &middot; 2 series ligeras de press"]},{"h":"A &middot; B&Aacute;SICO","fmt":"Descanso 2 min","lines":["Press militar con barra de pie 2 x 6-8 @ RIR 3"]},{"h":"B &middot; COMPLEMENTO","fmt":"Descanso 60-90 s","lines":["Press Arnold 2 x 8-10","Elevaciones laterales con mancuernas 2 x 12-15","P&aacute;jaros en m&aacute;quina 2 x 12-15","Encogimientos con mancuernas 2 x 10-12","Elevaciones frontales en polea 2 x 12"]}],"rx":"Peso de la S44 &middot; 2 series &middot; RIR 3","sc":"Press de hombro en m&aacute;quina sentado","material":["barra","rack","mancuernas","maquina de pajaros","poleas"],"foco":"Gl&uacute;teo y abdomen apretados en el press de pie: el tronco no se arquea."}];
 var WEEK={
-  no:"SEMANA 44",name:"BALANZA",sub:"Ciclo APOCALIPSIS &middot; Intensificaci&oacute;n &middot; 26&ndash;31 oct 2026",
-  block:[["S42","CONQUISTA","Acum."],["S43","GUERRA","Acum."],["S44","BALANZA","Intens."],["S45","ALFA Y OMEGA","Realiz."]],
-  current:2,
-  anniv:"XIII Aniversario &middot; s&aacute;bado 31 oct",
-  rider:{title:"El jinete &middot; Caballo negro",
-    quote:"&laquo;Y mir&eacute;, y he aqu&iacute; un caballo negro; y el que lo montaba ten&iacute;a una balanza en la mano.&raquo; Apocalipsis 6:5",
-    text:"Semana de intensificaci&oacute;n. Baja el volumen y sube la carga: cada serie se pone en la balanza. Halterofilia trabaja pegada al techo del 82% con menos repeticiones, y el front squat sigue siendo el hilo hacia el 3RM de ALFA Y OMEGA. En CrossFit y Endurance, menos relleno y m&aacute;s calidad en cada repetici&oacute;n. El s&aacute;bado celebramos 13 a&ntilde;os de licencia CrossFit."},
-  days:[
-    {key:"lun",label:"LUN",date:"2026-10-26",title:"LUNES",sub:"26 de octubre",tracks:{
-      cf:{name:"TRIGO",blocks:[
-          {h:"WARM-UP",lines:["2 rondas: 200 m run &middot; 5 burpees &middot; barra vac&iacute;a: 5 tall clean + 5 split jerk"]},
-          {h:"A &middot; FUERZA",fmt:"EMOM 10",lines:["1 Squat Clean + 1 Split Jerk @80-82%"]},
-          {h:"B &middot; TRIGO",fmt:"3 rounds for time",lines:["100 m Run","12 Burpee Box Jump-Overs (24/20 in)","100 m Run","9 Push-Ups","100 m Run","6 Hang Squat Cleans (70/47 kg)","100 m Run","3 Bar Muscle-Ups"]}],
-        rx:"Clean &amp; jerk @80-82% &middot; hang squat clean 70/47 kg &middot; caj&oacute;n 24/20 in",
-        sc:"Clean &amp; jerk @70-75% &middot; barra 50/35 kg &middot; burpee step-over &middot; 6 chest-to-bar o 9 pull-ups",
-        material:["calle","barra","discos","cajon","suelo","barra de dominadas"],
-        foco:"A: una repetici&oacute;n por minuto, perfecta. Recibir el clean abajo y el jerk con pie delantero largo. B: las carreras son transici&oacute;n, no descanso.",
-        banderas:"Clean &amp; jerk fallado dos minutos seguidos: bajar a 75%. Muscle-up con chicken wing: pasar a chest-to-bar."},
-      end:{name:"",blocks:[
-          {h:"WARM-UP",lines:["6 min: trote suave &middot; 2 x 10 KB swings ligeros &middot; 5 inchworms"]},
-          {h:"A &middot; MOTOR",fmt:"E3:00 x 30 min (10 sets alternos)",lines:["Set 1: 15 Calories &middot; 15 Kettlebell Swings","Set 2: 200 m Run &middot; 20 Burpees"]}],
-        rx:"15 cal &middot; KB de referencia del box",
-        sc:"12 cal &middot; 12 swings &middot; 150 m run &middot; 14 burpees",
-        material:["maquina de calorias","kettlebell","calle","suelo"],
-        foco:"Cada set tiene que dejar al menos 1 minuto de descanso dentro de los 3.",
-        banderas:"Set de burpees por encima de 2 minutos: escalar el siguiente."},
-      halt:{name:"CLEAN &amp; JERK",tag:"Principal: Clean &amp; Jerk &middot; T&eacute;cnica: Snatch",dur:[["Warm-up",8],["Principal",12],["Accesorios",17],["T&eacute;cnica",9],["Calma",4],["Total",50]],blocks:[
-          {h:"WARM-UP",lines:["Barra vac&iacute;a: clean pull x 5 &middot; tall clean x 3 &middot; front squat x 5 &middot; jerk footwork x 5"]},
-          {h:"A &middot; PRINCIPAL",fmt:"E90 x 12 min (8 sets)",lines:["Squat Clean + Split Jerk (1+1): 2 sets @76% &middot; 2 @78% &middot; 2 @80% &middot; 2 @82%"]},
-          {h:"B &middot; ACCESORIOS",fmt:"E90",lines:["Front Squat 4 x 3 @80-82% (hilo del ciclo)","Clean Pull 3 x 3 @82%"]},
-          {h:"C &middot; T&Eacute;CNICA",fmt:"E60 x 6",lines:["Tall Snatch + Snatch Balance (1+1) ligero"]}],
-        rx:"Front squat: S43 5 x 4 @78% &rarr; S44 4 x 3 @80-82% &rarr; S45 3RM",
-        sc:"Power clean + push jerk, -10% &middot; front squat @72-75%",
-        material:["barra","discos","rack"],
-        foco:"Menos reps y m&aacute;s carga: la t&eacute;cnica de las series al 82% tiene que ser la misma que la del 76%.",
-        banderas:"Front squat que pierde codos en la rep 3: esa es la carga de referencia para el 3RM, no subir m&aacute;s."},
-      bs:BS[0]}},
-
-    {key:"mar",label:"MAR",date:"2026-10-27",title:"MARTES",sub:"27 de octubre",tracks:{
-      cf:{name:"DENARIO",blocks:[
-          {h:"WARM-UP",lines:["Barra vac&iacute;a: muscle snatch x 5 &middot; OHS x 5 &middot; snatch balance x 3 &middot; 30 s comba"]},
-          {h:"A &middot; SQUAT SNATCH",fmt:"E90 x 12 min (8 sets)",lines:["2 reps @78-82%"]},
-          {h:"B &middot; DENARIO",fmt:"AMRAP 16",lines:["10 Kettlebell Snatches (32/24 kg)","30 Double-Unders","10 Kettlebell Snatches","5 Overhead Squats (60/40 kg)"]}],
-        rx:"KB 32/24 kg &middot; OHS 60/40 kg",
-        sc:"KB 24/16 kg &middot; 60 single-unders &middot; OHS 40/30 kg",
-        material:["barra","discos","kettlebell","comba"],
-        foco:"A: barra cerca en la segunda tracci&oacute;n. B: KB snatch alterno sin golpear el antebrazo; los 5 OHS siempre unbroken.",
-        banderas:"Snatch al 82% con recepci&oacute;n blanda dos sets seguidos: quedarse en 78%."},
-      end:{name:"",blocks:[
-          {h:"WARM-UP",lines:["8 min trote &middot; 2 x 10 DB jerks ligeros &middot; 10 lunges sin peso"]},
-          {h:"A &middot; MOTOR",fmt:"3 rounds for time",lines:["1000 m Run","15/12 Calories (Bike)","20 DB Jerks (22.5/15 kg)","15 Burpees","20 Overhead Lunges"]}],
-        rx:"DB 22.5/15 kg en jerks y lunges",
-        sc:"800 m run &middot; 12/9 cal &middot; DB 15/10 kg &middot; front rack lunges",
-        material:["calle","bike","mancuernas","suelo"],
-        foco:"El kil&oacute;metro a ritmo que permita entrar a la bici sin parar.",
-        banderas:"Lunge overhead con el codo flojo: pasar a front rack."},
-      halt:{name:"SNATCH",tag:"Principal: Snatch &middot; T&eacute;cnica: Clean &amp; Jerk",dur:[["Warm-up",8],["Principal",12],["Accesorios",17],["T&eacute;cnica",9],["Calma",4],["Total",50]],blocks:[
-          {h:"WARM-UP",lines:["Barra vac&iacute;a: snatch grip RDL x 5 &middot; muscle snatch x 5 &middot; OHS x 5 &middot; tall snatch x 3"]},
-          {h:"A &middot; PRINCIPAL",fmt:"E90 x 12 min (8 sets)",lines:["Squat Snatch x 1: 76% &middot; 78% &middot; 80% &middot; 80% &middot; 82% &middot; 82% &middot; 82% &middot; 82%"]},
-          {h:"B &middot; ACCESORIOS",fmt:"E90",lines:["Snatch Deadlift con pausa bajo rodilla 3 x 3 @82%","Overhead Squat 3 x 3 pesado, sin perder posici&oacute;n"]},
-          {h:"C &middot; T&Eacute;CNICA",fmt:"E60 x 6",lines:["Hang Power Clean desde rodilla x 2 @55-60%"]}],
-        rx:"Singles: cada uno con pausa de 2 s en la recepci&oacute;n",
-        sc:"Power snatch con la misma escalera, -10%",
-        material:["barra","discos","rack"],
-        foco:"Single al 82% igual de r&aacute;pido que el 76%. La pausa bajo rodilla ense&ntilde;a a mantener hombros por delante.",
-        banderas:"Dos fallos seguidos al 82%: el resto de sets al 78%."},
-      bs:BS[1]}},
-
-    {key:"mie",label:"MIE",date:"2026-10-28",title:"MI&Eacute;RCOLES",sub:"28 de octubre",tracks:{
-      cf:{name:"CEBADA",blocks:[
-          {h:"WARM-UP",lines:["Barra vac&iacute;a: complejo completo x 3 &middot; 5 wall walks parciales &middot; 5 devil press ligeros"]},
-          {h:"A &middot; FUERZA",fmt:"E90 x 12 min (8 sets)",lines:["1 Clean + 1 Front Squat + 1 Hang Squat Clean + 1 Front Squat","Unbroken"]},
-          {h:"B &middot; CEBADA",fmt:"E5:00 x 20 min (4 sets)",lines:["4 Alternating Devil Press","2 Wall Climbs","12 One-Arm Overhead Squats (22.5/15 kg)","2 Wall Climbs","4 Alternating Devil Press"]}],
-        rx:"DB 22.5/15 kg",
-        sc:"DB 15/10 kg &middot; wall climb a media altura &middot; goblet squat en vez de OHS a un brazo",
-        material:["barra","discos","mancuernas","pared"],
-        foco:"A: el complejo manda por el segundo front squat; si no sale unbroken, la carga sobra. B: OHS a un brazo con la mancuerna sobre la vertical del hombro.",
-        banderas:"Codo que se dobla en el OHS a un brazo: pasar a goblet en ese mismo set."},
-      end:{name:"",blocks:[
-          {h:"WARM-UP",lines:["2 rondas: 1 min m&aacute;quina &middot; 6 step-overs &middot; 30 s comba &middot; 100 m trote"]},
-          {h:"A &middot; MAIN",fmt:"5 rounds for time (cap 26)",lines:["20 Calories","12 Box Step-Overs (24/20 in)","40 Double-Unders","200 m Run"]}],
-        rx:"Caj&oacute;n 24/20 in",
-        sc:"15 cal &middot; 80 single-unders",
-        material:["maquina de calorias","cajon","comba","calle"],
-        foco:"Rondas iguales: la quinta no puede ser 30 s m&aacute;s lenta que la primera.",
-        banderas:"Double-unders rotos m&aacute;s de tres veces: pasar a singles."},
-      halt:{name:"CLEAN &amp; JERK",tag:"Principal: Clean &amp; Jerk &middot; T&eacute;cnica: Snatch",dur:[["Warm-up",8],["Principal",12],["Accesorios",17],["T&eacute;cnica",9],["Calma",4],["Total",50]],blocks:[
-          {h:"WARM-UP",lines:["Barra vac&iacute;a: hang clean x 5 &middot; push press x 5 &middot; split jerk x 3"]},
-          {h:"A &middot; PRINCIPAL",fmt:"E2:00 x 12 min (6 sets)",lines:["Clean + Hang Clean + Split Jerk (1+1+1) @74-80%"]},
-          {h:"B &middot; ACCESORIOS",fmt:"E90",lines:["Push Jerk desde rack 4 x 2 @78-82% del jerk","Romanian Deadlift 3 x 5"]},
-          {h:"C &middot; T&Eacute;CNICA",fmt:"E60 x 6",lines:["Hang Snatch bajo rodilla x 2 @60%"]}],
-        rx:"Complejo de tres partes: justifica el E2:00",
-        sc:"Power clean + hang power clean + push jerk, -10%",
-        material:["barra","discos","rack"],
-        foco:"El hang clean sale de una pausa encima de rodilla, sin rebote. Push jerk: dip vertical y bloqueo r&aacute;pido.",
-        banderas:"Jerk que sale por delante de la cabeza: es dip hacia la punta del pie, corregir antes de subir."},
-      bs:BS[2]}},
-
-    {key:"jue",label:"JUE",date:"2026-10-29",title:"JUEVES",sub:"29 de octubre",tracks:{
-      cf:{name:"ACEITE Y VINO",blocks:[
-          {h:"WARM-UP",lines:["Barra vac&iacute;a: muscle snatch + power snatch x 5 &middot; 2 subidas de cuerda t&eacute;cnicas &middot; 1 min ski"]},
-          {h:"A &middot; FUERZA",fmt:"EMOM 10",lines:["2 Power Snatches @80%"]},
-          {h:"B &middot; ACEITE Y VINO",fmt:"E3:00 x 6 sets (alternos)",lines:["Set 1: 12/9 Calories (Ski Erg) &middot; 2 Legless Rope Climbs (15 ft) &middot; 6 Thrusters (52/35 kg)","Set 2: 200 m Run &middot; 20 American Kettlebell Swings"]}],
-        rx:"Legless &middot; thrusters 52/35 kg",
-        sc:"Rope climb con piernas &middot; thrusters 35/25 kg &middot; swing ruso",
-        material:["barra","discos","ski erg","cuerda","calle","kettlebell"],
-        foco:"A: dos reps en el minuto, recepci&oacute;n por encima del paralelo. B: el set 1 decide la sesi&oacute;n; el set 2 es de ritmo.",
-        banderas:"Bajada de cuerda deslizando: prohibido, mano a mano. American swing con lumbar arqueada arriba: pasar a ruso."},
-      end:{name:"",blocks:[
-          {h:"WARM-UP",lines:["6 min trote &middot; 10 wall balls &middot; 10 sit-ups"]},
-          {h:"A &middot; MOTOR",fmt:"4 rounds for time",lines:["100 m Run","20 Wall Balls (9/6 kg)","100 m Run","20 Sit-Ups","100 m Run","20 Burpees"]}],
-        rx:"Wall ball 9/6 kg",
-        sc:"Wall ball 6/4 kg &middot; 15 burpees",
-        material:["calle","balon medicinal","suelo"],
-        foco:"Wall balls en dos bloques como m&aacute;ximo.",
-        banderas:"Sit-ups tirando del cuello: manos al pecho."},
-      halt:{name:"SNATCH",tag:"Principal: Snatch &middot; T&eacute;cnica: Clean &amp; Jerk",dur:[["Warm-up",8],["Principal",12],["Accesorios",17],["T&eacute;cnica",9],["Calma",4],["Total",50]],blocks:[
-          {h:"WARM-UP",lines:["Barra vac&iacute;a: snatch pull x 5 &middot; hang muscle snatch x 5 &middot; OHS x 3"]},
-          {h:"A &middot; PRINCIPAL",fmt:"E90 x 12 min (8 sets)",lines:["Snatch Pull + Squat Snatch (1+1) @76-82%"]},
-          {h:"B &middot; ACCESORIOS",fmt:"E90",lines:["Back Squat 4 x 3 @75%","Snatch Grip Push Press 3 x 4"]},
-          {h:"C &middot; T&Eacute;CNICA",fmt:"E60 x 6",lines:["Jerk Footwork + Split Jerk x 2 @55%"]}],
-        rx:"El porcentaje lo marca el snatch; el pull va con la misma carga",
-        sc:"Snatch pull + power snatch, -10%",
-        material:["barra","discos","rack"],
-        foco:"El pull previo marca el camino de la barra: el snatch tiene que copiarlo.",
-        banderas:"Barra que se aleja en la segunda tracci&oacute;n: bajar un 5%."},
-      bs:BS[3]}},
-
-    {key:"vie",label:"VIE",date:"2026-10-30",title:"VIERNES",sub:"30 de octubre",flag:"HERO",tracks:{
-      cf:{name:"TILLMAN",tag:"Hero WOD",nota_excepcion:"viernes, CrossFit y Endurance en salas distintas",blocks:[
-          {h:"WARM-UP",lines:["2 rondas: 5 deadlift con barra ligera &middot; 100 m progresivo &middot; 5 kip swings + 5 pull-ups"]},
-          {h:"TILLMAN",fmt:"7 rounds for time",lines:["7 Deadlifts (143/93 kg)","200 m Sprint","15 Pull-Ups","Rest 45 seconds"]}],
-        rx:"Deadlift 143/93 kg (315/205 lb)",
-        sc:"Deadlift 100/70 kg &middot; 10 pull-ups o jumping pull-ups",
-        material:["barra","discos","calle","barra de dominadas"],
-        foco:"Los 45 s de descanso son obligatorios. El sprint es sprint de verdad.",
-        banderas:"Deadlift con espalda redonda en las rondas finales: bajar carga en el acto."},
-      end:{name:"BRADLEY",tag:"Hero WOD",blocks:[
-          {h:"WARM-UP",lines:["5 min trote &middot; 3 x 60 m progresivos &middot; 5 pull-ups &middot; 5 burpees"]},
-          {h:"BRADLEY",fmt:"10 rounds for time",lines:["100 m Sprint","10 Pull-Ups","100 m Sprint","10 Burpees","Rest 30 seconds"]}],
-        rx:"Tal cual",
-        sc:"6 pull-ups o ring rows &middot; 6 burpees",
-        material:["calle","barra de dominadas","suelo"],
-        tribute:"Senior Airman Bradley R. Smith, 24 a&ntilde;os, de Troy (Illinois), destinado en el 10th Air Support Operations Squadron de Fort Riley (Kansas). Muri&oacute; el 3 de enero de 2010 por un artefacto explosivo improvisado en el distrito de Zhari, provincia de Kandahar (Afganist&aacute;n). Le sobreviven su esposa Tiffany, su hija Chloe, sus padres Gary y Paula y su hermano Ryan.",
-        foco:"Sprints a fondo; el descanso de 30 s es para volver a sprintar, no para caminar.",
-        banderas:"Sprints que se convierten en trote desde la ronda 4: escalar pull-ups y burpees, no la carrera."},
-      halt:{name:"CLEAN &amp; JERK",tag:"Principal: Clean &amp; Jerk &middot; d&iacute;a pesado dentro del techo",dur:[["Warm-up",8],["Principal",14],["Accesorios",15],["T&eacute;cnica",9],["Calma",4],["Total",50]],blocks:[
-          {h:"WARM-UP",lines:["Barra vac&iacute;a: complejo de clean &amp; jerk x 3 &middot; series de aproximaci&oacute;n al 50, 60 y 70%"]},
-          {h:"A &middot; PRINCIPAL",fmt:"E90 x 13.5 min (9 sets)",lines:["Clean &amp; Jerk x 1: 75% &middot; 75% &middot; 78% &middot; 80% &middot; 80% &middot; 82% &middot; 82% &middot; 82% &middot; 82%"]},
-          {h:"B &middot; ACCESORIOS",fmt:"E90",lines:["Clean Deadlift 3 x 3 @82%","Jerk Dip con pausa 3 x 3"]},
-          {h:"C &middot; T&Eacute;CNICA",fmt:"E60 x 6",lines:["Power Snatch x 2 @60%"]}],
-        rx:"El 82% es el techo: no se sube aunque salga f&aacute;cil",
-        sc:"Power clean + push jerk con la misma escalera, -10%",
-        material:["barra","discos","rack"],
-        foco:"Cada single con rutina fija: pies, agarre, respiraci&oacute;n. Igual que en el 3RM de la semana que viene.",
-        banderas:"Jerk fallado dos veces al 82%: el resto de sets al 78%."},
-      bs:BS[4]}},
-
-    {key:"sab",label:"SAB",date:"2026-10-31",title:"S&Aacute;BADO",sub:"31 de octubre",flag:"XIII",
-      banner:"13 a&ntilde;os de licencia CrossFit. Master class de dos horas, dos clases en una, en equipos de 4.",
-      pend:{end:"Pendiente: &iquest;Endurance se une al aniversario?"},tracks:{
-      cf:{name:"XIII",tag:"Master class &middot; 2 clases en 1 &middot; equipos de 4",dur:[["Bienvenida",10],["Warm-up",15],["WOD 1",30],["Cambio",10],["WOD 2",40],["Cierre",15],["Total",120]],blocks:[
-          {h:"WARM-UP",lines:["Por equipos: 800 m trote juntos &middot; 2 rondas de 10 wall balls, 10 swings y 5 box jumps &middot; 5 sit-ups y 5 burpees sincronizados por parejas"]},
-          {h:"WOD 1",fmt:"Equipos de 4 &middot; cap 30",lines:["1600 m Run (todo el equipo junto)","3000 m Row por equipo, una sola m&aacute;quina, relevos libres"]},
-          {h:"WOD 2 &middot; BLOQUE 1",fmt:"For time",lines:["120 Wall Balls (reparto libre entre los 4)","20 Synchro Sit-Ups (2 atletas)","120 Box Jumps (reparto libre entre los 4)","20 Synchro Sit-Ups (2 atletas)","120 Wall Balls (reparto libre entre los 4)","20 Synchro Sit-Ups (2 atletas)"]},
-          {h:"DESCANSO",fmt:"2 min",lines:["Descanso entre bloques"]},
-          {h:"WOD 2 &middot; BLOQUE 2",fmt:"For time",lines:["120 Kettlebell Swings (reparto libre entre los 4)","20 Synchro Burpees (2 atletas)","120 Box Jumps (reparto libre entre los 4)","20 Synchro Burpees (2 atletas)","120 Kettlebell Swings (reparto libre entre los 4)","20 Synchro Burpees (2 atletas)"]}],
-        rx:"Wall ball 9/6 kg &middot; caj&oacute;n 24/20 in &middot; KB 24/16 kg",
-        sc:"Wall ball 6/4 kg &middot; step-up &middot; KB 16/12 kg",
-        material:["calle","remo","balon medicinal","cajon","kettlebell","suelo"],
-        foco:"WOD 1: el equipo corre junto, nadie se queda atr&aacute;s. WOD 2: el equipo decide qu&eacute; pareja entra en cada sincronizado.",
-        banderas:"Box jumps con rebote cuando llega la fatiga: pasar a step-down. Sincronizados sin contar en voz alta: no cuenta la rep."},
-      end:null,
-      halt:{name:"SNATCH",tag:"Principal: Snatch &middot; T&eacute;cnica: Clean &amp; Jerk",dur:[["Warm-up",8],["Principal",12],["Accesorios",17],["T&eacute;cnica",9],["Calma",4],["Total",50]],blocks:[
-          {h:"WARM-UP",lines:["Barra vac&iacute;a: power snatch x 3 &middot; OHS x 5 &middot; squat snatch x 3"]},
-          {h:"A &middot; PRINCIPAL",fmt:"E2:00 x 12 min (6 sets)",lines:["Power Snatch + Overhead Squat + Squat Snatch (1+1+1) @70-76%"]},
-          {h:"B &middot; ACCESORIOS",fmt:"E90",lines:["Snatch Grip Deadlift 3 x 4 @82%","Back Squat 3 x 5 @70%"]},
-          {h:"C &middot; T&Eacute;CNICA",fmt:"E60 x 6",lines:["Power Clean + Split Jerk x 2 @55-60%"]}],
-        rx:"El porcentaje lo marca el squat snatch",
-        sc:"Power snatch + OHS + power snatch, -10%",
-        material:["barra","discos","rack"],
-        foco:"El OHS en medio del complejo ense&ntilde;a d&oacute;nde tiene que estar la barra al recibir el squat snatch.",
-        banderas:"OHS con la barra por delante de la cabeza: la carga sobra para el complejo."},
-      bs:BS[5]}}
+ "no": "SEMANA 45",
+ "name": "ALFA Y OMEGA",
+ "sub": "Ciclo APOCALIPSIS &#183; Realizaci&#243;n &#183; 3&#8211;7 nov 2026",
+ "block": [
+  [
+   "S42",
+   "CONQUISTA",
+   "Acum."
+  ],
+  [
+   "S43",
+   "GUERRA",
+   "Acum."
+  ],
+  [
+   "S44",
+   "BALANZA",
+   "Intens."
+  ],
+  [
+   "S45",
+   "ALFA Y OMEGA",
+   "Realiz."
   ]
+ ],
+ "current": 3,
+ "rider": {
+  "title": "El cuarto jinete &#183; Caballo p&#225;lido",
+  "quote": "&#171;Mir&#233;, y he aqu&#237; un caballo p&#225;lido.&#187; Apocalipsis 6:8",
+  "text": "Alfa y Omega: el principio y el fin del ciclo. Llega el &#250;ltimo jinete, y no viene a por ti: viene a sepultar a tu versi&#243;n d&#233;bil. Al ego que necesita aplauso, a la pereza que negocia cada repetici&#243;n, a la excusa que siempre llega primero. De martes a jueves el volumen cae y la intensidad se mantiene. El viernes se mide lo construido en cuatro semanas: el 1000 m de remo con el mismo damper y el 3RM de sentadilla frontal. Lo que quede en pie despu&#233;s es el atleta que empieza el pr&#243;ximo ciclo."
+ },
+ "days": [
+  {
+   "key": "lun",
+   "label": "LUN",
+   "date": "2026-11-02",
+   "title": "LUNES",
+   "sub": "2 de noviembre &#183; Todos los Santos",
+   "flag": "FESTIVO",
+   "banner": "FESTIVO &#183; D&#237;a de Todos los Santos, trasladado al lunes. El box cierra. Hoy no se entrena: se recuerda. Una vela, un nombre, un paseo con los tuyos. Honramos a los que ya no est&#225;n y a todos los que, sin hacer ruido, nos hicieron quienes somos. Volvemos el martes.",
+   "tracks": {}
+  },
+  {
+   "key": "mar",
+   "label": "MAR",
+   "date": "2026-11-03",
+   "title": "MARTES",
+   "sub": "3 de noviembre &#183; Principio",
+   "tracks": {
+    "cf": {
+     "name": "SIEMBRA",
+     "dur": [
+      [
+       "Warm-up",
+       12
+      ],
+      [
+       "Fuerza",
+       10
+      ],
+      [
+       "WOD",
+       18
+      ],
+      [
+       "Calma",
+       10
+      ],
+      [
+       "Total",
+       50
+      ]
+     ],
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "2 rounds",
+       "lines": [
+        "8 Good Mornings (empty bar)",
+        "6 Muscle Cleans",
+        "30 Single-Unders",
+        "6 Lateral Barbell Step-Overs"
+       ]
+      },
+      {
+       "h": "A &#183; STRENGTH",
+       "fmt": "EMOM 8",
+       "lines": [
+        "1 Squat Clean + 1 Front Squat @65-70%"
+       ]
+      },
+      {
+       "h": "B &#183; SIEMBRA",
+       "fmt": "For Time &#183; cap 14 &#183; RPE 6",
+       "lines": [
+        "40 Double-Unders",
+        "3 rounds: 9 Hang Squat Cleans (50/35 kg) + 12 Lateral Barbell Step-Overs",
+        "40 Double-Unders"
+       ]
+      }
+     ],
+     "rx": "EMOM @65-70% &#183; Hang Squat Clean 50/35 kg &#183; 40 DU",
+     "sc": "Intermedio: 25 DU &#183; 40/30 kg &#183; Iniciaci&#243;n: 80 singles &#183; 30/20 kg &#183; step-over sin barra",
+     "material": [
+      "barra",
+      "discos",
+      "comba",
+      "suelo"
+     ],
+     "foco": "A: velocidad, no carga; al recibir, &#171;codos hacia la pared de enfrente&#187;. B: principio y fin con la misma comba: los 40 DU del final tienen que salir igual de sueltos que los del principio. Step-over caminando, sin saltar. El cap de 14 es un techo, no un objetivo."
+    },
+    "end": {
+     "name": "PRIMERA LUZ",
+     "tag": "3 &#215; 8&#8242; rotation &#183; 7 groups",
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "6 min",
+       "lines": [
+        "3 min easy Row",
+        "10 light KB Swings",
+        "5 Inchworms"
+       ]
+      },
+      {
+       "h": "ZONE ROW",
+       "fmt": "EMOM 8",
+       "lines": [
+        "10/8 Calories Row"
+       ]
+      },
+      {
+       "h": "ZONE STREET",
+       "fmt": "AMRAP 8",
+       "lines": [
+        "200 m Run",
+        "12 Kettlebell Swings (24/16 kg)"
+       ]
+      },
+      {
+       "h": "ZONE BOX",
+       "fmt": "3 rounds &#183; cap 8",
+       "lines": [
+        "10 Box Step-Ups (24/20 in)",
+        "10 Push-Ups"
+       ]
+      }
+     ],
+     "rx": "10/8 cal &#183; KB 24/16 kg &#183; Box 24/20 in",
+     "sc": "Intermedio: 8/6 cal &#183; KB 16/12 kg &#183; Iniciaci&#243;n: 6/5 cal &#183; 150 m &#183; caj&#243;n bajo &#183; push-ups de rodillas",
+     "material": [
+      "ergometros",
+      "remo",
+      "calle",
+      "kettlebell",
+      "cajon",
+      "suelo"
+     ],
+     "foco": "Organizaci&#243;n: 7 grupos de 2-3 atletas; cada grupo empieza en una zona y rota en sentido &#250;nico (remos &#8594; calle &#8594; cajones) con 1&#8242; de cambio caminando. En el remo, un atleta del grupo por minuto. Ritmo de conversaci&#243;n (RPE 6). Remo: &#171;empuja la plataforma lejos&#187;. Swing: &#171;proyecta la kettlebell hacia delante&#187;."
+    },
+    "halt": {
+     "name": "SNATCH",
+     "tag": "Principal: Snatch &#183; T&#233;cnica: Clean &amp; Jerk &#183; descarga",
+     "dur": [
+      [
+       "Warm-up",
+       10
+      ],
+      [
+       "Principal",
+       9
+      ],
+      [
+       "Accesorios",
+       10
+      ],
+      [
+       "T&#233;cnica",
+       6
+      ],
+      [
+       "Movilidad",
+       15
+      ],
+      [
+       "Total",
+       50
+      ]
+     ],
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "Empty bar",
+       "lines": [
+        "5 Snatch-Grip RDLs &#183; 5 Muscle Snatches &#183; 5 OHS &#183; 3 Tall Snatches"
+       ]
+      },
+      {
+       "h": "A &#183; PRINCIPAL",
+       "fmt": "E90 x 9 min (6 sets)",
+       "lines": [
+        "Squat Snatch x 1 @70-75% (2 s pause in the catch)"
+       ]
+      },
+      {
+       "h": "B &#183; ACCESORIOS",
+       "fmt": "E90",
+       "lines": [
+        "Overhead Squat 3 x 3 @65%"
+       ]
+      },
+      {
+       "h": "C &#183; T&#201;CNICA",
+       "fmt": "E60 x 6",
+       "lines": [
+        "Hang Power Clean + Split Jerk (1+1) @55-60%"
+       ]
+      },
+      {
+       "h": "D &#183; MOBILITY",
+       "fmt": "15 min",
+       "lines": [
+        "Ankle &#183; Hip &#183; T-spine &#183; Shoulder"
+       ]
+      }
+     ],
+     "rx": "Snatch @70-75% &#183; OHS 3 x 3 @65%",
+     "sc": "Power Snatch -10%",
+     "material": [
+      "barra",
+      "discos",
+      "rack"
+     ],
+     "foco": "El single al 75% igual de r&#225;pido que en la S44: &#171;barra pegada a ti&#187; en la segunda tracci&#243;n."
+    },
+    "bs": BS[1]
+   }
+  },
+  {
+   "key": "mie",
+   "label": "MI&#201;",
+   "date": "2026-11-04",
+   "title": "MI&#201;RCOLES",
+   "sub": "4 de noviembre &#183; Sello",
+   "tracks": {
+    "cf": {
+     "name": "LACRE",
+     "dur": [
+      [
+       "Warm-up",
+       12
+      ],
+      [
+       "Fuerza",
+       10
+      ],
+      [
+       "WOD",
+       16
+      ],
+      [
+       "Calma",
+       10
+      ],
+      [
+       "Total",
+       48
+      ]
+     ],
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "2 rounds",
+       "lines": [
+        "8 PVC Pass-Throughs",
+        "6 Snatch Balances (empty bar)",
+        "5 Pike Push-Ups",
+        "1 min easy Bike or Ski"
+       ]
+      },
+      {
+       "h": "A &#183; STRENGTH",
+       "fmt": "EMOM 8",
+       "lines": [
+        "1 Power Snatch + 1 Overhead Squat @65-70%"
+       ]
+      },
+      {
+       "h": "B &#183; LACRE",
+       "fmt": "EMOM 12 &#183; 3 stations &#183; RPE 6",
+       "lines": [
+        "Station 1: 12/9 Calories (Ski Erg, Bike Erg or Air Bike)",
+        "Station 2: 6 Handstand Push-Ups",
+        "Station 3: 15 Sit-Ups"
+       ]
+      }
+     ],
+     "rx": "EMOM @65-70% &#183; 12/9 cal &#183; 6 HSPU &#183; 15 Sit-Ups",
+     "sc": "Intermedio: 10/7 cal &#183; 4 HSPU con colchoneta extra &#183; Iniciaci&#243;n: 8/6 cal &#183; 6 pike push-ups en caj&#243;n &#183; 10 sit-ups",
+     "material": [
+      "barra",
+      "discos",
+      "ergometros",
+      "ski erg",
+      "bike erg",
+      "air bike",
+      "pared",
+      "suelo"
+     ],
+     "foco": "Organizaci&#243;n: salida escalonada, un tercio de la clase empieza en cada estaci&#243;n; 8 m&#225;quinas por estaci&#243;n. A: &#171;barra pegada a ti&#187; y recepci&#243;n alta y estable. B: HSPU con &#171;empuja el suelo lejos de ti&#187;, siempre con una rep en rec&#225;mara."
+    },
+    "end": {
+     "name": "CORREDOR",
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "8 min",
+       "lines": [
+        "Easy Jog",
+        "10 light Goblet Squats",
+        "10 Air Lunges"
+       ]
+      },
+      {
+       "h": "A &#183; MOTOR",
+       "fmt": "4 rounds &#183; rest 1:00 &#183; RPE 6",
+       "lines": [
+        "600 m Run",
+        "12 Kettlebell Goblet Squats (24/16 kg)",
+        "24 Air Squats"
+       ]
+      }
+     ],
+     "rx": "600 m &#183; KB 24/16 kg &#183; 24 Air Squats",
+     "sc": "Intermedio: 400 m &#183; KB 16/12 kg &#183; 18 air squats &#183; Iniciaci&#243;n: 300 m &#183; goblet a caj&#243;n &#183; 12 air squats",
+     "material": [
+      "calle",
+      "kettlebell",
+      "suelo"
+     ],
+     "foco": "Hoy las m&#225;quinas son de CrossFit. Ritmo de conversaci&#243;n. Carrera: &#171;empuja el suelo hacia atr&#225;s&#187;. Goblet: &#171;empuja las rodillas hacia fuera con los codos&#187;."
+    },
+    "halt": {
+     "name": "CLEAN &amp; JERK",
+     "tag": "Principal: Clean &amp; Jerk &#183; T&#233;cnica: Snatch &#183; descarga",
+     "dur": [
+      [
+       "Warm-up",
+       10
+      ],
+      [
+       "Principal",
+       9
+      ],
+      [
+       "Accesorios",
+       10
+      ],
+      [
+       "T&#233;cnica",
+       6
+      ],
+      [
+       "Movilidad",
+       15
+      ],
+      [
+       "Total",
+       50
+      ]
+     ],
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "Empty bar",
+       "lines": [
+        "5 Hang Cleans &#183; 5 Push Presses &#183; 3 Split Jerks"
+       ]
+      },
+      {
+       "h": "A &#183; PRINCIPAL",
+       "fmt": "E90 x 9 min (6 sets)",
+       "lines": [
+        "Squat Clean + Split Jerk (1+1) @70-75%"
+       ]
+      },
+      {
+       "h": "B &#183; ACCESORIOS",
+       "fmt": "E90",
+       "lines": [
+        "Front Squat 3 x 2 @75%"
+       ]
+      },
+      {
+       "h": "C &#183; T&#201;CNICA",
+       "fmt": "E60 x 6",
+       "lines": [
+        "Muscle Snatch + Snatch Balance (1+1), light"
+       ]
+      },
+      {
+       "h": "D &#183; MOBILITY",
+       "fmt": "15 min",
+       "lines": [
+        "Ankle &#183; Hip &#183; T-spine &#183; Wrist"
+       ]
+      }
+     ],
+     "rx": "C&amp;J @70-75% &#183; Front Squat 3 x 2 @75%",
+     "sc": "Power Clean + Push Jerk -10% &#183; Front Squat 2 x 2 @75%",
+     "material": [
+      "barra",
+      "discos",
+      "rack"
+     ],
+     "foco": "Clean: &#171;empuja el suelo y mete los codos bajo la barra&#187;. El front squat al 75% debe sentirse ligero; si pesa, avisa al coach antes del viernes."
+    },
+    "bs": BS[2]
+   }
+  },
+  {
+   "key": "jue",
+   "label": "JUE",
+   "date": "2026-11-05",
+   "title": "JUEVES",
+   "sub": "5 de noviembre &#183; V&#237;spera",
+   "tracks": {
+    "cf": {
+     "name": "CALMA",
+     "nota_excepcion": "mancuernas ilimitadas, se comparten hoy entre CrossFit y Endurance",
+     "dur": [
+      [
+       "Warm-up",
+       10
+      ],
+      [
+       "Fuerza",
+       10
+      ],
+      [
+       "WOD",
+       15
+      ],
+      [
+       "Movilidad",
+       10
+      ],
+      [
+       "Total",
+       45
+      ]
+     ],
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "2 rounds",
+       "lines": [
+        "8 Good Mornings (empty bar)",
+        "5 Hang Power Cleans (empty bar)",
+        "5 Push Presses (empty bar)",
+        "1 Wall Climb",
+        "200 m Jog"
+       ]
+      },
+      {
+       "h": "A &#183; STRENGTH",
+       "fmt": "EMOM 10",
+       "lines": [
+        "3 Power Cleans + 3 Front Squats + 3 Push Presses (43/25 kg)"
+       ]
+      },
+      {
+       "h": "B &#183; CALMA",
+       "fmt": "AMRAP 15 &#183; RPE 5",
+       "lines": [
+        "200 m Run",
+        "2 Wall Climbs",
+        "10 Air Squats",
+        "2 Devil Press (22.5/15 kg)"
+       ]
+      },
+      {
+       "h": "C &#183; MOBILITY",
+       "fmt": "10 min",
+       "lines": [
+        "T-spine &#183; Hip &#183; Ankle &#183; Wrist &#183; Shoulder"
+       ]
+      }
+     ],
+     "rx": "Complex 43/25 kg &#183; Devil Press 22.5/15 kg",
+     "sc": "Intermedio: complejo 35/20 kg &#183; wall climb a media altura &#183; DB 15/10 kg &#183; Iniciaci&#243;n: complejo 25/15 kg &#183; 2 inchworms en vez de wall climb &#183; DB 10/7.5 kg",
+     "material": [
+      "barra",
+      "discos",
+      "calle",
+      "pared",
+      "mancuernas",
+      "suelo"
+     ],
+     "foco": "A: el complejo entero dentro del minuto con al menos 20 s de descanso; en el power clean, &#171;mete los codos bajo la barra&#187;. B: a ritmo de charla, RPE 5. Wall climb: &#171;lleva el pecho hacia la pared&#187;. Devil press: &#171;lanza las mancuernas al techo en un solo gesto&#187;. C: movilidad pensando en ma&#241;ana."
+    },
+    "end": {
+     "name": "SUELTA",
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "5 min",
+       "lines": [
+        "Easy Jog",
+        "10 Sit-Ups",
+        "10 Air Lunges"
+       ]
+      },
+      {
+       "h": "A &#183; MOTOR",
+       "fmt": "AMRAP 12 &#183; RPE 5",
+       "lines": [
+        "200 m Run",
+        "12 Walking Lunges",
+        "10 Sit-Ups"
+       ]
+      },
+      {
+       "h": "B &#183; MOTOR",
+       "fmt": "AMRAP 12",
+       "lines": [
+        "200 m Row",
+        "12 One-Arm Dumbbell Clean &amp; Jerks (22.5/15 kg)",
+        "6 Burpees",
+        "12 One-Arm Dumbbell Clean &amp; Jerks"
+       ]
+      }
+     ],
+     "rx": "A: 200 m &#183; 12 Lunges &#183; 10 Sit-Ups &#183; B: 200 m Row &#183; DB 22.5/15 kg",
+     "sc": "Intermedio: 150 m &#183; DB 15/10 kg &#183; Iniciaci&#243;n: 100 m &#183; 150 m de remo &#183; DB 10/7.5 kg &#183; burpee sin salto",
+     "material": [
+      "calle",
+      "suelo",
+      "ergometros",
+      "remo",
+      "mancuernas"
+     ],
+     "foco": "A suelto, B algo m&#225;s vivo pero lejos del l&#237;mite: ma&#241;ana es el 1000 m. Alterna el brazo en cada clean &amp; jerk. &#171;Empuja la plataforma lejos&#187; en el remo."
+    },
+    "halt": {
+     "name": "SNATCH",
+     "tag": "Principal: Snatch &#183; aperturas del 3RM",
+     "dur": [
+      [
+       "Warm-up",
+       10
+      ],
+      [
+       "Principal",
+       6
+      ],
+      [
+       "Aperturas",
+       8
+      ],
+      [
+       "T&#233;cnica",
+       4
+      ],
+      [
+       "Movilidad",
+       15
+      ],
+      [
+       "Total",
+       43
+      ]
+     ],
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "10 min",
+       "lines": [
+        "Empty bar, both lifts"
+       ]
+      },
+      {
+       "h": "A &#183; PRINCIPAL",
+       "fmt": "E90 x 6 min (4 sets)",
+       "lines": [
+        "Squat Snatch x 1 @70%"
+       ]
+      },
+      {
+       "h": "B &#183; OPENERS",
+       "fmt": "E2:00",
+       "lines": [
+        "Front Squat 2 x 2 @80%"
+       ]
+      },
+      {
+       "h": "C &#183; T&#201;CNICA",
+       "fmt": "E60 x 3",
+       "lines": [
+        "Clean &amp; Jerk x 1 @70%"
+       ]
+      },
+      {
+       "h": "D &#183; MOBILITY",
+       "fmt": "15 min",
+       "lines": [
+        "Ankle &#183; Hip &#183; T-spine &#183; Wrist"
+       ]
+      }
+     ],
+     "rx": "Snatch @70% &#183; Front Squat 2 x 2 @80% &#183; C&amp;J @70%",
+     "sc": "Front Squat 1 x 2 @80%",
+     "material": [
+      "barra",
+      "discos",
+      "rack"
+     ],
+     "foco": "Las dos dobles al 80% son tus aperturas de ma&#241;ana: memoriza c&#243;mo se sienten. Misma barra, mismo ritual, mismo cintur&#243;n si lo usas. &#171;Codos hacia la pared de enfrente&#187; en cada rep."
+    },
+    "bs": BS[3]
+   }
+  },
+  {
+   "key": "vie",
+   "label": "VIE",
+   "date": "2026-11-06",
+   "title": "VIERNES",
+   "sub": "6 de noviembre &#183; Juicio &#183; d&#237;a de medici&#243;n",
+   "flag": "HERO",
+   "tracks": {
+    "cf": {
+     "name": "FRANTASY LAND",
+     "nota_excepcion": "viernes, CrossFit y Endurance en salas distintas",
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "2 rounds",
+       "lines": [
+        "8 PVC Pass-Throughs",
+        "8 Air Squats",
+        "5 Scap Pull-Ups",
+        "5 Thrusters (empty bar)",
+        "3 Pull-Ups",
+        "3 Kipping Swings + 1 Bar Muscle-Up drill"
+       ]
+      },
+      {
+       "h": "FRANTASY LAND",
+       "fmt": "For Time",
+       "lines": [
+        "21-15-9: Thrusters (95/65 lb) &#183; Pull-Ups",
+        "15-12-9: Thrusters (115/85 lb) &#183; Chest-to-Bar Pull-Ups",
+        "12-9-6: Thrusters (135/95 lb) &#183; Bar Muscle-Ups"
+       ]
+      }
+     ],
+     "rx": "Thrusters 95/65 lb (43/30 kg) &#183; 115/85 lb (52/38 kg) &#183; 135/95 lb (61/43 kg)",
+     "sc": "Intermedio: 43/30 &#183; 52/38 &#183; 52/38 kg &#183; pull-ups en lugar de C2B &#183; 2 C2B por cada MU &#183; Iniciaci&#243;n: 30/20 &#183; 35/25 &#183; 40/30 kg &#183; jumping pull-ups &#183; ring rows",
+     "material": [
+      "barra",
+      "discos",
+      "jaula",
+      "barra de dominadas"
+     ],
+     "foco": "Thruster: &#171;empuja el suelo y lanza la barra al techo&#187;, ciclo continuo. Las tres partes suben carga y bajan reps: el primer 21-15-9 se corre controlado para llegar entero a los muscle-ups. Si quieres conservar la comparaci&#243;n con el Fran del 13 de octubre, anota el tiempo al terminar el primer 21-15-9 (no es id&#233;ntico a un Fran aislado, pero da una referencia)."
+    },
+    "end": {
+     "name": "TEST + DAE HAN",
+     "tag": "Retest 13 oct &#183; Hero WOD",
+     "tribute": "Sargento primero Dae Han Park, 36 a&#241;os, de Watertown (Connecticut), del 3.er Batall&#243;n del 1.er Grupo de Fuerzas Especiales, con base en Joint Base Lewis-McChord (Washington). Muri&#243; el 12 de marzo de 2011 en la provincia de Wardak (Afganist&#225;n) por las heridas de un artefacto explosivo improvisado. Le sobreviven su mujer, Mi Kyong; sus hijas, Niya y Sadie; sus padres, Joseph y Bonnie; y sus hermanos, Katie y Saejin.",
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "10 min",
+       "lines": [
+        "3 min easy",
+        "5 x (30 s hard / 30 s easy)",
+        "2 min easy"
+       ]
+      },
+      {
+       "h": "A &#183; TEST",
+       "fmt": "For Time &#183; max effort",
+       "lines": [
+        "1000 m Row"
+       ]
+      },
+      {
+       "h": "B &#183; DAE HAN",
+       "fmt": "3 rounds For Time",
+       "lines": [
+        "800 m Run",
+        "3 Rope Climbs (15 ft)",
+        "12 Thrusters (61/43 kg)"
+       ]
+      }
+     ],
+     "rx": "1000 m Row &#183; Thrusters 61/43 kg (135/95 lb)",
+     "sc": "Intermedio: thrusters 43/30 kg &#183; 2 rope climbs &#183; Iniciaci&#243;n: thrusters 30/20 kg &#183; 3 rope pulls desde el suelo &#183; 600 m",
+     "material": [
+      "ergometros",
+      "remo",
+      "calle",
+      "cuerda",
+      "barra",
+      "discos"
+     ],
+     "foco": "Test: 3 tandas de 7-7-6 en los 7 remos; la anterior juzga a la siguiente (tiempo, ritmo /500 m y damper). Mismo damper y misma distancia que el 13 de octubre. Salida controlada y aprieta en los &#250;ltimos 400 m. Dae Han: la versi&#243;n oficial corre los 800 m con barra vac&#237;a; aqu&#237; se corren sin barra. Cuerda: &#171;pisa la cuerda con el pie de abajo&#187;."
+    },
+    "halt": {
+     "name": "FRONT SQUAT 3RM",
+     "tag": "Cierre del hilo del ciclo",
+     "dur": [
+      [
+       "Warm-up",
+       15
+      ],
+      [
+       "T&#233;cnica",
+       4
+      ],
+      [
+       "3RM",
+       20
+      ],
+      [
+       "Back-off",
+       7
+      ],
+      [
+       "Calma",
+       4
+      ],
+      [
+       "Total",
+       50
+      ]
+     ],
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "15 min",
+       "lines": [
+        "Progressive ramp"
+       ]
+      },
+      {
+       "h": "A &#183; T&#201;CNICA",
+       "fmt": "E60 x 4",
+       "lines": [
+        "Power Snatch x 1 + Power Clean &amp; Jerk x 1 @60%"
+       ]
+      },
+      {
+       "h": "B &#183; PRINCIPAL",
+       "fmt": "Build to 3RM",
+       "lines": [
+        "Front Squat",
+        "Rest 3:00 between heavy sets",
+        "Max. 3 attempts above 90%"
+       ]
+      },
+      {
+       "h": "C &#183; BACK-OFF",
+       "fmt": "E2:00",
+       "lines": [
+        "Front Squat 2 x 3 @85% of today's 3RM"
+       ]
+      }
+     ],
+     "rx": "Front Squat 3RM + 2 x 3 @85%",
+     "sc": "Heavy triple @RPE 9",
+     "material": [
+      "barra",
+      "discos",
+      "rack"
+     ],
+     "foco": "Los dos levantamientos ligeros al principio cumplen la regla de Halterofilia sin gastar pierna. &#171;Codos hacia la pared de enfrente&#187; hasta la &#250;ltima rep de cada intento. Si el codo cae en la segunda rep, ese es tu tope de hoy. Profundidad completa, sin rebote."
+    },
+    "bs": BS[4]
+   }
+  },
+  {
+   "key": "sab",
+   "label": "S&#193;B",
+   "date": "2026-11-07",
+   "title": "S&#193;BADO",
+   "sub": "7 de noviembre &#183; Omega",
+   "flag": "TEAM",
+   "banner": "Cierre del ciclo APOCALIPSIS.",
+   "tracks": {
+    "cf": {
+     "name": "SPEED DIANE + SPEED ELIZABETH",
+     "tag": "Teams of 3",
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "2 rounds",
+       "lines": [
+        "5 Deadlifts (light bar)",
+        "5 Pike Push-Ups",
+        "5 Hang Power Cleans",
+        "5 Ring Dips (scaled)",
+        "100 m Jog"
+       ]
+      },
+      {
+       "h": "PART 1",
+       "fmt": "Teams of 3 &#183; For Time",
+       "lines": [
+        "800 m Run (together)",
+        "Speed Diane &#183; 63-45-27: Deadlifts (70/50 kg) &#183; Handstand Push-Ups"
+       ]
+      },
+      {
+       "h": "REST",
+       "fmt": "2:00",
+       "lines": [
+        "Rest 2:00"
+       ]
+      },
+      {
+       "h": "PART 2",
+       "fmt": "Teams of 3 &#183; For Time",
+       "lines": [
+        "800 m Run (together)",
+        "Speed Elizabeth &#183; 63-45-27: Cleans (40/30 kg) &#183; Ring Dips"
+       ]
+      },
+      {
+       "h": "INDIVIDUAL",
+       "fmt": "Same structure",
+       "lines": [
+        "Diane and Elizabeth 21-15-9"
+       ]
+      }
+     ],
+     "rx": "Deadlift 70/50 kg &#183; Clean 40/30 kg &#183; HSPU &#183; Ring Dips",
+     "sc": "Intermedio: DL 60/40 kg &#183; clean 35/25 kg &#183; HSPU con colchoneta extra &#183; fondos con banda &#183; Iniciaci&#243;n: DL 50/35 kg &#183; clean 30/20 kg &#183; pike push-ups &#183; fondos en caj&#243;n",
+     "material": [
+      "barra",
+      "discos",
+      "calle",
+      "pared",
+      "jaula",
+      "anillas"
+     ],
+     "foco": "Reparto libre de las reps dentro del equipo; los 800 m se corren juntos. Deadlift: &#171;empuja el suelo, la barra pegada a las piernas&#187;. Clean: &#171;mete los codos bajo la barra&#187;. HSPU: &#171;empuja el suelo lejos de ti&#187;."
+    },
+    "end": {
+     "name": "SE ENTRA JUNTO",
+     "tag": "Pairs &#183; AMRAP 20",
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "Pairs",
+       "lines": [
+        "2 min any Erg",
+        "10 Box Step-Ups",
+        "100 m Jog together"
+       ]
+      },
+      {
+       "h": "A &#183; PAIRS",
+       "fmt": "AMRAP 20 &#183; You-go-I-go &#183; RPE 7",
+       "lines": [
+        "Partner A: 12/10 Calories (any Erg)",
+        "Partner B: 15 Box Step-Overs (24/20 in)",
+        "Switch every round",
+        "Every 4 rounds: 200 m Run together"
+       ]
+      }
+     ],
+     "rx": "12/10 cal &#183; Box 24/20 in",
+     "sc": "Intermedio: 10/8 cal &#183; 12 step-overs &#183; Iniciaci&#243;n: 8/6 cal &#183; caj&#243;n bajo",
+     "material": [
+      "ergometros",
+      "remo",
+      "ski erg",
+      "bike erg",
+      "air bike",
+      "cajon",
+      "calle"
+     ],
+     "foco": "Los 200 m cada 4 rondas se corren juntos: la pareja no se separa. Ayer el 1000 m vaci&#243; el dep&#243;sito: el remo es opcional, elige bici o ski si las piernas protestan. Step-over con pie completo: &#171;empuja el caj&#243;n hacia abajo&#187;."
+    },
+    "halt": {
+     "name": "SNATCH",
+     "tag": "Complejos en pareja &#183; cierre de ciclo",
+     "dur": [
+      [
+       "Warm-up",
+       10
+      ],
+      [
+       "Principal",
+       16
+      ],
+      [
+       "Accesorios",
+       8
+      ],
+      [
+       "Movilidad",
+       10
+      ],
+      [
+       "Total",
+       44
+      ]
+     ],
+     "blocks": [
+      {
+       "h": "WARM-UP",
+       "fmt": "Pairs &#183; 10 min",
+       "lines": [
+        "Empty bar, both lifts"
+       ]
+      },
+      {
+       "h": "A &#183; PRINCIPAL",
+       "fmt": "Pairs &#183; EMOM 16 (alt) &#183; 1 bar",
+       "lines": [
+        "Odd: 1 Power Snatch + 1 Overhead Squat @60-65%",
+        "Even: 1 Power Clean + 1 Push Jerk @60-65%"
+       ]
+      },
+      {
+       "h": "B &#183; ACCESORIOS",
+       "fmt": "E90",
+       "lines": [
+        "Snatch-Grip RDL 2 x 5, light"
+       ]
+      },
+      {
+       "h": "C &#183; MOBILITY",
+       "fmt": "Pairs &#183; 10 min",
+       "lines": [
+        "T-spine &#183; Ankle &#183; Wrist"
+       ]
+      }
+     ],
+     "rx": "Complexes @60-65%",
+     "sc": "One movement per minute",
+     "material": [
+      "barra",
+      "discos"
+     ],
+     "foco": "Carga ligera el d&#237;a despu&#233;s del 3RM. &#171;Barra pegada a ti&#187; en el snatch y &#171;mete los codos&#187; en el clean."
+    },
+    "bs": BS[5]
+   }
+  }
+ ]
 };
 /* ============================================================ */
 
@@ -590,8 +1360,8 @@ var WEEK={
   var $=function(id){return document.getElementById(id);};
   $("weekNo").innerHTML=WEEK.no;$("weekName").innerHTML=WEEK.name;$("weekSub").innerHTML=WEEK.sub;
   if(WEEK.anniv){$("anniv").innerHTML=WEEK.anniv;$("anniv").hidden=false;}
-  if(WEEK.rider){$("rider").innerHTML='<h3>'+WEEK.rider.title+'</h3><q>'+WEEK.rider.quote+'</q><p>'+WEEK.rider.text+'</p>';$("rider").hidden=false;}
-  var FLAGS={HERO:"HERO DAY",TEAM:"TEAM DAY",XIII:"13 ANIVERSARIO"};
+  if(WEEK.rider){$("rider").innerHTML='<h3>'+WEEK.rider.title+'</h3><details class="manif"><summary>Leer manifiesto</summary><q>'+WEEK.rider.quote+'</q><p>'+WEEK.rider.text+'</p></details>';$("rider").hidden=false;}
+  var FLAGS={HERO:"HERO DAY",TEAM:"TEAM DAY",XIII:"13 ANIVERSARIO",FESTIVO:"FESTIVO"};
   $("block").innerHTML=WEEK.block.map(function(b,i){return '<div class="blk'+(i===WEEK.current?' on':'')+'"><b>'+b[0]+'</b><span>'+b[1]+'</span><i>'+b[2]+'</i></div>';}).join("");
 
   function audit(d){
@@ -618,14 +1388,14 @@ var WEEK={
     h+='<details class="fb"><summary>FEEDBACK COACHES</summary><div class="cards">'+
        '<div class="card"><h5>FOCO T&Eacute;CNICO</h5><p>'+t.foco+'</p></div>'+
        '<div class="card"><h5>MATERIAL</h5><div class="chips">'+t.material.map(function(m){return '<span>'+m+'</span>';}).join("")+'</div></div>'+
-       '<div class="card red"><h5>BANDERAS ROJAS</h5><p>'+t.banderas+'</p></div></div></details>';
+       (t.banderas?'<div class="card red"><h5>BANDERAS ROJAS</h5><p>'+t.banderas+'</p></div>':'')+'</div></details>';
     return h+'</div></details>';
   }
   function show(i){
     var d=WEEK.days[i];
     [].forEach.call(document.querySelectorAll(".day-btn"),function(b,j){b.classList.toggle("on",j===i);b.setAttribute("aria-selected",j===i);});
-    $("day").innerHTML='<div class="dayhead"><h2>'+d.title+'</h2><p>'+d.sub+(d.flag?' &middot; '+FLAGS[d.flag]:'')+'</p></div>'+(d.banner?'<div class="banner">'+d.banner+'</div>':'')+audit(d)+
-      '<div class="mods">'+TR.map(function(t){return mod(t[0],t[1],d.tracks[t[0]],d);}).join("")+'</div>';
+    $("day").innerHTML='<div class="dayhead"><h2>'+d.title+'</h2><p>'+d.sub+(d.flag?' &middot; '+FLAGS[d.flag]:'')+'</p></div>'+(d.banner?'<div class="banner">'+d.banner+'</div>':'')+(d.flag==="FESTIVO"?'':audit(d)+
+      '<div class="mods">'+TR.map(function(t){return mod(t[0],t[1],d.tracks[t[0]],d);}).join("")+'</div>');
     if(document.body.classList.contains("pizarra"))openAll();
     try{localStorage.setItem("cfvk-day",d.key);}catch(e){}
   }
